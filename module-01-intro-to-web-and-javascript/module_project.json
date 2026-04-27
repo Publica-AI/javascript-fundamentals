@@ -1,0 +1,226 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Intro to the Web and JavaScript",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_project"
+  },
+  "pool_brief": "You are given a starter HTML file for a Nigerian web page. Write script.js to log information about the page's content to the browser Console. Your script.js must: (1) contain at least five console.log statements; (2) log at least one string value, one number value, and one boolean value; (3) include at least one console.log with a message written in any Nigerian language (Yoruba, Igbo, Hausa, Pidgin English, or any other); (4) log values in a logical order that tells a story about the page — for example, start with a load confirmation, then log specific content details. Do not modify the HTML file.",
+  "project_pool": [
+    {
+      "project_id": "proj_1",
+      "project_title": "Cowry Budget App Landing Page",
+      "context": "A personal finance app for Nigerians that helps users track income and expenses in Naira.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Cowry Budget</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"app-name\">Cowry Budget</h1>\n        <p id=\"tagline\">Track every Naira. Build every dream.</p>\n    </header>\n\n    <main>\n        <h2>Features</h2>\n        <ul id=\"features\">\n            <li>Log income and expenses in Naira</li>\n            <li>Set monthly savings goals</li>\n            <li>View spending breakdown by category</li>\n            <li>Export reports to PDF</li>\n        </ul>\n\n        <section id=\"pricing\">\n            <h2>Pricing</h2>\n            <p>Free plan: up to 50 transactions per month</p>\n            <p>Pro plan: \u20a61,500 / month \u2014 unlimited transactions</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 1 Project — Cowry Budget App\n// Write at least 5 console.log statements about this page.\n// Include: at least one string, one number, one boolean, and one Nigerian-language message.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "output_completeness",
+            "description": "At least five console.log statements are present, each logging a value that relates to something on the page — app name, feature count, price, availability, or any other content from the HTML",
+            "max_points": 30
+          },
+          {
+            "id": "value_types",
+            "description": "All three value types are demonstrated: at least one string (a meaningful word or phrase, not just any character), at least one number (e.g. the pro plan price 1500, or the number of features 4), and at least one boolean (e.g. true for is the free plan available, or false for is registration closed)",
+            "max_points": 30
+          },
+          {
+            "id": "order_and_flow",
+            "description": "Logs appear in a logical sequence — typically a load-confirmation message first, then specific page details; the script runs without any errors in the browser Console",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "Clean, consistently indented code; string values are descriptive and relate to the page content (not \"test\", \"abc\", or random text); at least one Nigerian-language phrase is present; no duplicate or redundant logs",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_2",
+      "project_title": "Naija Recipe Hub",
+      "context": "A Nigerian food recipe website featuring traditional dishes with preparation details.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Naija Recipe Hub</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"site-name\">Naija Recipe Hub</h1>\n        <p id=\"subtitle\">Authentic Nigerian recipes, made with love.</p>\n    </header>\n\n    <main>\n        <article id=\"featured-recipe\">\n            <h2>Today's Featured Recipe: Egusi Soup</h2>\n            <p id=\"description\">A rich, hearty soup made with ground melon seeds, assorted fish, and leafy vegetables. Served with pounded yam or eba.</p>\n\n            <h3>Ingredients</h3>\n            <ul id=\"ingredients\">\n                <li>2 cups ground egusi</li>\n                <li>500g assorted fish</li>\n                <li>3 tablespoons palm oil</li>\n                <li>2 stock cubes</li>\n                <li>Salt and pepper to taste</li>\n                <li>Ugu leaves (or spinach)</li>\n            </ul>\n\n            <p id=\"prep-time\">Preparation time: 45 minutes</p>\n            <p id=\"servings\">Serves: 4 people</p>\n        </article>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 1 Project — Naija Recipe Hub\n// Write at least 5 console.log statements about this page.\n// Include: at least one string, one number, one boolean, and one Nigerian-language message.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "output_completeness",
+            "description": "At least five console.log statements are present, each logging a value related to the page — the site name, recipe name, ingredient count, prep time, servings, or any other content from the HTML",
+            "max_points": 30
+          },
+          {
+            "id": "value_types",
+            "description": "All three value types are demonstrated: at least one string (e.g. the recipe name or site name), at least one number (e.g. prep time 45, servings 4, or ingredient count 6), and at least one boolean (e.g. true for is this a featured recipe, or false for is this a dessert)",
+            "max_points": 30
+          },
+          {
+            "id": "order_and_flow",
+            "description": "Logs appear in a logical sequence — a load confirmation typically comes first, followed by specific recipe details; the script runs without any errors in the Console",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "Clean, consistently indented code; string values are meaningful and drawn from the page content; at least one Nigerian-language phrase is present; no duplicate or pointless logs",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_3",
+      "project_title": "Lagos Event Guide",
+      "context": "An events listing page for upcoming concerts, festivals, and community events in Lagos.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Lagos Event Guide</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"site-name\">Lagos Event Guide</h1>\n        <p id=\"tagline\">Your go-to source for what's happening in Lagos.</p>\n    </header>\n\n    <main>\n        <section id=\"featured-event\">\n            <h2>Featured Event: Afrobeats Festival 2025</h2>\n            <p id=\"event-description\">Three days of live performances from Nigeria's top Afrobeats artists at Eko Atlantic City, Lagos.</p>\n            <ul id=\"event-details\">\n                <li>Date: 14–16 November 2025</li>\n                <li>Venue: Eko Atlantic City, Lagos</li>\n                <li>Ticket price: \u20a65,000 (early bird)</li>\n                <li>Capacity: 10,000 attendees</li>\n            </ul>\n            <p id=\"registration-status\">Registration: Open</p>\n        </section>\n\n        <section id=\"upcoming\">\n            <h2>Also Coming Up</h2>\n            <ul>\n                <li>Lagos Jazz Weekend — October 2025</li>\n                <li>Naija Tech Summit — September 2025</li>\n                <li>Lekki Food Festival — August 2025</li>\n            </ul>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 1 Project — Lagos Event Guide\n// Write at least 5 console.log statements about this page.\n// Include: at least one string, one number, one boolean, and one Nigerian-language message.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "output_completeness",
+            "description": "At least five console.log statements are present, each logging something related to the page — the site name, event name, ticket price, capacity, number of upcoming events, registration status, or other content from the HTML",
+            "max_points": 30
+          },
+          {
+            "id": "value_types",
+            "description": "All three value types are demonstrated: at least one string (e.g. the event name or site name), at least one number (e.g. ticket price 5000 or capacity 10000), and at least one boolean (e.g. true for is registration open)",
+            "max_points": 30
+          },
+          {
+            "id": "order_and_flow",
+            "description": "Logs are sequenced logically — a page-load confirmation first, then content details; the script executes without any Console errors",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "Clean, consistently formatted code; string values are drawn from actual page content; at least one Nigerian-language phrase is present; no throwaway or duplicate logs",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_4",
+      "project_title": "Publica Academy Homepage",
+      "context": "The homepage of an online learning platform offering tech courses for professionals in Nigeria.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Publica Academy</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"brand\">Publica Academy</h1>\n        <p id=\"mission\">Practical tech education for Nigerian professionals.</p>\n    </header>\n\n    <main>\n        <section id=\"courses\">\n            <h2>Our Courses</h2>\n            <ul id=\"course-list\">\n                <li>HTML &amp; CSS Basics</li>\n                <li>JavaScript Fundamentals</li>\n                <li>Git &amp; GitHub</li>\n                <li>Intro to Databases</li>\n            </ul>\n            <p id=\"enrollment-info\">Enrollment is open. New cohort starts 1 May 2025.</p>\n        </section>\n\n        <section id=\"stats\">\n            <h2>By the Numbers</h2>\n            <ul>\n                <li>Students enrolled: 1,200</li>\n                <li>Courses available: 4</li>\n                <li>Average rating: 4.8 / 5</li>\n                <li>Completion rate: 87%</li>\n            </ul>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 1 Project — Publica Academy Homepage\n// Write at least 5 console.log statements about this page.\n// Include: at least one string, one number, one boolean, and one Nigerian-language message.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "output_completeness",
+            "description": "At least five console.log statements are present, each logging a value from the page — the platform name, a course name, the number of courses, student count, completion rate, enrollment status, or other content",
+            "max_points": 30
+          },
+          {
+            "id": "value_types",
+            "description": "All three value types are demonstrated: at least one string (e.g. the platform name or a course name), at least one number (e.g. number of courses 4, or students enrolled 1200), and at least one boolean (e.g. true for is enrollment open)",
+            "max_points": 30
+          },
+          {
+            "id": "order_and_flow",
+            "description": "Logs flow in a logical sequence — a page or app load message first, then stats and details; the script runs without errors in the Console",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "Clean, indented code; string values reference actual page content; at least one Nigerian-language phrase is included; no filler or duplicate logs",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_5",
+      "project_title": "Lagos Street Market",
+      "context": "An online market listing page for a Lagos street market selling fresh food and everyday goods.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Lagos Street Market</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"market-name\">Lagos Street Market</h1>\n        <p id=\"market-tagline\">Fresh from the farm. Delivered to your door.</p>\n    </header>\n\n    <main>\n        <section id=\"featured-product\">\n            <h2>Today's Featured Product</h2>\n            <h3 id=\"product-name\">Fresh Roma Tomatoes</h3>\n            <p id=\"product-description\">Sun-ripened Roma tomatoes sourced directly from farms in Kaduna. Perfect for stews, sauces, and jollof rice.</p>\n            <ul id=\"product-details\">\n                <li>Price: \u20a61,800 per basket</li>\n                <li>Weight: approximately 3kg</li>\n                <li>Stock: 40 baskets available</li>\n                <li>Discount: None today</li>\n            </ul>\n        </section>\n\n        <section id=\"categories\">\n            <h2>Shop by Category</h2>\n            <ul>\n                <li>Vegetables</li>\n                <li>Fruits</li>\n                <li>Grains &amp; Pulses</li>\n                <li>Spices &amp; Seasonings</li>\n                <li>Cooking Oils</li>\n            </ul>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 1 Project — Lagos Street Market\n// Write at least 5 console.log statements about this page.\n// Include: at least one string, one number, one boolean, and one Nigerian-language message.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "output_completeness",
+            "description": "At least five console.log statements are present, each logging something related to the page — market name, product name, price, stock quantity, number of categories, discount status, or other page content",
+            "max_points": 30
+          },
+          {
+            "id": "value_types",
+            "description": "All three value types are demonstrated: at least one string (e.g. market name or product name), at least one number (e.g. price 1800, stock 40, or category count 5), and at least one boolean (e.g. false for is there a discount today)",
+            "max_points": 30
+          },
+          {
+            "id": "order_and_flow",
+            "description": "Logs are in a logical sequence — a load confirmation first, then product and market details; the script runs without any Console errors",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "Clean, consistently formatted code; strings are drawn from actual page content and are meaningful; at least one Nigerian-language phrase is present; no duplicate or meaningless logs",
+            "max_points": 20
+          }
+        ]
+      }
+    }
+  ]
+}

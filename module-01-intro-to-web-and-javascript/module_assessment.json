@@ -1,0 +1,387 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Intro to the Web and JavaScript",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_package",
+    "package_structure": "2_code_1_text",
+    "points_per_package": 100
+  },
+  "question_packages": [
+    {
+      "package_id": "pkg_1",
+      "questions": [
+        {
+          "question_id": "pkg1_q1",
+          "submission_type": "code",
+          "prompt": "Write a complete HTML file that satisfies all three requirements: (a) a <h1> element with id=\"page-heading\" and the text \"My First Web Page\"; (b) a <p> element with id=\"description\" and any descriptive text of your choice; (c) a <script> tag linked to an external file called main.js, placed correctly just before the closing </body> tag. Do not include a <script> tag inside the <head>.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All three requirements are met: h1 with id=\"page-heading\" and the specified text is present; p with id=\"description\" and non-empty text is present; script tag links to main.js with the src attribute",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Script tag uses src=\"main.js\" (not an inline script), is placed immediately before </body>, and there is no script tag anywhere in the <head>",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Valid HTML structure with DOCTYPE, html, head, and body elements; consistent indentation; no duplicate or conflicting elements",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg1_q2",
+          "submission_type": "code",
+          "prompt": "Write the contents of main.js to do all three of the following using console.log: (a) log the string \"Hello from Naija!\"; (b) log the number 2024; (c) log the boolean false. Values should be logged directly as literals — no variable declarations are needed.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All three console.log statements are present and produce the correct output: the exact string \"Hello from Naija!\", the number 2024 (not the string \"2024\"), and the boolean false (not the string \"false\")",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Uses console.log() for all three outputs; values are passed directly as literals inside the parentheses",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Each statement is on its own line; no syntax errors; no extra output beyond the three required logs",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg1_q3",
+          "submission_type": "text",
+          "prompt": "What happens step by step when you type a URL like jumia.com.ng into your browser and press Enter? Describe at least four distinct steps in the process, starting from when you press Enter and ending when the page appears on your screen.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Describes at least four correct steps in the right order: DNS translates the domain name to an IP address; the browser sends an HTTP request to the server; the server processes the request and sends back a response (HTML, CSS, JS files); the browser receives and renders the content on screen",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Steps are described in sequence and in plain terms; the answer reads as an explanation, not just a list of keywords",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_2",
+      "questions": [
+        {
+          "question_id": "pkg2_q1",
+          "submission_type": "code",
+          "prompt": "A developer wrote the HTML below but placed the <script> tag in the wrong location. Rewrite the complete HTML file with the script tag moved to the correct position, and add an HTML comment on the line above the script tag explaining why it belongs there:\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>My App</title>\n    <script src=\"app.js\"></script>\n</head>\n<body>\n    <h1 id=\"title\">Cowry Finance</h1>\n    <p id=\"tagline\">Track every Naira.</p>\n</body>\n</html>",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "Script tag is removed from <head> and placed immediately before </body>; an HTML comment is added on the line above the script tag; all other HTML content is unchanged",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "HTML comment accurately states that the script is placed after the body elements so all HTML exists before JavaScript runs; comment uses correct <!-- --> syntax",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Only the script tag was moved and a comment was added — no other changes made; consistent indentation and valid HTML structure preserved",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg2_q2",
+          "submission_type": "code",
+          "prompt": "Write the contents of app.js with four console.log statements that log the following in order: (a) the string \"Cowry Finance app loaded\"; (b) the number 250000 (representing a starting balance in Naira); (c) the boolean true (representing whether the user is logged in); (d) any message of your choice written in Yoruba, Igbo, Hausa, or Pidgin English.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All four console.log statements are present; the types are correct — string, number 250000, boolean true (not a string), and a Nigerian-language string in the correct order",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "All four values are logged using console.log(); the boolean true is the literal true, not a string; the Nigerian-language log is a complete, meaningful phrase",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Each statement on its own line; clean formatting; no syntax errors; the Nigerian-language message is a recognisable phrase, not random characters",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg2_q3",
+          "submission_type": "text",
+          "prompt": "Explain the difference between a client and a server on the web. What does each one do, and how do they communicate? Use a Nigerian website you know (such as Jumia, Chowdeck, Konga, or any other) as part of your explanation.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly identifies the client as the browser or device that initiates requests and displays responses; correctly identifies the server as the machine that receives requests, processes them, and sends back data; correctly describes the request-response cycle as the communication mechanism",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Uses a specific Nigerian website to illustrate the explanation concretely — e.g. describing what the browser sends and what the server returns when loading that site",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_3",
+      "questions": [
+        {
+          "question_id": "pkg3_q1",
+          "submission_type": "code",
+          "prompt": "Write a complete HTML file for a page called \"Lagos Events\" that satisfies all three requirements: (a) a <h1> with the text \"Lagos Events\" and id=\"events-heading\"; (b) a <p> that describes any fictional upcoming event in Lagos; (c) an inline <script> block (not linked from an external file) placed just before </body> that logs the string \"Events page loaded\" to the Console.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "h1 with id=\"events-heading\" and text \"Lagos Events\" is present; p with a non-empty event description is present; inline <script> block contains console.log(\"Events page loaded\") and produces that exact output",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Script is an inline <script> block (no src attribute), placed immediately before </body>; the console.log string matches the requirement exactly",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Valid HTML structure; consistent indentation; no external script file referenced; no script tag in the <head>",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg3_q2",
+          "submission_type": "code",
+          "prompt": "Now convert the page from the previous question to use an external script instead of an inline one. Write two things: (a) the updated HTML file — replace the inline <script> block with a <script src=\"events.js\"> tag placed correctly just before </body>; (b) the contents of events.js — log three values in order: the string \"External script loaded\", the number of upcoming events on the page (choose any number from 1–10), and the boolean true (representing whether event registration is open).",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "HTML has <script src=\"events.js\"></script> just before </body> with no inline JavaScript remaining; events.js has three console.log statements in the correct order with the correct types: string, number, boolean true",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "The inline script has been fully removed from the HTML; the external script tag uses src=\"events.js\" correctly; the number logged is a whole number between 1 and 10; the boolean is the literal true",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Clean code in both files; no leftover inline JavaScript in the HTML; no stray comments or duplicate logs",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg3_q3",
+          "submission_type": "text",
+          "prompt": "What is console.log and what is it used for? Explain why its output appears in the DevTools Console rather than on the visible page. Also give one specific, concrete example of a situation where you would use console.log while building a website.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly identifies console.log as a JavaScript method used to print messages to the browser's DevTools Console; correctly explains that the output does not appear on the page because the Console is a developer tool separate from the rendered HTML that users see",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Gives a specific, concrete use case — not just \"to check something\" — such as confirming a script ran, verifying the value of an expression, or checking that a file linked correctly",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_4",
+      "questions": [
+        {
+          "question_id": "pkg4_q1",
+          "submission_type": "code",
+          "prompt": "Write a complete HTML file for a recipe page called \"Mama's Jollof Rice\" that includes all three of the following: (a) a <h1> with the text \"Mama's Jollof Rice\" and id=\"recipe-title\"; (b) a <ul> with at least three <li> ingredients; (c) a <script src=\"recipe.js\"> tag placed correctly just before </body>.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "h1 with id=\"recipe-title\" and the exact text \"Mama's Jollof Rice\" is present; ul with at least three li items containing ingredient names is present; script tag with src=\"recipe.js\" is present",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Script tag uses the src attribute (not an inline script), is placed immediately before </body>, and is not in the <head>",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Valid, well-indented HTML; ingredient names are actual ingredients, not placeholder text; no script tag in the <head>",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg4_q2",
+          "submission_type": "code",
+          "prompt": "Write recipe.js with five console.log statements that log the following in order: (a) the string \"Recipe loaded\"; (b) the name of the recipe as a string; (c) the number of ingredients as a number — this must match the number of <li> items you wrote in your HTML; (d) the preparation time in minutes as a number (choose a realistic value); (e) the boolean true (representing that this recipe has been tested and approved).",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All five console.log statements are present in the correct order; value types are correct — two strings, two numbers, one boolean true; the ingredient count number matches the number of li elements written in the HTML",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "All five values are logged directly using console.log(); the boolean is the literal true, not a string; the prep time is a realistic positive whole number",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Clean, consistently formatted code; recipe name and ingredient count are accurate and match the HTML; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg4_q3",
+          "submission_type": "text",
+          "prompt": "Explain the role of each of the three web technologies: HTML, CSS, and JavaScript. What does each one do on a typical web page? Use a real Nigerian website you use or know about to give a concrete example for each of the three technologies.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly identifies HTML as the structure and content layer, CSS as the visual styling and layout layer, and JavaScript as the interactive behaviour layer; all three definitions are technically accurate and clearly differentiated",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Uses a specific named Nigerian website to give at least one concrete example per technology — for example naming what HTML, CSS, or JavaScript does on that specific site, not just a generic description",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_5",
+      "questions": [
+        {
+          "question_id": "pkg5_q1",
+          "submission_type": "code",
+          "prompt": "Write a complete HTML file for a page called \"Publica Academy Dashboard\" that has all of the following: (a) a <header> element containing a <h1> with id=\"dashboard-title\" and the text \"My Learning Dashboard\"; (b) a <main> element containing a <p> with id=\"welcome-msg\" and the text \"Welcome back, developer.\"; (c) a <script src=\"dashboard.js\"> tag placed correctly just before </body>.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "header and main semantic elements are present; h1 has id=\"dashboard-title\" and the exact text \"My Learning Dashboard\"; p has id=\"welcome-msg\" and the exact text \"Welcome back, developer.\"; script tag links to dashboard.js",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Uses semantic <header> and <main> elements (not divs); script tag uses src=\"dashboard.js\" and is placed immediately before </body>",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Valid HTML with correct DOCTYPE and lang attribute; consistent indentation; no script tag in the <head>",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg5_q2",
+          "submission_type": "code",
+          "prompt": "Write dashboard.js with four console.log statements that log all of the following: (a) a string greeting that includes a Nigerian name — for example \"Welcome, Ada\" or \"Welcome, Emeka\" (use any Nigerian name you like); (b) the number 18 (the total number of modules in the JavaScript Fundamentals course); (c) the boolean false (representing that today's lesson has not yet been completed); (d) any encouraging message written in any Nigerian language of your choice.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All four console.log statements are present in order; the greeting string contains a Nigerian name; the number is 18; the boolean is the literal false (not the string \"false\"); a Nigerian-language message is present",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "All four values logged using console.log(); boolean false is the literal, not a string; Nigerian-language log is a complete, recognisable phrase",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Clean formatting; the greeting contains an actual Nigerian name, not a placeholder; the Nigerian-language message is meaningful; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg5_q3",
+          "submission_type": "text",
+          "prompt": "Explain what an HTTP method is. What does the GET method do, and when does a browser use it? Then describe one other HTTP method (such as POST, PUT, or DELETE) and give a specific example of when it would be used on a Nigerian website.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that HTTP methods tell the server what action the client wants to perform; correctly identifies GET as the method used to retrieve or load data (e.g. requesting a web page); correctly identifies at least one other method — POST sends data to the server, PUT updates existing data, DELETE removes data — with an accurate description",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Uses a concrete example involving a Nigerian website or app for at least one of the methods described — e.g. what happens when a form is submitted on Jumia, or when a user logs in to Chowdeck",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
