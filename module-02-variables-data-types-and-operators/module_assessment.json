@@ -1,0 +1,387 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Variables, Data Types & Operators",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_package",
+    "package_structure": "2_code_1_text",
+    "points_per_package": 100
+  },
+  "question_packages": [
+    {
+      "package_id": "pkg_1",
+      "questions": [
+        {
+          "question_id": "pkg1_q1",
+          "submission_type": "code",
+          "prompt": "Write a script for a Chowdeck food order. (a) Declare const variables for the restaurant name (any Nigerian restaurant), the dish name (any Nigerian dish), and the price per item in Naira. (b) Declare let variables for the quantity (start at 1) and the order status (start at the string \"pending\"). (c) Reassign the quantity to 3 and the status to \"confirmed\". (d) Log all five variables with descriptive labels using console.log.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All five variables are present: three const (restaurant, dish, price) and two let (quantity, status); quantity is reassigned to 3 and status to \"confirmed\"; all five values are logged with labels",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "const is used for the three fixed values; let is used for the two mutable values; reassignment does not redeclare the variables (no second const/let); console.log labels are descriptive",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "camelCase variable names; no var; logical ordering (declarations before reassignments before logs); no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg1_q2",
+          "submission_type": "code",
+          "prompt": "Write a script that calculates the grand total for a Jumia order and then checks the total using comparison operators. (a) Declare const variables: itemPrice = 4500, quantity = 3, discount = 200. (b) Calculate and store in a const: subtotal (itemPrice * quantity), discountedTotal (subtotal - discount), vat (discountedTotal * 0.075), and grandTotal (discountedTotal + vat). (c) Log grandTotal with a label. (d) Log whether grandTotal is greater than 10000 using >. (e) Log whether grandTotal is strictly equal to the number 13653.75 using ===.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All four calculations are mathematically correct: subtotal = 13500, discountedTotal = 13300, vat = 997.5, grandTotal = 14297.5; comparison (d) logs true; comparison (e) logs false (14297.5 !== 13653.75)",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "All four calculated values use const (they are fixed once computed); each value builds on the previous (subtotal → discountedTotal → vat → grandTotal); both comparisons use === or > correctly",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Descriptive variable names; consistent formatting; no var; no magic numbers (all given values are named variables, not typed as literals in the calculations)",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg1_q3",
+          "submission_type": "text",
+          "prompt": "Explain why JavaScript developers prefer `const` over `let` as the default choice for variable declarations. What practical benefit does using `const` give when reading or debugging someone else's code?",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that const prevents reassignment and signals to any reader that the value never changes — making code self-documenting; correctly explains that let signals a value that will be updated, so const being the default reduces the mental load of tracking which values might change",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Uses a concrete example or scenario to illustrate the benefit — e.g. seeing const country tells you it will never change, so you don't have to search the rest of the code to be sure",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_2",
+      "questions": [
+        {
+          "question_id": "pkg2_q1",
+          "submission_type": "code",
+          "prompt": "Write a script that declares one variable of each primitive type using Nigerian-relevant values, then logs the typeof each. Specifically: (a) a string for any Nigerian state name; (b) a number for that state's approximate population; (c) a boolean for whether the state is in the south (true or false); (d) a null variable called areaCode — set it to null (no area code exists); (e) a let variable called regionCode — declare it but do not assign a value. Log typeof for all five variables.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All five variables present with the correct types; typeof output in the Console is: string, number, boolean, object (for null), undefined (for regionCode); all five typeof calls are logged",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "null is explicitly assigned (not just declared without a value); regionCode is declared with let and not assigned any value; typeof is used on each variable (not on the literal values)",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Descriptive variable names; const used for the four fixed variables; logs include labels so the output is readable; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg2_q2",
+          "submission_type": "code",
+          "prompt": "A developer wrote the following buggy code:\n\nconst itemCount = \"5\";\nconst priceEach = 2000;\nconst total = itemCount * priceEach;\nconsole.log(total);\nconsole.log(itemCount === priceEach);\nconsole.log(itemCount == 5);\n\n(a) Predict the output of each console.log — write your prediction as a comment on each line. (b) Explain in a comment above the first line why itemCount is declared incorrectly. (c) Rewrite the first line to fix the type bug so that total calculates correctly as a number.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "Predictions are correct: total logs 10000 (JavaScript coerces the string \"5\" to number in multiplication), itemCount === priceEach logs false (different types and values), itemCount == 5 logs true (loose equality coerces \"5\" to 5); the fix changes \"5\" to the number 5",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "The comment explains that itemCount should be a number because it is used in arithmetic; the fix removes the quotes from \"5\" making it the number literal 5; the student does not change any other lines",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All three predictions are present as comments; explanation is specific (not just \"it's wrong\"); corrected code is clean with no extra changes",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg2_q3",
+          "submission_type": "text",
+          "prompt": "What is `typeof` in JavaScript and when would you use it? Explain the `typeof null` result — what does it return, why does it return that, and what does this mean for code that needs to check whether a value is null?",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly identifies typeof as an operator that returns a string describing a value's type; correctly states that typeof null returns \"object\" due to a legacy bug from JavaScript's original 1995 implementation that cannot be changed without breaking existing websites; correctly notes that to reliably check for null you must use === null rather than typeof",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Explains the practical consequence clearly — relying on typeof to detect null will fail; gives a concrete example showing the check that works (value === null) vs the one that doesn't (typeof value === \"null\")",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_3",
+      "questions": [
+        {
+          "question_id": "pkg3_q1",
+          "submission_type": "code",
+          "prompt": "Write a cart calculation script for a Konga order. (a) Declare const variables: itemPrice = 3200, quantity = 4, couponDiscount = 500. (b) Calculate and store in consts: subtotal (itemPrice * quantity), totalAfterCoupon (subtotal - couponDiscount), vat (totalAfterCoupon * 0.075), grandTotal (totalAfterCoupon + vat). (c) Log grandTotal with a label. (d) Use the % operator to check whether the quantity is even (quantity % 2 === 0) and log the result as a boolean with a label.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "Calculations are correct: subtotal = 12800, totalAfterCoupon = 12300, vat = 922.5, grandTotal = 13222.5; the % check logs true (4 is even: 4 % 2 === 0 is true)",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "All four computed values use const; % is used correctly in the even-check expression; the even-check result is logged as a boolean (not compared with == but with ===)",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Descriptive names; consistent formatting; the % expression is written as quantity % 2 === 0 (not as a separate variable unless clearly labelled); no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg3_q2",
+          "submission_type": "code",
+          "prompt": "Write a delivery eligibility script. Declare: const isReturningCustomer = true, const hasPromoCode = false, const cartTotal = 8500, const minimumForDiscount = 5000. Then log all three of the following with descriptive labels: (a) whether the customer gets a loyalty discount — returning customer OR has a promo code (use ||); (b) whether the customer qualifies for express delivery — cart total is at or above the minimum AND is a returning customer (use && and >=); (c) whether the cart does NOT meet the minimum threshold (use ! on the comparison cartTotal >= minimumForDiscount).",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All three expressions produce the correct boolean results: (a) true — isReturningCustomer is true so || short-circuits to true; (b) true — 8500 >= 5000 is true AND isReturningCustomer is true; (c) false — cartTotal >= minimumForDiscount is true, so ! flips it to false",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Uses || for (a), && and >= for (b), and ! wrapping the comparison for (c); all three expressions are inside console.log calls with labels; no if statements are used",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All variables declared with const as specified; expressions are readable and not overly compressed; labels clearly describe what each boolean represents",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg3_q3",
+          "submission_type": "text",
+          "prompt": "Explain the difference between `null` and `undefined` in JavaScript. Give one specific real-world coding scenario where a variable would hold null, and one where it would hold undefined. How can a developer tell which situation they are in?",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly distinguishes null as a value intentionally assigned by the developer to represent \"empty\" or \"not applicable\", and undefined as the default state JavaScript gives to a declared variable that has never been assigned; both scenarios are valid and distinct",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Scenarios are concrete and realistic — e.g. null: a user's middle name that doesn't exist; undefined: a variable declared at the top of a script but not yet assigned after an async operation. Explains that checking === null vs === undefined tells you which situation you're in",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_4",
+      "questions": [
+        {
+          "question_id": "pkg4_q1",
+          "submission_type": "code",
+          "prompt": "Write a student test result script. Declare: const studentName as any Nigerian name, const score = 78, const passMark = 50, const totalMarks = 100. Then log all four of the following: (a) the student's score as a percentage — calculate score / totalMarks * 100 and log it with the label \"Percentage:\"; (b) whether the student passed, as a boolean using >= (score >= passMark); (c) whether the score is a \"credit\" — strictly between 65 and 79 inclusive — as a boolean using && to combine both conditions; (d) whether the student did NOT fail — log !( score < passMark ) as a boolean.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All four outputs are correct: percentage = 78; passed = true (78 >= 50); credit = true (78 >= 65 && 78 <= 79); notFail = true (!(78 < 50) = !false = true)",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Percentage uses score / totalMarks * 100 (not a hard-coded 78); credit check uses && combining both ends of the range; the not-fail uses the ! operator correctly wrapping the comparison",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All variables declared with const; camelCase naming; all four logs have descriptive labels; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg4_q2",
+          "submission_type": "code",
+          "prompt": "Write a Konga loyalty programme script. Declare: const orderCount = 15, const loyaltyThreshold = 10, const isPremium = false. Then log all four of the following with labels: (a) whether the customer has exceeded the loyalty threshold (orderCount > loyaltyThreshold); (b) whether the order count is an exact multiple of 5 — use the % operator and log the boolean (orderCount % 5 === 0); (c) whether the customer qualifies for a reward — order count exceeds threshold OR is premium (use ||); (d) the exact remainder when the order count is divided by 7 (log the number: orderCount % 7).",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All four outputs are correct: (a) true (15 > 10); (b) true (15 % 5 === 0); (c) true (15 > 10 is true, || short-circuits); (d) 1 (15 % 7 = 1)",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "% is used correctly in both (b) and (d); || is used for the OR condition in (c); strict equality === is used in the % comparison in (b); no if statements",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All variables declared with const; all four logs have clear labels; expressions are readable; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg4_q3",
+          "submission_type": "text",
+          "prompt": "Explain what the `%` (remainder) operator does in JavaScript. Why is `n % 2 === 0` a reliable way to check whether a number is even? Give one other practical use case for the remainder operator beyond even/odd checking.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that % returns the remainder after integer division; correctly explains that n % 2 === 0 works because any even number divided by 2 leaves no remainder, while an odd number leaves 1; the additional use case is valid — e.g. cycling through a list index, applying a discount to every nth order, checking if a year is a leap year",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Uses a concrete numerical example (e.g. 10 % 3 = 1 because 3 goes into 10 three times with 1 left over) before stating the rule; the additional use case is described concretely, not just named",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_5",
+      "questions": [
+        {
+          "question_id": "pkg5_q1",
+          "submission_type": "code",
+          "prompt": "Write a Bolt ride fare calculator for a Lagos trip. (a) Declare const: distance = 12 (km), ratePerKm = 150 (Naira per km), baseFare = 500. Declare let: tip = 0. (b) Calculate and store in a const: fare = baseFare + (distance * ratePerKm). (c) Log fare with the label \"Ride fare (₦):\". (d) Reassign tip to 200. (e) Calculate and log the finalTotal (fare + tip) with the label \"Total with tip (₦):\". (f) Log whether the finalTotal is above ₦2,500 using strict comparison.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "fare = 500 + (12 * 150) = 2300; tip is reassigned to 200 (not redeclared); finalTotal = 2300 + 200 = 2500; the comparison 2500 > 2500 logs false",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "tip is declared with let and reassigned (not redeclared); fare uses const (calculated, won't change); the > comparison produces a boolean; the calculation uses the named variables, not hard-coded numbers",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "camelCase variable names; all logs have descriptive labels including the ₦ currency symbol or equivalent; no syntax errors; no var",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg5_q2",
+          "submission_type": "code",
+          "prompt": "A user registers on a fintech app. Declare: const phoneNumber = \"08012345678\" (stored as a string), const walletBalance = 5000, const transferMin = 1000, const isVerified = true. Then log all four of the following with labels: (a) the typeof phoneNumber — explain in a comment why a phone number is stored as a string and not a number; (b) whether the user can initiate a transfer — walletBalance is above the minimum AND isVerified is true (use && and >); (c) whether the phoneNumber is exactly equal to the string \"08012345678\" using ===; (d) the remaining balance after a ₦1,800 withdrawal (walletBalance - 1800).",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "typeof phoneNumber logs \"string\"; the transfer check logs true (5000 > 1000 && true); the === check logs true (exact string match); remaining balance logs 3200",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Uses typeof correctly; && and > used for the transfer condition; === used for the exact string comparison; the comment for (a) explains that phone numbers are strings because they are not used in arithmetic and may have leading zeros that would be lost as numbers",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All four logs have descriptive labels; comment is meaningful and technically accurate; no syntax errors; no var",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg5_q3",
+          "submission_type": "text",
+          "prompt": "Why is `===` (strict equality) preferred over `==` (loose equality) in JavaScript? Give two specific examples of comparisons where `==` returns `true` but should logically return `false`. For each example, describe the real-world bug that could result.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that === checks both type and value while == performs type coercion before comparing; both examples demonstrate real loose-equality traps — e.g. 0 == false, \"\" == false, null == undefined, \"5\" == 5 — and each is a valid case where the coercion masks a type mismatch",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "For each example, the described bug is concrete — e.g. a form input returning the string \"0\" comparing as equal to the number 0 with ==, causing a zero-balance check to behave incorrectly; explanations show the student understands why the result is dangerous, not just that it is unexpected",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

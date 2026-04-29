@@ -1,0 +1,470 @@
+[
+    {
+        "title": "variables let const and var",
+        "description": "What is a variable",
+        "type": "multiple choice",
+        "question": "What is a variable in JavaScript?",
+        "options": "A function that runs code|A named container that stores a value|A type of loop|A built-in browser feature",
+        "answer": "A named container that stores a value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "Declaration keywords",
+        "type": "multiple choice",
+        "question": "Which of the following is a valid keyword for declaring a variable in JavaScript?",
+        "options": "define|variable|const|create",
+        "answer": "const",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "Assignment operator",
+        "type": "multiple choice",
+        "question": "What does the = sign do in the statement const city = \"Lagos\"?",
+        "options": "Compares city to Lagos|Assigns the value Lagos to the variable city|Checks if city equals Lagos|Creates a new data type",
+        "answer": "Assigns the value Lagos to the variable city",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "const default",
+        "type": "multiple choice",
+        "question": "Which keyword should you use by default when declaring a variable?",
+        "options": "var|let|const|function",
+        "answer": "const",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "let usage",
+        "type": "multiple choice",
+        "question": "When should you use let instead of const?",
+        "options": "When the variable name is long|When the value will change during the program|When storing text|When you need a number",
+        "answer": "When the value will change during the program",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "var avoidance",
+        "type": "True or False",
+        "question": "You should use var in new JavaScript code because it is the original keyword.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "const reassignment",
+        "type": "multiple choice",
+        "question": "What happens when you try to reassign a const variable?",
+        "options": "The value changes silently|Nothing happens|A TypeError is thrown|The browser refreshes",
+        "answer": "A TypeError is thrown",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "Block scoping",
+        "type": "multiple choice",
+        "question": "Which keywords are block-scoped in JavaScript?",
+        "options": "Only const|Only let|Both const and let|Only var",
+        "answer": "Both const and let",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "var scoping",
+        "type": "True or False",
+        "question": "var is block-scoped just like let and const.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "Naming convention",
+        "type": "multiple choice",
+        "question": "What naming convention does JavaScript use for variable names?",
+        "options": "snake_case|PascalCase|camelCase|UPPER_CASE",
+        "answer": "camelCase",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "Descriptive names",
+        "type": "multiple choice",
+        "question": "Which is the best variable name for storing a student's weekly score?",
+        "options": "s|x|score|data",
+        "answer": "score",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "const error message",
+        "type": "Fill in the gap",
+        "question": "When you reassign a const variable the browser throws: ________ Assignment to constant variable.",
+        "options": "TypeError:|SyntaxError:|ReferenceError:|RangeError:",
+        "answer": "TypeError:",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "Assignment vs equality",
+        "type": "multiple choice",
+        "question": "What is the difference between = and === in JavaScript?",
+        "options": "They are the same thing|= assigns a value while === compares two values|= compares values while === assigns them|=== is used for numbers only",
+        "answer": "= assigns a value while === compares two values",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "let reassignment",
+        "type": "multiple choice",
+        "question": "What is the output of this code: let week = 1; week = 2; console.log(week);?",
+        "options": "1|2|undefined|TypeError",
+        "answer": "2",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "const with let decision",
+        "type": "multiple choice",
+        "question": "A developer needs to store a counter that increases each time a user clicks a button. Which keyword should they use?",
+        "options": "const|var|let|function",
+        "answer": "let",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "TypeError identification",
+        "type": "multiple choice",
+        "question": "A developer sees a red error in the Console: TypeError: Assignment to constant variable. What caused it?",
+        "options": "A missing semicolon|Trying to reassign a variable declared with const|Using let without a value|A broken HTML file",
+        "answer": "Trying to reassign a variable declared with const",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "variables let const and var",
+        "description": "var problems",
+        "type": "multiple choice",
+        "question": "Why does var cause bugs that const and let do not?",
+        "options": "var is slower|var is not block-scoped so it leaks out of blocks like if statements|var cannot store numbers|var requires a semicolon",
+        "answer": "var is not block-scoped so it leaks out of blocks like if statements",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Five primitives",
+        "type": "multiple choice",
+        "question": "How many primitive data types does JavaScript have?",
+        "options": "3|4|5|7",
+        "answer": "5",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "primitive data types",
+        "description": "String type",
+        "type": "multiple choice",
+        "question": "What data type is the value \"Lagos\"?",
+        "options": "number|boolean|string|undefined",
+        "answer": "string",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Number type",
+        "type": "multiple choice",
+        "question": "What data type is the value 2500?",
+        "options": "string|number|boolean|null",
+        "answer": "number",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Boolean values",
+        "type": "multiple choice",
+        "question": "Which of the following is a valid boolean value?",
+        "options": "yes|\"true\"|true|1",
+        "answer": "true",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Null meaning",
+        "type": "multiple choice",
+        "question": "What does null represent in JavaScript?",
+        "options": "A broken variable|An intentional absence of value|A number equal to zero|An error",
+        "answer": "An intentional absence of value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Undefined meaning",
+        "type": "multiple choice",
+        "question": "When does a variable have the value undefined?",
+        "options": "When it is assigned zero|When it is declared but not yet assigned a value|When it stores a boolean|When it is inside a function",
+        "answer": "When it is declared but not yet assigned a value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "primitive data types",
+        "description": "String quotes",
+        "type": "True or False",
+        "question": "Strings in JavaScript can use single quotes or double quotes or backticks.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Number with quotes",
+        "type": "multiple choice",
+        "question": "What is the data type of \"2500\" (with quotes)?",
+        "options": "number|string|boolean|null",
+        "answer": "string",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "primitive data types",
+        "description": "String concatenation bug",
+        "type": "multiple choice",
+        "question": "What does \"2500\" + 500 produce in JavaScript?",
+        "options": "3000|2500500|\"2500500\"|Error",
+        "answer": "2500500",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "primitive data types",
+        "description": "typeof operator",
+        "type": "multiple choice",
+        "question": "What does the typeof operator do?",
+        "options": "Converts a value to another type|Returns a string describing the type of a value|Declares a new variable|Compares two types",
+        "answer": "Returns a string describing the type of a value",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "primitive data types",
+        "description": "typeof string",
+        "type": "Fill in the gap",
+        "question": "typeof \"Lagos\" returns ________.",
+        "options": "number|\"string\"|\"text\"|undefined",
+        "answer": "string",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "primitive data types",
+        "description": "typeof number",
+        "type": "multiple choice",
+        "question": "What does typeof 42 return?",
+        "options": "42|\"number\"|\"integer\"|number",
+        "answer": "number",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "primitive data types",
+        "description": "null vs undefined",
+        "type": "multiple choice",
+        "question": "What is the key difference between null and undefined?",
+        "options": "They are the same thing|null is set deliberately while undefined means no value was ever assigned|undefined is for numbers and null is for strings|null throws an error",
+        "answer": "null is set deliberately while undefined means no value was ever assigned",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Boolean not string",
+        "type": "True or False",
+        "question": "The boolean value true is the same as the string \"true\".",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "primitive data types",
+        "description": "typeof null quirk",
+        "type": "multiple choice",
+        "question": "What does typeof null return?",
+        "options": "null|\"null\"|\"object\"|\"undefined\"",
+        "answer": "object",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "primitive data types",
+        "description": "typeof null explanation",
+        "type": "multiple choice",
+        "question": "Why does typeof null return \"object\" instead of \"null\"?",
+        "options": "Because null is secretly an object|It is a known bug from 1995 that cannot be fixed|Because objects and null are the same|The console displays it incorrectly",
+        "answer": "It is a known bug from 1995 that cannot be fixed",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "primitive data types",
+        "description": "Decimal numbers",
+        "type": "multiple choice",
+        "question": "Which statement about numbers in JavaScript is true?",
+        "options": "Integers and decimals are separate types|There is no separate float type \u2014 all numbers are the same type|Decimals must be stored as strings|Only whole numbers are valid",
+        "answer": "There is no separate float type \u2014 all numbers are the same type",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Addition operator",
+        "type": "multiple choice",
+        "question": "What does the + operator do with two numbers?",
+        "options": "Concatenates them as text|Adds them together|Compares them|Assigns one to the other",
+        "answer": "Adds them together",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Subtraction operator",
+        "type": "multiple choice",
+        "question": "What is the result of 5000 - 2500?",
+        "options": "7500|2500|25002500|undefined",
+        "answer": "2500",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Multiplication operator",
+        "type": "multiple choice",
+        "question": "Which operator is used for multiplication in JavaScript?",
+        "options": "x|\u00d7|*|#",
+        "answer": "*",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Division operator",
+        "type": "multiple choice",
+        "question": "What is the result of 9000 / 3?",
+        "options": "3|27000|3000|6000",
+        "answer": "3000",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Modulo operator",
+        "type": "multiple choice",
+        "question": "What does the % operator return?",
+        "options": "A percentage|The remainder after division|The quotient|A decimal",
+        "answer": "The remainder after division",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Modulo example",
+        "type": "multiple choice",
+        "question": "What is the result of 10 % 3?",
+        "options": "3|3.33|0|1",
+        "answer": "1",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Even number check",
+        "type": "multiple choice",
+        "question": "How can you check if a number n is even using the modulo operator?",
+        "options": "n % 2 === 1|n % 2 === 0|n / 2 === 0|n * 2 === 0",
+        "answer": "n % 2 === 0",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Exponentiation",
+        "type": "multiple choice",
+        "question": "What does 2 ** 8 evaluate to?",
+        "options": "16|28|256|10",
+        "answer": "256",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Comparison return type",
+        "type": "multiple choice",
+        "question": "What data type do comparison operators always return?",
+        "options": "string|number|boolean|undefined",
+        "answer": "boolean",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Strict equality",
+        "type": "multiple choice",
+        "question": "What does 5 === \"5\" evaluate to?",
+        "options": "true|false|5|TypeError",
+        "answer": "false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Strict vs loose equality",
+        "type": "multiple choice",
+        "question": "Why is === preferred over == in JavaScript?",
+        "options": "=== is faster|=== checks both type and value while == converts types which can hide bugs|== is deprecated|There is no difference",
+        "answer": "=== checks both type and value while == converts types which can hide bugs",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Loose equality danger",
+        "type": "multiple choice",
+        "question": "What does 5 == \"5\" evaluate to?",
+        "options": "false|TypeError|undefined|true",
+        "answer": "true",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "AND operator",
+        "type": "multiple choice",
+        "question": "When does the && (AND) operator return true?",
+        "options": "When at least one condition is true|When both conditions are true|When neither condition is true|When the first condition is false",
+        "answer": "When both conditions are true",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "OR operator",
+        "type": "multiple choice",
+        "question": "When does the || (OR) operator return true?",
+        "options": "Only when both conditions are true|When at least one condition is true|Only when both are false|When the types match",
+        "answer": "When at least one condition is true",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "NOT operator",
+        "type": "multiple choice",
+        "question": "What does the ! (NOT) operator do?",
+        "options": "Adds two values|Flips a boolean value to its opposite|Checks strict equality|Divides a number",
+        "answer": "Flips a boolean value to its opposite",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "NOT example",
+        "type": "multiple choice",
+        "question": "If isActive is true what does !isActive evaluate to?",
+        "options": "true|undefined|false|null",
+        "answer": "false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Assignment in condition",
+        "type": "multiple choice",
+        "question": "What is wrong with this code: if (score = 10) { ... }?",
+        "options": "Nothing is wrong|It uses = (assignment) instead of === (comparison) so score becomes 10 and the condition is always true|The syntax is invalid|score must be a string",
+        "answer": "It uses = (assignment) instead of === (comparison) so score becomes 10 and the condition is always true",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "arithmetic comparison and logical operators",
+        "description": "Combined logical",
+        "type": "multiple choice",
+        "question": "What does this expression return: balance > 1000 && isActive when balance is 5000 and isActive is true?",
+        "options": "false|undefined|null|true",
+        "answer": "true",
+        "difficulty": "Advanced"
+    }
+]

@@ -1,0 +1,226 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Variables, Data Types & Operators",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_project"
+  },
+  "pool_brief": "You are given a starter HTML file for a Nigerian business scenario. Write script.js to process and log the page data using variables, data types, and operators. Your script.js must: (1) declare at least 5 variables — use const for values that will not change, let for at least one value that you reassign; (2) use all three value types — string, number, and boolean — at least once each; (3) perform at least two arithmetic calculations using different operators (include % at least once); (4) include at least two comparisons using === and at least one logical operator (&& or || or !); (5) log every output with a descriptive label using console.log('Label:', value). Do not modify the HTML file.",
+  "project_pool": [
+    {
+      "project_id": "proj_1",
+      "project_title": "Jumia Cart Calculator",
+      "context": "An e-commerce cart page for a Jumia Nigeria order with multiple items, a coupon, and VAT.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Jumia — My Cart</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"store-name\">Jumia Nigeria</h1>\n        <p id=\"tagline\">Nigeria's No. 1 Online Shopping Destination</p>\n    </header>\n\n    <main>\n        <section id=\"cart\">\n            <h2>My Cart</h2>\n            <ul id=\"cart-items\">\n                <li class=\"item\">\n                    <span class=\"name\">Tecno Spark 20 Pro</span>\n                    <span class=\"price\">&#8358;89,000</span>\n                    <span class=\"qty\">Qty: 1</span>\n                </li>\n                <li class=\"item\">\n                    <span class=\"name\">Wireless Earbuds (JBL)</span>\n                    <span class=\"price\">&#8358;12,500</span>\n                    <span class=\"qty\">Qty: 2</span>\n                </li>\n            </ul>\n        </section>\n\n        <section id=\"order-summary\">\n            <h2>Order Summary</h2>\n            <p>Phone: &#8358;89,000 &times; 1</p>\n            <p>Earbuds: &#8358;12,500 &times; 2</p>\n            <p>Coupon code: JUMIA20 (&#8358;2,000 off)</p>\n            <p>VAT: 7.5%</p>\n            <p>Free delivery on orders above &#8358;50,000</p>\n            <p id=\"is-premium\">Premium member: No</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 2 Project — Jumia Cart Calculator\n// Declare variables, calculate the order total, and check eligibility using operators.\n// Requirements: 5+ variables (const + let reassignment), string + number + boolean,\n// arithmetic (including %), comparisons (===), logical operator (&& or || or !).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "variable_usage",
+            "description": "At least 5 variables declared: phone price (89000), earbuds price (12500), earbuds quantity (2), coupon discount (2000), VAT rate (0.075), and at least one let variable that is reassigned (e.g. a running total or a status string that changes). const is used for all fixed values; let only where reassignment occurs",
+            "max_points": 30
+          },
+          {
+            "id": "operators_and_types",
+            "description": "All three value types are used (strings for labels or store name, numbers for prices/totals, booleans for comparisons); arithmetic uses at least two operators including % (e.g. to check if total is a multiple of 1000, or to check if earbud count is even); at least two comparisons use ===; at least one logical operator (&&, ||, or !) is present",
+            "max_points": 30
+          },
+          {
+            "id": "output_accuracy",
+            "description": "All logged values are arithmetically correct: subtotal = 89000 + (12500 * 2) = 114000; after coupon = 112000; VAT = 8400; grandTotal = 120400; free delivery check logs true (114000 > 50000); all logs have descriptive labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming throughout; no var; const/let used appropriately (computed totals are const once calculated); consistent indentation; no bare magic numbers in calculations — all prices come from named variables",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_2",
+      "project_title": "PiggyVest Savings Tracker",
+      "context": "A personal savings dashboard for a PiggyVest user tracking their monthly savings goal progress.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>PiggyVest — My Savings</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"app-name\">PiggyVest</h1>\n        <p id=\"tagline\">Save better. Invest smarter.</p>\n    </header>\n\n    <main>\n        <section id=\"goal\">\n            <h2>Monthly Savings Goal</h2>\n            <p id=\"goal-name\">Emergency Fund</p>\n            <p id=\"goal-target\">Target: &#8358;150,000</p>\n            <p id=\"goal-saved\">Saved so far: &#8358;87,500</p>\n            <p id=\"goal-months\">Months remaining: 3</p>\n        </section>\n\n        <section id=\"account\">\n            <h2>Account Details</h2>\n            <p id=\"username\">Ada Okonkwo</p>\n            <p id=\"plan\">Plan: Premium</p>\n            <p id=\"streak\">Current saving streak: 14 days</p>\n            <p id=\"daily-rate\">Daily savings rate: &#8358;1,500</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 2 Project — PiggyVest Savings Tracker\n// Declare variables, calculate savings progress, and check goal status using operators.\n// Requirements: 5+ variables (const + let reassignment), string + number + boolean,\n// arithmetic (including %), comparisons (===), logical operator (&& or || or !).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "variable_usage",
+            "description": "At least 5 variables declared from the page data: target (150000), saved (87500), months remaining (3), daily rate (1500), streak (14), and at least one let variable that is reassigned (e.g. a projected savings amount that updates, or a status string that changes). const used for fixed values",
+            "max_points": 30
+          },
+          {
+            "id": "operators_and_types",
+            "description": "All three value types used (string for user name or app name, numbers for financial amounts, booleans from comparisons); arithmetic uses at least two operators including % (e.g. to check if streak is a multiple of 7 — a full week — or if savings amount is divisible by 1000); at least two === comparisons; at least one logical operator",
+            "max_points": 30
+          },
+          {
+            "id": "output_accuracy",
+            "description": "All calculated values are correct: remaining = 150000 - 87500 = 62500; projected = daily rate * 30 * months = 135000; goal achievable check (projected >= remaining) logs true (135000 >= 62500); streak milestone check uses % correctly; all logs have descriptive labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; no var; const for all computed results that won't change; let only for reassigned values; descriptive labels on all console.log calls; no bare magic numbers in calculations",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_3",
+      "project_title": "Bolt Ride Fare Calculator",
+      "context": "A ride summary page for a Bolt trip in Lagos showing distance, fare breakdown, and driver rating.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Bolt — Trip Summary</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"app-name\">Bolt</h1>\n        <p id=\"tagline\">Your city. Your ride.</p>\n    </header>\n\n    <main>\n        <section id=\"trip\">\n            <h2>Trip Details</h2>\n            <p id=\"route\">Victoria Island to Lekki Phase 1, Lagos</p>\n            <p id=\"distance\">Distance: 9.4 km</p>\n            <p id=\"duration\">Duration: 22 minutes</p>\n        </section>\n\n        <section id=\"fare\">\n            <h2>Fare Breakdown</h2>\n            <p id=\"base-fare\">Base fare: &#8358;400</p>\n            <p id=\"rate\">Rate per km: &#8358;120</p>\n            <p id=\"booking-fee\">Booking fee: &#8358;50</p>\n            <p id=\"promo\">Promo applied: &#8358;200 off (first ride)</p>\n            <p id=\"tip-policy\">Tip: optional, 0 by default</p>\n        </section>\n\n        <section id=\"driver\">\n            <h2>Driver Info</h2>\n            <p id=\"driver-name\">Driver: Emeka O.</p>\n            <p id=\"driver-rating\">Rating: 4.92</p>\n            <p id=\"trips-completed\">Trips completed: 843</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 2 Project — Bolt Ride Fare Calculator\n// Declare variables, calculate the ride total, and check conditions using operators.\n// Requirements: 5+ variables (const + let reassignment), string + number + boolean,\n// arithmetic (including %), comparisons (===), logical operator (&& or || or !).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "variable_usage",
+            "description": "At least 5 variables from the page: baseFare (400), ratePerKm (120), distance (9.4), bookingFee (50), promoDiscount (200), and at least one let variable (e.g. tip, starting at 0 and reassigned to a non-zero amount). const for all fixed values",
+            "max_points": 30
+          },
+          {
+            "id": "operators_and_types",
+            "description": "All three value types present (string for route or driver name, numbers for fares and distance, booleans from comparisons); arithmetic uses multiplication and addition/subtraction at minimum, plus % for at least one check (e.g. whether trip count is a multiple of 100, or whether fare rounded to nearest 50 leaves a remainder); at least two === comparisons; at least one logical operator",
+            "max_points": 30
+          },
+          {
+            "id": "output_accuracy",
+            "description": "Core calculation is correct: distanceFare = 9.4 * 120 = 1128; subTotal = 400 + 1128 + 50 = 1578; afterPromo = 1578 - 200 = 1378; all comparisons produce correct booleans; all logs have descriptive labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; no var; const/let used correctly; tip is let and gets reassigned; all logs have clear descriptive labels; no magic numbers used directly in calculations",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_4",
+      "project_title": "Flutterwave Payment Summary",
+      "context": "A payment confirmation page for a Flutterwave transaction showing amount, fees, exchange rate, and account status.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Flutterwave — Payment Summary</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"app-name\">Flutterwave</h1>\n        <p id=\"tagline\">Powering payments across Africa</p>\n    </header>\n\n    <main>\n        <section id=\"transaction\">\n            <h2>Transaction Details</h2>\n            <p id=\"merchant\">Merchant: Publica Academy</p>\n            <p id=\"reference\">Reference: FLW-2025-0044821</p>\n            <p id=\"amount\">Amount: &#8358;25,000</p>\n            <p id=\"fee\">Processing fee: 1.4% (capped at &#8358;2,000)</p>\n            <p id=\"currency\">Currency: NGN</p>\n        </section>\n\n        <section id=\"account\">\n            <h2>Account Details</h2>\n            <p id=\"account-name\">Bayo Adeyemi</p>\n            <p id=\"account-number\">Account: 0123456789</p>\n            <p id=\"bank\">Bank: GTBank</p>\n            <p id=\"verified\">KYC verified: Yes</p>\n            <p id=\"daily-limit\">Daily transfer limit: &#8358;500,000</p>\n            <p id=\"transfers-today\">Transfers today: 3</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 2 Project — Flutterwave Payment Summary\n// Declare variables, calculate the payment total, and validate conditions using operators.\n// Requirements: 5+ variables (const + let reassignment), string + number + boolean,\n// arithmetic (including %), comparisons (===), logical operator (&& or || or !).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "variable_usage",
+            "description": "At least 5 variables from the page: amount (25000), feeRate (0.014), feeCap (2000), dailyLimit (500000), transfersToday (3), isVerified (true), and at least one let variable that is reassigned (e.g. a running total or a status variable). const for fixed values",
+            "max_points": 30
+          },
+          {
+            "id": "operators_and_types",
+            "description": "All three value types present (strings for merchant name or reference, numbers for amounts and fees, booleans from comparisons); arithmetic uses multiplication for fee calculation and at least one other operator; % used for at least one check (e.g. whether transfers today is a multiple of 3, or whether amount is divisible by 5000); at least two === comparisons; at least one logical operator",
+            "max_points": 30
+          },
+          {
+            "id": "output_accuracy",
+            "description": "Fee calculation is correct: rawFee = 25000 * 0.014 = 350; since 350 < 2000 cap, processingFee = 350; totalCharged = 25000 + 350 = 25350; all comparisons produce correct booleans; all logs have descriptive labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; no var; const for all values that don't change after calculation; let only for reassigned values; all console.log calls use descriptive labels; no bare magic numbers in calculations",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_5",
+      "project_title": "Cowry Budget Monthly Report",
+      "context": "A monthly budget summary page for a Cowry Budget app user tracking income, expenses, and savings in Naira.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Cowry Budget — April Report</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"app-name\">Cowry Budget</h1>\n        <p id=\"tagline\">Track every Naira. Build every dream.</p>\n    </header>\n\n    <main>\n        <section id=\"summary\">\n            <h2>April 2025 — Monthly Summary</h2>\n            <p id=\"user\">User: Ngozi Eze</p>\n            <p id=\"income\">Total income: &#8358;285,000</p>\n            <p id=\"rent\">Rent: &#8358;80,000</p>\n            <p id=\"food\">Food &amp; groceries: &#8358;35,000</p>\n            <p id=\"transport\">Transport: &#8358;18,500</p>\n            <p id=\"utilities\">Utilities &amp; bills: &#8358;12,000</p>\n            <p id=\"entertainment\">Entertainment: &#8358;9,500</p>\n            <p id=\"savings-goal\">Monthly savings goal: &#8358;60,000</p>\n            <p id=\"days-in-month\">Days in April: 30</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 2 Project — Cowry Budget Monthly Report\n// Declare variables, calculate income vs expenses, and check savings goals using operators.\n// Requirements: 5+ variables (const + let reassignment), string + number + boolean,\n// arithmetic (including %), comparisons (===), logical operator (&& or || or !).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "variable_usage",
+            "description": "At least 5 variables from the page: income (285000), rent (80000), food (35000), transport (18500), utilities (12000), entertainment (9500), savingsGoal (60000), and at least one let variable that is reassigned (e.g. a running total of expenses that grows, or a status string updated after the savings check). const for all fixed values",
+            "max_points": 30
+          },
+          {
+            "id": "operators_and_types",
+            "description": "All three value types present (strings for username or category labels, numbers for all financial values, booleans from comparisons); arithmetic uses addition for total expenses and subtraction for remaining balance at minimum; % used for at least one check (e.g. whether the savings amount is divisible by a round number, or whether the number of expense categories is even); at least two === comparisons; at least one logical operator",
+            "max_points": 30
+          },
+          {
+            "id": "output_accuracy",
+            "description": "Core calculations are correct: totalExpenses = 80000 + 35000 + 18500 + 12000 + 9500 = 155000; remaining = 285000 - 155000 = 130000; goalMet check (remaining >= savingsGoal) logs true (130000 >= 60000); all logs have descriptive labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; no var; const/let used correctly; all console.log calls include descriptive labels with currency symbol where appropriate; no bare magic numbers in calculations — all values come from named variables",
+            "max_points": 20
+          }
+        ]
+      }
+    }
+  ]
+}
