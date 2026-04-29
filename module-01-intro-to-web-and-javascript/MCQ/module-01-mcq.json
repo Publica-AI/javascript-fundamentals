@@ -1,0 +1,434 @@
+[
+    {
+        "title": "how the web works",
+        "description": "Request-response cycle",
+        "type": "multiple choice",
+        "question": "What happens first when you type a URL into your browser and press Enter?",
+        "options": "The browser renders the page|The server sends CSS files|The browser sends an HTTP request to the server|JavaScript runs on the page",
+        "answer": "The browser sends an HTTP request to the server",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "HTTP methods",
+        "type": "multiple choice",
+        "question": "What does the HTTP GET method do?",
+        "options": "Sends data to the server|Requests a resource from the server|Deletes a file on the server|Updates an existing record",
+        "answer": "Requests a resource from the server",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "Status codes",
+        "type": "multiple choice",
+        "question": "What does a 200 status code mean?",
+        "options": "The page was not found|The server encountered an error|The request was successful|The request was redirected",
+        "answer": "The request was successful",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "Status codes",
+        "type": "multiple choice",
+        "question": "Which HTTP status code means the requested page was not found?",
+        "options": "200|301|404|500",
+        "answer": "404",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "Client and server",
+        "type": "multiple choice",
+        "question": "In web communication the client is typically the ________.",
+        "options": "database|web server|browser|router",
+        "answer": "browser",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "DevTools Network tab",
+        "type": "multiple choice",
+        "question": "Which DevTools tab shows all HTTP requests made by the browser?",
+        "options": "Console|Elements|Network|Sources",
+        "answer": "Network",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "Request-response cycle",
+        "type": "True or False",
+        "question": "When you load a web page the browser makes only one request to the server.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "HTTP requests",
+        "type": "Fill in the gap",
+        "question": "The browser sends a ________ request when you type a URL and press Enter.",
+        "options": "GET|POST|DELETE|PUT",
+        "answer": "GET",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "how the web works",
+        "description": "Status codes",
+        "type": "multiple choice",
+        "question": "A 500 status code indicates which type of problem?",
+        "options": "Client-side error|Page not found|Server-side error|Successful request",
+        "answer": "Server-side error",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "how the web works",
+        "description": "DNS",
+        "type": "multiple choice",
+        "question": "What role does DNS play when you visit a website?",
+        "options": "It styles the web page|It translates domain names into IP addresses|It executes JavaScript|It compresses images",
+        "answer": "It translates domain names into IP addresses",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "how the web works",
+        "description": "Request-response cycle",
+        "type": "multiple choice",
+        "question": "When loading jumia.com.ng the browser requests multiple files. Which file type is requested first?",
+        "options": "JavaScript|Images|CSS|HTML document",
+        "answer": "HTML document",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "how the web works",
+        "description": "HTTP headers",
+        "type": "multiple choice",
+        "question": "Where can you see the request URL and HTTP method for a specific request in Chrome?",
+        "options": "Elements tab|Console tab|Headers section of the Network tab|Sources tab",
+        "answer": "Headers section of the Network tab",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "how the web works",
+        "description": "Client-server model",
+        "type": "multiple choice",
+        "question": "What does the server send back to the browser after receiving a request?",
+        "options": "Only HTML|Only JavaScript|A response containing the requested resources|A new HTTP method",
+        "answer": "A response containing the requested resources",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "how the web works",
+        "description": "Request-response cycle",
+        "type": "select 2 correct options",
+        "question": "Which two of the following are parts of an HTTP request visible in DevTools?",
+        "options": "Request URL|CSS animation speed|Request Method|Font family used",
+        "answer": "Request URL|Request Method",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "how the web works",
+        "description": "Status codes",
+        "type": "multiple choice",
+        "question": "A developer loads a page and sees status code 301 in the Network tab. What does this mean?",
+        "options": "Server error|Page not found|The resource has been permanently redirected|Successful request",
+        "answer": "The resource has been permanently redirected",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "how the web works",
+        "description": "Request-response cycle",
+        "type": "multiple choice",
+        "question": "Why does the browser make dozens of requests when loading a single page like jumia.com.ng?",
+        "options": "The server is slow|Each resource (HTML CSS JS images fonts) requires a separate request|The browser is broken|DNS returns multiple pages",
+        "answer": "Each resource (HTML CSS JS images fonts) requires a separate request",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "how the web works",
+        "description": "HTTP methods",
+        "type": "multiple choice",
+        "question": "A user submits a login form on a Nigerian banking website. Which HTTP method is most likely used?",
+        "options": "GET|POST|DELETE|PATCH",
+        "answer": "POST",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Three web technologies",
+        "type": "multiple choice",
+        "question": "What is the role of HTML on a web page?",
+        "options": "Adds interactivity and behaviour|Provides the structure and content|Controls colours and layout|Connects to the database",
+        "answer": "Provides the structure and content",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Three web technologies",
+        "type": "multiple choice",
+        "question": "What does CSS do on a web page?",
+        "options": "Provides structure|Handles events|Controls visual styling and layout|Stores data",
+        "answer": "Controls visual styling and layout",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Role of JavaScript",
+        "type": "multiple choice",
+        "question": "What does JavaScript add to a web page?",
+        "options": "Structure|Styling|Interactivity and behaviour|Server-side storage",
+        "answer": "Interactivity and behaviour",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Static vs interactive pages",
+        "type": "True or False",
+        "question": "A page with only HTML and CSS can respond to button clicks without JavaScript.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Script tag",
+        "type": "multiple choice",
+        "question": "Which HTML tag is used to link a JavaScript file to a web page?",
+        "options": "<link>|<style>|<script>|<js>",
+        "answer": "<script>",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "DOM manipulation",
+        "type": "multiple choice",
+        "question": "In the demo script.js uses document.getElementById() to do what?",
+        "options": "Delete the page|Find an HTML element by its ID|Create a new server|Change the CSS file",
+        "answer": "Find an HTML element by its ID",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Event listeners",
+        "type": "True or False",
+        "question": "addEventListener is a JavaScript method that allows code to run in response to user actions like clicks.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Static vs interactive pages",
+        "type": "multiple choice",
+        "question": "What happens when you click a button on a page that has no JavaScript linked?",
+        "options": "The page refreshes automatically|Nothing happens|The button changes colour|An alert appears",
+        "answer": "Nothing happens",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Three web technologies",
+        "type": "select all correct options",
+        "question": "Which of the following are correct pairings of technology and role?",
+        "options": "HTML provides structure|CSS handles click events|JavaScript adds behaviour|CSS controls styling",
+        "answer": "HTML provides structure|JavaScript adds behaviour|CSS controls styling",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Script tag",
+        "type": "multiple choice",
+        "question": "What attribute on the script tag specifies the external JavaScript file to load?",
+        "options": "href|link|src|type",
+        "answer": "src",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "DOM and events",
+        "type": "multiple choice",
+        "question": "In the Module 1 demo what three steps does the JavaScript code perform?",
+        "options": "Request data from a server then display it|Find elements listen for a click and update the page|Create new HTML then delete old HTML|Connect to a database then render a table",
+        "answer": "Find elements listen for a click and update the page",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Real-world JavaScript",
+        "type": "multiple choice",
+        "question": "When you type in a search box and suggestions appear which technology is responsible for that behaviour?",
+        "options": "HTML|CSS|JavaScript|DNS",
+        "answer": "JavaScript",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Static vs interactive pages",
+        "type": "multiple choice",
+        "question": "A developer has a page with a styled button but clicking it does nothing. What is the most likely cause?",
+        "options": "The CSS is broken|The HTML is invalid|No JavaScript is linked to handle the click event|The server returned a 404",
+        "answer": "No JavaScript is linked to handle the click event",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "Three web technologies",
+        "type": "multiple choice",
+        "question": "On Jumia when you click Add to Cart and the cart count updates without the page reloading which technology is responsible?",
+        "options": "HTML|CSS|JavaScript|HTTP",
+        "answer": "JavaScript",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "where javascript fits in",
+        "description": "DOM manipulation",
+        "type": "multiple choice",
+        "question": "What does heading.textContent = 'New Text' do in JavaScript?",
+        "options": "Creates a new HTML file|Changes the visible text of the heading element|Sends text to the server|Deletes the heading",
+        "answer": "Changes the visible text of the heading element",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "console.log",
+        "type": "multiple choice",
+        "question": "What does console.log() do?",
+        "options": "Displays output on the visible web page|Prints a message to the DevTools Console|Saves data to a file|Sends data to a server",
+        "answer": "Prints a message to the DevTools Console",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Script placement",
+        "type": "multiple choice",
+        "question": "Where should the script tag be placed in an HTML file?",
+        "options": "Inside the <head> tag|Inside the <title> tag|Just before the closing </body> tag|After the </html> tag",
+        "answer": "Just before the closing </body> tag",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "External scripts",
+        "type": "multiple choice",
+        "question": "What file extension should a JavaScript file have?",
+        "options": ".html|.css|.js|.py",
+        "answer": ".js",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "console.log",
+        "type": "True or False",
+        "question": "The output of console.log() appears on the visible web page that users see.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "DevTools Console",
+        "type": "multiple choice",
+        "question": "Which keyboard shortcut opens DevTools in Chrome?",
+        "options": "Ctrl + P|F12|Ctrl + S|Alt + Tab",
+        "answer": "F12",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Execution order",
+        "type": "True or False",
+        "question": "JavaScript statements inside a script file run in order from top to bottom.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Inline vs external",
+        "type": "multiple choice",
+        "question": "What is the difference between an inline script and an external script?",
+        "options": "Inline scripts are faster|An inline script is written directly in the HTML file while an external script is in a separate .js file|External scripts cannot use console.log|There is no difference",
+        "answer": "An inline script is written directly in the HTML file while an external script is in a separate .js file",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Script linking",
+        "type": "Fill in the gap",
+        "question": "To link an external JavaScript file called app.js you write: <script ________></script>",
+        "options": "src=\"app.js\"|href=\"app.js\"|link=\"app.js\"|file=\"app.js\"",
+        "answer": "src=\"app.js\"",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "console.log output",
+        "type": "multiple choice",
+        "question": "What will appear in the Console after running: console.log(\"Naija\") followed by console.log(42)?",
+        "options": "Naija 42 on one line|Only Naija|Naija on the first line and 42 on the second line|An error",
+        "answer": "Naija on the first line and 42 on the second line",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Debugging",
+        "type": "multiple choice",
+        "question": "If the Console is empty after loading a page with a linked script what is the most likely cause?",
+        "options": "DevTools is broken|The script file name in the src attribute does not match the actual file name|The browser does not support JavaScript|The HTML is invalid",
+        "answer": "The script file name in the src attribute does not match the actual file name",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Script placement",
+        "type": "multiple choice",
+        "question": "Why is the script tag placed before the closing body tag rather than in the head?",
+        "options": "So it loads faster from the server|So that all HTML elements exist before JavaScript tries to access them|Because the head tag cannot contain script tags|It makes no difference",
+        "answer": "So that all HTML elements exist before JavaScript tries to access them",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "console.log types",
+        "type": "select 2 correct options",
+        "question": "Which two of the following are valid console.log statements?",
+        "options": "console.log(\"Hello\")|console.log(100)|console.Log(\"test\")|consolelog(\"hi\")",
+        "answer": "console.log(\"Hello\")|console.log(100)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "DevTools line numbers",
+        "type": "multiple choice",
+        "question": "What do the file name and line number shown on the right side of Console output tell you?",
+        "options": "Which server processed the request|Which CSS file styled the element|Exactly which file and line produced that log output|How many times the script ran",
+        "answer": "Exactly which file and line produced that log output",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Script execution",
+        "type": "multiple choice",
+        "question": "A developer has two script tags in their HTML linking to a.js and b.js in that order. Which file executes first?",
+        "options": "b.js|They run simultaneously|a.js|It is random",
+        "answer": "a.js",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "console.log vs page output",
+        "type": "multiple choice",
+        "question": "A junior developer writes console.log(\"Welcome\") expecting the text to appear on the page. Why does it not appear?",
+        "options": "The browser is offline|console.log outputs to the developer Console not to the rendered HTML page|The string is too short|JavaScript cannot display text",
+        "answer": "console.log outputs to the developer Console not to the rendered HTML page",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "running javascript in a web page",
+        "description": "Inline vs external tradeoffs",
+        "type": "multiple choice",
+        "question": "What is the main advantage of using an external .js file instead of an inline script for a large project?",
+        "options": "External files run faster|External files can be reused across multiple HTML pages and keep code organised|Inline scripts do not support console.log|External files are required by all browsers",
+        "answer": "External files can be reused across multiple HTML pages and keep code organised",
+        "difficulty": "Advanced"
+    }
+]
