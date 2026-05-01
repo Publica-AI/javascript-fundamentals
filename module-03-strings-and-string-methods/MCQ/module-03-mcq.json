@@ -1,0 +1,472 @@
+[
+    {
+        "title": "string basics and template literals",
+        "description": "Three quote styles",
+        "type": "multiple choice",
+        "question": "Which of the following is NOT a valid way to create a string in JavaScript?",
+        "options": "Single quotes|Double quotes|Backticks|Curly braces",
+        "answer": "Curly braces",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Single vs double quotes",
+        "type": "True or False",
+        "question": "Single quotes and double quotes produce identical strings in JavaScript.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Template literal syntax",
+        "type": "multiple choice",
+        "question": "Which quote style is used for template literals?",
+        "options": "Single quotes|Double quotes|Backticks|Parentheses",
+        "answer": "Backticks",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Embedding variables",
+        "type": "multiple choice",
+        "question": "What syntax is used to embed a variable inside a template literal?",
+        "options": "${variableName}|{variableName}|#variableName|@variableName",
+        "answer": "${variableName}",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Template literal requirement",
+        "type": "multiple choice",
+        "question": "The ${} syntax works inside which type of string?",
+        "options": "Single-quoted strings|Double-quoted strings|Backtick strings only|All string types",
+        "answer": "Backtick strings only",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "String concatenation",
+        "type": "multiple choice",
+        "question": "What is the old way of joining variables with text before template literals?",
+        "options": "Using ${} syntax|Using the + operator to concatenate|Using the & symbol|Using commas",
+        "answer": "Using the + operator to concatenate",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Expression evaluation",
+        "type": "multiple choice",
+        "question": "What does `Total: \u20a6${4500 * 3}` produce?",
+        "options": "Total: \u20a6${4500 * 3}|Total: \u20a613500|Total: \u20a64500 * 3|An error",
+        "answer": "Total: \u20a613500",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Expressions in templates",
+        "type": "True or False",
+        "question": "You can only put variable names inside ${} \u2014 not calculations or method calls.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Method call in template",
+        "type": "multiple choice",
+        "question": "What does `Hello, ${\"ada\".toUpperCase()}!` produce?",
+        "options": "Hello, ada!|Hello, ADA!|Hello, Ada!|An error",
+        "answer": "Hello, ADA!",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Multi-line old way",
+        "type": "multiple choice",
+        "question": "What escape character is used to create a new line in a single or double-quoted string?",
+        "options": "\\t|\\n|\\r|\\b",
+        "answer": "\\n",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Multi-line template",
+        "type": "multiple choice",
+        "question": "How do backtick strings handle multiple lines?",
+        "options": "You must use \\n|They preserve actual line breaks without escape characters|They ignore line breaks|They throw an error",
+        "answer": "They preserve actual line breaks without escape characters",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Convention",
+        "type": "multiple choice",
+        "question": "What is the modern convention for when to use backticks vs regular quotes?",
+        "options": "Always use backticks|Use regular quotes for plain text and backticks when embedding variables|Always use double quotes|Use single quotes for variables",
+        "answer": "Use regular quotes for plain text and backticks when embedding variables",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Concatenation vs template",
+        "type": "multiple choice",
+        "question": "Which produces the same output as: \"Hello, \" + name + \"!\"?",
+        "options": "`Hello",
+        "answer": " name!`|`Hello",
+        "difficulty": " ${name}!`|`Hello",
+        "null": [
+            " +name+!`|'Hello",
+            " ${name}!'",
+            "`Hello",
+            " ${name}!`\"",
+            "intermediate"
+        ]
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Expression result type",
+        "type": "True or False",
+        "question": "The result of ${} is always automatically converted to a string.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Boolean in template",
+        "type": "multiple choice",
+        "question": "What does `Is it true? ${5 > 3}` produce?",
+        "options": "Is it true? ${5 > 3}|Is it true? true|Is it true? false|An error",
+        "answer": "Is it true? true",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "string basics and template literals",
+        "description": "Comparison in template",
+        "type": "multiple choice",
+        "question": "What does `Result: ${10 === \"10\"}` produce?",
+        "options": "Result: true|Result: false|Result: 10|An error",
+        "answer": "Result: false",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "includes return type",
+        "type": "multiple choice",
+        "question": "What does .includes() return?",
+        "options": "A number|A string|A boolean (true or false)|An array",
+        "answer": "A boolean (true or false)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "includes basic usage",
+        "type": "multiple choice",
+        "question": "What does \"ada@gmail.com\".includes(\"@\") return?",
+        "options": "true|false|3|\"@\"",
+        "answer": "true",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "indexOf return type",
+        "type": "multiple choice",
+        "question": "What does .indexOf() return when it finds the substring?",
+        "options": "true|The position (index) where the substring starts|The substring itself|The length of the string",
+        "answer": "The position (index) where the substring starts",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "indexOf not found",
+        "type": "multiple choice",
+        "question": "What does .indexOf() return when the substring is NOT found?",
+        "options": "0|false|null|-1",
+        "answer": "-1",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "startsWith basic",
+        "type": "multiple choice",
+        "question": "What does \"https://jumia.com.ng\".startsWith(\"https\") return?",
+        "options": "true|false|\"https\"|0",
+        "answer": "true",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "endsWith basic",
+        "type": "multiple choice",
+        "question": "What does \"report-april.pdf\".endsWith(\".pdf\") return?",
+        "options": "true|false|\".pdf\"|12",
+        "answer": "true",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "Case sensitivity",
+        "type": "True or False",
+        "question": "String search methods like .includes() are case-sensitive.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "indexOf position",
+        "type": "multiple choice",
+        "question": "What does \"ada@gmail.com\".indexOf(\"@\") return?",
+        "options": "0|1|3|4",
+        "answer": "3",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "includes vs indexOf",
+        "type": "multiple choice",
+        "question": "When should you use .includes() instead of .indexOf()?",
+        "options": "When you need the position|When you only need a yes/no answer|When the string is long|When searching for numbers",
+        "answer": "When you only need a yes/no answer",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "startsWith false",
+        "type": "multiple choice",
+        "question": "What does \"08012345678\".startsWith(\"090\") return?",
+        "options": "true|false|\"080\"|0",
+        "answer": "false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "length property",
+        "type": "multiple choice",
+        "question": "How do you get the number of characters in a string?",
+        "options": "string.length()|string.length|string.size()|string.count()",
+        "answer": "string.length",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "length vs method",
+        "type": "True or False",
+        "question": ".length is a method that requires parentheses to call.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "Combining methods",
+        "type": "multiple choice",
+        "question": "Which expression checks that an email contains both \"@\" and \".\"?",
+        "options": "email.includes(\"@\" && \".\")|email.includes(\"@\") && email.includes(\".\")|email.has(\"@\") && email.has(\".\")|email.contains(\"@.\")",
+        "answer": "email.includes(\"@\") && email.includes(\".\")",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "Not found check",
+        "type": "multiple choice",
+        "question": "How do you check if a substring was NOT found using indexOf?",
+        "options": "value === 0|value === false|value === -1|value === null",
+        "answer": "value === -1",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "searching and checking strings",
+        "description": "endsWith case",
+        "type": "multiple choice",
+        "question": "What does \"Report.PDF\".endsWith(\".pdf\") return?",
+        "options": "true|false|\".PDF\"|undefined",
+        "answer": "false",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "transforming strings",
+        "description": "trim purpose",
+        "type": "multiple choice",
+        "question": "What does the .trim() method do?",
+        "options": "Removes all spaces from a string|Removes spaces from both ends of a string|Converts to lowercase|Splits the string",
+        "answer": "Removes spaces from both ends of a string",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "transforming strings",
+        "description": "toUpperCase",
+        "type": "multiple choice",
+        "question": "What does \"nigeria\".toUpperCase() return?",
+        "options": "nigeria|Nigeria|NIGERIA|nIGERIA",
+        "answer": "NIGERIA",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "transforming strings",
+        "description": "toLowerCase",
+        "type": "multiple choice",
+        "question": "What does \"GOOD MORNING\".toLowerCase() return?",
+        "options": "GOOD MORNING|Good Morning|good morning|goodmorning",
+        "answer": "good morning",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "transforming strings",
+        "description": "Immutability",
+        "type": "True or False",
+        "question": "String methods change the original string directly.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "transforming strings",
+        "description": "replace basic",
+        "type": "multiple choice",
+        "question": "What does \"Hello, World!\".replace(\"World\", \"Nigeria\") return?",
+        "options": "Hello, World!|Hello, Nigeria!|Hello, !|Nigeria",
+        "answer": "Hello, Nigeria!",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "transforming strings",
+        "description": "trim spaces",
+        "type": "multiple choice",
+        "question": "What does \"  Emeka Nwosu  \".trim() return?",
+        "options": "EmekaNwosu|Emeka Nwosu|emeka nwosu|  Emeka Nwosu",
+        "answer": "Emeka Nwosu",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "trim middle spaces",
+        "type": "True or False",
+        "question": ".trim() removes spaces in the middle of a string as well as the ends.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "Method chaining",
+        "type": "multiple choice",
+        "question": "What does \"  ADA  \".trim().toLowerCase() return?",
+        "options": "ADA|ada|  ada  |Ada",
+        "answer": "ada",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "replace first only",
+        "type": "multiple choice",
+        "question": "What does \"080-123-456\".replace(\"-\", \"\") return?",
+        "options": "080123456|080123-456|080-123456|-123-456",
+        "answer": "080123-456",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "replaceAll",
+        "type": "multiple choice",
+        "question": "Which method replaces ALL occurrences of a substring?",
+        "options": "replace()|replaceAll()|replaceEvery()|substituteAll()",
+        "answer": "replaceAll()",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "slice basic",
+        "type": "multiple choice",
+        "question": "What does \"ada@gmail.com\".slice(0, 3) return?",
+        "options": "ada@|ada|ad|a@g",
+        "answer": "ada",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "slice from position",
+        "type": "multiple choice",
+        "question": "What does \"ada@gmail.com\".slice(4) return?",
+        "options": "ada@|gmail.com|ada|@gmail.com",
+        "answer": "gmail.com",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "slice negative",
+        "type": "multiple choice",
+        "question": "What does \"ada@gmail.com\".slice(-3) return?",
+        "options": "ada|com|.com|gmail",
+        "answer": "com",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "split basic",
+        "type": "multiple choice",
+        "question": "What does \"Lagos,Abuja,Kano\".split(\",\") return?",
+        "options": "A string without commas|[\"Lagos\" \"Abuja\" \"Kano\"]|[\"Lagos\"",
+        "answer": " \"Abuja\"",
+        "difficulty": " \"Kano\"]|Lagos Abuja Kano",
+        "null": [
+            "[\"Lagos\", \"Abuja\", \"Kano\"]",
+            "intermediate"
+        ]
+    },
+    {
+        "title": "transforming strings",
+        "description": "split separator removed",
+        "type": "True or False",
+        "question": "The separator character is included in the results of .split().",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "split by space",
+        "type": "multiple choice",
+        "question": "What does \"JavaScript is powerful\".split(\" \") return?",
+        "options": "[\"JavaScript is powerful\"]|[\"JavaScript\", \"is\", \"powerful\"]|[\"J\", \"a\", \"v\", \"a\"]|JavaScript is powerful",
+        "answer": "[\"JavaScript\", \"is\", \"powerful\"]",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "transforming strings",
+        "description": "Cleaning pipeline",
+        "type": "multiple choice",
+        "question": "What is the standard order for cleaning user input?",
+        "options": "toLowerCase then trim|trim then toLowerCase|split then trim|replace then toUpperCase",
+        "answer": "trim then toLowerCase",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "transforming strings",
+        "description": "Store result",
+        "type": "multiple choice",
+        "question": "How do you keep the result of a string transformation?",
+        "options": "The original variable updates automatically|You must store it in a variable: const clean = name.trim()|Call .save() after the method|Use let instead of const",
+        "answer": "You must store it in a variable: const clean = name.trim()",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "transforming strings",
+        "description": "slice end not included",
+        "type": "multiple choice",
+        "question": "In slice(0, 3) is the character at index 3 included in the result?",
+        "options": "Yes it is included|No it is not included|Only if it is a letter|It depends on the string",
+        "answer": "No it is not included",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "transforming strings",
+        "description": "Chained pipeline",
+        "type": "multiple choice",
+        "question": "What does \"  Ada@Gmail.Com  \".trim().toLowerCase() return?",
+        "options": "Ada@Gmail.Com|ada@gmail.com|  ada@gmail.com  |ADA@GMAIL.COM",
+        "answer": "ada@gmail.com",
+        "difficulty": "Advanced"
+    }
+]

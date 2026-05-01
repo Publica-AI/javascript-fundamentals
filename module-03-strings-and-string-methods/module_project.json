@@ -1,0 +1,226 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Strings & String Methods",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_project"
+  },
+  "pool_brief": "You are given a starter HTML file for a Nigerian business scenario. Write script.js to process and log the string data using template literals, string search methods, and string transformation methods. Your script.js must: (1) use template literals (backticks with ${}) for all output statements — do not concatenate strings with +; (2) build at least one multi-line template literal string that formats a confirmation or summary message; (3) use at least two search methods (includes(), startsWith(), endsWith(), or indexOf()) on the raw string data and log the result of each check with a descriptive label; (4) use at least two transformation methods (trim(), toLowerCase(), toUpperCase(), replace(), replaceAll(), or slice()) to clean the raw inputs, and log the cleaned value alongside the raw value to show the difference; (5) use const for all raw inputs and all cleaned results. Do not modify the HTML file.",
+  "project_pool": [
+    {
+      "project_id": "proj_1",
+      "project_title": "Chowdeck Order Confirmation",
+      "context": "A food delivery order confirmation page for a Chowdeck customer in Lagos with messy registration input that needs cleaning before display.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Chowdeck &#8212; Order Confirmation</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"app-name\">Chowdeck</h1>\n        <p id=\"tagline\">Fast food. Faster delivery.</p>\n    </header>\n\n    <main>\n        <section id=\"customer\">\n            <h2>Customer Details (raw input)</h2>\n            <p id=\"raw-name\">  Amara Obi  </p>\n            <p id=\"raw-email\">  AMARA.OBI@GMAIL.COM  </p>\n            <p id=\"raw-phone\">081-234-567-890</p>\n            <p id=\"address\">14 Bode Thomas Street, Surulere, Lagos</p>\n        </section>\n\n        <section id=\"order\">\n            <h2>Order Summary</h2>\n            <p id=\"restaurant\">Restaurant: Mr. Bigg's Lekki</p>\n            <p id=\"order-ref\">Order reference: CDK-2025-004482</p>\n            <p id=\"items\">1x Beef Burger Combo, 2x Pepsi 35cl</p>\n            <p id=\"total\">Total: &#8358;4,800</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 3 Project — Chowdeck Order Confirmation\n// Use the raw string data from the page to clean and display the order details.\n// Requirements: template literals with ${} for all output, one multi-line confirmation string,\n// at least 2 search methods (includes/startsWith/endsWith/indexOf),\n// at least 2 transformation methods (trim/toLowerCase/replace/replaceAll/slice).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "template_and_output",
+            "description": "All console.log calls use template literals with backticks and ${} — no string concatenation with +; at least one multi-line template literal builds a formatted order confirmation showing the cleaned name, email, phone, restaurant, order reference, and total; expressions inside ${} are used (not just variable names) for at least one output",
+            "max_points": 30
+          },
+          {
+            "id": "search_methods",
+            "description": "At least two search methods applied to the string data and logged: includes('@') on the email returns true; endsWith('.com') on the cleaned email returns true; indexOf('@') is used (typically combined with slice) to locate the @ sign; results are logged with descriptive labels showing what each check confirms",
+            "max_points": 30
+          },
+          {
+            "id": "transform_methods",
+            "description": "At least two transformation methods applied to clean the raw inputs: rawEmail.trim().toLowerCase() produces 'amara.obi@gmail.com'; rawName.trim() produces 'Amara Obi'; rawPhone.replaceAll('-', '') produces '081234567890'; slice() with indexOf('@') extracts the email domain ('gmail.com'); the cleaned values are logged so the before/after difference is visible",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming throughout; const used for rawName, rawEmail, rawPhone, and all cleaned results; no var; no string concatenation with +; all console.log calls have clear descriptive labels; no bare magic values (the search strings like '@' and '.com' appear directly in method calls, which is fine)",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_2",
+      "project_title": "Konga Seller Store Setup",
+      "context": "A seller onboarding page for a new Konga marketplace store. The seller submitted their details with inconsistent casing and a product listing URL that needs to be parsed.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Konga &#8212; Seller Setup</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"marketplace\">Konga</h1>\n        <p id=\"tagline\">Nigeria's Trusted Online Marketplace</p>\n    </header>\n\n    <main>\n        <section id=\"seller\">\n            <h2>Seller Details (raw input)</h2>\n            <p id=\"raw-store-name\">  TECH HAVEN STORE  </p>\n            <p id=\"raw-email\">  TECHHAVEN@KONGA.NG  </p>\n            <p id=\"raw-phone\">090-345-678-901</p>\n            <p id=\"seller-code\">KNG-SEL-2025-04482</p>\n        </section>\n\n        <section id=\"product\">\n            <h2>First Product Listing</h2>\n            <p id=\"product-url\">https://konga.com/product/tecno-spark-20-pro-256gb</p>\n            <p id=\"product-price\">Price: &#8358;89,000</p>\n            <p id=\"category\">Category: Phones &amp; Tablets</p>\n            <p id=\"stock\">Stock: 12 units</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 3 Project — Konga Seller Store Setup\n// Use the raw string data from the page to clean and display the seller profile.\n// Requirements: template literals with ${} for all output, one multi-line store summary,\n// at least 2 search methods (includes/startsWith/endsWith/indexOf),\n// at least 2 transformation methods (trim/toLowerCase/replace/replaceAll/slice).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "template_and_output",
+            "description": "All console.log calls use template literals; at least one multi-line template literal builds a formatted seller profile card showing the cleaned store name, email, phone, and seller code; at least one expression (not just a variable) appears inside ${} — e.g. a method call or an operation",
+            "max_points": 30
+          },
+          {
+            "id": "search_methods",
+            "description": "At least two search methods applied and logged: startsWith('https://') on the product URL returns true; includes('konga.com') on the product URL returns true; endsWith('.ng') on the cleaned email returns true; indexOf('/product/') is used with slice() to extract the product slug from the URL; results logged with labels",
+            "max_points": 30
+          },
+          {
+            "id": "transform_methods",
+            "description": "At least two transformation methods applied: rawStoreName.trim().toLowerCase() produces 'tech haven store' (or trim only for display); rawEmail.trim().toLowerCase() produces 'techhaven@konga.ng'; rawPhone.replaceAll('-', '') produces '090345678901'; slice() used with indexOf('/product/') to extract the product slug ('tecno-spark-20-pro-256gb'); cleaned values logged alongside the raw inputs",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const for all raw inputs and cleaned results; no var; no string concatenation with +; all logs have descriptive labels (e.g. 'Clean email:', 'Product slug:', 'Is valid URL:'); consistent indentation",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_3",
+      "project_title": "Paystack Payment Receipt",
+      "context": "A payment receipt page for a Paystack transaction. The customer name and email were submitted in inconsistent format, and the payment description uses dashes that need to be replaced for display.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Paystack &#8212; Payment Receipt</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"processor\">Paystack</h1>\n        <p id=\"tagline\">Simple, powerful payments for Africa</p>\n    </header>\n\n    <main>\n        <section id=\"transaction\">\n            <h2>Transaction Details</h2>\n            <p id=\"ref\">Reference: PSK_LIVE_20250422_0044821</p>\n            <p id=\"merchant\">Merchant: Publica Academy</p>\n            <p id=\"amount\">Amount: &#8358;25,000</p>\n            <p id=\"description\">Description: course-enrollment-javascript-fundamentals</p>\n            <p id=\"status\">Status: SUCCESS</p>\n        </section>\n\n        <section id=\"customer\">\n            <h2>Customer Details (raw input)</h2>\n            <p id=\"raw-name\">  BAYO ADEYEMI  </p>\n            <p id=\"raw-email\">  BAYO.ADEYEMI@YAHOO.COM  </p>\n            <p id=\"raw-phone\">0802-456-789-01</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 3 Project — Paystack Payment Receipt\n// Use the raw string data from the page to clean and display the payment receipt.\n// Requirements: template literals with ${} for all output, one multi-line receipt string,\n// at least 2 search methods (includes/startsWith/endsWith/indexOf),\n// at least 2 transformation methods (trim/toLowerCase/replace/replaceAll/slice).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "template_and_output",
+            "description": "All console.log calls use template literals; at least one multi-line template literal builds a formatted receipt showing the cleaned customer name, email, transaction reference, merchant, amount, and cleaned description; no + concatenation used anywhere",
+            "max_points": 30
+          },
+          {
+            "id": "search_methods",
+            "description": "At least two search methods applied and logged with labels: startsWith('PSK_') on the transaction reference returns true; includes('LIVE') on the reference confirms it is a live transaction (not test); endsWith('.com') on the cleaned email returns true; results clearly logged so the validation purpose is visible",
+            "max_points": 30
+          },
+          {
+            "id": "transform_methods",
+            "description": "At least two transformation methods applied: rawName.trim().toLowerCase() or rawName.trim() produces the clean name; rawEmail.trim().toLowerCase() produces 'bayo.adeyemi@yahoo.com'; rawPhone.replaceAll('-', '') produces '080245678901'; description.replaceAll('-', ' ') produces a readable label ('course enrollment javascript fundamentals'); cleaned values logged showing before/after",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const for all raw inputs and all cleaned results; no var; no string concatenation with +; all console.log calls have descriptive labels; the transaction reference and description are stored in named const variables before being passed to methods",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_4",
+      "project_title": "Publica Academy Student Enrollment",
+      "context": "A student registration confirmation page for Publica Academy. The student's name and email were submitted with spaces and wrong casing, and a student ID has been assigned that needs to be parsed.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Publica Academy &#8212; Enrollment Confirmed</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"school\">Publica Academy</h1>\n        <p id=\"tagline\">Learn. Build. Grow.</p>\n    </header>\n\n    <main>\n        <section id=\"student\">\n            <h2>Student Details (raw input)</h2>\n            <p id=\"raw-name\">  Ngozi Eze  </p>\n            <p id=\"raw-email\">  NGOZI.EZE@PUBLICAACADEMY.COM  </p>\n            <p id=\"raw-phone\">0803-456-789-01</p>\n            <p id=\"student-id\">Student ID: PUB-JS2-2025-0044</p>\n        </section>\n\n        <section id=\"course\">\n            <h2>Enrolled Course</h2>\n            <p id=\"course-name\">JavaScript Fundamentals</p>\n            <p id=\"module-count\">Modules: 18</p>\n            <p id=\"start-date\">Start date: 2025-05-01</p>\n            <p id=\"fee\">Course fee: &#8358;35,000</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 3 Project — Publica Academy Student Enrollment\n// Use the raw string data from the page to clean and display the enrollment confirmation.\n// Requirements: template literals with ${} for all output, one multi-line confirmation certificate,\n// at least 2 search methods (includes/startsWith/endsWith/indexOf),\n// at least 2 transformation methods (trim/toLowerCase/replace/replaceAll/slice).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "template_and_output",
+            "description": "All console.log calls use template literals; at least one multi-line template literal builds a formatted enrollment confirmation showing the student's clean name, email, student ID, course name, and start date — styled like a real confirmation screen; no string concatenation with + anywhere",
+            "max_points": 30
+          },
+          {
+            "id": "search_methods",
+            "description": "At least two search methods applied and logged: includes('@') on the email returns true; endsWith('.com') on the cleaned email returns true; startsWith('PUB-') on the student ID confirms it is a valid Publica ID (true); indexOf('@') used with slice() to extract the email domain; results logged with descriptive labels",
+            "max_points": 30
+          },
+          {
+            "id": "transform_methods",
+            "description": "At least two transformation methods applied: rawEmail.trim().toLowerCase() produces 'ngozi.eze@publicaacademy.com'; rawName.trim() produces 'Ngozi Eze'; rawPhone.replaceAll('-', '') produces '080345678901'; slice(0, cleanName.indexOf(' ')) extracts the first name ('Ngozi'); slice(cleanEmail.indexOf('@') + 1) extracts the domain; cleaned values logged with before/after comparison visible",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const for all raw inputs and computed values; no var; no + concatenation; all logs have labels; the student ID string ('PUB-JS2-2025-0044') is stored in a named const variable before methods are called on it; consistent indentation throughout",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_5",
+      "project_title": "Bolt Driver Profile Confirmation",
+      "context": "A driver onboarding confirmation page for Bolt in Lagos. The driver's name and email were entered with inconsistent casing, the phone has dashes, and the vehicle plate number has extra spaces.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Bolt &#8212; Driver Profile</title>\n</head>\n<body>\n\n    <header>\n        <h1 id=\"app-name\">Bolt</h1>\n        <p id=\"tagline\">Your city. Your ride.</p>\n    </header>\n\n    <main>\n        <section id=\"driver\">\n            <h2>Driver Details (raw input)</h2>\n            <p id=\"raw-name\">  EMEKA OKAFOR  </p>\n            <p id=\"raw-email\">  EMEKA.OKAFOR@GMAIL.COM  </p>\n            <p id=\"raw-phone\">081-234-567-890</p>\n            <p id=\"raw-plate\">  LSD 234 AA  </p>\n        </section>\n\n        <section id=\"vehicle\">\n            <h2>Vehicle &amp; Trip Info</h2>\n            <p id=\"vehicle-type\">Vehicle: Toyota Corolla 2019</p>\n            <p id=\"city\">City: Lagos</p>\n            <p id=\"driver-ref\">Driver reference: BLT-LGS-2025-0044</p>\n            <p id=\"trips\">Trips completed: 312</p>\n            <p id=\"rating\">Average rating: 4.88</p>\n        </section>\n    </main>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 3 Project — Bolt Driver Profile Confirmation\n// Use the raw string data from the page to clean and display the driver profile.\n// Requirements: template literals with ${} for all output, one multi-line profile summary,\n// at least 2 search methods (includes/startsWith/endsWith/indexOf),\n// at least 2 transformation methods (trim/toLowerCase/replace/replaceAll/slice).\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "template_and_output",
+            "description": "All console.log calls use template literals; at least one multi-line template literal builds a formatted driver profile card showing clean name, email, phone, plate number, driver reference, city, and vehicle; no string concatenation with + anywhere; at least one expression inside ${} performs an operation (e.g. a method call or a slice)",
+            "max_points": 30
+          },
+          {
+            "id": "search_methods",
+            "description": "At least two search methods applied and logged: startsWith('BLT-') on the driver reference confirms it is a valid Bolt reference (true); includes('LGS') on the driver reference confirms the driver is registered in Lagos (true); endsWith('.com') on the cleaned email returns true; indexOf('@') used with slice() to extract the email domain ('gmail.com'); results logged with labels",
+            "max_points": 30
+          },
+          {
+            "id": "transform_methods",
+            "description": "At least two transformation methods applied: rawName.trim().toLowerCase() or rawName.trim() produces 'EMEKA OKAFOR' trimmed / 'emeka okafor' lowercased; rawEmail.trim().toLowerCase() produces 'emeka.okafor@gmail.com'; rawPhone.replaceAll('-', '') produces '081234567890'; rawPlate.trim() produces 'LSD 234 AA'; slice(0, 3) on the clean phone extracts the network prefix ('081'); all cleaned values logged alongside the raw versions",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const for all raw inputs and cleaned results; no var; no string concatenation with +; all console.log calls have descriptive labels; the driver reference ('BLT-LGS-2025-0044') stored in a named const before methods are called on it; consistent indentation",
+            "max_points": 20
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Strings & String Methods",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_package",
+    "package_structure": "2_code_1_text",
+    "points_per_package": 100
+  },
+  "question_packages": [
+    {
+      "package_id": "pkg_1",
+      "questions": [
+        {
+          "question_id": "pkg1_q1",
+          "submission_type": "code",
+          "prompt": "You are building a welcome screen for a Publica Academy app. Declare const variables for: studentName (any Nigerian name), city (any Nigerian city), courseName = \"JavaScript Fundamentals\", moduleNumber = 3. Then use template literals to log all three of the following: (a) a personalised greeting: \"Welcome to [courseName], [studentName]!\"; (b) a location message: \"You are learning from [city].\"; (c) a progress message using an expression inside ${}: \"You are on Module [moduleNumber] of 18. That is [round the percentage to a whole number]% complete.\" — calculate the percentage inside the ${}.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All three template literals produce the correct output; the percentage in (c) is calculated correctly inside ${} as Math.round(moduleNumber / 18 * 100) or equivalent; all variable values appear in the right positions",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "All three strings use backtick template literals with ${} for variable embedding — no string concatenation with +; the percentage expression is evaluated inside ${} without an intermediate variable",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All four variables declared with const; camelCase naming; no var; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg1_q2",
+          "submission_type": "code",
+          "prompt": "You receive a Nigerian user's registration data from a form. The raw values are: rawEmail = \"  BAYO@GMAIL.COM  \", rawPhone = \"090-876-543-210\", rawCity = \"  port harcourt  \". Write script.js that: (a) cleans rawEmail using trim() and toLowerCase() and stores it in a const; (b) cleans rawPhone by removing all dashes using replaceAll() and stores it in a const; (c) cleans rawCity using trim() and then capitalises it — store the trimmed version (you do not need to capitalise each word, just store the trimmed version); (d) logs all three cleaned values with descriptive labels using template literals.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "cleanEmail = \"bayo@gmail.com\" (trimmed and lowercased); cleanPhone = \"090876543210\" (all dashes removed); cleanCity = \"port harcourt\" (trimmed); all three logged with labels",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "trim().toLowerCase() chained for the email; replaceAll(\"-\", \"\") used for the phone (not replace()); trim() used for the city; methods are chained where appropriate rather than stored in intermediate variables",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "Cleaned results stored in descriptively-named consts; template literals used for logging; no syntax errors; no var",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg1_q3",
+          "submission_type": "text",
+          "prompt": "Explain the difference between template literals (backticks) and regular string quotes (single or double) in JavaScript. What are the two main advantages of template literals? Give a specific example showing a case where template literals are clearly the better choice.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly identifies that template literals use backticks and support both variable embedding with ${} and multi-line strings without \\n; correctly states that single/double quotes cannot do either of these things natively",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Example shows a meaningful string that contains a variable — e.g. a greeting with a name — first written with concatenation (showing the messiness) and then with a template literal (showing the clarity)",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_2",
+      "questions": [
+        {
+          "question_id": "pkg2_q1",
+          "submission_type": "code",
+          "prompt": "Write a Nigerian phone number validator. Declare const phone = \"08012345678\". Then log the result of all four checks with descriptive labels: (a) whether the phone number starts with \"080\", \"081\", \"090\", or \"091\" — check startsWith for each and combine with || to log a single boolean; (b) whether the phone number contains a dash (it should not — use includes(\"-\") and ! to log whether it is dash-free); (c) whether the phone number is exactly 11 characters long using .length; (d) the network prefix using slice(0, 3).",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All four results are correct: (a) true — startsWith(\"080\") is true so the || chain is true; (b) true — no dash, so !includes(\"-\") is true; (c) true — \"08012345678\".length === 11; (d) \"080\"",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "startsWith used for (a) with || combining at least two prefix checks; ! used to negate includes(\"-\") for (b); .length property (not .length()) used for (c); slice(0, 3) used for (d)",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All logs have descriptive labels; template literals or descriptive console.log calls used; no var; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg2_q2",
+          "submission_type": "code",
+          "prompt": "Declare const product = \"Ankara Midi Dress — Size M — Colour: Red\". Then write expressions (not stored in variables — directly inside console.log) for all four of the following: (a) log whether the product description includes the word \"Dress\"; (b) log the position of the word \"Size\" using indexOf; (c) log the last 5 characters of the string using slice with a negative index; (d) log an array of the three parts split by \" — \" (space-dash-dash-space) using split.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All four results correct: (a) true; (b) the index where \"Size\" starts (18); (c) \" Red\" — last 5 chars (space + Red + nothing, adjust: last 5 = \"d Red\" or \"R Red\" — exact answer depends on string length, marked correct if slice(-5) is used correctly); (d) array of three strings: [\"Ankara Midi Dress\", \"Size M\", \"Colour: Red\"]",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "includes() used for (a); indexOf() used for (b); slice() with a negative index used for (c); split(\" — \") used for (d) — separator must include the spaces",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All four expressions written directly inside console.log (no intermediate variables); descriptive labels on each log; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg2_q3",
+          "submission_type": "text",
+          "prompt": "Explain what `.indexOf()` returns and how it differs from `.includes()`. When would you choose indexOf over includes? What does a return value of -1 from indexOf mean, and how would you write a condition that checks whether something was NOT found?",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that includes() returns a boolean (true/false) while indexOf() returns the numeric position of the first match or -1 if not found; correctly states that -1 means not found; correctly shows the check value === -1 for the not-found condition",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Gives a concrete use case for preferring indexOf — e.g. needing to know where the @ is in an email to slice the domain out; explains the -1 sentinel value clearly with a code example of the not-found check",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_3",
+      "questions": [
+        {
+          "question_id": "pkg3_q1",
+          "submission_type": "code",
+          "prompt": "Build a Chowdeck order confirmation message using template literals. Declare: const customerName = \"Amaka\", const restaurant = \"Yellow Chilli\", const item = \"Egusi Soup & Eba\", const price = 3200, const deliveryTime = 35. Then log a multi-line order confirmation using a backtick template literal that includes at least four line breaks and embeds all five variables. The output should look like a real order receipt — include a header, the customer name, restaurant, item, price with the ₦ symbol, and estimated delivery time.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "All five variables are embedded in the template literal; the output spans at least four lines; the price appears with the ₦ symbol; the template literal uses actual line breaks (not \\n) inside the backtick string",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "Uses a single backtick template literal (not multiple console.log calls); line breaks are actual newlines inside the template literal, not \\n escape sequences; all five variables embedded with ${}",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All five variables declared with const; the template literal looks like a real receipt (structured, readable); no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg3_q2",
+          "submission_type": "code",
+          "prompt": "Write a URL inspector for a Nigerian news website. Declare const url = \"https://techcabal.com/2025/04/nigerian-tech-news\". Then log results for all four of the following with labels: (a) whether the URL is secure — use startsWith(\"https\"); (b) whether the URL contains the word \"nigeria\" (case-sensitive check — it should return false since the URL has \"nigerian\"); (c) extract just the domain — slice from after \"https://\" to the first \"/\" after the domain. Use indexOf(\"/\", 8) to find the first slash after \"https://\" (the 8 skips past the protocol); (d) split the URL by \"/\" and log the resulting array.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "(a) true; (b) false — the URL has 'nigerian' not 'nigeria' exact match; (c) 'techcabal.com' — slice(8, indexOf('/', 8)); (d) an array of url parts split by '/'",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "startsWith used for (a); includes used for (b); slice combined with indexOf(str, startIndex) form used for (c); split(\"/\") used for (d)",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All logs have descriptive labels; expressions are readable; no unnecessary intermediate variables; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg3_q3",
+          "submission_type": "text",
+          "prompt": "Explain why string methods in JavaScript do not modify the original string. What does this mean for how you use them in code? Give an example showing a common mistake (expecting the original to change) and the correct way to use the method.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that strings in JavaScript are immutable — methods return a new string without changing the original; correctly identifies that the result must be stored in a variable to be used",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "Shows the mistake clearly — e.g. calling name.trim() but then logging name and being confused that spaces remain — and the fix: const clean = name.trim(); console.log(clean)",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_4",
+      "questions": [
+        {
+          "question_id": "pkg4_q1",
+          "submission_type": "code",
+          "prompt": "You are processing a product CSV line from a Lagos market database. Declare const csvLine = \"Tomatoes,₦1800,Fresh,Lagos,In Stock\". Then: (a) split the line by \",\" and log the resulting array; (b) log the number of fields (the array's length — log csvLine.split(\",\").length); (c) log whether the line includes the word \"Fresh\" using includes(); (d) replace \"In Stock\" with \"✓ Available\" using replace() and log the new string; (e) log the last 8 characters of the original csvLine using slice(-8).",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "(a) array of 5 elements: [\"Tomatoes\", \"₦1800\", \"Fresh\", \"Lagos\", \"In Stock\"]; (b) 5; (c) true; (d) \"Tomatoes,₦1800,Fresh,Lagos,✓ Available\"; (e) \"In Stock\" — last 8 characters",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "split(\",\") used for (a) and (b); includes() for (c); replace() for (d); slice(-8) with negative index for (e)",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All logs have descriptive labels; template literals or clear console.log calls used; no var; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg4_q2",
+          "submission_type": "code",
+          "prompt": "Declare const password = \"MyP@ssw0rd!\". Write a password strength checker that logs all four of the following with labels: (a) the password length using .length; (b) whether the password is at least 8 characters — log a boolean; (c) whether the password contains \"@\" using includes(); (d) log the password with all vowels replaced — use replaceAll() to replace each vowel (a, e, i, o, u — lowercase only) with \"*\", chaining four replaceAll() calls. Log the censored version.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "(a) 11; (b) true (11 >= 8); (c) true; (d) \"MyP@ssw0rd!\" → \"MyP@ssw0rd!\" — lowercase vowels replaced: no lowercase vowels exist in this string, so result = \"MyP@ssw0rd!\" (full marks if student correctly chains four replaceAll calls even if no vowels are present in the test string)",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": ".length property (not method) used for (a); comparison with >= for (b); includes() for (c); four replaceAll() calls chained for (d) — one for each vowel a, e, i, o, u",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All four logs have descriptive labels; replaceAll() calls are chained in a single expression; no var; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg4_q3",
+          "submission_type": "text",
+          "prompt": "Explain the difference between `replace()` and `replaceAll()` in JavaScript. Give a real-world example where using `replace()` instead of `replaceAll()` would produce the wrong result. Then explain when you would deliberately use `replace()` over `replaceAll()`.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that replace() only replaces the first occurrence while replaceAll() replaces every occurrence; the real-world bug example is valid — e.g. stripping all dashes from a phone number where replace(\"-\", \"\") leaves all but the first dash",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "The deliberate use case for replace() is valid and specific — e.g. replacing only the first occurrence of a keyword in a template, correcting only the first error in a string while preserving later occurrences intentionally",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_5",
+      "questions": [
+        {
+          "question_id": "pkg5_q1",
+          "submission_type": "code",
+          "prompt": "Build a user display name formatter. Declare: let rawInput = \"  adeola ADEYEMI-JOHNSON  \". Then: (a) clean the input — trim whitespace and convert to lowercase, store in a const called cleanInput; (b) log whether cleanInput starts with \"adeola\"; (c) log the position of \"-\" in cleanInput using indexOf; (d) extract and log the part before the hyphen using slice(0, indexOf(\"-\")); (e) log the number of characters in cleanInput using .length.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "cleanInput = \"adeola adeyemi-johnson\"; (b) true; (c) 14 — position of \"-\"; (d) \"adeola adeyemi\" — slice from 0 to 14; (e) 22 — length of cleanInput",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "trim().toLowerCase() chained for (a); startsWith() for (b); indexOf(\"-\") for (c); slice(0, cleanInput.indexOf(\"-\")) for (d) — combining indexOf with slice; .length property for (e)",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "rawInput declared with let as specified; cleanInput declared with const; all logs have labels; methods correctly applied to cleanInput (not rawInput) for checks (b)–(e); no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg5_q2",
+          "submission_type": "code",
+          "prompt": "You receive a Flutterwave transaction reference string: const ref = \"FLW-LIVE-NGOZI-20250401-4821\". Log all five of the following with labels: (a) split the reference by \"-\" and log the resulting array; (b) log whether the reference includes \"LIVE\" using includes(); (c) log whether the reference ends with a 4-digit number — check endsWith(\"4821\"); (d) extract the date portion \"20250401\" using slice — find the right positions by inspecting the string; (e) create a display-friendly version: replace \"FLW-LIVE\" with \"TXN\" using replace() and log it.",
+          "rubric": {
+            "total_points": 40,
+            "criteria": [
+              {
+                "id": "correctness",
+                "description": "(a) [\"FLW\", \"LIVE\", \"NGOZI\", \"20250401\", \"4821\"]; (b) true; (c) true; (d) \"20250401\" — slice(9, 17) or equivalent correct positions; (e) \"TXN-NGOZI-20250401-4821\"",
+                "max_points": 20
+              },
+              {
+                "id": "technique",
+                "description": "split(\"-\") for (a); includes() for (b); endsWith() for (c); slice with correct positions for (d); replace() for (e); all results logged with descriptive labels",
+                "max_points": 12
+              },
+              {
+                "id": "code_quality",
+                "description": "All logs are clearly labeled; no var; expressions are readable; correct method used for each task; no syntax errors",
+                "max_points": 8
+              }
+            ]
+          }
+        },
+        {
+          "question_id": "pkg5_q3",
+          "submission_type": "text",
+          "prompt": "Explain how `.slice()` works in JavaScript strings. What does the second argument control? What happens when you omit the second argument? What does a negative index mean? Give a concrete example using a Nigerian name or data string that demonstrates all three behaviours.",
+          "rubric": {
+            "total_points": 20,
+            "criteria": [
+              {
+                "id": "accuracy",
+                "description": "Correctly explains that slice(start, end) extracts from start up to but not including end; omitting end extracts from start to the end of the string; negative index counts from the end of the string (-1 = last char, -3 = last 3 chars)",
+                "max_points": 12
+              },
+              {
+                "id": "clarity",
+                "description": "All three behaviours are shown using the same concrete string — e.g. an email address or phone number — with clear annotations showing which characters each slice returns",
+                "max_points": 8
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

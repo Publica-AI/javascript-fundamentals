@@ -1,0 +1,52 @@
+title,description,type,question,options,answer,difficulty
+string basics and template literals,Three quote styles,multiple choice,Which of the following is NOT a valid way to create a string in JavaScript?,Single quotes|Double quotes|Backticks|Curly braces,Curly braces,beginner
+string basics and template literals,Single vs double quotes,True or False,Single quotes and double quotes produce identical strings in JavaScript.,True|False,True,beginner
+string basics and template literals,Template literal syntax,multiple choice,Which quote style is used for template literals?,Single quotes|Double quotes|Backticks|Parentheses,Backticks,beginner
+string basics and template literals,Embedding variables,multiple choice,What syntax is used to embed a variable inside a template literal?,${variableName}|{variableName}|#variableName|@variableName,${variableName},beginner
+string basics and template literals,Template literal requirement,multiple choice,The ${} syntax works inside which type of string?,Single-quoted strings|Double-quoted strings|Backtick strings only|All string types,Backtick strings only,beginner
+string basics and template literals,String concatenation,multiple choice,What is the old way of joining variables with text before template literals?,Using ${} syntax|Using the + operator to concatenate|Using the & symbol|Using commas,Using the + operator to concatenate,beginner
+string basics and template literals,Expression evaluation,multiple choice,"What does `Total: ₦${4500 * 3}` produce?",Total: ₦${4500 * 3}|Total: ₦13500|Total: ₦4500 * 3|An error,Total: ₦13500,intermediate
+string basics and template literals,Expressions in templates,True or False,You can only put variable names inside ${} — not calculations or method calls.,True|False,False,intermediate
+string basics and template literals,Method call in template,multiple choice,"What does `Hello, ${""ada"".toUpperCase()}!` produce?","Hello, ada!|Hello, ADA!|Hello, Ada!|An error","Hello, ADA!",intermediate
+string basics and template literals,Multi-line old way,multiple choice,What escape character is used to create a new line in a single or double-quoted string?,\t|\n|\r|\b,\n,intermediate
+string basics and template literals,Multi-line template,multiple choice,How do backtick strings handle multiple lines?,You must use \n|They preserve actual line breaks without escape characters|They ignore line breaks|They throw an error,They preserve actual line breaks without escape characters,intermediate
+string basics and template literals,Convention,multiple choice,What is the modern convention for when to use backticks vs regular quotes?,Always use backticks|Use regular quotes for plain text and backticks when embedding variables|Always use double quotes|Use single quotes for variables,Use regular quotes for plain text and backticks when embedding variables,intermediate
+string basics and template literals,Concatenation vs template,multiple choice,"Which produces the same output as: ""Hello, "" + name + ""!""?",`Hello, name!`|`Hello, ${name}!`|`Hello, +name+!`|'Hello, ${name}!',`Hello, ${name}!`",intermediate
+string basics and template literals,Expression result type,True or False,The result of ${} is always automatically converted to a string.,True|False,True,Advanced
+string basics and template literals,Boolean in template,multiple choice,"What does `Is it true? ${5 > 3}` produce?",Is it true? ${5 > 3}|Is it true? true|Is it true? false|An error,Is it true? true,Advanced
+string basics and template literals,Comparison in template,multiple choice,"What does `Result: ${10 === ""10""}` produce?",Result: true|Result: false|Result: 10|An error,Result: false,Advanced
+searching and checking strings,includes return type,multiple choice,What does .includes() return?,A number|A string|A boolean (true or false)|An array,A boolean (true or false),beginner
+searching and checking strings,includes basic usage,multiple choice,"What does ""ada@gmail.com"".includes(""@"") return?",true|false|3|"@",true,beginner
+searching and checking strings,indexOf return type,multiple choice,What does .indexOf() return when it finds the substring?,true|The position (index) where the substring starts|The substring itself|The length of the string,The position (index) where the substring starts,beginner
+searching and checking strings,indexOf not found,multiple choice,What does .indexOf() return when the substring is NOT found?,0|false|null|-1,-1,beginner
+searching and checking strings,startsWith basic,multiple choice,"What does ""https://jumia.com.ng"".startsWith(""https"") return?",true|false|"https"|0,true,beginner
+searching and checking strings,endsWith basic,multiple choice,"What does ""report-april.pdf"".endsWith("".pdf"") return?",true|false|".pdf"|12,true,beginner
+searching and checking strings,Case sensitivity,True or False,String search methods like .includes() are case-sensitive.,True|False,True,intermediate
+searching and checking strings,indexOf position,multiple choice,"What does ""ada@gmail.com"".indexOf(""@"") return?",0|1|3|4,3,intermediate
+searching and checking strings,includes vs indexOf,multiple choice,When should you use .includes() instead of .indexOf()?,When you need the position|When you only need a yes/no answer|When the string is long|When searching for numbers,When you only need a yes/no answer,intermediate
+searching and checking strings,startsWith false,multiple choice,"What does ""08012345678"".startsWith(""090"") return?",true|false|"080"|0,false,intermediate
+searching and checking strings,length property,multiple choice,How do you get the number of characters in a string?,string.length()|string.length|string.size()|string.count(),string.length,intermediate
+searching and checking strings,length vs method,True or False,.length is a method that requires parentheses to call.,True|False,False,intermediate
+searching and checking strings,Combining methods,multiple choice,"Which expression checks that an email contains both ""@"" and "".""?",email.includes("@" && ".")|email.includes("@") && email.includes(".")|email.has("@") && email.has(".")|email.contains("@."),email.includes("@") && email.includes("."),Advanced
+searching and checking strings,Not found check,multiple choice,How do you check if a substring was NOT found using indexOf?,value === 0|value === false|value === -1|value === null,value === -1,Advanced
+searching and checking strings,endsWith case,multiple choice,"What does ""Report.PDF"".endsWith("".pdf"") return?",true|false|".PDF"|undefined,false,Advanced
+transforming strings,trim purpose,multiple choice,What does the .trim() method do?,Removes all spaces from a string|Removes spaces from both ends of a string|Converts to lowercase|Splits the string,Removes spaces from both ends of a string,beginner
+transforming strings,toUpperCase,multiple choice,"What does ""nigeria"".toUpperCase() return?",nigeria|Nigeria|NIGERIA|nIGERIA,NIGERIA,beginner
+transforming strings,toLowerCase,multiple choice,"What does ""GOOD MORNING"".toLowerCase() return?",GOOD MORNING|Good Morning|good morning|goodmorning,good morning,beginner
+transforming strings,Immutability,True or False,String methods change the original string directly.,True|False,False,beginner
+transforming strings,replace basic,multiple choice,"What does ""Hello, World!"".replace(""World"", ""Nigeria"") return?","Hello, World!|Hello, Nigeria!|Hello, !|Nigeria","Hello, Nigeria!",beginner
+transforming strings,trim spaces,multiple choice,"What does ""  Emeka Nwosu  "".trim() return?",EmekaNwosu|Emeka Nwosu|emeka nwosu|  Emeka Nwosu,Emeka Nwosu,intermediate
+transforming strings,trim middle spaces,True or False,.trim() removes spaces in the middle of a string as well as the ends.,True|False,False,intermediate
+transforming strings,Method chaining,multiple choice,"What does ""  ADA  "".trim().toLowerCase() return?",ADA|ada|  ada  |Ada,ada,intermediate
+transforming strings,replace first only,multiple choice,"What does ""080-123-456"".replace(""-"", """") return?",080123456|080123-456|080-123456|-123-456,080123-456,intermediate
+transforming strings,replaceAll,multiple choice,Which method replaces ALL occurrences of a substring?,replace()|replaceAll()|replaceEvery()|substituteAll(),replaceAll(),intermediate
+transforming strings,slice basic,multiple choice,"What does ""ada@gmail.com"".slice(0, 3) return?",ada@|ada|ad|a@g,ada,intermediate
+transforming strings,slice from position,multiple choice,"What does ""ada@gmail.com"".slice(4) return?",ada@|gmail.com|ada|@gmail.com,gmail.com,intermediate
+transforming strings,slice negative,multiple choice,"What does ""ada@gmail.com"".slice(-3) return?",ada|com|.com|gmail,com,intermediate
+transforming strings,split basic,multiple choice,"What does ""Lagos,Abuja,Kano"".split("","") return?",A string without commas|["Lagos" "Abuja" "Kano"]|["Lagos", "Abuja", "Kano"]|Lagos Abuja Kano,"[""Lagos"", ""Abuja"", ""Kano""]",intermediate
+transforming strings,split separator removed,True or False,The separator character is included in the results of .split().,True|False,False,intermediate
+transforming strings,split by space,multiple choice,"What does ""JavaScript is powerful"".split("" "") return?","[""JavaScript is powerful""]|[""JavaScript"", ""is"", ""powerful""]|[""J"", ""a"", ""v"", ""a""]|JavaScript is powerful","[""JavaScript"", ""is"", ""powerful""]",intermediate
+transforming strings,Cleaning pipeline,multiple choice,What is the standard order for cleaning user input?,toLowerCase then trim|trim then toLowerCase|split then trim|replace then toUpperCase,trim then toLowerCase,Advanced
+transforming strings,Store result,multiple choice,How do you keep the result of a string transformation?,The original variable updates automatically|You must store it in a variable: const clean = name.trim()|Call .save() after the method|Use let instead of const,You must store it in a variable: const clean = name.trim(),Advanced
+transforming strings,slice end not included,multiple choice,"In slice(0, 3) is the character at index 3 included in the result?",Yes it is included|No it is not included|Only if it is a letter|It depends on the string,No it is not included,Advanced
+transforming strings,Chained pipeline,multiple choice,"What does ""  Ada@Gmail.Com  "".trim().toLowerCase() return?",Ada@Gmail.Com|ada@gmail.com|  ada@gmail.com  |ADA@GMAIL.COM,ada@gmail.com,Advanced
