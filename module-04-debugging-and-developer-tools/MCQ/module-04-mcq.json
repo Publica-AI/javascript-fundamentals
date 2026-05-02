@@ -1,0 +1,425 @@
+[
+    {
+        "title": "the browser console and console methods",
+        "description": "Opening DevTools",
+        "type": "multiple choice",
+        "question": "What is the keyboard shortcut to open DevTools on Windows?",
+        "options": "Ctrl + P|F12|Ctrl + S|Alt + F4",
+        "answer": "F12",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Console tab",
+        "type": "multiple choice",
+        "question": "After opening DevTools which tab do you click to see JavaScript output?",
+        "options": "Elements|Console|Network|Sources",
+        "answer": "Console",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "console.log purpose",
+        "type": "multiple choice",
+        "question": "What does console.log() do?",
+        "options": "Displays text on the visible web page|Prints output to the DevTools Console|Saves data to a file|Sends data to a server",
+        "answer": "Prints output to the DevTools Console",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "console.log multiple args",
+        "type": "multiple choice",
+        "question": "What does console.log(\"Balance:\", 15000) display?",
+        "options": "Balance:|15000|Balance: 15000 on one line|An error",
+        "answer": "Balance: 15000 on one line",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "console.warn colour",
+        "type": "multiple choice",
+        "question": "What colour does console.warn() output appear in?",
+        "options": "White|Red|Yellow|Blue",
+        "answer": "Yellow",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "console.error colour",
+        "type": "multiple choice",
+        "question": "What colour does console.error() output appear in?",
+        "options": "White|Yellow|Green|Red",
+        "answer": "Red",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "console.table purpose",
+        "type": "multiple choice",
+        "question": "What does console.table() do?",
+        "options": "Logs a single value|Displays an array of objects as a readable table|Creates an HTML table on the page|Saves data to a spreadsheet",
+        "answer": "Displays an array of objects as a readable table",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Opening DevTools alternative",
+        "type": "multiple choice",
+        "question": "Besides F12 what other way can you open DevTools?",
+        "options": "Double-click the page|Right-click the page then click Inspect|Press Ctrl + Z|Press Enter",
+        "answer": "Right-click the page then click Inspect",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Descriptive labels",
+        "type": "multiple choice",
+        "question": "Why should you pass a label as the first argument to console.log()?",
+        "options": "It is required by JavaScript|So you know what value you are looking at in the output|It makes the code run faster|It stores the value in memory",
+        "answer": "So you know what value you are looking at in the output",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "warn vs error",
+        "type": "multiple choice",
+        "question": "What is the difference between console.warn() and console.error()?",
+        "options": "They are identical|warn signals a potential problem while error signals a definite failure|warn stops the code but error does not|error is yellow and warn is red",
+        "answer": "warn signals a potential problem while error signals a definite failure",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Does not stop code",
+        "type": "True or False",
+        "question": "console.warn() and console.error() stop your code from running.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "console.table input",
+        "type": "multiple choice",
+        "question": "What type of data works best with console.table()?",
+        "options": "A single string|A single number|An array of objects|A boolean",
+        "answer": "An array of objects",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Expression in log",
+        "type": "multiple choice",
+        "question": "What does console.log(\"Total:\", 15000 * 1.075) display in the Console?",
+        "options": "Total: 15000 * 1.075|Total: 16125|15000 * 1.075|An error",
+        "answer": "Total: 16125",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Production rule",
+        "type": "multiple choice",
+        "question": "What should you do with console.log() calls before deploying to production?",
+        "options": "Leave them for users to see|Remove them because output is visible to anyone who opens DevTools|Convert them to alerts|Move them to the HTML file",
+        "answer": "Remove them because output is visible to anyone who opens DevTools",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Mac shortcut",
+        "type": "multiple choice",
+        "question": "What is the keyboard shortcut to open DevTools on Mac?",
+        "options": "Cmd + Z|Cmd + Option + I|Cmd + S|Cmd + P",
+        "answer": "Cmd + Option + I",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "the browser console and console methods",
+        "description": "Comma separation",
+        "type": "multiple choice",
+        "question": "When you pass multiple arguments to console.log() separated by commas how are they displayed?",
+        "options": "On separate lines|On the same line separated by spaces|Only the first one shows|They are concatenated without spaces",
+        "answer": "On the same line separated by spaces",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "reading error messages",
+        "description": "Three parts of an error",
+        "type": "multiple choice",
+        "question": "How many parts does every error message have?",
+        "options": "1|2|3|4",
+        "answer": "3",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reading error messages",
+        "description": "Error parts",
+        "type": "multiple choice",
+        "question": "Which of the following is NOT one of the three parts of an error message?",
+        "options": "Error type|Error message|Location (file and line)|Error colour",
+        "answer": "Error colour",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reading error messages",
+        "description": "ReferenceError meaning",
+        "type": "multiple choice",
+        "question": "What does a ReferenceError mean?",
+        "options": "You used a value that is the wrong type|You used a name that does not exist|Your code cannot be parsed|The server is down",
+        "answer": "You used a name that does not exist",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reading error messages",
+        "description": "TypeError meaning",
+        "type": "multiple choice",
+        "question": "What does a TypeError mean?",
+        "options": "A variable name is misspelled|The code has a missing bracket|You did something a value cannot do for its type|The file was not found",
+        "answer": "You did something a value cannot do for its type",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reading error messages",
+        "description": "SyntaxError meaning",
+        "type": "multiple choice",
+        "question": "What does a SyntaxError mean?",
+        "options": "A variable is undefined|A method was called on null|JavaScript cannot parse the code so the file never runs|A network request failed",
+        "answer": "JavaScript cannot parse the code so the file never runs",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reading error messages",
+        "description": "Golden rule",
+        "type": "multiple choice",
+        "question": "What is the golden rule when you see an error in the Console?",
+        "options": "Delete the file and start over|Read the error message before you touch the code|Refresh the page immediately|Ask someone else to fix it",
+        "answer": "Read the error message before you touch the code",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reading error messages",
+        "description": "ReferenceError cause",
+        "type": "multiple choice",
+        "question": "Which of the following causes a ReferenceError?",
+        "options": "Calling .toUpperCase() on a number|A missing closing bracket|A misspelled variable name|Dividing by zero",
+        "answer": "A misspelled variable name",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reading error messages",
+        "description": "Case sensitivity",
+        "type": "multiple choice",
+        "question": "You declared const userName but wrote console.log(username). What error appears?",
+        "options": "TypeError|SyntaxError|ReferenceError: username is not defined|No error",
+        "answer": "ReferenceError: username is not defined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reading error messages",
+        "description": "TypeError null",
+        "type": "multiple choice",
+        "question": "What error does this code produce: const user = null; console.log(user.name);?",
+        "options": "ReferenceError|SyntaxError|TypeError: Cannot read properties of null|No error",
+        "answer": "TypeError: Cannot read properties of null",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reading error messages",
+        "description": "TypeError not a function",
+        "type": "multiple choice",
+        "question": "What error does this code produce: const price = 4500; price();?",
+        "options": "ReferenceError|TypeError: price is not a function|SyntaxError|No error",
+        "answer": "TypeError: price is not a function",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reading error messages",
+        "description": "SyntaxError file execution",
+        "type": "True or False",
+        "question": "When a SyntaxError occurs the rest of the code in the file still runs.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reading error messages",
+        "description": "SyntaxError cause",
+        "type": "multiple choice",
+        "question": "Which of the following causes a SyntaxError?",
+        "options": "Using a variable before declaring it|Calling a method on null|A missing closing bracket or brace|Dividing a string by a number",
+        "answer": "A missing closing bracket or brace",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reading error messages",
+        "description": "Wrong method on type",
+        "type": "multiple choice",
+        "question": "What error does this code produce: const amount = 5000; amount.toUpperCase();?",
+        "options": "ReferenceError|SyntaxError|TypeError: amount.toUpperCase is not a function|No error",
+        "answer": "TypeError: amount.toUpperCase is not a function",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "reading error messages",
+        "description": "Error location",
+        "type": "multiple choice",
+        "question": "What does the file:line part of an error message tell you?",
+        "options": "Which browser you are using|The exact file and line number where the error occurred|How many errors there are|The name of the variable",
+        "answer": "The exact file and line number where the error occurred",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "reading error messages",
+        "description": "SyntaxError line caveat",
+        "type": "multiple choice",
+        "question": "Why can the line number in a SyntaxError be misleading?",
+        "options": "Because SyntaxErrors do not show line numbers|Because the reported line is where JavaScript gave up not necessarily where the bug is|Because it always shows line 1|Because the file is too large",
+        "answer": "Because the reported line is where JavaScript gave up not necessarily where the bug is",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "What is a breakpoint",
+        "type": "multiple choice",
+        "question": "What does a breakpoint do?",
+        "options": "Deletes a line of code|Pauses code execution at a specific line|Adds a console.log automatically|Fixes a bug in the code",
+        "answer": "Pauses code execution at a specific line",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Which tab",
+        "type": "multiple choice",
+        "question": "Which DevTools tab do you use to set breakpoints?",
+        "options": "Console|Elements|Sources|Network",
+        "answer": "Sources",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Setting a breakpoint",
+        "type": "multiple choice",
+        "question": "How do you set a breakpoint in the Sources tab?",
+        "options": "Right-click the code and select Break|Click the line number|Type debugger in the Console|Press F5",
+        "answer": "Click the line number",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Breakpoint marker",
+        "type": "multiple choice",
+        "question": "What appears on a line when you set a breakpoint?",
+        "options": "A red circle|A blue marker|A yellow arrow|A green checkmark",
+        "answer": "A blue marker",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Scope panel purpose",
+        "type": "multiple choice",
+        "question": "What does the Scope panel show while code is paused?",
+        "options": "All HTML elements|Every variable's current value|The network requests|The CSS styles",
+        "answer": "Every variable's current value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "F10 action",
+        "type": "multiple choice",
+        "question": "What does pressing F10 (Step Over) do when code is paused?",
+        "options": "Resumes normal execution|Runs the current line and moves to the next|Enters a function call|Removes the breakpoint",
+        "answer": "Runs the current line and moves to the next",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "F11 action",
+        "type": "multiple choice",
+        "question": "What does pressing F11 (Step Into) do?",
+        "options": "Skips the current line|Runs the current line and moves to the next|Steps inside a function call on the current line|Resumes to the next breakpoint",
+        "answer": "Steps inside a function call on the current line",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "F8 action",
+        "type": "multiple choice",
+        "question": "What does pressing F8 (Resume) do?",
+        "options": "Steps to the next line|Enters a function call|Continues running until the next breakpoint|Closes DevTools",
+        "answer": "Continues running until the next breakpoint",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Most used control",
+        "type": "multiple choice",
+        "question": "Which stepping control will you use 95% of the time?",
+        "options": "F8 Resume|F10 Step Over|F11 Step Into|F5 Refresh",
+        "answer": "F10 Step Over",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Breakpoint workflow",
+        "type": "multiple choice",
+        "question": "What is the correct workflow after setting a breakpoint?",
+        "options": "Close DevTools and reopen|Refresh the page so JavaScript pauses at the breakpoint|Click Run in the Console|Edit the HTML file",
+        "answer": "Refresh the page so JavaScript pauses at the breakpoint",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Why better than console.log",
+        "type": "multiple choice",
+        "question": "Why are breakpoints better than console.log for complex bugs?",
+        "options": "They are faster to type|You can inspect every variable without adding and removing log statements|They fix bugs automatically|They work without DevTools",
+        "answer": "You can inspect every variable without adding and removing log statements",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Loop debugging",
+        "type": "multiple choice",
+        "question": "Why would you set a breakpoint inside a loop?",
+        "options": "To delete the loop|To watch how variables change on each iteration|To skip the loop entirely|To make the loop run faster",
+        "answer": "To watch how variables change on each iteration",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Scope panel live updates",
+        "type": "True or False",
+        "question": "Values in the Scope panel update as you step forward through the code.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Finding the bug",
+        "type": "multiple choice",
+        "question": "When stepping through code with F10 how do you identify the bug?",
+        "options": "When the Console turns red|When a variable gets a wrong value in the Scope panel|When the page refreshes|When DevTools closes",
+        "answer": "When a variable gets a wrong value in the Scope panel",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Resume in loop",
+        "type": "multiple choice",
+        "question": "If you set a breakpoint inside a loop and press F8 (Resume) what happens?",
+        "options": "The loop stops|Code continues to the next breakpoint which is the same line on the next iteration|The page refreshes|The breakpoint is removed",
+        "answer": "Code continues to the next breakpoint which is the same line on the next iteration",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "breakpoints and stepping through code",
+        "description": "Step Into use case",
+        "type": "multiple choice",
+        "question": "When should you use Step Into (F11) instead of Step Over (F10)?",
+        "options": "When you want to skip a line|When the current line calls a function and you want to see what happens inside it|When you want to resume normal execution|When you want to close DevTools",
+        "answer": "When the current line calls a function and you want to see what happens inside it",
+        "difficulty": "Advanced"
+    }
+]

@@ -1,0 +1,226 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Debugging & Developer Tools",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_project"
+  },
+  "pool_brief": "You are given a starter index.html and a buggy script.js for a Nigerian business scenario. The script.js contains errors that prevent it from running correctly. Your task is to: (1) open the page in Chrome with DevTools open; (2) identify and fix all bugs by reading the Console error messages — state the error type and cause in a comment above each fix; (3) add console.warn() for at least one condition that should be flagged (e.g. a value below a threshold); (4) add console.error() for at least one condition that is definitely wrong (e.g. a required field is empty or a value is negative); (5) use console.table() to display any array of objects in the script. Do not guess — read the error, locate the line, understand the cause, then fix it.",
+  "project_pool": [
+    {
+      "project_id": "proj_1",
+      "project_title": "Chowdeck Order Summary — Debug Challenge",
+      "context": "A Chowdeck food delivery script with three bugs: a ReferenceError (misspelled variable), a TypeError (method called on null), and missing console method improvements.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Chowdeck &#8212; Order Summary</title>\n</head>\n<body>\n    <h1>Chowdeck Order Summary</h1>\n    <p>Open DevTools (F12) &#8594; Console to see errors and output.</p>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 4 Project — Chowdeck Order Summary\n// This script has 2 bugs. Find them, fix them, then improve it with console.warn and console.error.\n\nconst customerName = \"Amara Obi\";\nconst deliveryFee  = 500;\nconst minFreeDelivery = 3000;\n\nconst orders = [\n  { item: \"Jollof Rice\",   price: 1800, qty: 1 },\n  { item: \"Puff Puff\",     price: 400,  qty: 3 },\n  { item: \"Chapman Drink\", price: 600,  qty: 2 }\n];\n\n// BUG 1: ReferenceError — misspelled variable\nconsole.log(\"Customer:\", customername);\n\nconst subtotal = orders[0].price + orders[1].price * orders[1].qty + orders[2].price * orders[2].qty;\n\n// BUG 2: TypeError — calling a method on the wrong type\nconsole.log(\"Subtotal: ₦\", subtotal.toUpperCase());\n\n// TODO: Add console.warn if subtotal is below minFreeDelivery (delivery fee applies)\n// TODO: Add console.error if customerName is empty\n// TODO: Add console.table for the orders array\n\nconsole.log(\"Delivery fee: ₦\", deliveryFee);\nconsole.log(\"Orders:\", orders.length, \"items\");\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "bug_fixes",
+            "description": "Both bugs are identified and fixed with a comment above each fix stating the error type and cause: (1) ReferenceError — 'customername' corrected to 'customerName'; (2) TypeError — subtotal.toUpperCase() removed; subtotal is a number and has no toUpperCase method. Each fix is targeted — not a random rewrite",
+            "max_points": 40
+          },
+          {
+            "id": "console_methods",
+            "description": "At least one console.warn added (e.g. if subtotal < minFreeDelivery, delivery fee applies); at least one console.error added (e.g. if customerName === ''); console.table(orders) added to display the orders array; all existing console.log calls use descriptive labels",
+            "max_points": 30
+          },
+          {
+            "id": "error_reading",
+            "description": "The student read the Console error message to locate each bug — demonstrated by: correct identification of the error type in the fix comment; fix targets the exact problematic identifier or method call (not a surrounding rewrite); no unrelated code was changed",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const used for all fixed values; no var; fix comments are clear (e.g. '// Fixed: ReferenceError — customername → customerName'); code runs to completion with correct Console output after all fixes are applied",
+            "max_points": 10
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_2",
+      "project_title": "PiggyVest Savings Dashboard — Debug Challenge",
+      "context": "A PiggyVest savings tracker script with a SyntaxError (missing comma in object) and a ReferenceError (variable used before declaration).",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>PiggyVest &#8212; Savings Dashboard</title>\n</head>\n<body>\n    <h1>PiggyVest Savings Dashboard</h1>\n    <p>Open DevTools (F12) &#8594; Console to see errors and output.</p>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 4 Project — PiggyVest Savings Dashboard\n// This script has 2 bugs. Find them, fix them, then improve it with console.warn and console.error.\n\n// BUG 1: SyntaxError — missing comma in object literal\nconst account = {\n  owner: \"Ngozi Eze\",\n  balance: 87500\n  goal: 150000,\n  streak: 14\n};\n\n// BUG 2: ReferenceError — variable used before its declaration\nconsole.log(\"Remaining to goal: ₦\", remaining);\n\nconst remaining = account.goal - account.balance;\n\n// TODO: Add console.warn if remaining > 50000 (far from goal)\n// TODO: Add console.error if account.balance is negative\n// TODO: Add console.table for a transactions array (create one with 3 entries)\n\nconsole.log(\"Owner:\", account.owner);\nconsole.log(\"Balance: ₦\", account.balance);\nconsole.log(\"Goal: ₦\", account.goal);\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "bug_fixes",
+            "description": "Both bugs are identified and fixed with comments: (1) SyntaxError — comma added after 'balance: 87500'; student notes the entire file failed to run until this was fixed; (2) ReferenceError — console.log(remaining) moved to after the const remaining declaration, or const remaining moved before the log. Each fix is explained in a comment",
+            "max_points": 40
+          },
+          {
+            "id": "console_methods",
+            "description": "console.warn added if remaining > 50000 (87500 − 150000 leaves remaining = 62500, which is > 50000); console.error added if account.balance < 0; console.table added on a new transactions array (student must create this with 3 entries); existing logs have descriptive labels",
+            "max_points": 30
+          },
+          {
+            "id": "error_reading",
+            "description": "Student correctly identifies the SyntaxError type and explains that the whole file failed to run; correctly identifies the ReferenceError type and explains that const/let cannot be accessed before the line they are declared; fix comments demonstrate reading the error, not random changes",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const for all values; no var; fix comments are precise; the created transactions array uses realistic PiggyVest data (deposits/withdrawals with dates and amounts in Naira); code runs fully after all fixes",
+            "max_points": 10
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_3",
+      "project_title": "Konga Product Listing — Debug Challenge",
+      "context": "A Konga product listing script with a TypeError (method called on undefined) and a ReferenceError (misspelled object property access).",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Konga &#8212; Product Listing</title>\n</head>\n<body>\n    <h1>Konga Product Listing</h1>\n    <p>Open DevTools (F12) &#8594; Console to see errors and output.</p>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 4 Project — Konga Product Listing\n// This script has 2 bugs. Find them, fix them, then improve it with console methods.\n\nconst product = {\n  name: \"Tecno Spark 20 Pro\",\n  price: 89000,\n  category: \"Phones & Tablets\",\n  stock: 12,\n  seller: \"TechHaven Store\"\n};\n\nconst reviews = [\n  { reviewer: \"Emeka O.\", rating: 5, comment: \"Excellent battery life\" },\n  { reviewer: \"Sade M.\",  rating: 4, comment: \"Good value for money\"  },\n  { reviewer: \"Kola A.\",  rating: 3, comment: \"Average camera\"        }\n];\n\n// BUG 1: TypeError — product.rating is undefined; calling .toFixed(1) on undefined\nconst displayRating = product.rating.toFixed(1);\nconsole.log(\"Average rating:\", displayRating);\n\n// BUG 2: ReferenceError — misspelled variable\nconsole.log(\"Category:\", product.Category);\n\n// TODO: Add console.warn if product.stock < 5 (low stock)\n// TODO: Add console.error if product.price <= 0\n// TODO: Add console.table for the reviews array\n\nconsole.log(\"Product:\", product.name);\nconsole.log(\"Price: ₦\", product.price);\nconsole.log(\"Seller:\", product.seller);\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "bug_fixes",
+            "description": "Both bugs fixed with comments: (1) TypeError — product.rating is undefined because the product object has no 'rating' property. Fix: compute the average from the reviews array (e.g. (reviews[0].rating + reviews[1].rating + reviews[2].rating) / 3) or add a rating property to the product object; (2) ReferenceError equivalent — 'product.Category' returns undefined, not a ReferenceError (student may discover this distinction); correct fix: product.category (lowercase c). Note: property access on an object with a wrong key returns undefined rather than ReferenceError — this is an important distinction worth accepting either explanation",
+            "max_points": 40
+          },
+          {
+            "id": "console_methods",
+            "description": "console.warn added if product.stock < 5 (stock is 12 so warn does not fire, but the code must be present and correct); console.error added if product.price <= 0 (price is 89000 so error does not fire, but must be present and correct); console.table(reviews) added; all existing logs have descriptive labels",
+            "max_points": 30
+          },
+          {
+            "id": "error_reading",
+            "description": "Student correctly identifies the TypeError and explains that calling .toFixed(1) on undefined fails; explains the undefined property access issue for product.Category; fix comments demonstrate understanding rather than random changes",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase throughout; const used correctly; no var; fix comments are clear and accurate; final script runs to completion with no errors; console.table displays a readable grid of reviews",
+            "max_points": 10
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_4",
+      "project_title": "Paystack Transaction Report — Debug Challenge",
+      "context": "A Paystack transaction summary script with a SyntaxError (missing closing bracket) and a TypeError (calling a function on a non-function value).",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Paystack &#8212; Transaction Report</title>\n</head>\n<body>\n    <h1>Paystack Transaction Report</h1>\n    <p>Open DevTools (F12) &#8594; Console to see errors and output.</p>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 4 Project — Paystack Transaction Report\n// This script has 2 bugs. Find them, fix them, then improve it with console methods.\n\nconst merchant    = \"Publica Academy\";\nconst totalAmount = 125000;\nconst feeRate     = 0.014;\n\n// BUG 1: SyntaxError — missing closing parenthesis\nconsole.log(\"Merchant:\", merchant;\n\nconst processingFee = totalAmount * feeRate;\nconst netAmount     = totalAmount - processingFee;\n\nconst transactions = [\n  { ref: \"PSK_001\", amount: 35000, status: \"success\" },\n  { ref: \"PSK_002\", amount: 50000, status: \"success\" },\n  { ref: \"PSK_003\", amount: 40000, status: \"pending\" }\n];\n\n// BUG 2: TypeError — feeRate is a number, not a function\nconsole.log(\"Fee rate:\", feeRate());\n\n// TODO: Add console.warn if processingFee > 2000 (high fee)\n// TODO: Add console.error if totalAmount <= 0\n// TODO: Add console.table for the transactions array\n\nconsole.log(\"Total: ₦\", totalAmount);\nconsole.log(\"Processing fee: ₦\", processingFee);\nconsole.log(\"Net amount: ₦\", netAmount);\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "bug_fixes",
+            "description": "Both bugs fixed with comments: (1) SyntaxError — missing closing parenthesis on console.log('Merchant:', merchant; — add the closing ) so it becomes console.log('Merchant:', merchant); Student must note the file did not run at all until this was fixed; (2) TypeError — feeRate() treats feeRate as a function; feeRate is a number (0.014). Fix: remove the () so it reads console.log('Fee rate:', feeRate);",
+            "max_points": 40
+          },
+          {
+            "id": "console_methods",
+            "description": "console.warn added if processingFee > 2000 (processingFee = 125000 * 0.014 = 1750, so warn does NOT fire — but the condition must be correctly written); console.error added if totalAmount <= 0 (125000 > 0 so error does not fire — but must be present); console.table(transactions) added; all existing logs have descriptive labels",
+            "max_points": 30
+          },
+          {
+            "id": "error_reading",
+            "description": "Student identifies SyntaxError type and notes the whole file failed to run; identifies TypeError type and explains that feeRate is a number not a function; fix comments are targeted at the specific problem",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const used correctly; no var; fix comments accurate; all logs have labels; arithmetic (processingFee = 1750, netAmount = 123250) is correct in the output after all fixes applied",
+            "max_points": 10
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_5",
+      "project_title": "Bolt Ride Analytics — Debug Challenge",
+      "context": "A Bolt ride analytics script with a ReferenceError (variable out of scope) and a TypeError (string method on number), plus missing console improvements.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Bolt &#8212; Ride Analytics</title>\n</head>\n<body>\n    <h1>Bolt Ride Analytics</h1>\n    <p>Open DevTools (F12) &#8594; Console to see errors and output.</p>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 4 Project — Bolt Ride Analytics\n// This script has 2 bugs. Find them, fix them, then improve it with console methods.\n\nconst driverName  = \"Emeka Okafor\";\nconst totalTrips  = 843;\nconst totalEarned = 215000;\nconst avgRating   = 4.92;\n\nconst recentRides = [\n  { route: \"VI to Lekki\",       fare: 1800, rating: 5 },\n  { route: \"Ikeja to Surulere\", fare: 2200, rating: 4 },\n  { route: \"Lekki to VI\",       fare: 1600, rating: 5 }\n];\n\n// BUG 1: TypeError — totalTrips is a number; numbers have no .includes() method\nconst isMilestone = totalTrips.includes(\"8\");\nconsole.log(\"Is milestone trip:\", isMilestone);\n\n// BUG 2: ReferenceError — avgrating is not defined (wrong case)\nconsole.log(\"Average rating:\", avgrating);\n\n// TODO: Add console.warn if avgRating < 4.5 (below Bolt standard)\n// TODO: Add console.error if totalTrips === 0\n// TODO: Add console.table for the recentRides array\n\nconsole.log(\"Driver:\", driverName);\nconsole.log(\"Total trips:\", totalTrips);\nconsole.log(\"Total earned: ₦\", totalEarned);\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "bug_fixes",
+            "description": "Both bugs fixed with comments: (1) TypeError — totalTrips.includes('8') fails because totalTrips is a number and numbers have no includes() method. Fix: convert to string first — String(totalTrips).includes('8') → returns true (843 contains '8'); or use a different check such as totalTrips % 100 === 43; (2) ReferenceError — 'avgrating' should be 'avgRating' (capital R). JavaScript is case-sensitive. Fix: console.log('Average rating:', avgRating);",
+            "max_points": 40
+          },
+          {
+            "id": "console_methods",
+            "description": "console.warn added if avgRating < 4.5 (avgRating is 4.92 so warn does not fire — but condition must be correctly written); console.error added if totalTrips === 0 (843 !== 0 so error does not fire — but must be present); console.table(recentRides) added; all existing logs have descriptive labels",
+            "max_points": 30
+          },
+          {
+            "id": "error_reading",
+            "description": "Student correctly identifies the TypeError and explains includes() is a string/array method not available on numbers; correctly identifies the ReferenceError and the case mismatch; fix comments demonstrate reading and understanding the error messages",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase throughout; const used correctly; no var; fix comments are clear; recentRides table displays correctly after fix; script runs to completion with no errors",
+            "max_points": 10
+          }
+        ]
+      }
+    }
+  ]
+}

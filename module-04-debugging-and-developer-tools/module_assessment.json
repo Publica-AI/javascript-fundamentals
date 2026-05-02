@@ -1,0 +1,140 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Debugging & Developer Tools",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_package"
+  },
+  "question_packages": [
+    {
+      "package_id": "pkg_1",
+      "questions": [
+        {
+          "question_id": "pkg1_q1",
+          "type": "code",
+          "prompt": "A PiggyVest savings script has the following data. Write four console calls: (1) console.log with a label showing the user's name and balance; (2) console.warn if the balance is below minBalance; (3) console.error if the accountName is an empty string; (4) console.table showing the transactions array.\n\n```js\nconst accountName  = \"Ngozi Eze\";\nconst balance      = 4200;\nconst minBalance   = 5000;\nconst transactions = [\n  { date: \"2025-04-01\", amount: 3000,  type: \"deposit\"    },\n  { date: \"2025-04-08\", amount: -1500, type: \"withdrawal\" },\n  { date: \"2025-04-15\", amount: 2700,  type: \"deposit\"    }\n];\n```",
+          "expected_answer": "console.log(\"Account:\", accountName, \"| Balance: ₦\", balance);\nconsole.warn(\"Balance below minimum — current:\", balance, \"min:\", minBalance);\n// console.error is NOT triggered because accountName is not empty\n// If accountName were \"\": console.error(\"Account name cannot be empty!\");\nconsole.table(transactions);\n\n// Key points: balance (4200) < minBalance (5000) so warn fires;\n// accountName is not empty so error does NOT fire (or student may add an if check);\n// console.table receives the transactions array",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg1_q2",
+          "type": "code",
+          "prompt": "The following script throws a ReferenceError. Identify the bug, explain what type of error it is and why, then write the corrected line.\n\n```js\nconst transactionRef = \"PSK_LIVE_2025_0044\";\nconst amount         = 25000;\n\nconsole.log(\"Reference:\", transactionref);\nconsole.log(\"Amount: ₦\", amount);\n```",
+          "expected_answer": "Bug: 'transactionref' is misspelled — should be 'transactionRef' (capital R).\nError type: ReferenceError — JavaScript cannot find a variable named 'transactionref'.\nJavaScript is case-sensitive: transactionRef and transactionref are two different identifiers.\n\nCorrected line:\nconsole.log(\"Reference:\", transactionRef);",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg1_q3",
+          "type": "text",
+          "prompt": "Explain the difference between console.log(), console.warn(), and console.error(). When should you use each?",
+          "expected_answer": "console.log() outputs standard text to the Console with no visual styling — used for general debugging output and inspecting variable values during development. console.warn() outputs with a yellow background and warning icon — used when something might be a problem but execution can continue (e.g. a balance below a threshold, a deprecated API call). console.error() outputs with a red background and error icon — used when something has definitely gone wrong and needs attention (e.g. a required field is empty, a required value is missing). All three log to the Console without stopping code execution. None of them should remain in production code.",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_2",
+      "questions": [
+        {
+          "question_id": "pkg2_q1",
+          "type": "code",
+          "prompt": "The following Konga cart script throws a TypeError. Identify the exact line causing the error, explain why it is a TypeError, then write the corrected version of that line.\n\n```js\nconst cartTotal = null;\nconst itemCount = 3;\n\nconsole.log(\"Items:\", itemCount);\nconsole.log(\"Total: ₦\", cartTotal.toFixed(2));\nconsole.log(\"Delivery: free\");\n```",
+          "expected_answer": "Bug: line 5 — cartTotal.toFixed(2)\nReason: cartTotal is null. null has no methods. Calling .toFixed(2) on null throws:\n  TypeError: Cannot read properties of null (reading 'toFixed')\nThis is a TypeError because null is not a number — it cannot use number methods.\n\nFix: The cartTotal should be 0 (or a real number) instead of null.\nconst cartTotal = 0;\n// Then: console.log(\"Total: ₦\", cartTotal.toFixed(2)); — works correctly, outputs \"Total: ₦ 0.00\"",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg2_q2",
+          "type": "code",
+          "prompt": "You have an array of three Bolt trip objects. Write: (1) a console.table call to display all three trips; (2) a variable that calculates the sum of all fare amounts; (3) a console.warn if the total fare exceeds ₦5000.\n\n```js\nconst trips = [\n  { date: \"2025-04-10\", from: \"VI\",   to: \"Lekki\",   fare: 1800 },\n  { date: \"2025-04-14\", from: \"Ikeja\", to: \"Surulere\", fare: 2200 },\n  { date: \"2025-04-20\", from: \"Lekki\", to: \"VI\",       fare: 1600 }\n];\n```",
+          "expected_answer": "console.table(trips);\n\nconst totalFare = trips[0].fare + trips[1].fare + trips[2].fare; // 5600\n// OR using reduce (acceptable if student knows it): trips.reduce((sum, t) => sum + t.fare, 0)\n\nconsole.warn(\"Total fare exceeds ₦5000:\", totalFare);\n// warn fires because 5600 > 5000\n\n// Note: console.table should display a grid with columns: (index), date, from, to, fare",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg2_q3",
+          "type": "text",
+          "prompt": "What is a ReferenceError? Give one example of JavaScript code that causes a ReferenceError and explain exactly why that code triggers it.",
+          "expected_answer": "A ReferenceError occurs when JavaScript tries to access a variable or identifier that does not exist in the current scope. This happens in three main situations: (1) the variable name is misspelled — JavaScript is case-sensitive, so myName and myname are different identifiers; (2) the variable is used before it is declared with const or let; (3) the variable was declared inside a function or block and is being accessed from outside that scope. Example: const city = \"Lagos\"; console.log(cty); — this throws ReferenceError: cty is not defined because 'cty' (with the 'i' missing) is not a declared variable anywhere in scope.",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_3",
+      "questions": [
+        {
+          "question_id": "pkg3_q1",
+          "type": "code",
+          "prompt": "The following Flutterwave script has a SyntaxError that prevents the entire file from running. Find the bug, explain why it is a SyntaxError, and write the corrected code.\n\n```js\nconst payment = {\n  merchant: \"Publica Academy\",\n  amount: 35000\n  currency: \"NGN\",\n  status: \"success\"\n};\n\nconsole.log(\"Payment:\", payment.merchant, \"₦\", payment.amount);\n```",
+          "expected_answer": "Bug: missing comma after the amount property value (line 3).\namount: 35000   ← needs a comma at the end\n\nReason: JavaScript object literals require a comma between every key-value pair. Without the comma after 35000, JavaScript cannot parse the object — it encounters 'currency' and does not know what to do with it, so it throws:\n  SyntaxError: Unexpected identifier 'currency'\n\nThis is a SyntaxError (not a ReferenceError or TypeError) because the problem is with the structure of the code itself — JavaScript cannot even parse the file. None of the code runs at all.\n\nCorrected:\nconst payment = {\n  merchant: \"Publica Academy\",\n  amount: 35000,\n  currency: \"NGN\",\n  status: \"success\"\n};",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg3_q2",
+          "type": "code",
+          "prompt": "The following four console.log calls have no descriptive labels. Rewrite all four so each has a meaningful label as its first argument.\n\n```js\nconst storeName = \"Konga\";\nconst totalSales = 145000;\nconst topProduct = \"Tecno Spark 20 Pro\";\nconst isOpen = true;\n\nconsole.log(storeName);\nconsole.log(totalSales);\nconsole.log(topProduct);\nconsole.log(isOpen);\n```",
+          "expected_answer": "console.log(\"Store:\", storeName);\nconsole.log(\"Total sales: ₦\", totalSales);\nconsole.log(\"Top product:\", topProduct);\nconsole.log(\"Store is open:\", isOpen);\n\n// Acceptable variations: labels can differ in wording as long as each call\n// has a string label as the first argument that clearly identifies the value being logged",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg3_q3",
+          "type": "text",
+          "prompt": "Explain what is different about a SyntaxError compared to a ReferenceError or TypeError. What happens to code execution when a SyntaxError occurs, and why does that make it harder to debug?",
+          "expected_answer": "A SyntaxError means JavaScript cannot parse the code at all — the file's structure is invalid. Unlike ReferenceError and TypeError (which occur during execution — while the code is actually running), a SyntaxError prevents execution from starting. Not a single line of the file runs. This makes it harder to debug because: (1) the line number reported in the error is where JavaScript gave up parsing, not necessarily where the actual mistake is — the real bug is often on the line before; (2) you cannot use console.log to help trace the issue because nothing executes; (3) common causes include missing closing brackets or braces, missing commas in object literals or function arguments, or using = instead of : in an object. To fix a SyntaxError, work backwards from the reported line looking for unclosed brackets, missing commas, or wrong punctuation.",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_4",
+      "questions": [
+        {
+          "question_id": "pkg4_q1",
+          "type": "code",
+          "prompt": "Each of the three code snippets below throws a different type of error. For each one: (a) state what type of error it throws, (b) explain in one sentence why.\n\n```js\n// Snippet A\nconst courseFee = 35000;\ncourseFee();\n\n// Snippet B\nconst studentId = \"PUB-2025-0044\";\nconsole.log(\"ID:\", studentID);\n\n// Snippet C\nconst profile = {\n  name: \"Ada\"\n  city: \"Abuja\"\n};\n```",
+          "expected_answer": "Snippet A: TypeError — courseFee is a number (35000), not a function; calling it with () is an invalid operation for its type. Error message: 'courseFee is not a function'.\n\nSnippet B: ReferenceError — 'studentID' (capital D) does not exist; the declared variable is 'studentId' (lowercase d). JavaScript is case-sensitive. Error message: 'studentID is not defined'.\n\nSnippet C: SyntaxError — missing comma after the 'name' property value. The object cannot be parsed. Error message: 'Unexpected identifier city'. The entire file fails to run.",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg4_q2",
+          "type": "code",
+          "prompt": "A student is debugging a loop that calculates total sales for a Chowdeck delivery record. They want to add console.log calls to see what is happening at each step. Write the console.log statements they should add: one before the loop (showing the starting total), and one inside the loop (showing the current index, the current order value, and the running total after each addition).\n\n```js\nconst orders = [3200, 1800, 4500, 900, 2700];\nlet salesTotal = 0;\n\nfor (let i = 0; i < orders.length; i++) {\n  salesTotal = salesTotal + orders[i];\n}\n\nconsole.log(\"Final total: ₦\", salesTotal);\n```",
+          "expected_answer": "// Before the loop:\nconsole.log(\"Starting total:\", salesTotal);\n\n// Inside the loop (after the addition):\nfor (let i = 0; i < orders.length; i++) {\n  salesTotal = salesTotal + orders[i];\n  console.log(\"Iteration:\", i, \"| Added: ₦\", orders[i], \"| Running total: ₦\", salesTotal);\n}\n\n// Expected output:\n// Starting total: 0\n// Iteration: 0 | Added: ₦ 3200 | Running total: ₦ 3200\n// Iteration: 1 | Added: ₦ 1800 | Running total: ₦ 5000\n// Iteration: 2 | Added: ₦ 4500 | Running total: ₦ 9500\n// Iteration: 3 | Added: ₦ 900  | Running total: ₦ 10400\n// Iteration: 4 | Added: ₦ 2700 | Running total: ₦ 13100\n// Final total: ₦ 13100",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg4_q3",
+          "type": "text",
+          "prompt": "In the Chrome DevTools debugger, what is the difference between pressing F10 (Step Over) and pressing F8 (Resume) while paused at a breakpoint? Give an example of when you would use each.",
+          "expected_answer": "F10 (Step Over) executes the current line and pauses again on the very next line. It moves forward one line at a time. Use F10 when you want to observe what happens on each individual line — for example, watching a variable's value change after each line inside a loop iteration, or tracing through a short block of code to find the exact line where a wrong value appears. F8 (Resume) continues execution at full speed until the next breakpoint is encountered. Use F8 when you are inside a loop and want to skip to the start of the next iteration — the breakpoint fires again at the same line for the next pass through the loop. In practice: use F10 to step through individual lines slowly, use F8 to jump iteration-by-iteration when the breakpoint is inside a loop.",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_5",
+      "questions": [
+        {
+          "question_id": "pkg5_q1",
+          "type": "code",
+          "prompt": "The following Cowry Budget script has two bugs — one ReferenceError and one TypeError. Find both bugs, identify each error type, and write the corrected script.\n\n```js\nconst userName    = \"Bayo Adeyemi\";\nconst monthlyIncome = 285000;\nconst savingsGoal   = 60000;\n\nconsole.log(\"User:\", username);\nconsole.log(\"Income: ₦\", monthlyIncome);\n\nconst goalPercent = savingsGoal.slice(0, 3);\nconsole.log(\"Goal (first 3 chars):\", goalPercent);\n```",
+          "expected_answer": "Bug 1 — ReferenceError on line 5:\n'username' should be 'userName' (capital N).\nconsole.log(\"User:\", userName);\n\nBug 2 — TypeError on line 8:\n'savingsGoal' is a number (60000). Numbers do not have a .slice() method — that is a string method.\nFix: either convert to string first, or simply log the number directly.\nconst goalPercent = String(savingsGoal).slice(0, 3); // produces \"600\"\n// OR: just remove the .slice() call and log savingsGoal directly\n\nFull corrected script:\nconst userName      = \"Bayo Adeyemi\";\nconst monthlyIncome = 285000;\nconst savingsGoal   = 60000;\n\nconsole.log(\"User:\", userName);\nconsole.log(\"Income: ₦\", monthlyIncome);\n\nconst goalPrefix = String(savingsGoal).slice(0, 3);\nconsole.log(\"Goal prefix:\", goalPrefix);",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg5_q2",
+          "type": "code",
+          "prompt": "Rewrite the following script to use appropriate console methods. Replace all bare console.log calls with labeled ones. Add a console.warn if the available balance is below ₦10000. Add a console.error if the orderId is an empty string.\n\n```js\nconst orderId       = \"\";\nconst customerName  = \"Amara Obi\";\nconst orderTotal    = 8500;\nconst balance       = 7200;\n\nconsole.log(orderId);\nconsole.log(customerName);\nconsole.log(orderTotal);\nconsole.log(balance);\n```",
+          "expected_answer": "const orderId      = \"\";\nconst customerName = \"Amara Obi\";\nconst orderTotal   = 8500;\nconst balance      = 7200;\n\nconsole.log(\"Order ID:\", orderId);\nconsole.log(\"Customer:\", customerName);\nconsole.log(\"Order total: ₦\", orderTotal);\nconsole.log(\"Balance: ₦\", balance);\n\nif (balance < 10000) {\n  console.warn(\"Balance is below ₦10,000 — current balance: ₦\", balance);\n}\n\nif (orderId === \"\") {\n  console.error(\"Order ID cannot be empty!\");\n}\n\n// Both conditions are true here: balance (7200) < 10000, and orderId is empty string",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg5_q3",
+          "type": "text",
+          "prompt": "Explain the production rule for console methods. Why should console.log calls be removed before deploying JavaScript code to a live website? What specific risks do they create?",
+          "expected_answer": "Console.log calls should be removed before deploying because: (1) Performance — logging statements add overhead, and logging large objects (arrays, API responses) slows down the application; (2) Security — the Console is visible to any user who opens DevTools on the live site. console.log calls may accidentally expose sensitive data such as user IDs, API keys, internal variable names, object structures, or business logic that should not be visible to end users; (3) Professionalism — console output in a live app tells users (and potential attackers) that the code was not cleaned up before deployment; (4) Code quality — many companies use ESLint rules that fail the build if console.log is found in production code. The correct approach is to use console.log freely during development, then search the codebase for 'console.log' before any deployment and remove every instance. Some teams use logging libraries that can be disabled in production without touching each individual call.",
+          "max_points": 20
+        }
+      ]
+    }
+  ]
+}
