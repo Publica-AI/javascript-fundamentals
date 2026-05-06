@@ -1,0 +1,226 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Control Flow — Conditionals",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_project"
+  },
+  "pool_brief": "You are given a starter HTML file for a Nigerian business scenario. Write script.js to process and log the page data using conditional statements. Your script.js must: (1) use at least one if/else if/else chain with three or more branches and correct condition order (most specific first); (2) use at least one switch statement with three or more cases, a break after every case, and a default; (3) use at least one ternary operator to assign a short label or display value; (4) use the || default value pattern at least once to handle a potentially empty or falsy value; (5) combine && or || in at least one condition. Log all outputs with descriptive labels using console.log. Do not modify the HTML file.",
+  "project_pool": [
+    {
+      "project_id": "proj_1",
+      "project_title": "PiggyVest Savings Tier Calculator",
+      "context": "A PiggyVest savings dashboard where the user's tier (Bronze, Silver, Gold, Platinum) is determined by their balance, and their daily interest rate is determined by their tier.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>PiggyVest &#8212; Savings Dashboard</title>\n</head>\n<body>\n    <header>\n        <h1 id=\"app-name\">PiggyVest</h1>\n        <p id=\"tagline\">Save better. Invest smarter.</p>\n    </header>\n    <main>\n        <section id=\"account\">\n            <h2>Account Details</h2>\n            <p id=\"owner\">Ada Okonkwo</p>\n            <p id=\"balance\">Balance: &#8358;87,500</p>\n            <p id=\"goal\">Goal: &#8358;200,000</p>\n            <p id=\"streak\">Saving streak: 21 days</p>\n            <p id=\"nickname\"></p>\n        </section>\n        <section id=\"tiers\">\n            <h2>Tier System</h2>\n            <p>Bronze: below &#8358;50,000</p>\n            <p>Silver: &#8358;50,000 &#8211; &#8358;99,999</p>\n            <p>Gold: &#8358;100,000 &#8211; &#8358;199,999</p>\n            <p>Platinum: &#8358;200,000 and above</p>\n        </section>\n    </main>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 5 Project — PiggyVest Savings Tier Calculator\n// Use conditional statements to determine the user's tier, interest rate, and status.\n// Requirements: if/else if chain (4 branches), switch (tier → interest rate), ternary, || default.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "if_else_chain",
+            "description": "An if/else if/else chain with 4 branches assigns the correct tier: Platinum (>= 200000), Gold (>= 100000), Silver (>= 50000), Bronze (else). Balance is 87500 so Silver is the correct output. Conditions are ordered from highest to lowest (most specific first). At least one condition uses && or || — e.g. checking if streak >= 21 && tier is Silver for a milestone bonus",
+            "max_points": 30
+          },
+          {
+            "id": "switch_statement",
+            "description": "A switch on the tier string maps each tier to a daily interest rate: 'Platinum' → 0.5%, 'Gold' → 0.35%, 'Silver' → 0.25%, 'Bronze' → 0.1%; break after every case; default handles unknown tiers; the Silver rate (0.25%) is logged for balance 87500",
+            "max_points": 30
+          },
+          {
+            "id": "ternary_and_truthy",
+            "description": "At least one ternary assigns a short label (e.g. goalMet = balance >= goal ? 'Goal reached!' : 'Still saving'); || default pattern used for the empty nickname field (e.g. const displayName = nickname || ownerName); both outputs are logged with descriptive labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase naming; const for fixed values and computed results; no var; all console.log calls have descriptive labels; no unreachable conditions; correct numeric outputs (balance 87500 → Silver tier → 0.25% interest rate → daily interest = 87500 * 0.0025 = 218.75)",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_2",
+      "project_title": "Konga Shipping Eligibility Checker",
+      "context": "A Konga marketplace page where shipping cost and delivery speed are determined by the order total and destination zone.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Konga &#8212; Checkout</title>\n</head>\n<body>\n    <header>\n        <h1 id=\"store\">Konga</h1>\n        <p id=\"tagline\">Nigeria's Trusted Online Marketplace</p>\n    </header>\n    <main>\n        <section id=\"order\">\n            <h2>Order Details</h2>\n            <p id=\"customer\">Emeka Nwosu</p>\n            <p id=\"total\">Order total: &#8358;65,000</p>\n            <p id=\"zone\">Delivery zone: Abuja</p>\n            <p id=\"promo-code\"></p>\n        </section>\n        <section id=\"shipping\">\n            <h2>Shipping Options</h2>\n            <p>Free delivery on orders above &#8358;50,000 (Lagos only)</p>\n            <p>Express: same-day (Lagos), next-day (Abuja), 3 days (other zones)</p>\n            <p>Standard: 3 days (Lagos), 5 days (Abuja), 7 days (other zones)</p>\n        </section>\n    </main>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 5 Project — Konga Shipping Eligibility Checker\n// Use conditional statements to determine delivery cost and timeline.\n// Requirements: if/else if chain (3+ branches), switch (zone → delivery days), ternary, || default.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "if_else_chain",
+            "description": "An if/else if/else chain determines shipping cost based on order total: free if total >= 50000 AND zone is 'Lagos'; discounted (e.g. ₦500) if total >= 50000 but zone is not Lagos; standard fee (e.g. ₦1500) otherwise. Uses && to combine the total and zone conditions. Conditions in correct order (most specific first). 65000 and Abuja correctly produces discounted or standard fee (not free)",
+            "max_points": 30
+          },
+          {
+            "id": "switch_statement",
+            "description": "A switch on the delivery zone determines delivery days for standard shipping: 'Lagos' → '3 days', 'Abuja' → '5 days', any other → '7 days'. Break after every case. Default handles unrecognised zones. Abuja correctly produces '5 days'",
+            "max_points": 30
+          },
+          {
+            "id": "ternary_and_truthy",
+            "description": "At least one ternary used for a short label (e.g. freeDelivery = total >= 50000 && zone === 'Lagos' ? 'Free' : 'Paid'); || default pattern used for the empty promo-code field (e.g. const promoDisplay = promoCode || 'No promo code applied'); both logged with labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase; const for all fixed values; no var; all logs have descriptive labels; the zone condition in the if chain uses === (strict equality); outputs are correct for total 65000 and zone 'Abuja'",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_3",
+      "project_title": "Publica Academy Course Progress Tracker",
+      "context": "A student progress page for a Publica Academy learner showing completion percentage, pace status, and next action recommendation.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Publica Academy &#8212; My Progress</title>\n</head>\n<body>\n    <header>\n        <h1 id=\"school\">Publica Academy</h1>\n        <p id=\"tagline\">Learn. Build. Grow.</p>\n    </header>\n    <main>\n        <section id=\"progress\">\n            <h2>Course Progress</h2>\n            <p id=\"student\">Ngozi Eze</p>\n            <p id=\"course\">JavaScript Fundamentals</p>\n            <p id=\"modules-done\">Modules completed: 11</p>\n            <p id=\"total-modules\">Total modules: 18</p>\n            <p id=\"days-enrolled\">Days enrolled: 28</p>\n            <p id=\"preferred-name\"></p>\n        </section>\n    </main>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 5 Project — Publica Academy Course Progress Tracker\n// Use conditional statements to assess the student's pace and recommend next steps.\n// Requirements: if/else if chain (3+ branches), switch, ternary, || default.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "if_else_chain",
+            "description": "An if/else if/else chain determines pace status based on completion percentage (modulesDone / totalModules * 100): >= 70% → 'On track — excellent pace'; >= 50% → 'On track — steady progress'; >= 30% → 'Slightly behind — pick up the pace'; below 30% → 'At risk — intensive review needed'. 11/18 = 61.1% so 'On track — steady progress' is correct. Conditions ordered most specific (highest %) first",
+            "max_points": 30
+          },
+          {
+            "id": "switch_statement",
+            "description": "A switch on a derived week number (e.g. Math.ceil(daysEnrolled / 7) or a category like 'early', 'mid', 'late') OR a switch on a pace label string maps to a specific next-action recommendation. At least 3 cases with break and a default. Output is logged with a label",
+            "max_points": 30
+          },
+          {
+            "id": "ternary_and_truthy",
+            "description": "At least one ternary used (e.g. const certificateEligible = modulesDone === totalModules ? 'Eligible' : 'In progress'); || default pattern used for the empty preferred-name field (e.g. const displayName = preferredName || studentName); both logged",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase; const for all values; no var; correct percentage calculation (11/18 * 100 ≈ 61.1); all logs labeled; correct pace output for the given data",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_4",
+      "project_title": "Bolt Ride Fare Category Calculator",
+      "context": "A Bolt ride summary page where the fare category (budget, standard, premium) and surge pricing status are determined based on fare amount, time of day, and rating.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Bolt &#8212; Ride Summary</title>\n</head>\n<body>\n    <header>\n        <h1 id=\"app\">Bolt</h1>\n        <p id=\"tagline\">Your city. Your ride.</p>\n    </header>\n    <main>\n        <section id=\"ride\">\n            <h2>Trip Details</h2>\n            <p id=\"driver\">Chidi Okafor</p>\n            <p id=\"fare\">Fare: &#8358;3,200</p>\n            <p id=\"distance\">Distance: 12.5 km</p>\n            <p id=\"hour\">Hour of day: 8</p>\n            <p id=\"driver-rating\">Driver rating: 4.95</p>\n            <p id=\"promo\"></p>\n        </section>\n    </main>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 5 Project — Bolt Ride Fare Category Calculator\n// Use conditional statements to categorise the fare and check surge pricing.\n// Requirements: if/else if chain (3+ branches), switch, ternary, || default.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "if_else_chain",
+            "description": "An if/else if/else chain assigns fare category based on fare amount: >= 5000 → 'Premium ride', >= 2000 → 'Standard ride', else → 'Budget ride'. Fare is 3200 so 'Standard ride' is correct. A combined condition check using && flags surge pricing: if (hour >= 7 && hour <= 9) or (hour >= 17 && hour <= 20) → log 'Surge pricing active'. hour is 8 so surge fires",
+            "max_points": 30
+          },
+          {
+            "id": "switch_statement",
+            "description": "A switch on the fare category string ('Premium ride', 'Standard ride', 'Budget ride') maps to a tip recommendation: Premium → 'Consider a ₦500 tip', Standard → 'Consider a ₦200 tip', Budget → 'No tip expected'. Break after each case. Default handles unexpected values. 'Standard ride' correctly logs the ₦200 tip suggestion",
+            "max_points": 30
+          },
+          {
+            "id": "ternary_and_truthy",
+            "description": "At least one ternary used (e.g. const driverBonus = driverRating >= 4.9 ? 'Bonus eligible' : 'Standard pay'); || default pattern used for the empty promo field (e.g. const promoDisplay = promoCode || 'No promo applied'); both logged with labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase; const used correctly; no var; all logs labeled; surge check correctly identifies hour 8 as peak (morning rush); all outputs correct for the given data (fare 3200, hour 8, rating 4.95)",
+            "max_points": 20
+          }
+        ]
+      }
+    },
+    {
+      "project_id": "proj_5",
+      "project_title": "Cowry Budget Monthly Spending Health",
+      "context": "A Cowry Budget app page showing a user's monthly income, expenses by category, and spending health assessment.",
+      "submission_type": "code",
+      "files": [
+        {
+          "file_path": "index.html",
+          "role": "starter",
+          "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Cowry Budget &#8212; May Report</title>\n</head>\n<body>\n    <header>\n        <h1 id=\"app\">Cowry Budget</h1>\n        <p id=\"tagline\">Track every Naira. Build every dream.</p>\n    </header>\n    <main>\n        <section id=\"summary\">\n            <h2>May 2025 &#8212; Spending Summary</h2>\n            <p id=\"user\">Bayo Adeyemi</p>\n            <p id=\"income\">Income: &#8358;320,000</p>\n            <p id=\"rent\">Rent: &#8358;90,000</p>\n            <p id=\"food\">Food: &#8358;42,000</p>\n            <p id=\"transport\">Transport: &#8358;22,000</p>\n            <p id=\"entertainment\">Entertainment: &#8358;18,000</p>\n            <p id=\"savings\">Savings target: &#8358;80,000</p>\n            <p id=\"budget-name\"></p>\n        </section>\n    </main>\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "file_path": "script.js",
+          "role": "submission",
+          "content": "// Module 5 Project — Cowry Budget Monthly Spending Health\n// Use conditional statements to assess spending health and savings status.\n// Requirements: if/else if chain (3+ branches), switch, ternary, || default.\n"
+        }
+      ],
+      "rubric": {
+        "total_points": 100,
+        "criteria": [
+          {
+            "id": "if_else_chain",
+            "description": "An if/else if/else chain assesses spending health based on what percentage of income went to expenses. totalExpenses = 90000 + 42000 + 22000 + 18000 = 172000; expenseRate = 172000/320000*100 ≈ 53.75%. Chain: >= 80% → 'Critical overspend', >= 65% → 'High spending — review budget', >= 50% → 'Moderate — watch entertainment', else → 'Healthy spending'. 53.75% lands in 'Moderate'. Combined condition: if remaining >= savingsTarget && expenseRate < 60 → 'Savings goal achievable'. remaining = 320000 - 172000 = 148000 >= 80000 AND expenseRate < 60 → both true",
+            "max_points": 30
+          },
+          {
+            "id": "switch_statement",
+            "description": "A switch on a spending category string ('Critical overspend', 'High spending — review budget', 'Moderate — watch entertainment', 'Healthy spending') recommends a specific action. Break after every case. Default handles unexpected values. 'Moderate — watch entertainment' logs the correct recommendation",
+            "max_points": 30
+          },
+          {
+            "id": "ternary_and_truthy",
+            "description": "At least one ternary used (e.g. const savingsStatus = remaining >= savingsTarget ? 'On track' : 'Short of target'); || default pattern used for the empty budget-name field (e.g. const budgetLabel = budgetName || 'May Budget'); both logged with descriptive labels",
+            "max_points": 20
+          },
+          {
+            "id": "code_quality",
+            "description": "camelCase; const for all values and computed results; no var; all arithmetic correct (totalExpenses = 172000, remaining = 148000, expenseRate ≈ 53.75%); all console.log calls have descriptive labels",
+            "max_points": 20
+          }
+        ]
+      }
+    }
+  ]
+}

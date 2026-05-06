@@ -1,0 +1,407 @@
+[
+    {
+        "title": "if else if and else",
+        "description": "What is a conditional",
+        "type": "multiple choice",
+        "question": "What does a conditional do in JavaScript?",
+        "options": "Loops through an array|Runs different code depending on whether a condition is true or false|Declares a variable|Creates a function",
+        "answer": "Runs different code depending on whether a condition is true or false",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "if else if and else",
+        "description": "if block runs",
+        "type": "multiple choice",
+        "question": "When does the code inside an if block run?",
+        "options": "Always|When the condition is false|When the condition is true|When the else block runs",
+        "answer": "When the condition is true",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "if else if and else",
+        "description": "else block runs",
+        "type": "multiple choice",
+        "question": "When does the else block run?",
+        "options": "When the if condition is true|When the if condition is false|Always after the if block|Never",
+        "answer": "When the if condition is false",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Only one branch",
+        "type": "True or False",
+        "question": "Both the if block and the else block can run in the same execution.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Condition type",
+        "type": "multiple choice",
+        "question": "What value type does the condition inside an if statement produce?",
+        "options": "A string|A number|A boolean (true or false)|An array",
+        "answer": "A boolean (true or false)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "if else if and else",
+        "description": "else if purpose",
+        "type": "multiple choice",
+        "question": "What does else if allow you to do?",
+        "options": "Run the same block twice|Check multiple conditions in order|Create a loop|Declare a new variable",
+        "answer": "Check multiple conditions in order",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Checking order",
+        "type": "multiple choice",
+        "question": "In an if/else if chain how are conditions evaluated?",
+        "options": "All at once|From bottom to top|From top to bottom stopping at the first true condition|Randomly",
+        "answer": "From top to bottom stopping at the first true condition",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "First match wins",
+        "type": "multiple choice",
+        "question": "If score is 74 and the chain checks >= 80 then >= 70 then >= 60 which block runs?",
+        "options": ">= 80 block|>= 70 block|>= 60 block|else block",
+        "answer": ">= 70 block",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Wrong order bug",
+        "type": "multiple choice",
+        "question": "If you put score >= 50 as the first condition before >= 70 and >= 80 what happens when score is 74?",
+        "options": "It correctly gets Grade B|It incorrectly matches >= 50 first and the higher grades are never reached|It throws an error|All blocks run",
+        "answer": "It incorrectly matches >= 50 first and the higher grades are never reached",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Order rule",
+        "type": "multiple choice",
+        "question": "What is the correct order for conditions in an if/else if chain?",
+        "options": "Most general condition first|Most specific (most restrictive) condition first|Alphabetical order|Random order",
+        "answer": "Most specific (most restrictive) condition first",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "else as catch-all",
+        "type": "multiple choice",
+        "question": "What role does the final else play in an if/else if/else chain?",
+        "options": "It runs every time|It runs only if no previous condition matched|It checks another condition|It stops the program",
+        "answer": "It runs only if no previous condition matched",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "&& operator in condition",
+        "type": "multiple choice",
+        "question": "What does the condition score >= 50 && attended evaluate to when score is 74 and attended is true?",
+        "options": "false|true|undefined|null",
+        "answer": "true",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "|| operator in condition",
+        "type": "multiple choice",
+        "question": "When does a condition using || (OR) evaluate to true?",
+        "options": "Only when both conditions are true|When at least one condition is true|Only when both conditions are false|Never",
+        "answer": "When at least one condition is true",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "! operator",
+        "type": "multiple choice",
+        "question": "What does !attended evaluate to when attended is true?",
+        "options": "true|false|undefined|null",
+        "answer": "false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Combined condition demo",
+        "type": "multiple choice",
+        "question": "In the demo code: if (score < 50 || !attended) \u2014 when does this block run?",
+        "options": "When score is above 50 and student attended|When score is below 50 OR the student did not attend|Only when both are false|Never",
+        "answer": "When score is below 50 OR the student did not attend",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Certificate eligibility",
+        "type": "multiple choice",
+        "question": "In the demo if (score >= 50 && attended) prints Certificate eligible. When score is 74 and attended is true what prints?",
+        "options": "Certificate eligible: no|Certificate eligible: yes|Nothing|Error",
+        "answer": "Certificate eligible: yes",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Grade A condition",
+        "type": "multiple choice",
+        "question": "What minimum score earns a Grade A Distinction in the demo?",
+        "options": "50|60|70|80",
+        "answer": "80",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "switch statements",
+        "description": "switch purpose",
+        "type": "multiple choice",
+        "question": "What does a switch statement do?",
+        "options": "Loops through values|Checks one value against multiple fixed cases|Combines two conditions|Declares variables",
+        "answer": "Checks one value against multiple fixed cases",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "switch statements",
+        "description": "case keyword",
+        "type": "multiple choice",
+        "question": "What does the case keyword do inside a switch?",
+        "options": "Creates a new variable|Defines a condition to match against the switch value|Starts a loop|Calls a function",
+        "answer": "Defines a condition to match against the switch value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "switch statements",
+        "description": "break purpose",
+        "type": "multiple choice",
+        "question": "What does break do inside a switch statement?",
+        "options": "Ends the program|Exits the switch block so no more cases run|Skips to the next case|Returns a value",
+        "answer": "Exits the switch block so no more cases run",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "switch statements",
+        "description": "default keyword",
+        "type": "multiple choice",
+        "question": "When does the default block run in a switch statement?",
+        "options": "Always|Only when the switch value is undefined|When no case matches the value|Before any case is checked",
+        "answer": "When no case matches the value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "switch statements",
+        "description": "Strict equality",
+        "type": "True or False",
+        "question": "switch uses strict equality (===) to compare the value to each case.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "switch statements",
+        "description": "Fall-through bug",
+        "type": "multiple choice",
+        "question": "What happens if you forget to write break after a case?",
+        "options": "The switch exits automatically|Execution falls through into the next case and runs its code too|An error is thrown|The default block runs",
+        "answer": "Execution falls through into the next case and runs its code too",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "switch statements",
+        "description": "Fall-through demo output",
+        "type": "multiple choice",
+        "question": "In the demo if day is Monday and the Monday case has no break what extra output appears?",
+        "options": "Nothing extra|The Tuesday message also runs|The default message runs|An error",
+        "answer": "The Tuesday message also runs",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "switch statements",
+        "description": "Intentional fall-through",
+        "type": "multiple choice",
+        "question": "How do you group Saturday and Sunday to share the same code in a switch?",
+        "options": "Use an if statement instead|Stack both cases with no code before the shared block then add one break|Write two separate switch statements|Use || inside a case",
+        "answer": "Stack both cases with no code before the shared block then add one break",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "switch statements",
+        "description": "When to use switch",
+        "type": "multiple choice",
+        "question": "When is switch preferred over if/else if?",
+        "options": "For range checks like score >= 70|When checking one variable against fixed string or number values|When combining && and || conditions|For checking truthy/falsy values",
+        "answer": "When checking one variable against fixed string or number values",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "switch statements",
+        "description": "Payment status demo",
+        "type": "multiple choice",
+        "question": "In the demo switch(status) when status is \"pending\" what message is logged?",
+        "options": "Payment confirmed|Payment pending \u2014 awaiting bank confirmation|Payment failed|Unknown status",
+        "answer": "Payment pending \u2014 awaiting bank confirmation",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "switch statements",
+        "description": "Numbers in switch",
+        "type": "multiple choice",
+        "question": "What does the switch log when errorCode is 404: case 200 OK / case 404 Not found / case 500 Server error?",
+        "options": "OK|Not found|Server error|Unknown",
+        "answer": "Not found",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Ternary syntax",
+        "type": "multiple choice",
+        "question": "What is the correct syntax for a ternary operator?",
+        "options": "condition : trueValue ? falseValue|condition ? trueValue : falseValue|if condition then trueValue else falseValue|condition && trueValue || falseValue",
+        "answer": "condition ? trueValue : falseValue",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Ternary parts",
+        "type": "multiple choice",
+        "question": "How many parts does the ternary operator have?",
+        "options": "2|3|4|1",
+        "answer": "3",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Ternary returns value",
+        "type": "True or False",
+        "question": "The ternary operator returns a value that can be assigned to a variable.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Ternary example",
+        "type": "multiple choice",
+        "question": "What does const label = score >= 50 ? \"Pass\" : \"Fail\" assign when score is 74?",
+        "options": "Fail|Pass|undefined|74",
+        "answer": "Pass",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "When not to use ternary",
+        "type": "multiple choice",
+        "question": "When should you avoid using the ternary operator?",
+        "options": "For simple two-way decisions|When you need nested conditions or multiple lines of logic|When assigning to a const|When comparing numbers",
+        "answer": "When you need nested conditions or multiple lines of logic",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Falsy value count",
+        "type": "multiple choice",
+        "question": "How many falsy values does JavaScript have?",
+        "options": "4|5|6|8",
+        "answer": "6",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Zero is falsy",
+        "type": "True or False",
+        "question": "The number 0 is a falsy value in JavaScript.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Empty string falsy",
+        "type": "multiple choice",
+        "question": "What happens when you write if (\"\") { console.log(\"runs\"); }?",
+        "options": "It runs|It does not run because an empty string is falsy|It throws an error|It logs undefined",
+        "answer": "It does not run because an empty string is falsy",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Empty array truthy",
+        "type": "multiple choice",
+        "question": "Is an empty array [] truthy or falsy?",
+        "options": "Falsy|Truthy|Undefined|Null",
+        "answer": "Truthy",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Empty object truthy",
+        "type": "True or False",
+        "question": "An empty object {} is falsy in JavaScript.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Six falsy values",
+        "type": "multiple choice",
+        "question": "Which of the following is NOT one of the six falsy values?",
+        "options": "0|\"\"|[]|null",
+        "answer": "[]",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Default value pattern",
+        "type": "multiple choice",
+        "question": "What does const displayName = username || \"Guest\" do when username is an empty string?",
+        "options": "Assigns \"\"|Assigns \"\"Guest\"\" because empty string is falsy|Throws an error|Assigns undefined\"",
+        "answer": "Assigns \"Guest\" because empty string is falsy",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "null is falsy",
+        "type": "multiple choice",
+        "question": "What happens when you write if (null) { ... }?",
+        "options": "The if block runs|The if block does not run because null is falsy|A TypeError is thrown|The else block throws an error",
+        "answer": "The if block does not run because null is falsy",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Ternary in demo",
+        "type": "multiple choice",
+        "question": "In the demo what does const notification = balance < minBalance ? \"Please top up\" : \"All good\" assign when balance is 4200 and minBalance is 5000?",
+        "options": "All good|Please top up your account|undefined|Error",
+        "answer": "Please top up your account",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Truthy check pattern",
+        "type": "multiple choice",
+        "question": "What does the pattern if (value) { ... } check for?",
+        "options": "If value is strictly true|If value is truthy (not one of the 6 falsy values)|If value is a boolean|If value equals 1",
+        "answer": "If value is truthy (not one of the 6 falsy values)",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "NaN is falsy",
+        "type": "True or False",
+        "question": "NaN (Not a Number) is one of the six falsy values in JavaScript.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Balance zero falsy",
+        "type": "multiple choice",
+        "question": "In the demo if balance is 0 and you write if (balance) { console.log(balance); } what happens?",
+        "options": "It logs 0|Nothing \u2014 0 is falsy so the if block does not run|It throws an error|It logs undefined",
+        "answer": "Nothing \u2014 0 is falsy so the if block does not run",
+        "difficulty": "Advanced"
+    }
+]

@@ -1,0 +1,140 @@
+{
+  "course": "javascript_fundamentals",
+  "module": "Control Flow — Conditionals",
+  "pool_config": {
+    "pool_size": 5,
+    "selection_strategy": "pick_one_package"
+  },
+  "question_packages": [
+    {
+      "package_id": "pkg_1",
+      "questions": [
+        {
+          "question_id": "pkg1_q1",
+          "type": "code",
+          "prompt": "Write an if/else if/else chain that assigns a grade label to a Publica Academy student based on their score. Use these bands: 80+ → 'Distinction', 70–79 → 'Merit', 60–69 → 'Credit', 50–59 → 'Pass', below 50 → 'Fail — retake required'. Test with score = 67.\n\n```js\nconst studentName = \"Ngozi Eze\";\nconst score       = 67;\n// write your if/else if/else chain here\n```",
+          "expected_answer": "const studentName = \"Ngozi Eze\";\nconst score       = 67;\n\nif (score >= 80) {\n  console.log(studentName + \" — Distinction\");\n} else if (score >= 70) {\n  console.log(studentName + \" — Merit\");\n} else if (score >= 60) {\n  console.log(studentName + \" — Credit\");   // 67 lands here\n} else if (score >= 50) {\n  console.log(studentName + \" — Pass\");\n} else {\n  console.log(studentName + \" — Fail — retake required\");\n}\n// Output: Ngozi Eze — Credit\n\n// Key requirements: conditions ordered from highest to lowest (most specific first);\n// else at the end as catch-all; correct threshold values",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg1_q2",
+          "type": "code",
+          "prompt": "A Paystack webhook sends a payment status. Write a switch statement that handles four statuses: 'success' → log 'Payment confirmed — receipt sent'; 'pending' → log 'Awaiting bank confirmation'; 'failed' → log 'Payment failed — please retry'; 'reversed' → log 'Transaction reversed — funds returned'. Add a default that logs 'Unknown status: ' + status. Test with status = 'pending'.\n\n```js\nconst status = \"pending\";\n// write your switch statement here\n```",
+          "expected_answer": "const status = \"pending\";\n\nswitch (status) {\n  case \"success\":\n    console.log(\"Payment confirmed — receipt sent\");\n    break;\n  case \"pending\":\n    console.log(\"Awaiting bank confirmation\");   // runs\n    break;\n  case \"failed\":\n    console.log(\"Payment failed — please retry\");\n    break;\n  case \"reversed\":\n    console.log(\"Transaction reversed — funds returned\");\n    break;\n  default:\n    console.log(\"Unknown status:\", status);\n}\n// Output: Awaiting bank confirmation\n\n// Key requirements: break after every case; default present; case labels use === matching",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg1_q3",
+          "type": "text",
+          "prompt": "Explain what happens when the conditions in an if/else if chain are placed in the wrong order — for example, a less specific condition (>= 50) appears before a more specific one (>= 80). What is the technical term for code that can never be reached? Give a specific example.",
+          "expected_answer": "When a less specific condition appears first in an if/else if chain, it matches too many values and prevents the more specific conditions below it from ever being checked. Since JavaScript evaluates conditions top to bottom and stops at the first match, a condition like `score >= 50` will catch all scores of 50 and above — including 80, 90, and 100 — and execute its block before the `score >= 80` condition is ever reached. Code that can never execute because it is blocked by a condition above it is called 'unreachable code' or 'dead code'. Example: if the grade chain starts with `if (score >= 50)` and then has `else if (score >= 80)`, a score of 90 would incorrectly print the 'Pass' message rather than 'Distinction' because 90 >= 50 is true and JavaScript stops there. Fix: always place the most restrictive (highest) condition first.",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_2",
+      "questions": [
+        {
+          "question_id": "pkg2_q1",
+          "type": "code",
+          "prompt": "The following switch statement has a fall-through bug. Identify the problem, explain what fall-through means, then write the corrected version.\n\n```js\nconst deliveryZone = \"Lagos\";\n\nswitch (deliveryZone) {\n  case \"Lagos\":\n    console.log(\"Same-day delivery available\");\n  case \"Abuja\":\n    console.log(\"Next-day delivery\");\n    break;\n  case \"Kano\":\n    console.log(\"3-day delivery\");\n    break;\n  default:\n    console.log(\"Delivery not available in this zone\");\n}\n```",
+          "expected_answer": "Bug: missing break after the 'Lagos' case.\n\nFall-through means: when a switch case has no break statement, JavaScript does not stop after that case — it continues executing the code in the next case automatically, regardless of whether that case's value matches. In this example, deliveryZone is 'Lagos', so the Lagos case matches. But because there is no break, execution falls through into the 'Abuja' case and runs that code too.\n\nActual (buggy) output:\n  Same-day delivery available\n  Next-day delivery\n\nExpected output:\n  Same-day delivery available\n\nCorrected version:\nswitch (deliveryZone) {\n  case \"Lagos\":\n    console.log(\"Same-day delivery available\");\n    break;   // ← added\n  case \"Abuja\":\n    console.log(\"Next-day delivery\");\n    break;\n  case \"Kano\":\n    console.log(\"3-day delivery\");\n    break;\n  default:\n    console.log(\"Delivery not available in this zone\");\n}",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg2_q2",
+          "type": "code",
+          "prompt": "Rewrite the following if/else as a ternary operator. Then explain in a comment when you would NOT use a ternary and should stick with if/else.\n\n```js\nlet membershipLabel;\nconst isPremium = true;\n\nif (isPremium) {\n  membershipLabel = \"Premium Member\";\n} else {\n  membershipLabel = \"Free Member\";\n}\nconsole.log(membershipLabel);\n```",
+          "expected_answer": "const isPremium      = true;\nconst membershipLabel = isPremium ? \"Premium Member\" : \"Free Member\";\nconsole.log(membershipLabel);  // Premium Member\n\n// Key improvements: let becomes const (ternary assigns immediately);\n// four lines become one line\n\n// When NOT to use ternary (comment):\n// Do not use ternary when either branch requires multiple statements,\n// complex logic, or when the condition is long and hard to read on one line.\n// Also avoid nested ternaries — a chain like:\n//   score >= 80 ? 'A' : score >= 70 ? 'B' : 'C'\n// is harder to read and debug than an if/else if chain.",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg2_q3",
+          "type": "text",
+          "prompt": "List all six falsy values in JavaScript. For each one, give a brief explanation of why it is considered falsy. Then give one example of a value that students often expect to be falsy but is actually truthy — and explain why.",
+          "expected_answer": "The six falsy values in JavaScript are: (1) false — the literal boolean false value; (2) 0 — the number zero (JavaScript treats zero as 'nothing'); (3) '' (empty string) — a string with no characters, representing absence of text; (4) null — a value explicitly set to 'nothing' by the developer; (5) undefined — a variable that has been declared but not yet assigned a value; (6) NaN — 'Not a Number', produced by invalid arithmetic like 0/0 or Number('abc'). Everything else is truthy — including any non-zero number, any non-empty string, objects, and arrays. A commonly misunderstood example: an empty array []. Students often expect it to be falsy because it 'has nothing in it', but JavaScript treats all object references (including arrays and objects) as truthy. `if ([])` will always execute. To check if an array is actually empty, use `array.length === 0`.",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_3",
+      "questions": [
+        {
+          "question_id": "pkg3_q1",
+          "type": "code",
+          "prompt": "A Bolt driver must meet two conditions to receive a bonus: more than 200 trips completed AND an average rating above 4.5. They receive a consolation discount if they have completed more than 100 trips OR maintained a rating above 4.8 (but did not qualify for the full bonus). Write the if/else if/else chain for this logic. Test with trips = 250 and rating = 4.6.\n\n```js\nconst driverName = \"Emeka Okafor\";\nconst trips      = 250;\nconst rating     = 4.6;\n// write your conditional here\n```",
+          "expected_answer": "const driverName = \"Emeka Okafor\";\nconst trips      = 250;\nconst rating     = 4.6;\n\nif (trips > 200 && rating > 4.5) {\n  console.log(driverName + \": Full bonus earned\");        // runs (250>200 AND 4.6>4.5)\n} else if (trips > 100 || rating > 4.8) {\n  console.log(driverName + \": Consolation discount earned\");\n} else {\n  console.log(driverName + \": No bonus this period\");\n}\n// Output: Emeka Okafor: Full bonus earned\n\n// Key: && requires both; || requires at least one; else if only checks when first if was false",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg3_q2",
+          "type": "code",
+          "prompt": "Write a switch statement that maps a Publica Academy module number to its topic name. Group cases: modules 1–3 map to 'Foundations', modules 4–6 map to 'Core JavaScript', modules 7–9 map to 'Functions & Arrays', and anything else maps to 'Advanced Topics'.\n\nNote: switch can only match exact values — you will need to list each module number as a separate case.\n\n```js\nconst moduleNumber = 5;\n// write your switch here\n```",
+          "expected_answer": "const moduleNumber = 5;\n\nswitch (moduleNumber) {\n  case 1:\n  case 2:\n  case 3:\n    console.log(\"Module\", moduleNumber, \"— Foundations\");\n    break;\n  case 4:\n  case 5:\n  case 6:\n    console.log(\"Module\", moduleNumber, \"— Core JavaScript\");  // runs\n    break;\n  case 7:\n  case 8:\n  case 9:\n    console.log(\"Module\", moduleNumber, \"— Functions & Arrays\");\n    break;\n  default:\n    console.log(\"Module\", moduleNumber, \"— Advanced Topics\");\n}\n// Output: Module 5 — Core JavaScript\n\n// Key: stacked empty cases share one code block and one break; this is intentional grouping",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg3_q3",
+          "type": "text",
+          "prompt": "Explain the difference between switch and if/else if. When should you choose switch over if/else if, and when should you stick with if/else if? Give one example of a scenario that suits each.",
+          "expected_answer": "switch checks a single variable or expression against a list of exact values using strict equality (===). It is best for: checking one value against a fixed set of known string or number options, such as payment statuses ('success', 'pending', 'failed') or day names ('Monday', 'Tuesday'). It is cleaner than a long if/else chain when there are many fixed options. if/else if checks conditions rather than exact values — it evaluates full boolean expressions and supports ranges (>= 80), multiple variables combined with && and ||, and any condition that cannot be expressed as an exact match. It is necessary whenever the decision involves: range comparisons (score >= 80), combined conditions (trips > 200 && rating > 4.5), or checking different variables in different branches. Example for switch: handling API response status codes (200, 404, 500). Example for if/else if: calculating a discount based on order total ranges (>= 50000 gets 20%, >= 20000 gets 10%, etc.).",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_4",
+      "questions": [
+        {
+          "question_id": "pkg4_q1",
+          "type": "code",
+          "prompt": "For each value below, predict whether `if (value)` will run the if block or the else block. Write your prediction as a comment, then confirm by writing the if/else for each.\n\n```js\nconst a = [];          // empty array\nconst b = {};          // empty object\nconst c = \"\";          // empty string\nconst d = 0;           // zero\nconst e = \"0\";         // string \"0\"\nconst f = null;        // null\n```",
+          "expected_answer": "const a = [];    // [] — truthy (empty array is an object reference)\nif (a) { console.log(\"a: truthy\"); } else { console.log(\"a: falsy\"); }\n// Output: a: truthy\n\nconst b = {};    // {} — truthy (empty object is an object reference)\nif (b) { console.log(\"b: truthy\"); } else { console.log(\"b: falsy\"); }\n// Output: b: truthy\n\nconst c = \"\";   // \"\" — FALSY (empty string)\nif (c) { console.log(\"c: truthy\"); } else { console.log(\"c: falsy\"); }\n// Output: c: falsy\n\nconst d = 0;    // 0 — FALSY (zero)\nif (d) { console.log(\"d: truthy\"); } else { console.log(\"d: falsy\"); }\n// Output: d: falsy\n\nconst e = \"0\";  // \"0\" — truthy (non-empty string — the content is irrelevant)\nif (e) { console.log(\"e: truthy\"); } else { console.log(\"e: falsy\"); }\n// Output: e: truthy\n\nconst f = null; // null — FALSY\nif (f) { console.log(\"f: truthy\"); } else { console.log(\"f: falsy\"); }\n// Output: f: falsy",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg4_q2",
+          "type": "code",
+          "prompt": "The following if/else if chain has its conditions in the wrong order. Identify the problem, explain which outputs are unreachable, and rewrite it in the correct order.\n\n```js\nconst orderTotal = 85000;\n\nif (orderTotal >= 10000) {\n  console.log(\"Free delivery\");\n} else if (orderTotal >= 50000) {\n  console.log(\"Free delivery + gift\");\n} else if (orderTotal >= 100000) {\n  console.log(\"VIP treatment + free delivery + gift\");\n} else {\n  console.log(\"Standard: ₦500 delivery fee\");\n}\n```",
+          "expected_answer": "Problem: conditions are ordered from least specific (10000) to most specific (100000). For orderTotal = 85000: the first condition (>= 10000) is true, so JavaScript stops there and prints 'Free delivery'. The 'Free delivery + gift' (>= 50000) and 'VIP treatment' (>= 100000) cases are unreachable for any value >= 10000.\n\nUnreachable outputs:\n- 'Free delivery + gift' — never runs because >= 10000 catches everything above 10000 first\n- 'VIP treatment + free delivery + gift' — same reason\n\nCorrected (most specific first):\nif (orderTotal >= 100000) {\n  console.log(\"VIP treatment + free delivery + gift\");\n} else if (orderTotal >= 50000) {\n  console.log(\"Free delivery + gift\");   // 85000 lands here correctly\n} else if (orderTotal >= 10000) {\n  console.log(\"Free delivery\");\n} else {\n  console.log(\"Standard: ₦500 delivery fee\");\n}\n// Output: Free delivery + gift",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg4_q3",
+          "type": "text",
+          "prompt": "Explain how the `||` operator works when used in an assignment like `const displayName = username || 'Guest'`. What does JavaScript return in each scenario? Why is this called the 'default value pattern'?",
+          "expected_answer": "The || operator in JavaScript does not simply return true or false when used in an assignment — it returns one of the two actual values. Specifically: if the left side is truthy, || returns the left side value without even evaluating the right side. If the left side is falsy, || returns the right side value. In `const displayName = username || 'Guest'`: if username is 'Ngozi' (truthy), displayName becomes 'Ngozi'; if username is '' (empty string — falsy), displayName becomes 'Guest'; if username is null or undefined (both falsy), displayName becomes 'Guest'. This is called the 'default value pattern' because the right side acts as a fallback — a sensible default when the left side has no value. It is widely used to handle missing or empty data: a user's display name when they haven't set one, a placeholder price when none is available, a default city when the user hasn't selected one.",
+          "max_points": 20
+        }
+      ]
+    },
+    {
+      "package_id": "pkg_5",
+      "questions": [
+        {
+          "question_id": "pkg5_q1",
+          "type": "code",
+          "prompt": "Write a Cowry Budget savings health checker. Use an if/else if/else chain: if the savings rate (savedAmount / income * 100) is >= 30 → 'Excellent saver'; >= 20 → 'Good saver'; >= 10 → 'Needs improvement'; below 10 → 'Critical — increase savings urgently'. Also add a combined condition check: if the user is premium AND savings rate >= 20, log 'Premium reward unlocked'. Test with income = 285000, savedAmount = 74100, isPremium = true.\n\n```js\nconst income      = 285000;\nconst savedAmount = 74100;\nconst isPremium   = true;\n// write your code here\n```",
+          "expected_answer": "const income        = 285000;\nconst savedAmount   = 74100;\nconst isPremium     = true;\nconst savingsRate   = savedAmount / income * 100;  // 26.0\n\nif (savingsRate >= 30) {\n  console.log(\"Savings health: Excellent saver\");\n} else if (savingsRate >= 20) {\n  console.log(\"Savings health: Good saver\");        // 26% lands here\n} else if (savingsRate >= 10) {\n  console.log(\"Savings health: Needs improvement\");\n} else {\n  console.log(\"Savings health: Critical — increase savings urgently\");\n}\n\nif (isPremium && savingsRate >= 20) {\n  console.log(\"Premium reward unlocked\");           // both conditions true\n}\n// Output:\n// Savings health: Good saver\n// Premium reward unlocked",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg5_q2",
+          "type": "code",
+          "prompt": "Complete three small tasks. (a) Rewrite the if/else below as a ternary. (b) Write a switch for the deliverySpeed variable. (c) Use the || default value pattern.\n\n```js\n// (a) Convert to ternary:\nlet deliveryLabel;\nif (orderTotal >= 50000) {\n  deliveryLabel = \"Free delivery\";\n} else {\n  deliveryLabel = \"₦500 delivery fee\";\n}\n\n// (b) Write a switch — 'express' → 'Arrives today', 'standard' → 'Arrives in 2 days', 'economy' → 'Arrives in 5 days'\nconst deliverySpeed = \"standard\";\n\n// (c) recipientName may be empty — use || to default to 'Valued Customer'\nconst recipientName = \"\";\n```",
+          "expected_answer": "const orderTotal = 60000; // assume this exists\n\n// (a) Ternary\nconst deliveryLabel = orderTotal >= 50000 ? \"Free delivery\" : \"₦500 delivery fee\";\nconsole.log(deliveryLabel); // Free delivery (60000 >= 50000)\n\n// (b) Switch\nconst deliverySpeed = \"standard\";\nswitch (deliverySpeed) {\n  case \"express\":\n    console.log(\"Arrives today\");\n    break;\n  case \"standard\":\n    console.log(\"Arrives in 2 days\");  // runs\n    break;\n  case \"economy\":\n    console.log(\"Arrives in 5 days\");\n    break;\n  default:\n    console.log(\"Unknown delivery speed:\", deliverySpeed);\n}\n\n// (c) || default value\nconst recipientName  = \"\";\nconst displayRecipient = recipientName || \"Valued Customer\";\nconsole.log(\"For:\", displayRecipient); // For: Valued Customer",
+          "max_points": 40
+        },
+        {
+          "question_id": "pkg5_q3",
+          "type": "text",
+          "prompt": "Explain why `if ([])` always runs the if block in JavaScript, even though an empty array appears to have nothing in it. What is the correct way to check if an array is empty?",
+          "expected_answer": "In JavaScript, the six falsy values are: false, 0, empty string, null, undefined, and NaN. An empty array [] is not in this list. Arrays are objects, and all object references (including empty arrays and empty objects) are truthy — regardless of whether they contain any items. The if condition converts the value to a boolean. `Boolean([])` is `true`. So `if ([])` always evaluates the condition as true and executes the if block. The reason for this behaviour is that JavaScript checks whether the value is a reference (an address in memory) rather than whether the thing it references has content. Any non-null, non-undefined reference is truthy. To correctly check if an array is empty, use `array.length === 0` — this checks the actual count of items. Example: `if (cartItems.length === 0) { console.log('Cart is empty'); }` — this only runs when there are genuinely no items, unlike `if (!cartItems)` which would only fail if cartItems were null or undefined.",
+          "max_points": 20
+        }
+      ]
+    }
+  ]
+}
