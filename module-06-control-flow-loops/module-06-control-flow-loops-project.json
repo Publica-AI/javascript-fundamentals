@@ -1,0 +1,175 @@
+{
+  "module": "06",
+  "title": "Control Flow: Loops — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build a loop-driven data processor for a Nigerian business context. Your solution must use: a for loop with an index, a for...of loop, a for...in loop, at least one break or continue, and a while loop with a safety-net counter. All variables must use const or let (no var).",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Jumia Order Dashboard",
+        "scenario": "Build a loop-based order analytics tool for a Jumia seller. Process an array of 6 orders with id, customer, amount, and status fields.",
+        "requirements": [
+          "Use a for loop with index to print a numbered order list: 'Order 1 of 6: Amara Obi — ₦4500'",
+          "Use a for...of loop with continue to skip cancelled orders and sum the revenue from delivered and pending orders",
+          "Use a for...of loop with break to find and print the first pending order",
+          "Use a for...in loop to print all keys and values of the first order object",
+          "Use a while loop with a max-iteration counter to simulate processing orders until a ₦20,000 shipping budget runs out (₦500 per order)"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Jumia Order Dashboard</title>\n</head>\n<body>\n  <h1>Jumia Order Dashboard</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Jumia Order Dashboard\n// Use all five loop techniques on this dataset\n\nconst orders = [\n  { id: 'ORD-001', customer: 'Amara Obi',   amount: 4500,  status: 'delivered' },\n  { id: 'ORD-002', customer: 'Bayo Ade',    amount: 1200,  status: 'delivered' },\n  { id: 'ORD-003', customer: 'Chidi Nweke', amount: 8000,  status: 'cancelled' },\n  { id: 'ORD-004', customer: 'Dami Lawal',  amount: 600,   status: 'pending'   },\n  { id: 'ORD-005', customer: 'Emeka Eze',   amount: 3300,  status: 'delivered' },\n  { id: 'ORD-006', customer: 'Funmi Bello', amount: 12000, status: 'delivered' }\n];\n\n// 1. for loop — numbered order list\n\n\n// 2. for...of + continue — revenue total (skip cancelled)\n\n\n// 3. for...of + break — find first pending order\n\n\n// 4. for...in — print all keys of orders[0]\n\n\n// 5. while loop + safety counter — shipping budget (₦500 per order, ₦20000 budget)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Publica Academy Grade Processor",
+        "scenario": "Build a grade processing system for a Publica Academy cohort. Process an array of 6 student records with name, score, and module fields.",
+        "requirements": [
+          "Use a for loop with index to print each student as: 'Student 1: Amara Obi — Module: JavaScript — Score: 88'",
+          "Use a for...of loop with continue to skip students who scored below 50, and accumulate total marks for passing students",
+          "Use a for...of loop with break to find the first student who scored above 90",
+          "Use a for...in loop to print every field of the highest-scoring student object",
+          "Use a while loop with a max counter to simulate awarding certificates one by one until a ₦5,000 printing budget runs out (₦800 per certificate)"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Publica Grade Processor</title>\n</head>\n<body>\n  <h1>Publica Academy Grade Processor</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Publica Academy Grade Processor\n// Use all five loop techniques on this dataset\n\nconst students = [\n  { name: 'Amara Obi',   score: 88,  module: 'JavaScript'    },\n  { name: 'Bayo Ade',    score: 45,  module: 'JavaScript'    },\n  { name: 'Chidi Nweke', score: 72,  module: 'HTML & CSS'    },\n  { name: 'Dami Lawal',  score: 93,  module: 'JavaScript'    },\n  { name: 'Emeka Eze',   score: 31,  module: 'HTML & CSS'    },\n  { name: 'Funmi Bello', score: 80,  module: 'JavaScript'    }\n];\n\n// 1. for loop — numbered student list\n\n\n// 2. for...of + continue — skip failing, sum passing scores\n\n\n// 3. for...of + break — find first student with score > 90\n\n\n// 4. for...in — print all keys of students[3] (Dami Lawal — highest scorer)\n\n\n// 5. while loop + safety counter — print certificates (₦800 each, ₦5000 budget)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "PiggyVest Transaction Analyser",
+        "scenario": "Build a transaction analysis tool for a PiggyVest savings account. Process an array of 6 transactions with id, type, amount, and category fields.",
+        "requirements": [
+          "Use a for loop with index to print each transaction as: 'Txn 1: deposit — ₦5000 (savings)'",
+          "Use a for...of loop with continue to skip withdrawals and accumulate total deposits",
+          "Use a for...of loop with break to find the first transaction with amount greater than ₦10,000",
+          "Use a for...in loop to print every field of the largest transaction object",
+          "Use a while loop with a safety counter to simulate draining the account balance (starting at ₦25,000, withdrawing ₦4,000 each iteration, maximum 10 iterations)"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>PiggyVest Transaction Analyser</title>\n</head>\n<body>\n  <h1>PiggyVest Transaction Analyser</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// PiggyVest Transaction Analyser\n// Use all five loop techniques on this dataset\n\nconst transactions = [\n  { id: 'TXN-001', type: 'deposit',    amount: 5000,  category: 'savings'    },\n  { id: 'TXN-002', type: 'withdrawal', amount: 1500,  category: 'spending'   },\n  { id: 'TXN-003', type: 'deposit',    amount: 12000, category: 'salary'     },\n  { id: 'TXN-004', type: 'deposit',    amount: 3000,  category: 'savings'    },\n  { id: 'TXN-005', type: 'withdrawal', amount: 800,   category: 'spending'   },\n  { id: 'TXN-006', type: 'deposit',    amount: 7500,  category: 'freelance'  }\n];\n\n// 1. for loop — numbered transaction list\n\n\n// 2. for...of + continue — skip withdrawals, sum deposits\n\n\n// 3. for...of + break — find first transaction > ₦10,000\n\n\n// 4. for...in — print all keys of transactions[2] (TXN-003 — largest deposit)\n\n\n// 5. while loop + safety counter — drain balance (₦25000, ₦4000 per iteration, max 10)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Paystack Payment Batch Processor",
+        "scenario": "Build a payment batch processor for a Paystack merchant. Process an array of 6 payments with id, merchant, amount, and status fields.",
+        "requirements": [
+          "Use a for loop with index to print each payment as: 'Payment 1 of 6: Shoprite — ₦15000 (success)'",
+          "Use a for...of loop with continue to skip failed payments and accumulate total successful revenue",
+          "Use a for...of loop with break to stop processing at the first failed payment and log which payment caused the halt",
+          "Use a for...in loop to print every field of the first failed payment object",
+          "Use a while loop with a safety counter to simulate verifying payments one by one until all are confirmed or a 5-attempt limit is reached"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Paystack Batch Processor</title>\n</head>\n<body>\n  <h1>Paystack Payment Batch Processor</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Paystack Payment Batch Processor\n// Use all five loop techniques on this dataset\n\nconst payments = [\n  { id: 'PAY-001', merchant: 'Shoprite',    amount: 15000, status: 'success' },\n  { id: 'PAY-002', merchant: 'Chicken Inn', amount: 3500,  status: 'success' },\n  { id: 'PAY-003', merchant: 'GTBank',      amount: 50000, status: 'failed'  },\n  { id: 'PAY-004', merchant: 'Konga',       amount: 8000,  status: 'success' },\n  { id: 'PAY-005', merchant: 'Uber',        amount: 1200,  status: 'pending' },\n  { id: 'PAY-006', merchant: 'DStv',        amount: 6000,  status: 'success' }\n];\n\n// 1. for loop — numbered payment list\n\n\n// 2. for...of + continue — skip failed, sum successful revenue\n\n\n// 3. for...of + break — halt at first failed payment\n\n\n// 4. for...in — print all keys of first failed payment (payments[2])\n\n\n// 5. while loop + safety counter — verify payments (max 5 attempts)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Bolt Driver Trip Report",
+        "scenario": "Build a trip report generator for a Bolt driver. Process an array of 6 trips with id, driver, fare, distance, and rating fields.",
+        "requirements": [
+          "Use a for loop with index to print each trip as: 'Trip 1 of 6: Gbenga Musa — ₦1800 — 4.8★'",
+          "Use a for...of loop with continue to skip trips with rating below 4.0, and accumulate total fare from high-rated trips",
+          "Use a for...of loop with break to find the highest-fare trip (stop when a trip with fare > ₦3000 is found)",
+          "Use a for...in loop to print every field of the highest-fare trip object",
+          "Use a while loop with a safety counter to simulate a driver completing trips until a 12-hour daily limit (each trip takes 1.5 hours, maximum 10 iterations)"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bolt Driver Trip Report</title>\n</head>\n<body>\n  <h1>Bolt Driver Trip Report</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bolt Driver Trip Report\n// Use all five loop techniques on this dataset\n\nconst trips = [\n  { id: 'TRIP-001', driver: 'Gbenga Musa',  fare: 1800, distance: 5.2,  rating: 4.8 },\n  { id: 'TRIP-002', driver: 'Gbenga Musa',  fare: 950,  distance: 2.1,  rating: 3.9 },\n  { id: 'TRIP-003', driver: 'Gbenga Musa',  fare: 3500, distance: 11.0, rating: 4.5 },\n  { id: 'TRIP-004', driver: 'Gbenga Musa',  fare: 1200, distance: 3.8,  rating: 4.2 },\n  { id: 'TRIP-005', driver: 'Gbenga Musa',  fare: 2800, distance: 8.5,  rating: 2.5 },\n  { id: 'TRIP-006', driver: 'Gbenga Musa',  fare: 4200, distance: 14.3, rating: 4.9 }\n];\n\n// 1. for loop — numbered trip list\n\n\n// 2. for...of + continue — skip low-rated trips, sum high-rated fares\n\n\n// 3. for...of + break — find first trip with fare > ₦3000\n\n\n// 4. for...in — print all keys of trips[2] (TRIP-003 — first high-fare)\n\n\n// 5. while loop + safety counter — hours tracking (1.5h per trip, 12h limit, max 10 iterations)\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "for_loops",
+          "label": "for Loop & for...of Loop",
+          "points": 30,
+          "descriptors": {
+            "full": "Classic for loop correctly uses index, for...of cleanly iterates values, both produce correct output",
+            "partial": "One loop type works correctly but the other has errors or is missing",
+            "none": "Both for loop types are missing or produce incorrect output"
+          }
+        },
+        {
+          "id": "break_continue",
+          "label": "break and continue",
+          "points": 25,
+          "descriptors": {
+            "full": "continue correctly skips items and the loop processes remaining items, break correctly exits after finding the first match",
+            "partial": "One keyword used correctly, the other missing or incorrectly applied",
+            "none": "Neither break nor continue used, or both produce incorrect behavior"
+          }
+        },
+        {
+          "id": "for_in_while",
+          "label": "for...in Loop & while Loop",
+          "points": 30,
+          "descriptors": {
+            "full": "for...in correctly iterates object keys using bracket notation, while loop includes a max-iteration counter and handles both exit conditions",
+            "partial": "One of the two works correctly, the other has errors or is missing the safety counter",
+            "none": "Both are missing or produce incorrect output"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used correctly throughout, loop variable names are clear (order, student, tx etc.), output format matches requirements exactly",
+            "partial": "Minor naming issues or small format discrepancies",
+            "none": "var used, unclear variable names, or output is significantly malformed"
+          }
+        }
+      ]
+    }
+  }
+}

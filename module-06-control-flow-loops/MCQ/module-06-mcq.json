@@ -1,0 +1,389 @@
+[
+    {
+        "title": "the for loop",
+        "description": "Three parts",
+        "type": "multiple choice",
+        "question": "What are the three parts of a for loop?",
+        "options": "start stop reset|initialise condition update|declare assign return|input process output",
+        "answer": "initialise condition update",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the for loop",
+        "description": "Initialise purpose",
+        "type": "multiple choice",
+        "question": "What does the initialise part of a for loop do?",
+        "options": "Checks if the loop should continue|Sets the starting value of the counter|Increases the counter|Runs the loop body",
+        "answer": "Sets the starting value of the counter",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the for loop",
+        "description": "Condition purpose",
+        "type": "multiple choice",
+        "question": "What does the condition part of a for loop do?",
+        "options": "Starts the counter|Updates the counter after each iteration|Determines whether the loop should keep running|Prints the output",
+        "answer": "Determines whether the loop should keep running",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the for loop",
+        "description": "Update purpose",
+        "type": "multiple choice",
+        "question": "What does i++ do in a for loop?",
+        "options": "Declares i|Checks if i is less than the limit|Adds 1 to i after each iteration|Resets i to zero",
+        "answer": "Adds 1 to i after each iteration",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the for loop",
+        "description": "Loop output",
+        "type": "multiple choice",
+        "question": "What does this loop output: for (let i = 0; i < 3; i++) { console.log(i); }?",
+        "options": "1 2 3|0 1 2|0 1 2 3|1 2",
+        "answer": "0 1 2",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the for loop",
+        "description": "Array access",
+        "type": "multiple choice",
+        "question": "How do you access elements in an array during a for loop?",
+        "options": "array(i)|array.i|array[i]|array{i}",
+        "answer": "array[i]",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the for loop",
+        "description": "Condition with length",
+        "type": "multiple choice",
+        "question": "Why do we use i < array.length as the condition when looping an array?",
+        "options": "To start at the right index|Because the last valid index is length - 1 and < stops before length|Because length equals the last index|To create an infinite loop",
+        "answer": "Because the last valid index is length - 1 and < stops before length",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the for loop",
+        "description": "Off-by-one bug",
+        "type": "multiple choice",
+        "question": "What happens if you use i <= prices.length instead of i < prices.length?",
+        "options": "The loop skips the last item|The loop accesses an index that does not exist producing undefined|The loop throws an error|The loop runs one fewer time",
+        "answer": "The loop accesses an index that does not exist producing undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the for loop",
+        "description": "Off-by-one rule",
+        "type": "multiple choice",
+        "question": "What is the correct condition to iterate an array in a for loop?",
+        "options": "i <= array.length|i < array.length|i === array.length|i > 0",
+        "answer": "i < array.length",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the for loop",
+        "description": "Accumulator placement",
+        "type": "multiple choice",
+        "question": "Where should you declare a running total variable when accumulating inside a loop?",
+        "options": "Inside the loop body|After the loop|Before the loop|Inside the condition",
+        "answer": "Before the loop",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the for loop",
+        "description": "Running total",
+        "type": "multiple choice",
+        "question": "What is cartTotal after: let cartTotal = 0; for prices [4500, 1200, 800]?",
+        "options": "4500|5700|6500|0",
+        "answer": "6500",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the for loop",
+        "description": "Demo cart total",
+        "type": "multiple choice",
+        "question": "In the demo what is the final cart total for prices [4500, 1200, 8000, 600, 3300]?",
+        "options": "8000|17600|13600|4500",
+        "answer": "17600",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "the for loop",
+        "description": "Human-readable index",
+        "type": "multiple choice",
+        "question": "Why does the demo use (i + 1) when printing item labels?",
+        "options": "Because arrays start at 1|To convert from 0-based index to human-readable numbering starting at 1|To calculate the total|To skip the first element",
+        "answer": "To convert from 0-based index to human-readable numbering starting at 1",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "while and do while",
+        "description": "while condition check",
+        "type": "multiple choice",
+        "question": "When is the condition of a while loop checked?",
+        "options": "After the loop body runs|Before each iteration|Only at the start|Only at the end",
+        "answer": "Before each iteration",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "while and do while",
+        "description": "while may not run",
+        "type": "True or False",
+        "question": "A while loop may never run if the condition is false from the start.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "while and do while",
+        "description": "while use case",
+        "type": "multiple choice",
+        "question": "When should you use a while loop instead of a for loop?",
+        "options": "When you know exactly how many iterations|When you do not know in advance how many iterations are needed|When iterating an array by index|When you need the index variable",
+        "answer": "When you do not know in advance how many iterations are needed",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "while and do while",
+        "description": "Infinite loop cause",
+        "type": "multiple choice",
+        "question": "What causes an infinite loop in a while statement?",
+        "options": "Using break|Forgetting to update the variable in the condition so it never becomes false|Using console.log|Declaring a variable before the loop",
+        "answer": "Forgetting to update the variable in the condition so it never becomes false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "while and do while",
+        "description": "Safety requirements",
+        "type": "multiple choice",
+        "question": "How many requirements are there for a safe while loop?",
+        "options": "1|2|3|4",
+        "answer": "3",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "while and do while",
+        "description": "do while minimum runs",
+        "type": "multiple choice",
+        "question": "What is the minimum number of times the body of a do...while loop runs?",
+        "options": "0|1|2|It depends on the condition",
+        "answer": "1",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "while and do while",
+        "description": "do while vs while",
+        "type": "multiple choice",
+        "question": "What is the key difference between while and do...while?",
+        "options": "do...while is faster|do...while checks the condition after running the body so it always executes at least once|while runs more times|There is no difference",
+        "answer": "do...while checks the condition after running the body so it always executes at least once",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "while and do while",
+        "description": "Demo PIN retry",
+        "type": "multiple choice",
+        "question": "In the demo the PIN retry loop uses while (!pinCorrect && attempts < 3). What happens if pinCorrect becomes true on attempt 2?",
+        "options": "The loop continues to 3|The loop stops because the condition is now false|An error is thrown|The loop resets",
+        "answer": "The loop stops because the condition is now false",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "while and do while",
+        "description": "Browser freeze",
+        "type": "multiple choice",
+        "question": "What happens if you accidentally run an infinite while loop in the browser?",
+        "options": "The page turns red|The browser tab freezes and requires a force-quit|The loop stops after 1000 iterations automatically|Nothing",
+        "answer": "The browser tab freezes and requires a force-quit",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "while and do while",
+        "description": "do while demo",
+        "type": "multiple choice",
+        "question": "In the demo what is retries after: do { retries++; } while (retries < 3)?",
+        "options": "0|1|2|3",
+        "answer": "3",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...of gives",
+        "type": "multiple choice",
+        "question": "What does for...of give you on each iteration?",
+        "options": "The index|The value directly|The key name|The array length",
+        "answer": "The value directly",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...of on array",
+        "type": "multiple choice",
+        "question": "What is the correct syntax to iterate values of an array with for...of?",
+        "options": "for (const item in array)|for (const item of array)|for (let i = 0; i < array.length; i++)|array.forEach(item)",
+        "answer": "for (const item of array)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...in gives",
+        "type": "multiple choice",
+        "question": "What does for...in give you on each iteration when used on an object?",
+        "options": "The value|The key (property name)|The index|The full object",
+        "answer": "The key (property name)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...of on string",
+        "type": "True or False",
+        "question": "for...of can iterate through each character of a string.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "for of and for in",
+        "description": "Bracket notation in for...in",
+        "type": "multiple choice",
+        "question": "Why must you use object[key] instead of object.key inside a for...in loop?",
+        "options": "Because dot notation is slower|Because key is a variable and dot notation looks for a literal property named key|Because bracket notation is modern|Because the object is frozen",
+        "answer": "Because key is a variable and dot notation looks for a literal property named key",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...of best for",
+        "type": "multiple choice",
+        "question": "When should you use for...of?",
+        "options": "When you need the index|When you only need the values from an array or string and do not need the index|When iterating object keys|When you need to use break only",
+        "answer": "When you only need the values from an array or string and do not need the index",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...in best for",
+        "type": "multiple choice",
+        "question": "When should you use for...in?",
+        "options": "When iterating array values|When iterating the keys of an object|When you need to use continue|When iterating strings",
+        "answer": "When iterating the keys of an object",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "for of and for in",
+        "description": "Don't use for...in on arrays",
+        "type": "True or False",
+        "question": "You should avoid using for...in on arrays because it gives index strings instead of values.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "for of and for in",
+        "description": "Vowel counter demo",
+        "type": "multiple choice",
+        "question": "In the demo how many vowels does for...of count in the name \"Amara\"?",
+        "options": "2|3|4|5",
+        "answer": "3",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...of accumulator",
+        "type": "multiple choice",
+        "question": "In the demo a for...of loop calculates cart total from [{item price:4500},{item price:1200},{item price:600}]. What is the total?",
+        "options": "4500|5700|6300|7200",
+        "answer": "6300",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "break effect",
+        "type": "multiple choice",
+        "question": "What does break do inside a loop?",
+        "options": "Skips the current iteration|Exits the loop entirely and stops all remaining iterations|Restarts the loop|Pauses execution",
+        "answer": "Exits the loop entirely and stops all remaining iterations",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "continue effect",
+        "type": "multiple choice",
+        "question": "What does continue do inside a loop?",
+        "options": "Exits the loop|Skips the rest of the current iteration and moves to the next|Stops the program|Restarts from the first iteration",
+        "answer": "Skips the rest of the current iteration and moves to the next",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "break use case",
+        "type": "multiple choice",
+        "question": "When is break most useful?",
+        "options": "When you want to process all items|When you only need the first matching item and want to stop searching|When you need to count items|When iterating an object",
+        "answer": "When you only need the first matching item and want to stop searching",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "continue use case",
+        "type": "multiple choice",
+        "question": "When is continue most useful?",
+        "options": "When you want to exit the loop|When you want to skip certain items but continue processing the rest|When you want to run code after the loop|When you need the index",
+        "answer": "When you want to skip certain items but continue processing the rest",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "Demo break output",
+        "type": "multiple choice",
+        "question": "In the demo orders loop [delivered delivered cancelled pending delivered] with break on cancelled how many orders are checked?",
+        "options": "1|2|3|5",
+        "answer": "3",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "Demo continue output",
+        "type": "multiple choice",
+        "question": "In the demo scores [88 45 72 31 95 60] with continue on score < 50 how many Pass lines are printed?",
+        "options": "2|3|4|6",
+        "answer": "4",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "break vs continue",
+        "type": "multiple choice",
+        "question": "What is the key difference between break and continue?",
+        "options": "They do the same thing|break exits the loop entirely while continue only skips the current iteration|break is for while loops and continue is for for loops|continue exits the loop",
+        "answer": "break exits the loop entirely while continue only skips the current iteration",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "Safety net pattern",
+        "type": "multiple choice",
+        "question": "What is the purpose of adding a MAX_ATTEMPTS counter to a while loop?",
+        "options": "To count how many items were processed|To guarantee the loop exits even if the primary condition never becomes false|To make the loop run faster|To print a status message",
+        "answer": "To guarantee the loop exits even if the primary condition never becomes false",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "Remaining items with break",
+        "type": "multiple choice",
+        "question": "After break runs what happens to the remaining items in the array?",
+        "options": "They are still processed|They are never processed|They are deleted|They become undefined",
+        "answer": "They are never processed",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "break continue and avoiding infinite loops",
+        "description": "Remaining items with continue",
+        "type": "multiple choice",
+        "question": "After continue runs what happens to the remaining items in the array?",
+        "options": "They are skipped|They are still processed in subsequent iterations|The loop exits|They become null",
+        "answer": "They are still processed in subsequent iterations",
+        "difficulty": "Advanced"
+    }
+]

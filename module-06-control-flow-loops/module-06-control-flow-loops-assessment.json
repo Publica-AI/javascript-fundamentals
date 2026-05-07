@@ -1,0 +1,199 @@
+{
+  "module": "06",
+  "title": "Control Flow: Loops",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "The array below contains Konga product prices. Write a for loop that prints each price on its own line in the format: `Item 1: ₦4500`. Use the index to build the label (add 1 to i for the display number). Do not use for...of.",
+            "starter": "const prices = [4500, 1200, 8000, 600, 3300];\n\n// Write your for loop here\n",
+            "solution": "const prices = [4500, 1200, 8000, 600, 3300];\n\nfor (let i = 0; i < prices.length; i++) {\n  console.log('Item ' + (i + 1) + ': ₦' + prices[i]);\n}",
+            "test_cases": [
+              { "expected_output": "Item 1: ₦4500" },
+              { "expected_output": "Item 3: ₦8000" },
+              { "expected_output": "Item 5: ₦3300" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Using a for loop, calculate and print the total of all prices in the array. Declare `let total = 0` before the loop. After the loop, print: `Cart total: ₦13100`.",
+            "starter": "const prices = [4500, 1200, 8000, 600, 3300];\nlet total = 0;\n\n// Write your for loop here\n\n// Print the total after the loop\n",
+            "solution": "const prices = [4500, 1200, 8000, 600, 3300];\nlet total = 0;\n\nfor (let i = 0; i < prices.length; i++) {\n  total = total + prices[i];\n}\n\nconsole.log('Cart total: ₦' + total);",
+            "test_cases": [
+              { "expected_output": "Cart total: ₦17600" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Explain the off-by-one error. Why should you always use `i < array.length` instead of `i <= array.length` when iterating an array with a for loop?",
+            "sample_answer": "Arrays use zero-based indexing, so a 5-element array has valid indices 0 to 4. Using `i <= array.length` allows i to reach 5 (the array's length), but `array[5]` doesn't exist — JavaScript returns undefined. Using `i < array.length` stops the loop when i equals the length (5), which means the last access is `array[4]`, the final valid index. The off-by-one error reads one element past the end of the array."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a while loop that simulates a PiggyVest savings withdrawal. Start with `let balance = 9000` and a `const withdrawal = 3000`. Keep withdrawing while the balance can cover a withdrawal. After each withdrawal, print the remaining balance. After the loop, print: `Final balance: ₦0`.",
+            "starter": "let balance = 9000;\nconst withdrawal = 3000;\n\n// Write your while loop here\n\n// Print final balance after the loop\n",
+            "solution": "let balance = 9000;\nconst withdrawal = 3000;\n\nwhile (balance >= withdrawal) {\n  balance = balance - withdrawal;\n  console.log('Remaining: ₦' + balance);\n}\n\nconsole.log('Final balance: ₦' + balance);",
+            "test_cases": [
+              { "expected_output": "Remaining: ₦6000" },
+              { "expected_output": "Remaining: ₦3000" },
+              { "expected_output": "Remaining: ₦0" },
+              { "expected_output": "Final balance: ₦0" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "The code below has an off-by-one bug. Fix the loop condition so it does not print `undefined`.\n\n```js\nconst cities = ['Lagos', 'Abuja', 'Kano', 'PH'];\nfor (let i = 0; i <= cities.length; i++) {\n  console.log(cities[i]);\n}\n```",
+            "starter": "const cities = ['Lagos', 'Abuja', 'Kano', 'PH'];\n\n// Fix the loop condition below\nfor (let i = 0; i <= cities.length; i++) {\n  console.log(cities[i]);\n}\n",
+            "solution": "const cities = ['Lagos', 'Abuja', 'Kano', 'PH'];\n\nfor (let i = 0; i < cities.length; i++) {\n  console.log(cities[i]);\n}",
+            "test_cases": [
+              { "expected_output": "Lagos" },
+              { "expected_output": "PH" },
+              { "expected_not_output": "undefined" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "When should you use a while loop instead of a for loop? Give one concrete example of a task where a while loop is the better choice.",
+            "sample_answer": "Use a while loop when you don't know how many iterations are needed in advance — only the stopping condition. For example, retrying a network connection until it succeeds (or a maximum attempt limit is reached): `while (!isConnected && attempts < 5)`. With a for loop you'd need to know the iteration count upfront, which isn't possible when it depends on external state."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use a for...of loop to iterate the students array and print only students who scored 70 or above. For each qualifying student, print: `Pass: Amara Obi — 88`. Use `continue` to skip students who scored below 70.",
+            "starter": "const students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 65 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 45 }\n];\n\n// Write your for...of loop with continue here\n",
+            "solution": "const students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 65 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 45 }\n];\n\nfor (const student of students) {\n  if (student.score < 70) {\n    continue;\n  }\n  console.log('Pass: ' + student.name + ' — ' + student.score);\n}",
+            "test_cases": [
+              { "expected_output": "Pass: Amara Obi — 88" },
+              { "expected_output": "Pass: Chidi Nweke — 72" },
+              { "expected_not_output": "Pass: Bayo Ade" },
+              { "expected_not_output": "Pass: Dami Lawal" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use a for...in loop to print every key and value from the product object below. Each line should read: `item: Wireless Earbuds`.",
+            "starter": "const product = {\n  item: 'Wireless Earbuds',\n  price: 4500,\n  inStock: true,\n  rating: 4.7\n};\n\n// Write your for...in loop here\n",
+            "solution": "const product = {\n  item: 'Wireless Earbuds',\n  price: 4500,\n  inStock: true,\n  rating: 4.7\n};\n\nfor (const key in product) {\n  console.log(key + ': ' + product[key]);\n}",
+            "test_cases": [
+              { "expected_output": "item: Wireless Earbuds" },
+              { "expected_output": "price: 4500" },
+              { "expected_output": "inStock: true" },
+              { "expected_output": "rating: 4.7" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between for...of and for...in? Give one scenario where you would use each.",
+            "sample_answer": "for...of iterates the values of an iterable (array, string) — each iteration gives you the element itself. for...in iterates the keys of an object — each iteration gives you the property name as a string, and you use bracket notation to get the value. Use for...of to process each item in an orders array. Use for...in to print every field of a student profile object."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use a for...of loop with break to find the first order with status 'pending'. Store it in a variable `firstPending`. After the loop, print: `First pending: ORD-003 — Emeka Eze`.",
+            "starter": "const orders = [\n  { id: 'ORD-001', customer: 'Amara Obi',   status: 'delivered' },\n  { id: 'ORD-002', customer: 'Bayo Ade',    status: 'delivered' },\n  { id: 'ORD-003', customer: 'Emeka Eze',   status: 'pending'   },\n  { id: 'ORD-004', customer: 'Dami Lawal',  status: 'delivered' }\n];\n\nlet firstPending = null;\n\n// Write your for...of loop with break here\n\n// Print result after the loop\n",
+            "solution": "const orders = [\n  { id: 'ORD-001', customer: 'Amara Obi',   status: 'delivered' },\n  { id: 'ORD-002', customer: 'Bayo Ade',    status: 'delivered' },\n  { id: 'ORD-003', customer: 'Emeka Eze',   status: 'pending'   },\n  { id: 'ORD-004', customer: 'Dami Lawal',  status: 'delivered' }\n];\n\nlet firstPending = null;\n\nfor (const order of orders) {\n  if (order.status === 'pending') {\n    firstPending = order;\n    break;\n  }\n}\n\nif (firstPending) {\n  console.log('First pending: ' + firstPending.id + ' — ' + firstPending.customer);\n}",
+            "test_cases": [
+              { "expected_output": "First pending: ORD-003 — Emeka Eze" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a do...while loop that simulates checking an ATM connection. Start with `let connected = false` and `let tries = 0`. The loop should increment tries and print `Attempt: X — checking...`. On attempt 2, set `connected = true`. After the loop, print whether connection succeeded.",
+            "starter": "let connected = false;\nlet tries = 0;\n\n// Write your do...while loop here\n// Set connected = true when tries === 2\n\n// Print result after the loop\n",
+            "solution": "let connected = false;\nlet tries = 0;\n\ndo {\n  tries++;\n  console.log('Attempt: ' + tries + ' — checking...');\n  if (tries === 2) connected = true;\n} while (!connected && tries < 5);\n\nif (connected) {\n  console.log('Connected after ' + tries + ' attempt(s)');\n} else {\n  console.log('Connection failed');\n}",
+            "test_cases": [
+              { "expected_output": "Attempt: 1 — checking..." },
+              { "expected_output": "Attempt: 2 — checking..." },
+              { "expected_output": "Connected after 2 attempt(s)" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Explain the difference between break and continue. When would you use each in a loop that processes a list of payments?",
+            "sample_answer": "break exits the loop entirely — no more iterations run. continue skips the rest of the current iteration and moves to the next one. For a payments list: use break if a corrupted payment (e.g., a negative amount) means the whole batch is invalid and should stop processing. Use continue if a zero-amount payment should be skipped but the remaining payments should still be processed."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a for...of loop that iterates the transactions array and prints only transactions where amount > 2000. Use continue to skip small transactions. Print each qualifying transaction as: `ORD-002: ₦5000 (delivered)`.",
+            "starter": "const transactions = [\n  { id: 'ORD-001', amount: 800,  status: 'delivered' },\n  { id: 'ORD-002', amount: 5000, status: 'delivered' },\n  { id: 'ORD-003', amount: 1200, status: 'pending'   },\n  { id: 'ORD-004', amount: 9500, status: 'delivered' },\n  { id: 'ORD-005', amount: 300,  status: 'cancelled' }\n];\n\n// Write your for...of loop with continue here\n",
+            "solution": "const transactions = [\n  { id: 'ORD-001', amount: 800,  status: 'delivered' },\n  { id: 'ORD-002', amount: 5000, status: 'delivered' },\n  { id: 'ORD-003', amount: 1200, status: 'pending'   },\n  { id: 'ORD-004', amount: 9500, status: 'delivered' },\n  { id: 'ORD-005', amount: 300,  status: 'cancelled' }\n];\n\nfor (const tx of transactions) {\n  if (tx.amount <= 2000) {\n    continue;\n  }\n  console.log(tx.id + ': ₦' + tx.amount + ' (' + tx.status + ')');\n}",
+            "test_cases": [
+              { "expected_output": "ORD-002: ₦5000 (delivered)" },
+              { "expected_output": "ORD-004: ₦9500 (delivered)" },
+              { "expected_not_output": "ORD-001" },
+              { "expected_not_output": "ORD-005" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Add a maximum iteration safety net to the while loop below so it never runs more than 10 times. Declare `const MAX = 10`. The loop condition should check both `!success` AND `count < MAX`. After the loop, print whether it succeeded or hit the limit.",
+            "starter": "let success = false;\nlet count = 0;\nconst MAX = 10;\n\n// Fix the while loop to add the safety net condition\nwhile (!success) {\n  count++;\n  console.log('Try:', count);\n  if (count === 4) success = true;\n}\n\n// Print result\n",
+            "solution": "let success = false;\nlet count = 0;\nconst MAX = 10;\n\nwhile (!success && count < MAX) {\n  count++;\n  console.log('Try:', count);\n  if (count === 4) success = true;\n}\n\nif (success) {\n  console.log('Succeeded on try ' + count);\n} else {\n  console.log('Hit limit after ' + MAX + ' tries');\n}",
+            "test_cases": [
+              { "expected_output": "Try: 1" },
+              { "expected_output": "Try: 4" },
+              { "expected_output": "Succeeded on try 4" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why is the do...while loop used less frequently than the while loop? Describe a scenario where do...while is the correct choice.",
+            "sample_answer": "do...while is less common because most loop scenarios only run if the condition is true — zero executions is a valid case. do...while forces at least one execution regardless of the condition, which is a specific requirement that comes up less often. A scenario where it's correct: a network retry system that must always make at least one connection attempt before checking whether to continue retrying. Another example: prompting a user for input at least once before validating whether to ask again."
+          }
+        ]
+      }
+    ]
+  }
+}
