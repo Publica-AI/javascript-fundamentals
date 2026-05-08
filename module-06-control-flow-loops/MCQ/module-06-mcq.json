@@ -385,5 +385,68 @@
         "options": "They are skipped|They are still processed in subsequent iterations|The loop exits|They become null",
         "answer": "They are still processed in subsequent iterations",
         "difficulty": "Advanced"
+    },
+    {
+        "title": "the for loop",
+        "description": "Loop starts at zero",
+        "type": "True or False",
+        "question": "Arrays in JavaScript are zero-indexed meaning the first element is at index 0.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "the for loop",
+        "description": "Decrement loop",
+        "type": "multiple choice",
+        "question": "What does this loop do: for (let i = 5; i > 0; i--) { console.log(i); }?",
+        "options": "Counts from 0 to 5|Counts from 5 down to 1|Counts from 5 down to 0|Runs infinitely",
+        "answer": "Counts from 5 down to 1",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "while and do while",
+        "description": "Three safety requirements",
+        "type": "select all correct options",
+        "question": "Which of the following are requirements for a safe while loop?",
+        "options": "A condition that can become false|A variable that is updated inside the loop|A starting condition that is defined before the loop|An array to iterate",
+        "answer": "A condition that can become false|A variable that is updated inside the loop|A starting condition that is defined before the loop",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...in on array warning",
+        "type": "multiple choice",
+        "question": "What does for...in give you when used on an array?",
+        "options": "The values|The index positions as strings|The array length|undefined",
+        "answer": "The index positions as strings",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "the for loop",
+        "description": "Nested loops",
+        "type": "multiple choice",
+        "question": "What happens when you put one for loop inside another?",
+        "options": "A syntax error|The inner loop runs completely for each iteration of the outer loop|Only the outer loop runs|Only the inner loop runs",
+        "answer": "The inner loop runs completely for each iteration of the outer loop",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "for of and for in",
+        "description": "for...of on object",
+        "type": "True or False",
+        "question": "You can use for...of directly on a plain object to iterate its key-value pairs.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "while and do while",
+        "description": "while vs for choice",
+        "type": "multiple choice",
+        "question": "A developer needs to keep asking for user input until they type quit. Which loop is most appropriate?",
+        "options": "for loop|while loop|for...of loop|for...in loop",
+        "answer": "while loop",
+        "difficulty": "beginner"
     }
 ]

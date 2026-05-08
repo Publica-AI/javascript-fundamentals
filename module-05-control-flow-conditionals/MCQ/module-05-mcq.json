@@ -129,7 +129,7 @@
         "title": "if else if and else",
         "description": "Combined condition demo",
         "type": "multiple choice",
-        "question": "In the demo code: if (score < 50 || !attended) \u2014 when does this block run?",
+        "question": "In the demo code: if (score < 50 || !attended) — when does this block run?",
         "options": "When score is above 50 and student attended|When score is below 50 OR the student did not attend|Only when both are false|Never",
         "answer": "When score is below 50 OR the student did not attend",
         "difficulty": "Advanced"
@@ -237,9 +237,9 @@
         "title": "switch statements",
         "description": "Payment status demo",
         "type": "multiple choice",
-        "question": "In the demo switch(status) when status is \"pending\" what message is logged?",
-        "options": "Payment confirmed|Payment pending \u2014 awaiting bank confirmation|Payment failed|Unknown status",
-        "answer": "Payment pending \u2014 awaiting bank confirmation",
+        "question": "In the demo switch(status) when status is pending what message is logged?",
+        "options": "Payment confirmed|Payment pending — awaiting bank confirmation|Payment failed|Unknown status",
+        "answer": "Payment pending — awaiting bank confirmation",
         "difficulty": "Advanced"
     },
     {
@@ -282,7 +282,7 @@
         "title": "ternary operator and truthy falsy",
         "description": "Ternary example",
         "type": "multiple choice",
-        "question": "What does const label = score >= 50 ? \"Pass\" : \"Fail\" assign when score is 74?",
+        "question": "What does const label = score >= 50 ? Pass : Fail assign when score is 74?",
         "options": "Fail|Pass|undefined|74",
         "answer": "Pass",
         "difficulty": "beginner"
@@ -318,7 +318,7 @@
         "title": "ternary operator and truthy falsy",
         "description": "Empty string falsy",
         "type": "multiple choice",
-        "question": "What happens when you write if (\"\") { console.log(\"runs\"); }?",
+        "question": "What happens when you write if () { console.log(runs); }?",
         "options": "It runs|It does not run because an empty string is falsy|It throws an error|It logs undefined",
         "answer": "It does not run because an empty string is falsy",
         "difficulty": "intermediate"
@@ -346,17 +346,8 @@
         "description": "Six falsy values",
         "type": "multiple choice",
         "question": "Which of the following is NOT one of the six falsy values?",
-        "options": "0|\"\"|[]|null",
+        "options": "0||[]|null",
         "answer": "[]",
-        "difficulty": "Advanced"
-    },
-    {
-        "title": "ternary operator and truthy falsy",
-        "description": "Default value pattern",
-        "type": "multiple choice",
-        "question": "What does const displayName = username || \"Guest\" do when username is an empty string?",
-        "options": "Assigns \"\"|Assigns \"\"Guest\"\" because empty string is falsy|Throws an error|Assigns undefined\"",
-        "answer": "Assigns \"Guest\" because empty string is falsy",
         "difficulty": "Advanced"
     },
     {
@@ -372,7 +363,7 @@
         "title": "ternary operator and truthy falsy",
         "description": "Ternary in demo",
         "type": "multiple choice",
-        "question": "In the demo what does const notification = balance < minBalance ? \"Please top up\" : \"All good\" assign when balance is 4200 and minBalance is 5000?",
+        "question": "In the demo what does const notification = balance < minBalance ? Please top up : All good assign when balance is 4200 and minBalance is 5000?",
         "options": "All good|Please top up your account|undefined|Error",
         "answer": "Please top up your account",
         "difficulty": "Advanced"
@@ -400,8 +391,62 @@
         "description": "Balance zero falsy",
         "type": "multiple choice",
         "question": "In the demo if balance is 0 and you write if (balance) { console.log(balance); } what happens?",
-        "options": "It logs 0|Nothing \u2014 0 is falsy so the if block does not run|It throws an error|It logs undefined",
-        "answer": "Nothing \u2014 0 is falsy so the if block does not run",
+        "options": "It logs 0|Nothing — 0 is falsy so the if block does not run|It throws an error|It logs undefined",
+        "answer": "Nothing — 0 is falsy so the if block does not run",
         "difficulty": "Advanced"
+    },
+    {
+        "title": "switch statements",
+        "description": "Grouped cases",
+        "type": "select 2 correct options",
+        "question": "Which two of the following are valid reasons to stack cases without break in a switch?",
+        "options": "To share the same code between multiple matching values|To make the code run faster|To group cases like Saturday and Sunday into one block|To create a fall-through bug intentionally",
+        "answer": "To share the same code between multiple matching values|To group cases like Saturday and Sunday into one block",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Nested if",
+        "type": "multiple choice",
+        "question": "What is a nested if statement?",
+        "options": "An if with no else|An if statement inside another if statement|An else without an if|A ternary operator",
+        "answer": "An if statement inside another if statement",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "switch statements",
+        "description": "Type mismatch",
+        "type": "multiple choice",
+        "question": "What happens if the switch value is the string 5 and the case is the number 5?",
+        "options": "The case matches|The case does not match because switch uses strict equality (===)|An error is thrown|It falls through",
+        "answer": "The case does not match because switch uses strict equality (===)",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "Ternary assignment",
+        "type": "Fill in the gap",
+        "question": "To assign Adult or Minor based on age >= 18 using a ternary you write: const label = ________",
+        "options": "age >= 18 ? Adult : Minor|if (age >= 18) Adult|age > 18 && Adult|age >= 18 : Adult ? Minor",
+        "answer": "age >= 18 ? Adult : Minor",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "if else if and else",
+        "description": "Logical operators",
+        "type": "select 2 correct options",
+        "question": "Which two logical operators can be used inside an if condition to combine multiple checks?",
+        "options": "&& (AND)|++ (increment)||| (OR)|== (equals)",
+        "answer": "&& (AND)||| (OR)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "ternary operator and truthy falsy",
+        "description": "undefined is falsy",
+        "type": "True or False",
+        "question": "The value undefined is one of the six falsy values in JavaScript.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
     }
 ]

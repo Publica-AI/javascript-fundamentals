@@ -30,7 +30,7 @@
         "title": "defining and calling functions",
         "description": "Parentheses required",
         "type": "True or False",
-        "question": "You must include () after the function name to call it \u2014 without them the function does not run.",
+        "question": "You must include () after the function name to call it — without them the function does not run.",
         "options": "True|False",
         "answer": "True",
         "difficulty": "beginner"
@@ -111,7 +111,7 @@
         "title": "defining and calling functions",
         "description": "Demo printReport",
         "type": "multiple choice",
-        "question": "In the demo printReport(\"Morning Sales\", [4500, 1200, 800]) logs Total: \u20a6 what amount?",
+        "question": "In the demo printReport(\"Morning Sales\", [4500, 1200, 800]) logs Total: ₦ what amount?",
         "options": "4500|6500|5700|1200",
         "answer": "6500",
         "difficulty": "Advanced"
@@ -139,8 +139,8 @@
         "description": "Argument order",
         "type": "multiple choice",
         "question": "How are arguments matched to parameters?",
-        "options": "By name|By position \u2014 first argument goes to the first parameter|Randomly|By data type",
-        "answer": "By position \u2014 first argument goes to the first parameter",
+        "options": "By name|By position — first argument goes to the first parameter|Randomly|By data type",
+        "answer": "By position — first argument goes to the first parameter",
         "difficulty": "beginner"
     },
     {
@@ -328,8 +328,8 @@
         "description": "Cross-function access",
         "type": "multiple choice",
         "question": "Can one function access a local variable declared inside a different function?",
-        "options": "Yes always|No \u2014 it throws a ReferenceError|Only with const|Only with var",
-        "answer": "No \u2014 it throws a ReferenceError",
+        "options": "Yes always|No — it throws a ReferenceError|Only with const|Only with var",
+        "answer": "No — it throws a ReferenceError",
         "difficulty": "Advanced"
     },
     {
@@ -345,9 +345,108 @@
         "title": "arrow functions and scope basics",
         "description": "Demo addNoBraceReturn",
         "type": "multiple choice",
-        "question": "In the demo const addNoBraceReturn = (a, b) => { a + b; } \u2014 what does addNoBraceReturn(3, 4) return?",
+        "question": "In the demo const addNoBraceReturn = (a, b) => { a + b; } — what does addNoBraceReturn(3, 4) return?",
         "options": "7|undefined|NaN|null",
         "answer": "undefined",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Function body",
+        "type": "multiple choice",
+        "question": "What do the curly braces {} contain in a function declaration?",
+        "options": "The function name|The code that runs when the function is called|The parameters|The return type",
+        "answer": "The code that runs when the function is called",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Define vs call",
+        "type": "multiple choice",
+        "question": "What is the difference between defining a function and calling it?",
+        "options": "There is no difference|Defining creates the function and calling executes it|Defining runs the code and calling stores it|Both happen at the same time",
+        "answer": "Defining creates the function and calling executes it",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Multiple parameters",
+        "type": "multiple choice",
+        "question": "How do you define a function with two parameters named price and quantity?",
+        "options": "function calcTotal(price; quantity)|function calcTotal(price and quantity)|function calcTotal(price",
+        "answer": " quantity)|function calcTotal(price | quantity)",
+        "difficulty": "function calcTotal(price, quantity)"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Return vs console.log",
+        "type": "multiple choice",
+        "question": "What is the difference between return and console.log inside a function?",
+        "options": "They do the same thing|return sends a value back to the caller while console.log only prints to the Console|console.log returns a value|return prints to the Console",
+        "answer": "return sends a value back to the caller while console.log only prints to the Console",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Chaining returned values",
+        "type": "multiple choice",
+        "question": "If calculateSubtotal returns a number what does console.log(calculateSubtotal(3, 5000)) do?",
+        "options": "Throws an error|Logs the returned value 15000 to the Console|Logs undefined|Logs the function code",
+        "answer": "Logs the returned value 15000 to the Console",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Arrow multiple params",
+        "type": "multiple choice",
+        "question": "How do you write an arrow function with two parameters a and b that returns their sum?",
+        "options": "const add = a, b => a + b|const add = (a, b) => a + b|const add => (a, b) a + b|const add = (a b) => a + b",
+        "answer": "const add = (a, b) => a + b",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "No params arrow",
+        "type": "multiple choice",
+        "question": "How do you write an arrow function with no parameters?",
+        "options": "const greet = => 'Hi'|const greet = () => 'Hi'|const greet => () 'Hi'|const greet = _ => 'Hi'",
+        "answer": "const greet = () => 'Hi'",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Multiple calls",
+        "type": "multiple choice",
+        "question": "If function greet() logs \"Hello\" what happens when you call greet() three times?",
+        "options": "It logs Hello once|It logs Hello three times|It throws an error|It logs Hello twice",
+        "answer": "It logs Hello three times",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Extra arguments",
+        "type": "multiple choice",
+        "question": "What happens to extra arguments passed to a function that only has one parameter? e.g. greet(\"Ada\", \"Lagos\")",
+        "options": "An error is thrown|The extra arguments are silently ignored|Both are combined into one parameter|The function runs twice",
+        "answer": "The extra arguments are silently ignored",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "var vs let scope",
+        "type": "multiple choice",
+        "question": "What is a key difference between var and let regarding scope inside a function?",
+        "options": "There is no difference|var is function-scoped while let is block-scoped|let is function-scoped while var is block-scoped|Both are global",
+        "answer": "var is function-scoped while let is block-scoped",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Side effects",
+        "type": "multiple choice",
+        "question": "A function that uses console.log but has no return statement is said to have what?",
+        "options": "A return value|A side effect|A parameter|A scope error",
+        "answer": "A side effect",
         "difficulty": "Advanced"
     }
 ]
