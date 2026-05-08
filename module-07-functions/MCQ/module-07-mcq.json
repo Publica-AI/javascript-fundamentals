@@ -1,0 +1,353 @@
+[
+    {
+        "title": "defining and calling functions",
+        "description": "What is a function",
+        "type": "multiple choice",
+        "question": "What is a function in JavaScript?",
+        "options": "A data type|A named reusable block of code|A type of variable|A loop structure",
+        "answer": "A named reusable block of code",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Function keyword",
+        "type": "multiple choice",
+        "question": "Which keyword is used to define a function declaration?",
+        "options": "const|let|function|define",
+        "answer": "function",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Calling a function",
+        "type": "multiple choice",
+        "question": "How do you call (execute) a function named showWelcome?",
+        "options": "showWelcome|showWelcome()|call showWelcome|run showWelcome",
+        "answer": "showWelcome()",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Parentheses required",
+        "type": "True or False",
+        "question": "You must include () after the function name to call it \u2014 without them the function does not run.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Reusability",
+        "type": "multiple choice",
+        "question": "What happens when you call the same function twice?",
+        "options": "It only runs the first time|It runs its code block each time it is called|It throws an error the second time|It returns undefined the second time",
+        "answer": "It runs its code block each time it is called",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Hoisting",
+        "type": "multiple choice",
+        "question": "What is hoisting in the context of function declarations?",
+        "options": "Moving a function call to the bottom|Function declarations are available for use anywhere in the file even before their definition|Functions must be defined first|A type of error",
+        "answer": "Function declarations are available for use anywhere in the file even before their definition",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Expression not hoisted",
+        "type": "True or False",
+        "question": "Function expressions (assigned to a variable with const) can be called before they are defined.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Naming convention",
+        "type": "multiple choice",
+        "question": "What naming convention should you use for functions?",
+        "options": "PascalCase|snake_case|camelCase starting with a verb|UPPER_CASE",
+        "answer": "camelCase starting with a verb",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Good function name",
+        "type": "multiple choice",
+        "question": "Which is the best function name?",
+        "options": "data()|thing()|x()|calculateTotal()",
+        "answer": "calculateTotal()",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "DRY principle",
+        "type": "multiple choice",
+        "question": "What does DRY stand for in programming?",
+        "options": "Define Run Yield|Don't Repeat Yourself|Data Response Yield|Debug Read Yield",
+        "answer": "Don't Repeat Yourself",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "When to create a function",
+        "type": "multiple choice",
+        "question": "What is a sign that you should create a function?",
+        "options": "You have one line of code|You are copy-pasting the same block of code in multiple places|You need a variable|You are writing HTML",
+        "answer": "You are copy-pasting the same block of code in multiple places",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Reference vs call",
+        "type": "multiple choice",
+        "question": "What does console.log(showWelcome) without () do?",
+        "options": "Runs the function|Logs the function definition itself without running it|Throws an error|Logs undefined",
+        "answer": "Logs the function definition itself without running it",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "defining and calling functions",
+        "description": "Demo printReport",
+        "type": "multiple choice",
+        "question": "In the demo printReport(\"Morning Sales\", [4500, 1200, 800]) logs Total: \u20a6 what amount?",
+        "options": "4500|6500|5700|1200",
+        "answer": "6500",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Parameter definition",
+        "type": "multiple choice",
+        "question": "What is a parameter?",
+        "options": "The value passed when calling a function|A placeholder variable declared in the function definition|A return value|A global variable",
+        "answer": "A placeholder variable declared in the function definition",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Argument definition",
+        "type": "multiple choice",
+        "question": "What is an argument?",
+        "options": "A variable inside the function|The actual value passed when calling a function|The function name|The return keyword",
+        "answer": "The actual value passed when calling a function",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Argument order",
+        "type": "multiple choice",
+        "question": "How are arguments matched to parameters?",
+        "options": "By name|By position \u2014 first argument goes to the first parameter|Randomly|By data type",
+        "answer": "By position \u2014 first argument goes to the first parameter",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Return keyword",
+        "type": "multiple choice",
+        "question": "What does the return keyword do?",
+        "options": "Prints a value to the console|Sends a value back to where the function was called and exits the function|Declares a variable|Starts a loop",
+        "answer": "Sends a value back to where the function was called and exits the function",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "No return",
+        "type": "multiple choice",
+        "question": "What does a function return if it has no return statement?",
+        "options": "null|0|An empty string|undefined",
+        "answer": "undefined",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Default parameter",
+        "type": "multiple choice",
+        "question": "What is a default parameter?",
+        "options": "A parameter that cannot be changed|A fallback value used when no argument is passed for that parameter|The first parameter in a function|A required parameter",
+        "answer": "A fallback value used when no argument is passed for that parameter",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Default syntax",
+        "type": "multiple choice",
+        "question": "How do you set a default value for a parameter named discount?",
+        "options": "discount = 0.1 in the function definition|discount: 0.1|default discount 0.1|let discount = 0.1",
+        "answer": "discount = 0.1 in the function definition",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Missing argument",
+        "type": "multiple choice",
+        "question": "What value does a parameter have if no argument is passed and no default is set?",
+        "options": "null|0|undefined|NaN",
+        "answer": "undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Return stops execution",
+        "type": "True or False",
+        "question": "Code written after a return statement inside a function will never run.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Using returned value",
+        "type": "multiple choice",
+        "question": "How do you store a function's returned value?",
+        "options": "const result = calculateTotal([4500])|result = return calculateTotal()|let result = return value|const result = calculateTotal",
+        "answer": "const result = calculateTotal([4500])",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Early return pattern",
+        "type": "multiple choice",
+        "question": "What does getGrade(85) return when the function has: if (score >= 70) return \"Pass\"; if (score >= 50) return \"Borderline\"; return \"Fail\";?",
+        "options": "Borderline|Fail|Pass|undefined",
+        "answer": "Pass",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Demo applyDiscount",
+        "type": "multiple choice",
+        "question": "In the demo what does applyDiscount(10000, 0.2) return?",
+        "options": "9000|8000|10000|2000",
+        "answer": "8000",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "parameters arguments and return values",
+        "description": "Demo no return",
+        "type": "multiple choice",
+        "question": "In the demo printTotal prints the total but does not return it. What does const result = printTotal([4500, 1200, 800]) store?",
+        "options": "6500|null|0|undefined",
+        "answer": "undefined",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Arrow syntax",
+        "type": "multiple choice",
+        "question": "What symbol replaces the function keyword in an arrow function?",
+        "options": "->|=>|>>|:=",
+        "answer": "=>",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Implicit return",
+        "type": "multiple choice",
+        "question": "When can you omit the braces and return keyword in an arrow function?",
+        "options": "Never|When the function body is a single expression|When there are multiple parameters|When the function has no parameters",
+        "answer": "When the function body is a single expression",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Single param parens",
+        "type": "True or False",
+        "question": "For an arrow function with a single parameter the parentheses around the parameter are optional.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Arrow one-liner",
+        "type": "multiple choice",
+        "question": "What does const double = n => n * 2; mean?",
+        "options": "A variable named double that holds the number 2|An arrow function that takes n and returns n multiplied by 2|A loop that doubles n|A syntax error",
+        "answer": "An arrow function that takes n and returns n multiplied by 2",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Braces require return",
+        "type": "multiple choice",
+        "question": "What happens if you use braces in an arrow function but omit the return keyword?",
+        "options": "It returns the last expression|It returns undefined|It throws an error|It returns null",
+        "answer": "It returns undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "When to use arrow",
+        "type": "multiple choice",
+        "question": "When is an arrow function preferred over a function declaration?",
+        "options": "For multi-line reusable utility functions|For short single-expression inline transformations|For functions that need hoisting|For constructor functions",
+        "answer": "For short single-expression inline transformations",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Global scope",
+        "type": "multiple choice",
+        "question": "What is a variable in global scope?",
+        "options": "A variable declared inside a function|A variable declared outside any function accessible everywhere|A variable with the keyword var|A variable inside a loop",
+        "answer": "A variable declared outside any function accessible everywhere",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Local scope",
+        "type": "multiple choice",
+        "question": "What happens to a variable declared inside a function?",
+        "options": "It is accessible everywhere|It is only accessible inside that function|It becomes global after the function runs|It is deleted immediately",
+        "answer": "It is only accessible inside that function",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Scope prevents collision",
+        "type": "True or False",
+        "question": "Two different functions can each have a local variable named total without conflict.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Accessing outer scope",
+        "type": "multiple choice",
+        "question": "Can a function access a variable declared in the global scope?",
+        "options": "No never|Yes functions can read variables from outer scopes|Only with bracket notation|Only if the variable is passed as an argument",
+        "answer": "Yes functions can read variables from outer scopes",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Cross-function access",
+        "type": "multiple choice",
+        "question": "Can one function access a local variable declared inside a different function?",
+        "options": "Yes always|No \u2014 it throws a ReferenceError|Only with const|Only with var",
+        "answer": "No \u2014 it throws a ReferenceError",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Share data between functions",
+        "type": "multiple choice",
+        "question": "How should you share data between two functions that each have their own local scope?",
+        "options": "Use global variables|Use parameters and return values|Use var instead of const|Write both functions in one line",
+        "answer": "Use parameters and return values",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "arrow functions and scope basics",
+        "description": "Demo addNoBraceReturn",
+        "type": "multiple choice",
+        "question": "In the demo const addNoBraceReturn = (a, b) => { a + b; } \u2014 what does addNoBraceReturn(3, 4) return?",
+        "options": "7|undefined|NaN|null",
+        "answer": "undefined",
+        "difficulty": "Advanced"
+    }
+]
