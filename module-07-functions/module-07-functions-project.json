@@ -1,0 +1,175 @@
+{
+  "module": "07",
+  "title": "Functions — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build a function-based processing system for a Nigerian business context. Your solution must use: at least 3 named functions with parameters and return values, at least 1 default parameter, at least 1 arrow function, and the functions must compose (the output of one feeds as input to another). All variables must use const or let (no var).",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Konga Order Processing System",
+        "scenario": "Build a function-based order processing pipeline for a Konga seller. Process the provided order dataset using separate, composable functions.",
+        "requirements": [
+          "Write `calculateSubtotal(orders)` — takes array of orders, returns sum of prices for non-cancelled orders",
+          "Write `applyVAT(amount, rate = 0.075)` — takes a subtotal and optional rate, returns the total with tax",
+          "Write `printOrderLine(order)` — takes a single order object, prints: `ORD-001 | Amara Obi | ₦4500 | delivered`",
+          "Write an arrow function `getStatusBadge` — takes a status string, returns 'Active', 'Pending', or 'Cancelled'",
+          "Chain the functions: loop orders with printOrderLine, then calculate subtotal and pass it to applyVAT, then print the final total"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Konga Order Processing</title>\n</head>\n<body>\n  <h1>Konga Order Processing System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Konga Order Processing System\n// Build composable functions for this dataset\n\nconst orders = [\n  { id: 'ORD-001', customer: 'Amara Obi',   item: 'Wireless Earbuds',   price: 4500,  status: 'delivered' },\n  { id: 'ORD-002', customer: 'Bayo Ade',    item: 'Phone Case',         price: 1200,  status: 'delivered' },\n  { id: 'ORD-003', customer: 'Chidi Nweke', item: 'Tecno Spark 20 Pro', price: 8000,  status: 'cancelled' },\n  { id: 'ORD-004', customer: 'Dami Lawal',  item: 'USB-C Cable',        price: 600,   status: 'delivered' },\n  { id: 'ORD-005', customer: 'Emeka Eze',   item: 'Screen Protector',   price: 3300,  status: 'pending'   }\n];\n\n// 1. calculateSubtotal(orders) — returns sum of non-cancelled order prices\n\n\n// 2. applyVAT(amount, rate = 0.075) — returns amount + VAT\n\n\n// 3. printOrderLine(order) — prints one line per order\n\n\n// 4. getStatusBadge — arrow function: 'delivered'→'Active', 'pending'→'Pending', else→'Cancelled'\n\n\n// 5. Use the functions: loop orders with printOrderLine, then chain calculateSubtotal → applyVAT and print\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Publica Academy Student Results Processor",
+        "scenario": "Build a function-based results processing system for a Publica Academy cohort. Process the provided student dataset using separate, composable functions.",
+        "requirements": [
+          "Write `getGrade(score)` — returns 'Distinction' (>=80), 'Pass' (>=50), or 'Fail' using early returns",
+          "Write `calculateAverage(scores)` — takes an array of numbers, returns the average (sum / count)",
+          "Write `printStudentResult(student)` — takes a student object, prints: `Amara Obi: 88 — Pass`",
+          "Write an arrow function `isPassing` — takes a student object, returns true if score >= 50",
+          "Chain: loop students with printStudentResult, use calculateAverage to get cohort average, print how many students pass using isPassing"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Publica Results Processor</title>\n</head>\n<body>\n  <h1>Publica Academy Results Processor</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Publica Academy Student Results Processor\n// Build composable functions for this dataset\n\nconst students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 45 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 93 },\n  { name: 'Emeka Eze',   score: 31 },\n  { name: 'Funmi Bello', score: 60 }\n];\n\n// 1. getGrade(score) — Distinction (>=80), Pass (>=50), Fail — use early returns\n\n\n// 2. calculateAverage(scores) — returns sum/count\n\n\n// 3. printStudentResult(student) — prints 'Name: score — Grade'\n\n\n// 4. isPassing — arrow function: returns true if student.score >= 50\n\n\n// 5. Loop students with printStudentResult; calculate cohort average; count passing students\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "PiggyVest Savings Account Manager",
+        "scenario": "Build a function-based savings account manager for PiggyVest. Process the provided transaction dataset using separate, composable functions.",
+        "requirements": [
+          "Write `getBalance(transactions)` — sums deposits, subtracts withdrawals, returns final balance",
+          "Write `applyInterest(balance, rate = 0.08)` — returns balance plus 8% annual interest by default",
+          "Write `printTransaction(txn)` — prints: `TXN-001 | deposit | ₦5000 | savings`",
+          "Write an arrow function `isDeposit` — takes a transaction object, returns true if type is 'deposit'",
+          "Chain: loop transactions with printTransaction, calculate balance, pass to applyInterest, print final balance with interest"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>PiggyVest Account Manager</title>\n</head>\n<body>\n  <h1>PiggyVest Savings Account Manager</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// PiggyVest Savings Account Manager\n// Build composable functions for this dataset\n\nconst transactions = [\n  { id: 'TXN-001', type: 'deposit',    amount: 5000,  category: 'savings'  },\n  { id: 'TXN-002', type: 'withdrawal', amount: 1500,  category: 'spending' },\n  { id: 'TXN-003', type: 'deposit',    amount: 12000, category: 'salary'   },\n  { id: 'TXN-004', type: 'withdrawal', amount: 800,   category: 'spending' },\n  { id: 'TXN-005', type: 'deposit',    amount: 3000,  category: 'savings'  }\n];\n\n// 1. getBalance(transactions) — sum deposits minus withdrawals\n\n\n// 2. applyInterest(balance, rate = 0.08) — balance + interest\n\n\n// 3. printTransaction(txn) — prints one line per transaction\n\n\n// 4. isDeposit — arrow function: returns true if txn.type === 'deposit'\n\n\n// 5. Loop with printTransaction; calculate balance; chain to applyInterest; print result\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Paystack Payment Analytics",
+        "scenario": "Build a function-based payment analytics dashboard for a Paystack merchant. Process the provided payment dataset using separate, composable functions.",
+        "requirements": [
+          "Write `getTotalRevenue(payments)` — returns sum of amounts for successful payments only",
+          "Write `applyProcessingFee(amount, feeRate = 0.015)` — returns amount minus 1.5% processing fee by default",
+          "Write `printPaymentLine(payment)` — prints: `PAY-001 | Shoprite | ₦15000 | success`",
+          "Write an arrow function `isSuccessful` — takes a payment object, returns true if status is 'success'",
+          "Chain: loop payments with printPaymentLine, calculate total revenue, pass to applyProcessingFee, print net revenue"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Paystack Analytics</title>\n</head>\n<body>\n  <h1>Paystack Payment Analytics</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Paystack Payment Analytics\n// Build composable functions for this dataset\n\nconst payments = [\n  { id: 'PAY-001', merchant: 'Shoprite',    amount: 15000, status: 'success' },\n  { id: 'PAY-002', merchant: 'Chicken Inn', amount: 3500,  status: 'success' },\n  { id: 'PAY-003', merchant: 'GTBank',      amount: 50000, status: 'failed'  },\n  { id: 'PAY-004', merchant: 'Konga',       amount: 8000,  status: 'success' },\n  { id: 'PAY-005', merchant: 'DStv',        amount: 6000,  status: 'success' }\n];\n\n// 1. getTotalRevenue(payments) — sum of successful payment amounts\n\n\n// 2. applyProcessingFee(amount, feeRate = 0.015) — amount minus fee\n\n\n// 3. printPaymentLine(payment) — prints one line per payment\n\n\n// 4. isSuccessful — arrow function: returns true if payment.status === 'success'\n\n\n// 5. Loop with printPaymentLine; calculate revenue; chain to applyProcessingFee; print net\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Bolt Driver Earnings Calculator",
+        "scenario": "Build a function-based earnings calculator for a Bolt driver. Process the provided trips dataset using separate, composable functions.",
+        "requirements": [
+          "Write `calculateGrossEarnings(trips)` — returns total fare from all trips",
+          "Write `applyCommission(amount, rate = 0.2)` — returns amount minus 20% Bolt commission by default",
+          "Write `printTripLine(trip)` — prints: `TRIP-001 | Gbenga Musa | ₦1800 | 4.8★`",
+          "Write an arrow function `isHighRated` — takes a trip object, returns true if rating >= 4.5",
+          "Chain: loop trips with printTripLine, calculate gross earnings, pass to applyCommission, print net earnings; also count and print high-rated trips using isHighRated"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bolt Driver Earnings</title>\n</head>\n<body>\n  <h1>Bolt Driver Earnings Calculator</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bolt Driver Earnings Calculator\n// Build composable functions for this dataset\n\nconst trips = [\n  { id: 'TRIP-001', driver: 'Gbenga Musa', fare: 1800, distance: 5.2,  rating: 4.8 },\n  { id: 'TRIP-002', driver: 'Gbenga Musa', fare: 950,  distance: 2.1,  rating: 3.9 },\n  { id: 'TRIP-003', driver: 'Gbenga Musa', fare: 3500, distance: 11.0, rating: 4.5 },\n  { id: 'TRIP-004', driver: 'Gbenga Musa', fare: 1200, distance: 3.8,  rating: 4.2 },\n  { id: 'TRIP-005', driver: 'Gbenga Musa', fare: 2800, distance: 8.5,  rating: 4.7 }\n];\n\n// 1. calculateGrossEarnings(trips) — total fare from all trips\n\n\n// 2. applyCommission(amount, rate = 0.2) — amount minus commission\n\n\n// 3. printTripLine(trip) — prints one line per trip\n\n\n// 4. isHighRated — arrow function: returns true if trip.rating >= 4.5\n\n\n// 5. Loop with printTripLine; calculate gross; chain to applyCommission; print net; count high-rated\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "named_functions",
+          "label": "Named Functions with Parameters and Return Values",
+          "points": 40,
+          "descriptors": {
+            "full": "All three required named functions defined correctly, each takes the right parameters, each returns the correct value (not just console.logs it)",
+            "partial": "One or two functions work correctly, remaining have errors or return undefined instead of a value",
+            "none": "Functions missing, not using parameters, or not returning values"
+          }
+        },
+        {
+          "id": "default_and_arrow",
+          "label": "Default Parameter & Arrow Function",
+          "points": 25,
+          "descriptors": {
+            "full": "Default parameter used correctly in one function (fallback works when argument omitted), arrow function correctly defined and called",
+            "partial": "One of the two implemented correctly, the other missing or broken",
+            "none": "No default parameter used, or arrow function missing"
+          }
+        },
+        {
+          "id": "composition",
+          "label": "Function Composition",
+          "points": 20,
+          "descriptors": {
+            "full": "Functions chain correctly: output of one function passed as argument to another, final result computed and printed",
+            "partial": "Functions defined but not composed — results computed independently rather than chained",
+            "none": "Functions not composed; all logic written inline without using the defined functions"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "Function names use verbs in camelCase, const/let used correctly, output format matches requirements",
+            "partial": "Minor naming issues or small formatting discrepancies",
+            "none": "var used, poor naming, or output significantly malformed"
+          }
+        }
+      ]
+    }
+  }
+}

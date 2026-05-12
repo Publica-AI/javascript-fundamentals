@@ -1,0 +1,187 @@
+{
+  "module": "07",
+  "title": "Functions",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function called `greetCustomer` that takes two parameters: `name` (string) and `storeName` (string). It should print: `Welcome, Amara Obi! Thanks for shopping at Konga.` Call the function twice with different names and stores.",
+            "starter": "// Write the greetCustomer function here\n\n// Call it twice with different arguments\n",
+            "solution": "function greetCustomer(name, storeName) {\n  console.log('Welcome, ' + name + '! Thanks for shopping at ' + storeName + '.');\n}\n\ngreetCustomer('Amara Obi', 'Konga');\ngreetCustomer('Bayo Ade', 'Jumia');",
+            "test_cases": [
+              { "expected_output": "Welcome, Amara Obi! Thanks for shopping at Konga." },
+              { "expected_output": "Welcome, Bayo Ade! Thanks for shopping at Jumia." }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function called `calculateTotal` that takes an array of prices and returns the sum. Do not use console.log inside the function — only return the value. After calling it, print: `Total: ₦9300`.",
+            "starter": "const prices = [4500, 1200, 800, 2800];\n\n// Write calculateTotal here — it should return the sum\n\n// Call it and print the result\n",
+            "solution": "const prices = [4500, 1200, 800, 2800];\n\nfunction calculateTotal(priceList) {\n  let total = 0;\n  for (const price of priceList) {\n    total = total + price;\n  }\n  return total;\n}\n\nconst result = calculateTotal(prices);\nconsole.log('Total: ₦' + result);",
+            "test_cases": [
+              { "expected_output": "Total: ₦9300" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between a function declaration and a function expression? Give one practical scenario where you would choose one over the other.",
+            "sample_answer": "A function declaration uses the `function` keyword as a statement: `function greet() {}`. It is hoisted — available anywhere in the file. A function expression assigns a function to a variable: `const greet = function() {}`. It is not hoisted — must be defined before use. In practice, use declarations for named, reusable utility functions that need to be called anywhere in the file. Use expressions (especially arrow functions) for short, inline operations passed as callbacks or assigned to variables."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write an arrow function called `applyDiscount` that takes a `price` and an optional `discount` (default: 0.1 for 10%). It should return the discounted price. Test it: `applyDiscount(5000)` should return 4500, `applyDiscount(5000, 0.2)` should return 4000. Print both results.",
+            "starter": "// Write applyDiscount as an arrow function with a default parameter\n\n// Print both test results\n",
+            "solution": "const applyDiscount = (price, discount = 0.1) => price - (price * discount);\n\nconsole.log(applyDiscount(5000));       // 4500\nconsole.log(applyDiscount(5000, 0.2)); // 4000",
+            "test_cases": [
+              { "expected_output": "4500" },
+              { "expected_output": "4000" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function called `getGrade` that takes a score and returns a grade string using early returns: score >= 70 returns 'Pass', score >= 50 returns 'Borderline', otherwise returns 'Fail'. Test with scores 85, 55, and 30 and print each result.",
+            "starter": "// Write getGrade with early returns\n\n// Test with 85, 55, and 30\n",
+            "solution": "function getGrade(score) {\n  if (score >= 70) return 'Pass';\n  if (score >= 50) return 'Borderline';\n  return 'Fail';\n}\n\nconsole.log(getGrade(85));\nconsole.log(getGrade(55));\nconsole.log(getGrade(30));",
+            "test_cases": [
+              { "expected_output": "Pass" },
+              { "expected_output": "Borderline" },
+              { "expected_output": "Fail" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Explain what `return` does in a function. Why is it better to return a value from a function rather than console.log it inside?",
+            "sample_answer": "`return` immediately stops the function and sends a value back to wherever the function was called. It's better to return a value than console.log inside because the caller can then decide what to do with the result: store it in a variable, use it in a calculation, pass it to another function, or display it. A function that only console.logs is a dead end — the computed value can't be used by any other code. Returning makes functions composable and reusable."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Convert the function below into an arrow function with an implicit return (no braces, no return keyword).\n\n```js\nfunction formatPrice(amount) {\n  return '₦' + amount;\n}\n```\n\nThen call it with 4500 and print the result.",
+            "starter": "// Write the arrow function version of formatPrice here\n\n// Call it with 4500 and print the result\n",
+            "solution": "const formatPrice = amount => '₦' + amount;\n\nconsole.log(formatPrice(4500));",
+            "test_cases": [
+              { "expected_output": "₦4500" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "The code below has a scope bug. Fix it so it runs without error. The `total` variable must be computed inside `calculateRevenue` and passed to `printRevenue` as an argument — do not make `total` a global variable.",
+            "starter": "function calculateRevenue(sales) {\n  const total = 0;\n  for (const sale of sales) {\n    total = total + sale;\n  }\n  return total;\n}\n\nfunction printRevenue() {\n  console.log('Revenue: ₦' + total);  // BUG: total not in scope\n}\n\nconst revenue = calculateRevenue([5000, 3000, 8000]);\nprintRevenue();\n",
+            "solution": "function calculateRevenue(sales) {\n  let total = 0;\n  for (const sale of sales) {\n    total = total + sale;\n  }\n  return total;\n}\n\nfunction printRevenue(total) {\n  console.log('Revenue: ₦' + total);\n}\n\nconst revenue = calculateRevenue([5000, 3000, 8000]);\nprintRevenue(revenue);",
+            "test_cases": [
+              { "expected_output": "Revenue: ₦16000" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is scope in JavaScript? Why can't a function access variables declared inside a different function?",
+            "sample_answer": "Scope determines where in your code a variable is accessible. Variables declared inside a function have local scope — they only exist within that function's block. When a function finishes executing, its local variables are destroyed. Two separate functions each have their own independent scope, so a variable declared in one function is invisible to another. To share data between functions, you pass it as an argument (parameter) or use a return value — not by trying to access the other function's local variables directly."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function called `printReceipt` that takes an order object with `customer`, `item`, and `price` properties. It should print three lines:\n```\n=== Receipt ===\nCustomer: Amara Obi\nItem: Wireless Earbuds — ₦4500\n```\nCall it with a sample order object.",
+            "starter": "// Write printReceipt here\n\n// Call it with this order:\n// { customer: 'Amara Obi', item: 'Wireless Earbuds', price: 4500 }\n",
+            "solution": "function printReceipt(order) {\n  console.log('=== Receipt ===');\n  console.log('Customer: ' + order.customer);\n  console.log('Item: ' + order.item + ' — ₦' + order.price);\n}\n\nprintReceipt({ customer: 'Amara Obi', item: 'Wireless Earbuds', price: 4500 });",
+            "test_cases": [
+              { "expected_output": "=== Receipt ===" },
+              { "expected_output": "Customer: Amara Obi" },
+              { "expected_output": "Item: Wireless Earbuds — ₦4500" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write two arrow functions: `addVAT` that takes a price and returns the price plus 7.5%, and `formatNaira` that takes a number and returns a string like `₦4837.50`. Chain them: `console.log(formatNaira(addVAT(4500)))` should print `₦4837.5`.",
+            "starter": "// Write addVAT and formatNaira as arrow functions\n\n// Chain them to print the result for 4500\n",
+            "solution": "const addVAT = price => price * 1.075;\nconst formatNaira = amount => '₦' + amount;\n\nconsole.log(formatNaira(addVAT(4500)));",
+            "test_cases": [
+              { "expected_output": "₦4837.5" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "When writing an arrow function, what is the rule about braces and the return keyword? What happens if you use braces but forget return?",
+            "sample_answer": "If an arrow function has curly braces `{}`, it requires an explicit `return` statement. The braces define a block of statements, and a block does not return anything automatically. If you use braces but forget `return`, the function always returns `undefined`. If you omit the braces entirely, the function uses implicit return — the expression to the right of `=>` is evaluated and its value is returned automatically. So `price => price * 1.075` and `price => { return price * 1.075; }` are equivalent, but `price => { price * 1.075; }` returns undefined."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `summariseOrders` that takes an array of order objects (each with `customer`, `amount`, `status`). It should return an object with two properties: `count` (total number of orders) and `revenue` (sum of amounts for delivered orders only). Print both properties after calling it.",
+            "starter": "const orders = [\n  { customer: 'Amara', amount: 4500, status: 'delivered' },\n  { customer: 'Bayo',  amount: 1200, status: 'delivered' },\n  { customer: 'Chidi', amount: 8000, status: 'cancelled' },\n  { customer: 'Dami',  amount: 600,  status: 'delivered' }\n];\n\n// Write summariseOrders here\n\n// Call it and print count and revenue\n",
+            "solution": "const orders = [\n  { customer: 'Amara', amount: 4500, status: 'delivered' },\n  { customer: 'Bayo',  amount: 1200, status: 'delivered' },\n  { customer: 'Chidi', amount: 8000, status: 'cancelled' },\n  { customer: 'Dami',  amount: 600,  status: 'delivered' }\n];\n\nfunction summariseOrders(orderList) {\n  let revenue = 0;\n  for (const order of orderList) {\n    if (order.status === 'delivered') {\n      revenue = revenue + order.amount;\n    }\n  }\n  return { count: orderList.length, revenue: revenue };\n}\n\nconst summary = summariseOrders(orders);\nconsole.log('Count:', summary.count);\nconsole.log('Revenue: ₦' + summary.revenue);",
+            "test_cases": [
+              { "expected_output": "Count: 4" },
+              { "expected_output": "Revenue: ₦6300" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "The function below violates the DRY principle — the same greeting logic is written twice. Refactor it: extract the greeting into a function called `buildGreeting(name, role)` that returns the greeting string. The two console.log calls should use that function.",
+            "starter": "// Refactor this to use a buildGreeting function\nconsole.log('Hello, Amara Obi! Your role is: Student');\nconsole.log('Hello, Kemi Lawal! Your role is: Instructor');\n",
+            "solution": "function buildGreeting(name, role) {\n  return 'Hello, ' + name + '! Your role is: ' + role;\n}\n\nconsole.log(buildGreeting('Amara Obi', 'Student'));\nconsole.log(buildGreeting('Kemi Lawal', 'Instructor'));",
+            "test_cases": [
+              { "expected_output": "Hello, Amara Obi! Your role is: Student" },
+              { "expected_output": "Hello, Kemi Lawal! Your role is: Instructor" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What does DRY mean in programming? How does writing functions help you follow the DRY principle?",
+            "sample_answer": "DRY stands for Don't Repeat Yourself. It means that each piece of logic should be written once and reused, not copy-pasted. Functions enforce DRY by letting you define logic in one place and call it from many places. If you need to change the logic, you change it in one function and every call site benefits automatically. Without functions, the same block of code might be copied into five places — a bug fix requires finding and updating all five copies, and it's easy to miss one."
+          }
+        ]
+      }
+    ]
+  }
+}
