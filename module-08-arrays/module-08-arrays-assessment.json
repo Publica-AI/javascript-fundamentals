@@ -1,0 +1,206 @@
+{
+  "module": "08",
+  "title": "Arrays",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the orders array below, print: the number of orders, the first order's customer name, the last order's amount, and the customer name of the order at index 2.",
+            "starter": "const orders = [\n  { id: 'ORD-001', customer: 'Amara Obi',   amount: 4500 },\n  { id: 'ORD-002', customer: 'Bayo Ade',    amount: 1200 },\n  { id: 'ORD-003', customer: 'Chidi Nweke', amount: 8000 },\n  { id: 'ORD-004', customer: 'Dami Lawal',  amount: 600  }\n];\n\n// Print: count, first customer, last amount, index-2 customer\n",
+            "solution": "const orders = [\n  { id: 'ORD-001', customer: 'Amara Obi',   amount: 4500 },\n  { id: 'ORD-002', customer: 'Bayo Ade',    amount: 1200 },\n  { id: 'ORD-003', customer: 'Chidi Nweke', amount: 8000 },\n  { id: 'ORD-004', customer: 'Dami Lawal',  amount: 600  }\n];\n\nconsole.log(orders.length);\nconsole.log(orders[0].customer);\nconsole.log(orders[orders.length - 1].amount);\nconsole.log(orders[2].customer);",
+            "test_cases": [
+              { "expected_output": "4" },
+              { "expected_output": "Amara Obi" },
+              { "expected_output": "600" },
+              { "expected_output": "Chidi Nweke" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Start with the cart array below. Push 'Laptop Bag' and 'Mouse' to the end. Then pop the last item and print it. Finally print the remaining cart.",
+            "starter": "const cart = ['Wireless Earbuds', 'Phone Case', 'USB-C Cable'];\n\n// Push 'Laptop Bag' and 'Mouse'\n// Pop the last item and print it\n// Print the remaining cart\n",
+            "solution": "const cart = ['Wireless Earbuds', 'Phone Case', 'USB-C Cable'];\n\ncart.push('Laptop Bag', 'Mouse');\nconst removed = cart.pop();\nconsole.log(removed);\nconsole.log(cart);",
+            "test_cases": [
+              { "expected_output": "Mouse" },
+              { "expected_output": "Wireless Earbuds" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `splice` and `slice`? Give one scenario where you would use each.",
+            "sample_answer": "splice modifies the original array — it can remove, insert, or replace elements at any position. slice copies a portion of the array into a new array without changing the original. Use splice when you need to remove an item from a list (e.g., removing a cancelled order from a queue). Use slice when you need a subset of data without affecting the source (e.g., taking the first 10 records from a 100-item result set for the first page of results)."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `map` to create a new array from the prices below where each price has 7.5% VAT added. Print the new array. Do not modify the original prices array.",
+            "starter": "const prices = [4500, 1200, 8000, 600, 3300];\n\n// Use map to add 7.5% VAT to each price\n// Print the new array\n// Print the original to confirm it's unchanged\n",
+            "solution": "const prices = [4500, 1200, 8000, 600, 3300];\n\nconst withVAT = prices.map(price => price * 1.075);\nconsole.log(withVAT);\nconsole.log(prices);",
+            "test_cases": [
+              { "expected_output": "4837.5" },
+              { "expected_output": "4500" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `filter` to create a new array containing only the delivered orders from the orders array below. Then use `forEach` to print each delivered customer's name.",
+            "starter": "const orders = [\n  { customer: 'Amara', status: 'delivered' },\n  { customer: 'Bayo',  status: 'cancelled' },\n  { customer: 'Chidi', status: 'delivered' },\n  { customer: 'Dami',  status: 'pending'   },\n  { customer: 'Emeka', status: 'delivered' }\n];\n\n// filter to get delivered orders only\n// forEach to print each customer name\n",
+            "solution": "const orders = [\n  { customer: 'Amara', status: 'delivered' },\n  { customer: 'Bayo',  status: 'cancelled' },\n  { customer: 'Chidi', status: 'delivered' },\n  { customer: 'Dami',  status: 'pending'   },\n  { customer: 'Emeka', status: 'delivered' }\n];\n\nconst delivered = orders.filter(order => order.status === 'delivered');\ndelivered.forEach(order => console.log(order.customer));",
+            "test_cases": [
+              { "expected_output": "Amara" },
+              { "expected_output": "Chidi" },
+              { "expected_output": "Emeka" },
+              { "expected_not_output": "Bayo" },
+              { "expected_not_output": "Dami" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why can't you use `break` inside a `forEach` callback? What should you use instead when you need to exit early from array iteration?",
+            "sample_answer": "break works on loop statements (for, while, for...of). forEach is a method that accepts a callback function — break inside the callback tries to break out of the callback function, not the forEach iteration, which is not allowed and throws a SyntaxError. When you need early exit (break) or skipping (continue), use a for...of loop instead. for...of is a loop statement that supports both break and continue as expected."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `splice` to: (1) remove 'Old Phone' from index 2, and (2) insert 'Tecno Spark 20 Pro' in its place. Print the array before and after each operation.",
+            "starter": "const products = ['Wireless Earbuds', 'Phone Case', 'Old Phone', 'USB Cable', 'Screen Protector'];\n\n// Use splice to replace 'Old Phone' at index 2 with 'Tecno Spark 20 Pro'\n",
+            "solution": "const products = ['Wireless Earbuds', 'Phone Case', 'Old Phone', 'USB Cable', 'Screen Protector'];\nconsole.log('Before:', products);\n\nproducts.splice(2, 1, 'Tecno Spark 20 Pro');\nconsole.log('After:', products);",
+            "test_cases": [
+              { "expected_output": "Old Phone" },
+              { "expected_output": "Tecno Spark 20 Pro" },
+              { "expected_not_output_after_splice": "Old Phone" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `slice` to extract the most recent 3 orders from the end of the orders array. Print the slice. Then confirm the original array still has all 6 orders.",
+            "starter": "const orders = ['ORD-001', 'ORD-002', 'ORD-003', 'ORD-004', 'ORD-005', 'ORD-006'];\n\n// Use slice to get the last 3 orders\n// Print the slice\n// Print original length to confirm it's unchanged\n",
+            "solution": "const orders = ['ORD-001', 'ORD-002', 'ORD-003', 'ORD-004', 'ORD-005', 'ORD-006'];\n\nconst recent = orders.slice(-3);\nconsole.log(recent);\nconsole.log(orders.length);",
+            "test_cases": [
+              { "expected_output": "ORD-004" },
+              { "expected_output": "ORD-005" },
+              { "expected_output": "ORD-006" },
+              { "expected_output": "6" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "A variable is declared as `const cart = []`. Can you call `cart.push('item')` and `cart.pop()`? Can you do `cart = ['new', 'array']`? Explain why.",
+            "sample_answer": "Yes, you can call push and pop on a const array. const prevents the variable from being reassigned — you can't point the cart variable to a different array. But const does NOT freeze the array's contents. push, pop, splice, and direct index assignment all work because they modify the array's internal data without reassigning the variable. Trying `cart = ['new', 'array']` would throw a TypeError because that reassigns the const variable to point to a new array object."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `forEach` with the index parameter to print a numbered list of products. Each line should read: `1. Wireless Earbuds — ₦4500`.",
+            "starter": "const products = [\n  { name: 'Wireless Earbuds',  price: 4500  },\n  { name: 'Phone Case',        price: 1200  },\n  { name: 'Laptop Bag',        price: 12000 },\n  { name: 'USB-C Cable',       price: 600   }\n];\n\n// Use forEach with (product, index) to print a numbered list\n",
+            "solution": "const products = [\n  { name: 'Wireless Earbuds',  price: 4500  },\n  { name: 'Phone Case',        price: 1200  },\n  { name: 'Laptop Bag',        price: 12000 },\n  { name: 'USB-C Cable',       price: 600   }\n];\n\nproducts.forEach((product, index) => {\n  console.log((index + 1) + '. ' + product.name + ' — ₦' + product.price);\n});",
+            "test_cases": [
+              { "expected_output": "1. Wireless Earbuds — ₦4500" },
+              { "expected_output": "3. Laptop Bag — ₦12000" },
+              { "expected_output": "4. USB-C Cable — ₦600" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Chain `filter` and `map` on the students array: first filter to keep only students who passed (score >= 50), then map to create an array of strings in the format `'Amara Obi: 88'`. Print the result.",
+            "starter": "const students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 45 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 31 },\n  { name: 'Emeka Eze',   score: 60 }\n];\n\n// Chain filter (score >= 50) then map ('Name: score') and print\n",
+            "solution": "const students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 45 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 31 },\n  { name: 'Emeka Eze',   score: 60 }\n];\n\nconst passingLabels = students\n  .filter(s => s.score >= 50)\n  .map(s => s.name + ': ' + s.score);\n\nconsole.log(passingLabels);",
+            "test_cases": [
+              { "expected_output": "Amara Obi: 88" },
+              { "expected_output": "Chidi Nweke: 72" },
+              { "expected_output": "Emeka Eze: 60" },
+              { "expected_not_output": "Bayo Ade" },
+              { "expected_not_output": "Dami Lawal" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What does `map` return? What does `filter` return? How are they similar, and how are they different?",
+            "sample_answer": "Both map and filter return a new array without modifying the original. map transforms every element and always returns an array of the same length — one output for every input. filter tests every element and returns a new array containing only the elements for which the callback returned true — so the result can be shorter than the original. Use map to change values (add VAT, format strings), use filter to keep a subset (only delivered orders, only passing scores)."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `shift` and `unshift` to simulate a customer queue at a Konga customer service desk. Start with the queue below. Serve (shift) the first customer and print who was served. Then add two new customers ('Funmi' and 'Gbenga') to the front with unshift. Print the final queue.",
+            "starter": "const queue = ['Amara', 'Bayo', 'Chidi'];\n\n// Shift the first customer (print who was served)\n// Unshift 'Funmi' and 'Gbenga' to the front\n// Print the final queue\n",
+            "solution": "const queue = ['Amara', 'Bayo', 'Chidi'];\n\nconst served = queue.shift();\nconsole.log('Served:', served);\n\nqueue.unshift('Funmi', 'Gbenga');\nconsole.log(queue);",
+            "test_cases": [
+              { "expected_output": "Served: Amara" },
+              { "expected_output": "Funmi" },
+              { "expected_output": "Gbenga" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a for...of loop over the payments array that uses `continue` to skip failed payments and `break` to stop at the first payment over ₦10,000. Print each processed payment's amount and stop if one exceeds ₦10,000.",
+            "starter": "const payments = [1500, 800, 0, 5000, 12000, 3000];\n// Note: 0 is a failed payment — skip it\n// Stop (break) at the first payment > 10000\n\n// Write your for...of loop here\n",
+            "solution": "const payments = [1500, 800, 0, 5000, 12000, 3000];\n\nfor (const amount of payments) {\n  if (amount === 0) {\n    continue;\n  }\n  if (amount > 10000) {\n    console.log('Large payment found: ₦' + amount + ' — stopping');\n    break;\n  }\n  console.log('Processed: ₦' + amount);\n}",
+            "test_cases": [
+              { "expected_output": "Processed: ₦1500" },
+              { "expected_output": "Processed: ₦800" },
+              { "expected_output": "Processed: ₦5000" },
+              { "expected_output": "Large payment found: ₦12000 — stopping" },
+              { "expected_not_output": "₦0" },
+              { "expected_not_output": "₦3000" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Describe two real-world scenarios in a Nigerian e-commerce app where you would use an array of objects. For each, name the array, describe its structure, and name one operation you'd perform on it.",
+            "sample_answer": "1. Cart: `const cart = [{ productId: 'PRD-001', name: 'Wireless Earbuds', price: 4500, qty: 1 }, ...]`. Operation: use reduce (or a for...of loop) to calculate the cart total. 2. Order history: `const orders = [{ id: 'ORD-001', customer: 'Amara', amount: 4500, status: 'delivered' }, ...]`. Operation: use filter to show only pending orders on a 'Track Orders' screen."
+          }
+        ]
+      }
+    ]
+  }
+}

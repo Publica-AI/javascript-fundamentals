@@ -1,0 +1,175 @@
+{
+  "module": "08",
+  "title": "Arrays — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build an array-based data processing system for a Nigerian business context. Your solution must use: array access with index (including last-element pattern), push or pop or shift or unshift, splice or slice, map to transform an array, filter to subset an array, and forEach or for...of to iterate and display results. All variables must use const or let (no var).",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Konga Product Catalogue Manager",
+        "scenario": "Build a product catalogue management system for a Konga seller. Process the provided inventory using array methods.",
+        "requirements": [
+          "Print the first product name, last product price, and total catalogue count using array access",
+          "Add two new products to the end with push, then remove the last one with pop (print what was popped)",
+          "Use splice to replace the out-of-stock product at index 2 with a new available product",
+          "Use map to create a new array of product name strings formatted as: 'Wireless Earbuds — ₦4500'",
+          "Use filter to get only in-stock products, then forEach to print a numbered list of available products"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Konga Catalogue Manager</title>\n</head>\n<body>\n  <h1>Konga Product Catalogue Manager</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Konga Product Catalogue Manager\n// Use array methods to process this catalogue\n\nconst catalogue = [\n  { id: 'PRD-001', name: 'Wireless Earbuds',  price: 4500,  inStock: true  },\n  { id: 'PRD-002', name: 'Phone Case',         price: 1200,  inStock: true  },\n  { id: 'PRD-003', name: 'Broken Tablet',      price: 0,     inStock: false },\n  { id: 'PRD-004', name: 'USB-C Cable',         price: 600,   inStock: true  },\n  { id: 'PRD-005', name: 'Screen Protector',    price: 3300,  inStock: true  }\n];\n\n// 1. Print: first product name, last product price, total count\n\n\n// 2. Push two new products; pop the last; print what was popped\n\n\n// 3. Splice to replace index-2 product ('Broken Tablet') with 'Tecno Spark 20 Pro' at ₦8000\n\n\n// 4. Map to build array of 'Name — ₦Price' strings; print the result\n\n\n// 5. Filter in-stock, forEach to print numbered available list\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Publica Academy Student Cohort Tracker",
+        "scenario": "Build a student cohort management system for Publica Academy. Process the provided student dataset using array methods.",
+        "requirements": [
+          "Print the first student's name, last student's score, and total cohort size using array access",
+          "Add two new students to the cohort with push, then remove the last one with pop (print the removed student's name)",
+          "Use splice to remove the student at index 1 (a duplicate entry) from the list",
+          "Use map to create an array of result strings formatted as: 'Amara Obi — 88 — Pass' (Pass if score >= 50, Fail otherwise)",
+          "Use filter to get only passing students (score >= 50), then forEach to print a numbered list"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Publica Cohort Tracker</title>\n</head>\n<body>\n  <h1>Publica Academy Cohort Tracker</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Publica Academy Student Cohort Tracker\n// Use array methods to process this cohort data\n\nconst students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 55 },  // ← duplicate entry at index 1 (to be removed)\n  { name: 'Bayo Ade',    score: 55 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 35 }\n];\n\n// 1. Print: first name, last score, total count\n\n\n// 2. Push two new students; pop the last; print removed name\n\n\n// 3. Splice to remove the duplicate at index 1\n\n\n// 4. Map to 'Name — Score — Pass/Fail' strings; print result\n\n\n// 5. Filter passing (score >= 50), forEach numbered list\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "PiggyVest Transaction Manager",
+        "scenario": "Build a transaction management system for a PiggyVest savings account. Process the provided transaction dataset using array methods.",
+        "requirements": [
+          "Print the first transaction ID, last transaction amount, and total transaction count using array access",
+          "Add a new deposit to the end with push, then remove the last transaction (the most recent) with pop and print it",
+          "Use slice to extract the last 3 transactions (most recent) and print them as a 'Recent Activity' report",
+          "Use map to create an array of transaction summary strings: 'TXN-001: +₦5000 (savings)' for deposits and 'TXN-002: -₦1500 (spending)' for withdrawals",
+          "Use filter to get only deposits, then forEach to sum and print the total deposited amount"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>PiggyVest Transactions</title>\n</head>\n<body>\n  <h1>PiggyVest Transaction Manager</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// PiggyVest Transaction Manager\n// Use array methods to process this transaction history\n\nconst transactions = [\n  { id: 'TXN-001', type: 'deposit',    amount: 5000,  category: 'savings'  },\n  { id: 'TXN-002', type: 'withdrawal', amount: 1500,  category: 'spending' },\n  { id: 'TXN-003', type: 'deposit',    amount: 12000, category: 'salary'   },\n  { id: 'TXN-004', type: 'withdrawal', amount: 800,   category: 'spending' },\n  { id: 'TXN-005', type: 'deposit',    amount: 3000,  category: 'savings'  }\n];\n\n// 1. Print: first ID, last amount, total count\n\n\n// 2. Push a new deposit; pop and print the removed transaction\n\n\n// 3. Slice last 3 transactions; print as 'Recent Activity'\n\n\n// 4. Map to '+₦amount (category)' for deposits and '-₦amount' for withdrawals\n\n\n// 5. Filter deposits only; forEach to calculate and print total deposited\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Paystack Payment Batch Dashboard",
+        "scenario": "Build a payment batch dashboard for a Paystack merchant. Process the provided payment dataset using array methods.",
+        "requirements": [
+          "Print the first payment merchant name, last payment amount, and total payment count using array access",
+          "Simulate a refund by removing the last payment with pop (print refunded amount); then add a new replacement payment with push",
+          "Use slice to get a preview of the first 3 payments for a dashboard summary",
+          "Use map to create an array of payment labels: 'Shoprite: ₦15000 ✔' for success and 'GTBank: ₦50000 ✖' for failed",
+          "Use filter to get successful payments only, then forEach to calculate and print total successful revenue"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Paystack Dashboard</title>\n</head>\n<body>\n  <h1>Paystack Payment Dashboard</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Paystack Payment Batch Dashboard\n// Use array methods to process this payment data\n\nconst payments = [\n  { id: 'PAY-001', merchant: 'Shoprite',    amount: 15000, status: 'success' },\n  { id: 'PAY-002', merchant: 'Chicken Inn', amount: 3500,  status: 'success' },\n  { id: 'PAY-003', merchant: 'GTBank',      amount: 50000, status: 'failed'  },\n  { id: 'PAY-004', merchant: 'Konga',       amount: 8000,  status: 'success' },\n  { id: 'PAY-005', merchant: 'DStv',        amount: 6000,  status: 'success' }\n];\n\n// 1. Print: first merchant, last amount, total count\n\n\n// 2. Pop last payment (print refunded amount); push a new replacement\n\n\n// 3. Slice first 3 for dashboard preview; print them\n\n\n// 4. Map to 'Merchant: ₦Amount ✔/✖' labels; print result\n\n\n// 5. Filter successful; forEach to sum and print total revenue\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Bolt Driver Trip History Analyser",
+        "scenario": "Build a trip history analyser for a Bolt driver. Process the provided trips dataset using array methods.",
+        "requirements": [
+          "Print the first trip ID, last trip fare, and total trip count using array access",
+          "Add a new high-earning trip to the end with push; then pop it back off (print the popped trip's fare — simulating a cancelled booking)",
+          "Use splice to remove the lowest-rated trip (at index 4, rating 2.5) from the history",
+          "Use map to create an array of trip summary strings: 'TRIP-001: ₦1800 — 4.8★'",
+          "Use filter to get high-rated trips (rating >= 4.5), then forEach to calculate and print total earnings from high-rated trips"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bolt Trip Analyser</title>\n</head>\n<body>\n  <h1>Bolt Driver Trip History</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bolt Driver Trip History Analyser\n// Use array methods to process this trip history\n\nconst trips = [\n  { id: 'TRIP-001', fare: 1800, distance: 5.2,  rating: 4.8 },\n  { id: 'TRIP-002', fare: 950,  distance: 2.1,  rating: 3.9 },\n  { id: 'TRIP-003', fare: 3500, distance: 11.0, rating: 4.5 },\n  { id: 'TRIP-004', fare: 1200, distance: 3.8,  rating: 4.2 },\n  { id: 'TRIP-005', fare: 2800, distance: 8.5,  rating: 2.5 },\n  { id: 'TRIP-006', fare: 4200, distance: 14.3, rating: 4.9 }\n];\n\n// 1. Print: first trip ID, last fare, total count\n\n\n// 2. Push a new trip ({ id:'TRIP-007', fare:5000, distance:16, rating:5.0 }); pop it; print popped fare\n\n\n// 3. Splice to remove the low-rated trip at index 4 (TRIP-005, rating 2.5)\n\n\n// 4. Map to 'TRIP-001: ₦1800 — 4.8★' strings; print result\n\n\n// 5. Filter rating >= 4.5; forEach to sum and print total high-rated earnings\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "access_and_mutation",
+          "label": "Array Access & Mutation Methods",
+          "points": 35,
+          "descriptors": {
+            "full": "Array access uses correct index patterns (including last-element), push/pop/shift/unshift used correctly and print the expected outputs, splice or slice applied correctly",
+            "partial": "Most operations correct but one method produces wrong output or is missing",
+            "none": "Multiple access or mutation operations missing or producing incorrect results"
+          }
+        },
+        {
+          "id": "map_and_filter",
+          "label": "map and filter",
+          "points": 40,
+          "descriptors": {
+            "full": "map correctly transforms every element into the required format and returns a new array, filter correctly keeps only matching elements, neither mutates the original",
+            "partial": "One of the two works correctly, the other has errors or attempts mutation",
+            "none": "map and/or filter missing or producing incorrect results"
+          }
+        },
+        {
+          "id": "iteration_display",
+          "label": "forEach / for...of Iteration and Display",
+          "points": 15,
+          "descriptors": {
+            "full": "forEach or for...of correctly iterates the filtered/processed result and output matches the required format",
+            "partial": "Iteration works but output format has minor errors",
+            "none": "Iteration missing or does not produce output"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 10,
+          "descriptors": {
+            "full": "const/let used correctly, descriptive variable names, output matches requirements exactly",
+            "partial": "Minor naming or formatting issues",
+            "none": "var used, unclear names, or significantly malformed output"
+          }
+        }
+      ]
+    }
+  }
+}

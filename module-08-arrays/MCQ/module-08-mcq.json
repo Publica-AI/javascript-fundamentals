@@ -1,0 +1,452 @@
+[
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "What is an array",
+        "type": "multiple choice",
+        "question": "What is an array in JavaScript?",
+        "options": "A single value|An ordered list of values|A function|An object with methods only",
+        "answer": "An ordered list of values",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Creating syntax",
+        "type": "multiple choice",
+        "question": "What syntax is used to create an array?",
+        "options": "{ }|( )|[ ]|< >",
+        "answer": "[ ]",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "First index",
+        "type": "multiple choice",
+        "question": "What index does the first element of an array have?",
+        "options": "1|0|-1|array.start",
+        "answer": "0",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Length property",
+        "type": "multiple choice",
+        "question": "How do you get the number of elements in an array?",
+        "options": "array.size()|array.count|array.length|array.total",
+        "answer": "array.length",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Access element",
+        "type": "multiple choice",
+        "question": "How do you access the third element of an array called items?",
+        "options": "items[3]|items(3)|items[2]|items.3",
+        "answer": "items[2]",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Last element",
+        "type": "multiple choice",
+        "question": "How do you dynamically access the last element of an array?",
+        "options": "array[last]|array[-1]|array[array.length - 1]|array.last()",
+        "answer": "array[array.length - 1]",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Out of bounds",
+        "type": "multiple choice",
+        "question": "What is returned when you access an index that does not exist in the array?",
+        "options": "null|An error|0|undefined",
+        "answer": "undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "const array mutable",
+        "type": "True or False",
+        "question": "An array declared with const cannot have its elements changed.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "const prevents reassignment",
+        "type": "multiple choice",
+        "question": "What does const prevent when used with an array?",
+        "options": "Changing the array's contents|Reassigning the variable itself to a different array|Adding new elements|Accessing elements",
+        "answer": "Reassigning the variable itself to a different array",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Update element",
+        "type": "multiple choice",
+        "question": "How do you update the element at index 1 of cart to a new value?",
+        "options": "cart(1) = value|cart.1 = value|cart[1] = value|cart{1} = value",
+        "answer": "cart[1] = value",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Array of objects access",
+        "type": "multiple choice",
+        "question": "Given orders = [{id: \"ORD-001\", customer: \"Amara\"}] how do you access the customer of the first order?",
+        "options": "orders.customer|orders[0].customer|orders.0.customer|customer[0]",
+        "answer": "orders[0].customer",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Mixed types",
+        "type": "True or False",
+        "question": "An array can contain elements of different data types like strings numbers and booleans.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Demo last order status",
+        "type": "multiple choice",
+        "question": "In the demo how is the last order's status accessed?",
+        "options": "orders[last].status|orders[-1].status|orders[orders.length - 1].status|orders.last.status",
+        "answer": "orders[orders.length - 1].status",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Negative index",
+        "type": "multiple choice",
+        "question": "What does items[-1] return in JavaScript?",
+        "options": "The last element|undefined|An error|The first element",
+        "answer": "undefined",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "push effect",
+        "type": "multiple choice",
+        "question": "What does push() do to an array?",
+        "options": "Adds an item to the start|Adds an item to the end|Removes the last item|Removes the first item",
+        "answer": "Adds an item to the end",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "pop effect",
+        "type": "multiple choice",
+        "question": "What does pop() do to an array?",
+        "options": "Adds an item to the end|Removes and returns the last item|Removes the first item|Returns the array length",
+        "answer": "Removes and returns the last item",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "shift effect",
+        "type": "multiple choice",
+        "question": "What does shift() do to an array?",
+        "options": "Adds an item to the start|Removes and returns the first item|Removes the last item|Shifts all indices by 1",
+        "answer": "Removes and returns the first item",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "unshift effect",
+        "type": "multiple choice",
+        "question": "What does unshift() do to an array?",
+        "options": "Removes the first item|Adds one or more items to the start|Adds to the end|Sorts the array",
+        "answer": "Adds one or more items to the start",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "push return value",
+        "type": "multiple choice",
+        "question": "What does push() return?",
+        "options": "The added item|The removed item|The new length of the array|undefined",
+        "answer": "The new length of the array",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "pop return value",
+        "type": "multiple choice",
+        "question": "What does pop() return?",
+        "options": "The new length|The removed item|undefined|The first element",
+        "answer": "The removed item",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "splice purpose",
+        "type": "multiple choice",
+        "question": "What can splice() do?",
+        "options": "Only remove items|Only add items|Insert remove or replace items at any position|Create a copy of the array",
+        "answer": "Insert remove or replace items at any position",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "splice mutates",
+        "type": "True or False",
+        "question": "splice() changes the original array (mutates it).",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "splice insert",
+        "type": "multiple choice",
+        "question": "How do you insert an item at index 1 without removing any elements?",
+        "options": "splice(1 1 item)|splice(1 0 item)|splice(0 1 item)|splice(item 1 0)",
+        "answer": "splice(1 0 item)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "slice mutates",
+        "type": "True or False",
+        "question": "slice() modifies the original array.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "slice end exclusive",
+        "type": "multiple choice",
+        "question": "What does orders.slice(2, 4) return from a 5-element array?",
+        "options": "Elements at indices 2 3 and 4|Elements at indices 2 and 3|Elements at indices 3 and 4|The entire array",
+        "answer": "Elements at indices 2 and 3",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "slice negative",
+        "type": "multiple choice",
+        "question": "What does orders.slice(-2) return from a 5-element array?",
+        "options": "First 2 elements|Last 2 elements|Elements 2 to end|An error",
+        "answer": "Last 2 elements",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "splice vs slice",
+        "type": "multiple choice",
+        "question": "What is the key difference between splice and slice?",
+        "options": "They are the same|splice mutates the original array while slice returns a new copy without changing the original|slice is faster|splice only removes items",
+        "answer": "splice mutates the original array while slice returns a new copy without changing the original",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "Demo splice remove",
+        "type": "multiple choice",
+        "question": "In the demo products.splice(1, 2) on [Earbuds Phone Case USB Cable Keyboard] removes which items?",
+        "options": "Earbuds and Phone Case|Phone Case and USB Cable|USB Cable and Keyboard|Earbuds and Keyboard",
+        "answer": "Phone Case and USB Cable",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "Three ways to iterate",
+        "type": "multiple choice",
+        "question": "Which of the following is NOT a way to iterate an array in JavaScript?",
+        "options": "for loop|for...of|forEach|for...in (on arrays)",
+        "answer": "for...in (on arrays)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "forEach purpose",
+        "type": "multiple choice",
+        "question": "What does forEach do?",
+        "options": "Returns a new array|Calls a function once for each element in the array|Filters the array|Sorts the array",
+        "answer": "Calls a function once for each element in the array",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "forEach return value",
+        "type": "multiple choice",
+        "question": "What does forEach return?",
+        "options": "A new array|The modified array|undefined|The last element",
+        "answer": "undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "forEach second parameter",
+        "type": "multiple choice",
+        "question": "What is the optional second parameter that the forEach callback receives?",
+        "options": "The array|The index|The length|The previous element",
+        "answer": "The index",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "break in forEach",
+        "type": "True or False",
+        "question": "You can use break inside a forEach callback to exit early.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "break alternative",
+        "type": "multiple choice",
+        "question": "Which loop type should you use if you need break or continue?",
+        "options": "forEach|for...of|map|filter",
+        "answer": "for...of",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "map purpose",
+        "type": "multiple choice",
+        "question": "What does map() do?",
+        "options": "Modifies the original array|Returns a new array with each element transformed by the callback|Filters elements|Logs each element",
+        "answer": "Returns a new array with each element transformed by the callback",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "map mutates",
+        "type": "True or False",
+        "question": "map() changes the original array.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "filter purpose",
+        "type": "multiple choice",
+        "question": "What does filter() do?",
+        "options": "Transforms each element|Returns a new array containing only elements where the callback returned true|Removes all elements|Sorts the array",
+        "answer": "Returns a new array containing only elements where the callback returned true",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "filter result length",
+        "type": "multiple choice",
+        "question": "Is the array returned by filter always the same length as the original?",
+        "options": "Yes always|No it can be shorter because elements that fail the test are excluded|It is always longer|It is always empty",
+        "answer": "No it can be shorter because elements that fail the test are excluded",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "map demo",
+        "type": "multiple choice",
+        "question": "In the demo what does prices.map(price => price * 1.075) produce?",
+        "options": "The same prices array|A new array with each price increased by 7.5%|An array of booleans|undefined",
+        "answer": "A new array with each price increased by 7.5%",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "filter demo",
+        "type": "multiple choice",
+        "question": "In the demo prices.filter(price => price > 3000) on [4500 1200 8000 600 3300] returns what?",
+        "options": "[4500 8000 3300]|[1200 600]|[4500 8000]|[8000]",
+        "answer": "[4500 8000 3300]",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Empty array",
+        "type": "multiple choice",
+        "question": "How do you create an empty array?",
+        "options": "const arr = {}|const arr = []|const arr = ()|const arr = empty",
+        "answer": "const arr = []",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "typeof array",
+        "type": "multiple choice",
+        "question": "What does typeof [] return in JavaScript?",
+        "options": "array|object|undefined|list",
+        "answer": "object",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "Multiple push",
+        "type": "multiple choice",
+        "question": "What does cart.push(\"Charger\", \"Cable\") do?",
+        "options": "Adds only Charger|Adds both items to the end of the array|Replaces the array|Throws an error",
+        "answer": "Adds both items to the end of the array",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "splice replace",
+        "type": "multiple choice",
+        "question": "What does products.splice(1, 1, \"Headphones\") do?",
+        "options": "Removes 1 item at index 1 and inserts Headphones in its place|Adds Headphones at index 1|Removes Headphones|Replaces the entire array",
+        "answer": "Removes 1 item at index 1 and inserts Headphones in its place",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "push pop shift unshift splice and slice",
+        "description": "slice no args",
+        "type": "multiple choice",
+        "question": "What does array.slice() with no arguments return?",
+        "options": "undefined|An empty array|A shallow copy of the entire array|The first element",
+        "answer": "A shallow copy of the entire array",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "forEach with index",
+        "type": "multiple choice",
+        "question": "How do you access both the item and its index in forEach?",
+        "options": "array.forEach((item) => ...)|array.forEach((item, index) => ...)|array.forEach((index) => ...)|array.forEach((item, index, length) => ...)",
+        "answer": "array.forEach((item, index) => ...)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "map vs forEach",
+        "type": "multiple choice",
+        "question": "What is the key difference between map() and forEach()?",
+        "options": "They are identical|map returns a new array while forEach returns undefined|forEach is faster|map changes the original array",
+        "answer": "map returns a new array while forEach returns undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "filter empty result",
+        "type": "True or False",
+        "question": "If no elements pass the filter callback condition filter() returns an empty array not undefined.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating arrays for for of and forEach",
+        "description": "Chaining map and filter",
+        "type": "multiple choice",
+        "question": "Can you chain filter() and map() together like array.filter(...).map(...)?",
+        "options": "No they cannot be combined|Yes because both return new arrays|Only if you use forEach first|Only on arrays of numbers",
+        "answer": "Yes because both return new arrays",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "creating arrays and accessing elements",
+        "description": "Spread into new array",
+        "type": "multiple choice",
+        "question": "What does const copy = [...original] create?",
+        "options": "A reference to the same array|A shallow copy of the original array|An empty array|A string version of the array",
+        "answer": "A shallow copy of the original array",
+        "difficulty": "Advanced"
+    }
+]
