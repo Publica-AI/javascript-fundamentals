@@ -1,0 +1,452 @@
+[
+    {
+        "title": "creating objects with properties and methods",
+        "description": "What is an object",
+        "type": "multiple choice",
+        "question": "What is an object in JavaScript?",
+        "options": "An ordered list of values|A collection of key-value pairs that groups related data|A type of loop|A function",
+        "answer": "A collection of key-value pairs that groups related data",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Object creation syntax",
+        "type": "multiple choice",
+        "question": "What syntax is used to create an object literal?",
+        "options": "[ ]|( )|{ }|< >",
+        "answer": "{ }",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Key-value pair",
+        "type": "multiple choice",
+        "question": "What are the two parts of each item inside an object?",
+        "options": "Index and value|Key and value|Name and type|Parameter and argument",
+        "answer": "Key and value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Dot notation access",
+        "type": "multiple choice",
+        "question": "How do you access the name property of a student object?",
+        "options": "student[name]|student(name)|student.name|student->name",
+        "answer": "student.name",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "What is a method",
+        "type": "multiple choice",
+        "question": "What is a method in an object?",
+        "options": "A property that holds a number|A function stored as an object property|A type of array|A CSS style",
+        "answer": "A function stored as an object property",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "this keyword",
+        "type": "multiple choice",
+        "question": "What does the keyword this refer to inside an object method?",
+        "options": "The global window|The object the method belongs to|The function itself|The previous variable",
+        "answer": "The object the method belongs to",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Method shorthand",
+        "type": "multiple choice",
+        "question": "What is the modern shorthand for writing a method inside an object?",
+        "options": "methodName: function() { }|methodName() { }|function methodName() { }|=> methodName() { }",
+        "answer": "methodName() { }",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Nested object access",
+        "type": "multiple choice",
+        "question": "How do you access order.customer.city when customer is a nested object?",
+        "options": "order[customer][city]|order.customer.city|order->customer->city|customer.city",
+        "answer": "order.customer.city",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Array inside object",
+        "type": "multiple choice",
+        "question": "How do you access the name of the first item in order.items (an array of objects)?",
+        "options": "order.items.name|order.items[0].name|order.items.0.name|order[items][0][name]",
+        "answer": "order.items[0].name",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Adding a property",
+        "type": "multiple choice",
+        "question": "How do you add a new property email to an existing profile object?",
+        "options": "profile.add(email)|profile.email = value|profile[add] = email|push(profile email)",
+        "answer": "profile.email = value",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Deleting a property",
+        "type": "multiple choice",
+        "question": "How do you permanently remove a property from an object?",
+        "options": "object.remove(key)|remove object.key|delete object.key|object.key = null",
+        "answer": "delete object.key",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Value types",
+        "type": "True or False",
+        "question": "Object values can be any type including strings numbers booleans arrays and other objects.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Demo getGrade",
+        "type": "multiple choice",
+        "question": "In the demo student.getGrade() uses this.score which is 88. What does it return?",
+        "options": "Fail|Borderline|Pass|undefined",
+        "answer": "Pass",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Demo introduce",
+        "type": "multiple choice",
+        "question": "In the demo what does student.introduce() return when name is \"Amara Obi\" and getGrade() returns \"Pass\"?",
+        "options": "Hi, I'm Amara Obi and my grade is Pass|Amara Obi Pass|undefined|Error",
+        "answer": "Hi, I'm Amara Obi and my grade is Pass",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "When dot notation",
+        "type": "multiple choice",
+        "question": "When should you use dot notation to access a property?",
+        "options": "When the key is stored in a variable|When the key is a known valid identifier|When the key contains a hyphen|When iterating object keys",
+        "answer": "When the key is a known valid identifier",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "When bracket notation",
+        "type": "multiple choice",
+        "question": "When is bracket notation required?",
+        "options": "Always|When the key contains special characters like hyphens or is stored in a variable|Only for arrays|When the object is nested",
+        "answer": "When the key contains special characters like hyphens or is stored in a variable",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Special character key",
+        "type": "multiple choice",
+        "question": "How do you access the property \"sku-id\" on a product object?",
+        "options": "product.sku-id|product[sku-id]|product[\"sku-id\"]|product.sku_id",
+        "answer": "product[\"sku-id\"]",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Variable as key",
+        "type": "multiple choice",
+        "question": "If const field = \"score\" what does student[field] access?",
+        "options": "A property named field|The score property (value of the field variable)|undefined|An error",
+        "answer": "The score property (value of the field variable)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Dot with variable",
+        "type": "multiple choice",
+        "question": "If const field = \"score\" what does student.field return?",
+        "options": "The score value|undefined because it looks for a literal property named field|An error|The field variable",
+        "answer": "undefined because it looks for a literal property named field",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "in operator",
+        "type": "multiple choice",
+        "question": "What does \"email\" in user return when user has no email property?",
+        "options": "true|false|undefined|null",
+        "answer": "false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "in operator true",
+        "type": "multiple choice",
+        "question": "What does \"name\" in user return when user has a name property?",
+        "options": "The name value|true|false|The key string",
+        "answer": "true",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Destructuring basic",
+        "type": "multiple choice",
+        "question": "What does const { name, score } = student do?",
+        "options": "Creates a new object|Extracts name and score from student into separate variables|Deletes name and score from student|Adds name and score to student",
+        "answer": "Extracts name and score from student into separate variables",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Destructuring rename",
+        "type": "multiple choice",
+        "question": "What does const { name: studentName } = user do?",
+        "options": "Creates a property called studentName on user|Extracts user.name and assigns it to a variable called studentName|Renames the property inside the object|Throws an error",
+        "answer": "Extracts user.name and assigns it to a variable called studentName",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Destructuring default",
+        "type": "multiple choice",
+        "question": "What does const { email = \"no email\" } = user give when user has no email property?",
+        "options": "undefined|null|no email|An error",
+        "answer": "no email",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Demo displayFields",
+        "type": "multiple choice",
+        "question": "In the demo displayFields(order, [\"id\", \"customer\"]) uses obj[key] in a loop. Why can't it use obj.key?",
+        "options": "obj.key is slower|key is a variable so dot notation would look for a literal property named key|There is no difference|obj.key throws an error",
+        "answer": "key is a variable so dot notation would look for a literal property named key",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "for...in on object",
+        "type": "multiple choice",
+        "question": "What does for...in give you when used on an object?",
+        "options": "The values|The keys (property names) as strings|The indices|The full object",
+        "answer": "The keys (property names) as strings",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object.keys return",
+        "type": "multiple choice",
+        "question": "What does Object.keys(obj) return?",
+        "options": "A string|An array of the object's keys|The object itself|A number",
+        "answer": "An array of the object's keys",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object.values return",
+        "type": "multiple choice",
+        "question": "What does Object.values(obj) return?",
+        "options": "An array of the object's keys|An array of the object's values|A string of values|The object",
+        "answer": "An array of the object's values",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object.entries return",
+        "type": "multiple choice",
+        "question": "What does Object.entries(obj) return?",
+        "options": "An array of keys|An array of values|An array of [key value] pairs|A single string",
+        "answer": "An array of [key value] pairs",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "entries destructuring",
+        "type": "multiple choice",
+        "question": "What does the pattern Object.entries(obj).forEach(([key, value]) => ...) do?",
+        "options": "Iterates with both key and value available in each callback by destructuring each entry pair|Only provides the key|Creates a new object|Deletes entries",
+        "answer": "Iterates with both key and value available in each callback by destructuring each entry pair",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object as lookup table",
+        "type": "multiple choice",
+        "question": "How does an object work as a lookup table?",
+        "options": "By using a for loop|By storing key-value pairs where you access the value directly by its key|By sorting values|By filtering keys",
+        "answer": "By storing key-value pairs where you access the value directly by its key",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Lookup with fallback",
+        "type": "multiple choice",
+        "question": "What does statusMessages[status] || \"Unknown status\" do when status is not a key in the object?",
+        "options": "Throws an error|Returns undefined|Returns the string Unknown status|Returns null",
+        "answer": "Returns the string Unknown status",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Frequency counter pattern",
+        "type": "multiple choice",
+        "question": "What does counts[status] = (counts[status] || 0) + 1 do?",
+        "options": "Resets the count to 0|Increments the count for that status by 1 initialising to 0 if it does not exist yet|Deletes the status key|Creates a new array",
+        "answer": "Increments the count for that status by 1 initialising to 0 if it does not exist yet",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Demo frequency result",
+        "type": "multiple choice",
+        "question": "In the demo after counting [delivered pending cancelled delivered pending delivered] what is counts.delivered?",
+        "options": "1|2|3|4",
+        "answer": "3",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object.keys with array methods",
+        "type": "True or False",
+        "question": "Because Object.keys() returns an array you can use map and filter on the result.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Object vs array",
+        "type": "multiple choice",
+        "question": "What is the main difference between an object and an array?",
+        "options": "Objects are faster|Objects use named keys while arrays use numbered indices|Arrays can hold more data|There is no difference",
+        "answer": "Objects use named keys while arrays use numbered indices",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "const object mutable",
+        "type": "True or False",
+        "question": "An object declared with const can still have its properties changed.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Property separator",
+        "type": "multiple choice",
+        "question": "What character separates properties inside an object literal?",
+        "options": "Semicolon (;)|Comma (,)|Pipe (|)|Colon (:)",
+        "answer": "Comma (,)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Bracket with string literal",
+        "type": "multiple choice",
+        "question": "What is the correct way to access a property called full-name using bracket notation?",
+        "options": "object[full-name]|object[\"full-name\"]|object.full-name|object.(full-name)",
+        "answer": "object[\"full-name\"]",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Computed property key",
+        "type": "multiple choice",
+        "question": "What does { [key]: value } do when creating an object?",
+        "options": "Creates a property literally named key|Uses the value of the variable key as the property name|Throws an error|Creates an array",
+        "answer": "Uses the value of the variable key as the property name",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object.keys length",
+        "type": "multiple choice",
+        "question": "How do you find the number of properties in an object?",
+        "options": "object.length|object.size|Object.keys(object).length|object.count()",
+        "answer": "Object.keys(object).length",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "for...in value access",
+        "type": "multiple choice",
+        "question": "Inside a for...in loop how do you access the value for each key?",
+        "options": "value|object.key|object[key]|key.value",
+        "answer": "object[key]",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Method calling",
+        "type": "multiple choice",
+        "question": "How do you call a method named getSummary on an order object?",
+        "options": "order.getSummary|order.getSummary()|getSummary(order)|call order.getSummary",
+        "answer": "order.getSummary()",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Checking property existence",
+        "type": "multiple choice",
+        "question": "Which of the following checks if a property exists on an object?",
+        "options": "object.has(key)|key in object|object.exists(key)|object.includes(key)",
+        "answer": "key in object",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Object spread merge",
+        "type": "multiple choice",
+        "question": "What does const merged = { ...obj1, ...obj2 } do?",
+        "options": "Deletes both objects|Creates a new object combining properties from both objects|Throws an error|Creates an array",
+        "answer": "Creates a new object combining properties from both objects",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object.values iteration",
+        "type": "multiple choice",
+        "question": "How can you iterate over only the values of an object?",
+        "options": "for...in|Object.values(obj).forEach(...)|object.forEach(...)|for...of obj",
+        "answer": "Object.values(obj).forEach(...)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "dot notation and bracket notation",
+        "description": "Optional chaining",
+        "type": "multiple choice",
+        "question": "What does order?.customer?.name do if customer is undefined?",
+        "options": "Throws a TypeError|Returns undefined without throwing an error|Returns null|Returns an empty string",
+        "answer": "Returns undefined without throwing an error",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Calling method that uses this",
+        "type": "True or False",
+        "question": "When you call student.getGrade() the this keyword inside getGrade refers to the student object.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "iterating objects for in and object keys",
+        "description": "Object.entries forEach",
+        "type": "multiple choice",
+        "question": "What does Object.entries(product) return for {name: \"Phone\", price: 85000}?",
+        "options": "[\"name\", \"price\"]|[[\"name\", \"Phone\"], [\"price\", 85000]]|{name: \"Phone\", price: 85000}|[\"Phone\", 85000]",
+        "answer": "[[\"name\", \"Phone\"], [\"price\", 85000]]",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "creating objects with properties and methods",
+        "description": "Shorthand property",
+        "type": "multiple choice",
+        "question": "If you have const name = \"Ada\" what does { name } create?",
+        "options": "An error|An object { name: \"Ada\" }|A string|An array",
+        "answer": "An object { name: \"Ada\" }",
+        "difficulty": "Advanced"
+    }
+]
