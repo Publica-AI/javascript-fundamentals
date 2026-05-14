@@ -1,0 +1,185 @@
+{
+  "module": "09",
+  "title": "Objects — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build an object-based management system for a Nigerian business context. Your solution must use: an object with at least 4 properties and 2 methods (using `this`), nested object or array access, bracket notation with a variable, destructuring, Object.entries or for...in for iteration, and a lookup table pattern. All variables must use const or let (no var).",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Konga Product Profile System",
+        "scenario": "Build a product profile system for a Konga seller. Model a product as an object with data, methods, and a complete display pipeline.",
+        "requirements": [
+          "Create a `product` object with at least 5 properties (id, name, price, category, inStock, and a nested `specs` object with at least 2 fields)",
+          "Add a method `getLabel()` that uses `this` to return: 'Wireless Earbuds — ₦4500 [Electronics]'",
+          "Add a method `isAvailable()` that uses `this.inStock` to return true/false",
+          "Use bracket notation with a variable to dynamically access and print 3 properties",
+          "Destructure at least 3 properties from the object",
+          "Use a lookup table object to map category strings to descriptions, look up the product's category, and print the result",
+          "Use Object.entries and forEach to print all properties of the nested specs object"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Konga Product Profile</title>\n</head>\n<body>\n  <h1>Konga Product Profile System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Konga Product Profile System\n// Build a rich product object with methods and iteration\n\n// 1. Create product object (id, name, price, category, inStock, specs: { ... })\n//    Add getLabel() and isAvailable() methods using 'this'\n\n\n// 2. Call and print getLabel() and isAvailable()\n\n\n// 3. Dynamic access: use bracket notation with a variable for 3 properties\n\n\n// 4. Destructure at least 3 properties\n\n\n// 5. Lookup table: map categories to descriptions, look up product.category\n\n\n// 6. Object.entries + forEach on the nested specs object\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Publica Academy Student Record System",
+        "scenario": "Build a student record system for Publica Academy. Model a student as a rich object with grades, contact, module history, and display methods.",
+        "requirements": [
+          "Create a `student` object with id, name, score, course, a nested `contact` object (email, city, phone), and a `modules` array with at least 3 module objects (id, title, passed)",
+          "Add a method `getGrade()` using `this.score` with early returns: Pass (>=70), Borderline (>=50), Fail",
+          "Add a method `getSummary()` that calls `this.getGrade()` and uses `this.name` and `this.score`",
+          "Use bracket notation with a variable to access 3 properties dynamically",
+          "Destructure the contact object into individual variables and print them",
+          "Use a lookup table to map grade strings to motivational messages, look up the student's grade",
+          "Use for...in to iterate the student's flat properties (skip objects and arrays using typeof)"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Publica Student Record</title>\n</head>\n<body>\n  <h1>Publica Academy Student Record</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Publica Academy Student Record System\n// Build a rich student object with nested data and methods\n\n// 1. Create student object with contact nested object and modules array\n//    Add getGrade() and getSummary() methods\n\n\n// 2. Call and print getGrade() and getSummary()\n\n\n// 3. Dynamic access: bracket notation with a variable for 3 properties\n\n\n// 4. Destructure contact object; print email, city, phone\n\n\n// 5. Lookup table: grade → motivational message\n\n\n// 6. for...in: iterate flat properties (skip objects, arrays, functions)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "PiggyVest Account Dashboard",
+        "scenario": "Build an account dashboard object for a PiggyVest user. Model the account with financial data, limits, and reporting methods.",
+        "requirements": [
+          "Create an `account` object with id, owner, balance, savingsGoal, a nested `limits` object (dailyWithdrawal, monthlyTransfer), and a `transactions` array with at least 3 transaction objects",
+          "Add a method `getProgress()` that uses `this.balance` and `this.savingsGoal` to return a progress string: '₦18000 of ₦50000 (36%)'",
+          "Add a method `canWithdraw(amount)` that uses `this.balance` and `this.limits.dailyWithdrawal` to check if the withdrawal is allowed",
+          "Use bracket notation with a variable to access 3 account properties dynamically",
+          "Destructure the limits object into individual variables",
+          "Use a lookup table to map transaction types to symbols (deposit → '+', withdrawal → '-')",
+          "Use Object.entries + forEach to print all limit settings"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>PiggyVest Dashboard</title>\n</head>\n<body>\n  <h1>PiggyVest Account Dashboard</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// PiggyVest Account Dashboard\n// Build a rich account object with nested data and methods\n\n// 1. Create account object (id, owner, balance, savingsGoal, limits: { ... }, transactions: [...])\n//    Add getProgress() and canWithdraw(amount) methods\n\n\n// 2. Call and print getProgress(); test canWithdraw with two amounts\n\n\n// 3. Dynamic access: bracket notation with variable for 3 properties\n\n\n// 4. Destructure limits object\n\n\n// 5. Lookup table: transaction type → symbol\n\n\n// 6. Object.entries + forEach to print all limit settings\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Paystack Merchant Profile",
+        "scenario": "Build a merchant profile system for a Paystack business account. Model the merchant with financial data, rates, and reporting methods.",
+        "requirements": [
+          "Create a `merchant` object with id, businessName, totalRevenue, transactionCount, a nested `fees` object (processingRate, capAmount), and a `recentPayments` array with at least 3 payment objects",
+          "Add a method `getNetRevenue()` that uses `this.totalRevenue` and `this.fees.processingRate` to calculate and return revenue after fees",
+          "Add a method `getAverageTransaction()` that uses `this.totalRevenue` and `this.transactionCount` to return the average",
+          "Use bracket notation with a variable to access 3 merchant properties dynamically",
+          "Destructure the fees object into variables and print them",
+          "Use a lookup table to map business category strings to Paystack plan names",
+          "Use Object.keys on the fees object to print a formatted fee schedule"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Paystack Merchant Profile</title>\n</head>\n<body>\n  <h1>Paystack Merchant Profile</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Paystack Merchant Profile\n// Build a rich merchant object with nested data and methods\n\n// 1. Create merchant object (id, businessName, totalRevenue, transactionCount,\n//    fees: { processingRate, capAmount }, recentPayments: [...])\n//    Add getNetRevenue() and getAverageTransaction() methods\n\n\n// 2. Call and print getNetRevenue() and getAverageTransaction()\n\n\n// 3. Dynamic access: bracket notation with variable for 3 properties\n\n\n// 4. Destructure fees object\n\n\n// 5. Lookup table: business category → Paystack plan\n\n\n// 6. Object.keys on fees to print formatted fee schedule\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Bolt Driver Performance Report",
+        "scenario": "Build a driver performance report system for a Bolt driver. Model the driver with trip history, earnings, and computed metrics.",
+        "requirements": [
+          "Create a `driver` object with id, name, totalTrips, totalEarnings, rating, a nested `vehicle` object (model, plate, year), and a `recentTrips` array with at least 3 trip objects",
+          "Add a method `getNetEarnings()` that uses `this.totalEarnings` and deducts 20% Bolt commission",
+          "Add a method `getRatingBadge()` that uses `this.rating` to return 'Gold' (>=4.8), 'Silver' (>=4.5), or 'Standard'",
+          "Use bracket notation with a variable to access 3 driver properties dynamically",
+          "Destructure the vehicle object into individual variables",
+          "Use a lookup table to map rating badge strings to descriptions",
+          "Use Object.entries + forEach to print all vehicle details"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bolt Driver Report</title>\n</head>\n<body>\n  <h1>Bolt Driver Performance Report</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bolt Driver Performance Report\n// Build a rich driver object with nested data and methods\n\n// 1. Create driver object (id, name, totalTrips, totalEarnings, rating,\n//    vehicle: { model, plate, year }, recentTrips: [...])\n//    Add getNetEarnings() and getRatingBadge() methods\n\n\n// 2. Call and print getNetEarnings() and getRatingBadge()\n\n\n// 3. Dynamic access: bracket notation with variable for 3 properties\n\n\n// 4. Destructure vehicle object\n\n\n// 5. Lookup table: badge string → description\n\n\n// 6. Object.entries + forEach to print all vehicle details\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "object_methods",
+          "label": "Object with Methods and this",
+          "points": 35,
+          "descriptors": {
+            "full": "Object has at least 4 properties and 2 methods; methods correctly use `this` to access object properties and return computed values",
+            "partial": "Methods defined but `this` not used, or methods don't return values (only console.log)",
+            "none": "Methods missing, or `this` absent from methods, or methods produce incorrect results"
+          }
+        },
+        {
+          "id": "notation_destructuring",
+          "label": "Bracket Notation and Destructuring",
+          "points": 30,
+          "descriptors": {
+            "full": "Bracket notation used with a variable (not a string literal) to access properties dynamically; destructuring extracts at least 3 properties correctly",
+            "partial": "One of the two techniques used correctly, the other missing or using static string instead of variable",
+            "none": "Both bracket notation with variable and destructuring missing"
+          }
+        },
+        {
+          "id": "iteration_lookup",
+          "label": "Iteration and Lookup Table",
+          "points": 25,
+          "descriptors": {
+            "full": "Object.entries/for...in iterates properties correctly; lookup table maps at least 3 keys to values and is accessed dynamically with a variable",
+            "partial": "One of the two implemented correctly, the other missing or using if/else instead of lookup table",
+            "none": "Both iteration and lookup table missing"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 10,
+          "descriptors": {
+            "full": "const/let used correctly, method names are verbs, nested access uses correct chain syntax, output is clear and well-formatted",
+            "partial": "Minor quality issues",
+            "none": "var used, poor naming, or output is difficult to read"
+          }
+        }
+      ]
+    }
+  }
+}

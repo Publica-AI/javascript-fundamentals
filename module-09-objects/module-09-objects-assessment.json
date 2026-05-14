@@ -1,0 +1,203 @@
+{
+  "module": "09",
+  "title": "Objects",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create an object called `product` with properties: name ('Wireless Earbuds'), price (4500), category ('Electronics'), and inStock (true). Add a method `displaySummary()` that returns: 'Wireless Earbuds — ₦4500 — Electronics'. Call the method and print the result.",
+            "starter": "// Create the product object with a displaySummary method\n\n// Call and print the result\n",
+            "solution": "const product = {\n  name: 'Wireless Earbuds',\n  price: 4500,\n  category: 'Electronics',\n  inStock: true,\n  displaySummary() {\n    return this.name + ' — ₦' + this.price + ' — ' + this.category;\n  }\n};\n\nconsole.log(product.displaySummary());",
+            "test_cases": [
+              { "expected_output": "Wireless Earbuds — ₦4500 — Electronics" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the order object below, print: the order ID, the customer's city (nested), the first item's name (nested array), and the total number of items.",
+            "starter": "const order = {\n  id: 'ORD-001',\n  customer: { name: 'Amara Obi', city: 'Lagos' },\n  items: [\n    { name: 'Wireless Earbuds', price: 4500 },\n    { name: 'Phone Case',       price: 1200 }\n  ],\n  total: 5700\n};\n\n// Print: order id, customer city, first item name, items count\n",
+            "solution": "const order = {\n  id: 'ORD-001',\n  customer: { name: 'Amara Obi', city: 'Lagos' },\n  items: [\n    { name: 'Wireless Earbuds', price: 4500 },\n    { name: 'Phone Case',       price: 1200 }\n  ],\n  total: 5700\n};\n\nconsole.log(order.id);\nconsole.log(order.customer.city);\nconsole.log(order.items[0].name);\nconsole.log(order.items.length);",
+            "test_cases": [
+              { "expected_output": "ORD-001" },
+              { "expected_output": "Lagos" },
+              { "expected_output": "Wireless Earbuds" },
+              { "expected_output": "2" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is `this` inside an object method? Write a short example showing why it's needed.",
+            "sample_answer": "`this` refers to the object that the method belongs to. It's needed when a method needs to access other properties of the same object. For example, a `getTotal()` method on an order object that adds up item prices needs `this.items` to access the items array. Without `this`, the method would need to reference the variable name directly (e.g., `order.items`), which breaks if the object is assigned to a different variable or passed to a function."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the student object, use bracket notation to: (1) access the score property using a variable `const field = 'score'`, and (2) loop through the array `['name', 'score', 'course']` and print each key-value pair.",
+            "starter": "const student = {\n  name:   'Amara Obi',\n  score:  88,\n  course: 'JavaScript',\n  passed: true\n};\n\nconst field = 'score';\n// 1. Print student[field]\n\n// 2. Loop ['name', 'score', 'course'] and print each key: value\n",
+            "solution": "const student = {\n  name:   'Amara Obi',\n  score:  88,\n  course: 'JavaScript',\n  passed: true\n};\n\nconst field = 'score';\nconsole.log(student[field]);\n\nconst fields = ['name', 'score', 'course'];\nfor (const key of fields) {\n  console.log(key + ': ' + student[key]);\n}",
+            "test_cases": [
+              { "expected_output": "88" },
+              { "expected_output": "name: Amara Obi" },
+              { "expected_output": "score: 88" },
+              { "expected_output": "course: JavaScript" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `Object.entries` with a `forEach` callback to print all key-value pairs of the product object. Destructure each entry as `[key, value]` in the callback.",
+            "starter": "const product = {\n  name:     'Wireless Earbuds',\n  price:    4500,\n  category: 'Electronics',\n  inStock:  true\n};\n\n// Use Object.entries + forEach + destructuring\n",
+            "solution": "const product = {\n  name:     'Wireless Earbuds',\n  price:    4500,\n  category: 'Electronics',\n  inStock:  true\n};\n\nObject.entries(product).forEach(([key, value]) => {\n  console.log(key + ': ' + value);\n});",
+            "test_cases": [
+              { "expected_output": "name: Wireless Earbuds" },
+              { "expected_output": "price: 4500" },
+              { "expected_output": "category: Electronics" },
+              { "expected_output": "inStock: true" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "When would you use bracket notation (`obj[key]`) instead of dot notation (`obj.key`)? Give two different scenarios.",
+            "sample_answer": "1. When the property key is stored in a variable: `const field = 'name'; obj[field]` — dot notation would look for a property literally named 'field'. 2. When the key contains special characters (hyphens, spaces) that are invalid in JavaScript identifiers: `obj['sku-id']` or `obj['Content-Type']` — dot notation would throw a SyntaxError."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use destructuring to extract `name`, `score`, and `passed` from the student object into separate variables. Then destructure the nested `contact` object to get `email` and `city`. Print all five values.",
+            "starter": "const student = {\n  name:    'Amara Obi',\n  score:   88,\n  passed:  true,\n  contact: { email: 'amara@example.com', city: 'Lagos' }\n};\n\n// Destructure name, score, passed from student\n// Destructure email, city from student.contact\n// Print all five\n",
+            "solution": "const student = {\n  name:    'Amara Obi',\n  score:   88,\n  passed:  true,\n  contact: { email: 'amara@example.com', city: 'Lagos' }\n};\n\nconst { name, score, passed } = student;\nconst { email, city } = student.contact;\n\nconsole.log(name);\nconsole.log(score);\nconsole.log(passed);\nconsole.log(email);\nconsole.log(city);",
+            "test_cases": [
+              { "expected_output": "Amara Obi" },
+              { "expected_output": "88" },
+              { "expected_output": "true" },
+              { "expected_output": "amara@example.com" },
+              { "expected_output": "Lagos" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Build a frequency counter: given the array of payment statuses below, use a for...of loop to build an object `counts` where each key is a status and each value is how many times it appears. Print the final counts object.",
+            "starter": "const statuses = ['success', 'success', 'failed', 'success', 'pending', 'failed', 'success'];\nconst counts = {};\n\n// Build frequency counter\n\nconsole.log(counts);\n",
+            "solution": "const statuses = ['success', 'success', 'failed', 'success', 'pending', 'failed', 'success'];\nconst counts = {};\n\nfor (const status of statuses) {\n  counts[status] = (counts[status] || 0) + 1;\n}\n\nconsole.log(counts);",
+            "test_cases": [
+              { "expected_output": "success" },
+              { "expected_output": "4" },
+              { "expected_output": "failed" },
+              { "expected_output": "2" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Describe the lookup table pattern using an object. Give an example of when it is preferable to a switch statement.",
+            "sample_answer": "A lookup table stores key-value pairs where the key is the input and the value is the mapped output. For example: `const statusMessages = { delivered: 'Order delivered', pending: 'In transit', cancelled: 'Order cancelled' }`. Access is `statusMessages[status]`. It's preferable to a switch when the mapping is static and the cases are simple value lookups — adding a new case is just adding a property to the object, not a new case block. The switch requires more code per case and is harder to update programmatically. The object can also be defined in a config file and imported."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a `transaction` object for a PiggyVest deposit with properties: id, type ('deposit'), amount (5000), category ('savings'), and a method `getLabel()` that returns: 'deposit: +₦5000 (savings)'. Call the method and print the result.",
+            "starter": "// Create transaction object with getLabel method\n\n// Print the label\n",
+            "solution": "const transaction = {\n  id: 'TXN-001',\n  type: 'deposit',\n  amount: 5000,\n  category: 'savings',\n  getLabel() {\n    return this.type + ': +₦' + this.amount + ' (' + this.category + ')';\n  }\n};\n\nconsole.log(transaction.getLabel());",
+            "test_cases": [
+              { "expected_output": "deposit: +₦5000 (savings)" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `Object.keys` to get the keys of the student object. Then use `Object.values` to get the values. Print both arrays. Finally, check if 'email' is in the object using the `in` operator.",
+            "starter": "const student = { name: 'Amara', score: 88, course: 'JavaScript', passed: true };\n\n// Print Object.keys result\n// Print Object.values result\n// Check 'email' in student and print true or false\n",
+            "solution": "const student = { name: 'Amara', score: 88, course: 'JavaScript', passed: true };\n\nconsole.log(Object.keys(student));\nconsole.log(Object.values(student));\nconsole.log('email' in student);",
+            "test_cases": [
+              { "expected_output": "name" },
+              { "expected_output": "88" },
+              { "expected_output": "false" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `Object.keys`, `Object.values`, and `Object.entries`? When would you choose `Object.entries` over `for...in`?",
+            "sample_answer": "Object.keys returns an array of the object's property names (strings). Object.values returns an array of the property values. Object.entries returns an array of [key, value] pair arrays. Choose Object.entries over for...in when you need both the key and value in each iteration and want to use array methods (map, filter, forEach) on the result, or when you want to use destructuring ([key, value]) for cleaner syntax. for...in is simpler for basic key iteration but returns only keys and can't be chained with array methods."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the profile object, dynamically add a `lastLogin` property with value '2024-01-20', update the `level` to 'advanced', then delete the `tempToken` property. Print the profile after each change.",
+            "starter": "const profile = {\n  username:  'amara_js',\n  level:     'beginner',\n  tempToken: 'abc123'\n};\n\n// Add lastLogin\n// Update level\n// Delete tempToken\n// Print after each change\n",
+            "solution": "const profile = {\n  username:  'amara_js',\n  level:     'beginner',\n  tempToken: 'abc123'\n};\n\nprofile.lastLogin = '2024-01-20';\nconsole.log(profile);\n\nprofile.level = 'advanced';\nconsole.log(profile.level);\n\ndelete profile.tempToken;\nconsole.log(profile);",
+            "test_cases": [
+              { "expected_output": "lastLogin" },
+              { "expected_output": "advanced" },
+              { "expected_not_output_after_delete": "tempToken" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `for...in` to iterate the order object below and print only the string and number properties (skip boolean and object values). Use `typeof` to check each value's type.",
+            "starter": "const order = {\n  id:       'ORD-001',\n  customer: 'Amara Obi',\n  amount:   4500,\n  paid:     true,\n  address:  { city: 'Lagos', state: 'Lagos' }\n};\n\n// for...in, skip boolean and object values using typeof\n",
+            "solution": "const order = {\n  id:       'ORD-001',\n  customer: 'Amara Obi',\n  amount:   4500,\n  paid:     true,\n  address:  { city: 'Lagos', state: 'Lagos' }\n};\n\nfor (const key in order) {\n  if (typeof order[key] === 'string' || typeof order[key] === 'number') {\n    console.log(key + ': ' + order[key]);\n  }\n}",
+            "test_cases": [
+              { "expected_output": "id: ORD-001" },
+              { "expected_output": "customer: Amara Obi" },
+              { "expected_output": "amount: 4500" },
+              { "expected_not_output": "paid: true" },
+              { "expected_not_output": "address:" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why are arrays of objects (e.g., a list of orders, each with id/customer/amount/status properties) the dominant data structure in web applications?",
+            "sample_answer": "Arrays of objects combine the two fundamental structures: arrays provide ordered, iterable lists, while objects provide named, structured records. This combination models real-world entities naturally — a customer database is an array of customer objects, a product catalogue is an array of product objects, an API response is an array of record objects. Arrays let you iterate, filter, and sort the collection. Objects let each item carry structured, named data that's easy to access (order.amount vs order[2]). Together they enable patterns like filtering delivered orders (array.filter), transforming prices (array.map), and looking up a customer by ID — all the operations needed in real applications."
+          }
+        ]
+      }
+    ]
+  }
+}
