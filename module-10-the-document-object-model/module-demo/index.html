@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publica Academy — Course Page</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 32px auto; padding: 0 16px; }
+    .hidden { display: none; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
+    .badge-active { background: #d4edda; color: #155724; }
+    .badge-closed { background: #f8d7da; color: #721c24; }
+    .alert { background: #fff3cd; color: #856404; padding: 10px 14px; border-radius: 4px; margin: 12px 0; }
+    .course-card { border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 12px 0; }
+    .highlight { border-color: navy; background: #f0f4ff; }
+    .btn { padding: 8px 18px; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+    .btn-primary { background: navy; color: white; border: none; }
+    .btn-disabled { background: #ccc; color: #666; border: none; cursor: not-allowed; }
+    .progress-bar { height: 8px; background: #e9ecef; border-radius: 4px; margin: 8px 0; }
+    .progress-fill { height: 100%; background: navy; border-radius: 4px; width: 0%; }
+  </style>
+</head>
+<body>
+  <h1 id="page-heading">Publica Academy</h1>
+  <p id="page-subtitle">Online tech courses for Nigerian professionals</p>
+
+  <div id="alert-box" class="alert hidden">
+    <span id="alert-message"></span>
+  </div>
+
+  <div id="course-card" class="course-card">
+    <span id="status-badge" class="badge badge-active">Enrolment Open</span>
+    <h2 id="course-title">JavaScript Fundamentals</h2>
+    <p id="course-price">₦15,000</p>
+    <p id="enrolment-info">47 of 50 spots remaining</p>
+    <div class="progress-bar">
+      <div id="progress-fill" class="progress-fill"></div>
+    </div>
+    <a id="course-link" href="/courses/javascript">Learn more</a>
+    &nbsp;
+    <button id="enroll-btn" class="btn btn-primary">Enroll Now</button>
+  </div>
+
+  <div id="confirmation" class="hidden">
+    <h3>Enrolment Confirmed!</h3>
+    <p id="confirmation-message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

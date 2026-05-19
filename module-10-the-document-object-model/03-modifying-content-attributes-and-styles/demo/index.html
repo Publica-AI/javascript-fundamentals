@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publica Academy — DOM Modification Demo</title>
+  <style>
+    .hidden { display: none; }
+    .alert { background: #fee; color: #c00; padding: 8px; border-radius: 4px; }
+    .btn { padding: 8px 16px; cursor: pointer; }
+    .btn-primary { background: navy; color: white; border: none; border-radius: 4px; }
+    .course-card { border: 1px solid #ccc; padding: 16px; margin: 8px 0; max-width: 320px; }
+    .highlight { background: #f0f4ff; border-color: navy; }
+  </style>
+</head>
+<body>
+  <h1 id="greeting">Welcome</h1>
+  <p id="status">Loading...</p>
+
+  <div id="alert-box" class="alert hidden">Payment failed. Please try again.</div>
+
+  <div id="course-card" class="course-card">
+    <h2 id="card-title">JavaScript Fundamentals</h2>
+    <img id="course-img" src="placeholder.jpg" alt="Course banner" width="200">
+    <p id="card-price">₦15,000</p>
+    <a id="enroll-link" href="/enroll">Enroll Now</a>
+    <br><br>
+    <button id="enroll-btn" class="btn">Enroll</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

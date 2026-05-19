@@ -1,0 +1,188 @@
+{
+  "module": "10",
+  "title": "The Document Object Model",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, write JavaScript to: (1) select the h1 by id and change its textContent to 'Welcome, Chidi!', (2) select the paragraph by class and change its textContent to 'JavaScript Fundamentals — Module 10', (3) log both updated values.",
+            "starter": "// HTML on the page:\n// <h1 id=\"page-title\">Welcome</h1>\n// <p class=\"subtitle\">Loading...</p>\n\n// 1. Select h1 by id and update textContent\n\n// 2. Select p by class and update textContent\n\n// 3. Log both updated values\n",
+            "solution": "const title = document.getElementById('page-title');\ntitle.textContent = 'Welcome, Chidi!';\n\nconst subtitle = document.querySelector('.subtitle');\nsubtitle.textContent = 'JavaScript Fundamentals — Module 10';\n\nconsole.log(title.textContent);\nconsole.log(subtitle.textContent);",
+            "test_cases": [
+              { "expected_output": "Welcome, Chidi!" },
+              { "expected_output": "JavaScript Fundamentals — Module 10" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, use querySelectorAll to select all list items. Log the count, then use forEach to log each item's textContent.",
+            "starter": "// HTML on the page:\n// <ul id=\"module-list\">\n//   <li class=\"module-item\">Module 1 — Intro</li>\n//   <li class=\"module-item\">Module 2 — Variables</li>\n//   <li class=\"module-item\">Module 3 — Control Flow</li>\n// </ul>\n\n// Select all .module-item elements\n// Log the count\n// forEach — log each item's textContent\n",
+            "solution": "const items = document.querySelectorAll('.module-item');\nconsole.log(items.length);\n\nitems.forEach(item => {\n  console.log(item.textContent);\n});",
+            "test_cases": [
+              { "expected_output": "3" },
+              { "expected_output": "Module 1 — Intro" },
+              { "expected_output": "Module 2 — Variables" },
+              { "expected_output": "Module 3 — Control Flow" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `textContent` and `innerHTML`? When should you use each, and what is the security risk with innerHTML?",
+            "sample_answer": "`textContent` sets or gets the plain text inside an element — any HTML tags in the string are treated as literal characters and not parsed. `innerHTML` sets or gets the HTML string, so tags are parsed and rendered as actual elements. Use `textContent` for plain text updates (safer, faster). Use `innerHTML` when you need to insert HTML structure (e.g., bold text, links) from trusted data. The security risk: if you set `innerHTML` to user-supplied input, an attacker can inject `<script>` tags or event handler attributes (e.g., `<img onerror='...'>`), executing arbitrary JavaScript — this is a cross-site scripting (XSS) attack. Never set `innerHTML` to user input."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, write JavaScript to: (1) use getAttribute to log the current src and href, (2) use setAttribute to update the image src to 'js-course.jpg' and the link href to '/courses/js', (3) set the button's disabled property to true.",
+            "starter": "// HTML on the page:\n// <img id=\"course-img\" src=\"placeholder.jpg\" alt=\"Course\">\n// <a id=\"course-link\" href=\"/enroll\">Enroll</a>\n// <button id=\"enroll-btn\">Enroll Now</button>\n\n// 1. Log current src and href\n\n// 2. Update src and href with setAttribute\n\n// 3. Disable the button\n",
+            "solution": "const img = document.getElementById('course-img');\nconst link = document.getElementById('course-link');\nconst btn = document.getElementById('enroll-btn');\n\nconsole.log(img.getAttribute('src'));\nconsole.log(link.getAttribute('href'));\n\nimg.setAttribute('src', 'js-course.jpg');\nlink.setAttribute('href', '/courses/js');\n\nbtn.disabled = true;",
+            "test_cases": [
+              { "expected_output": "placeholder.jpg" },
+              { "expected_output": "/enroll" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, use classList to: (1) add class 'active' to the button, (2) toggle the 'hidden' class on the alert box (to show it), (3) check if the alert box contains 'hidden' and log the result.",
+            "starter": "// HTML on the page:\n// <button id=\"enroll-btn\" class=\"btn\">Enroll</button>\n// <div id=\"alert-box\" class=\"alert hidden\">Only 3 spots left!</div>\n\n// 1. Add 'active' class to button\n\n// 2. Toggle 'hidden' on alert box\n\n// 3. Log whether alert-box contains 'hidden'\n",
+            "solution": "const btn = document.getElementById('enroll-btn');\nconst alert = document.getElementById('alert-box');\n\nbtn.classList.add('active');\nalert.classList.toggle('hidden');\n\nconsole.log(alert.classList.contains('hidden'));",
+            "test_cases": [
+              { "expected_output": "false" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why is `classList.add('active')` preferred over `element.className = 'active'`? Give a concrete scenario where using className directly would cause a problem.",
+            "sample_answer": "`classList.add('active')` adds the class to the existing class list without removing other classes. `element.className = 'active'` replaces the entire class attribute with just 'active', removing all previously applied classes. Concrete scenario: a button has `class=\"btn btn-primary\"`. After the user clicks, you want to add 'active' to show it's selected. If you use `className = 'active'`, the button loses 'btn' and 'btn-primary', breaking its appearance completely. With `classList.add('active')`, it becomes `btn btn-primary active` — all classes preserved."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that selects the element with id 'progress-bar', then sets its `style.width` to '72%', its `style.backgroundColor` to 'navy', and logs both style values after setting them.",
+            "starter": "// HTML on the page:\n// <div id=\"progress-bar\" style=\"height:8px; background:#eee;\"></div>\n\n// Set width to '72%' and backgroundColor to 'navy'\n// Log both values\n",
+            "solution": "const bar = document.getElementById('progress-bar');\nbar.style.width = '72%';\nbar.style.backgroundColor = 'navy';\n\nconsole.log(bar.style.width);\nconsole.log(bar.style.backgroundColor);",
+            "test_cases": [
+              { "expected_output": "72%" },
+              { "expected_output": "navy" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, use querySelectorAll to select all course cards. Convert the NodeList to an array with Array.from, then use filter to keep only cards whose price paragraph contains '₦10' (use textContent and includes). Log the count of filtered cards.",
+            "starter": "// HTML on the page:\n// <div class=\"course-card\"><p class=\"price\">₦10,000</p></div>\n// <div class=\"course-card\"><p class=\"price\">₦15,000</p></div>\n// <div class=\"course-card\"><p class=\"price\">₦10,500</p></div>\n\n// querySelectorAll all .course-card elements\n// Convert to array with Array.from\n// filter cards where .price textContent includes '₦10'\n// Log the count\n",
+            "solution": "const cards = document.querySelectorAll('.course-card');\nconst cardArray = Array.from(cards);\n\nconst affordable = cardArray.filter(card => {\n  return card.querySelector('.price').textContent.includes('₦10');\n});\n\nconsole.log(affordable.length);",
+            "test_cases": [
+              { "expected_output": "2" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Explain what a NodeList is and how it differs from a JavaScript array. Give two operations that work on both, and two that only work on arrays.",
+            "sample_answer": "A NodeList is a collection of DOM nodes returned by `querySelectorAll`. It is array-like but is not a JavaScript array — it is its own object type with its own prototype. Operations that work on both: length property (both have it), index access with [n] (both support it), forEach (NodeList has its own forEach). Operations that only work on arrays: map, filter, reduce, find, sort — these are Array.prototype methods and are not available on NodeList. To use them, convert with `Array.from(nodeList)` or `[...nodeList]`, which creates a real array from the NodeList's elements."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that: (1) selects the element with id 'enrol-count', (2) reads its current textContent and logs it, (3) updates its textContent to '48 of 50 spots remaining', (4) selects the element with id 'close-btn' and sets its disabled property to true.",
+            "starter": "// HTML on the page:\n// <p id=\"enrol-count\">50 of 50 spots remaining</p>\n// <button id=\"close-btn\">Close Enrolment</button>\n\n// 1. Select enrol-count and log its textContent\n// 2. Update its textContent\n// 3. Select close-btn and disable it\n",
+            "solution": "const count = document.getElementById('enrol-count');\nconsole.log(count.textContent);\n\ncount.textContent = '48 of 50 spots remaining';\n\nconst closeBtn = document.getElementById('close-btn');\ncloseBtn.disabled = true;",
+            "test_cases": [
+              { "expected_output": "50 of 50 spots remaining" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, use querySelector to select the nested `.card-title` inside `.course-card`, then update its textContent. Also use setAttribute to set the card's `data-status` attribute to 'enrolled'. Log the updated title and the attribute value.",
+            "starter": "// HTML on the page:\n// <div class=\"course-card\" id=\"js-card\">\n//   <h2 class=\"card-title\">JavaScript Fundamentals</h2>\n// </div>\n\n// Select .card-title inside .course-card\n// Update textContent to 'JavaScript Fundamentals — Enrolled'\n// Set data-status attribute to 'enrolled' on the card div\n// Log updated title and the attribute\n",
+            "solution": "const cardTitle = document.querySelector('.course-card .card-title');\ncardTitle.textContent = 'JavaScript Fundamentals — Enrolled';\n\nconst card = document.getElementById('js-card');\ncard.setAttribute('data-status', 'enrolled');\n\nconsole.log(cardTitle.textContent);\nconsole.log(card.getAttribute('data-status'));",
+            "test_cases": [
+              { "expected_output": "JavaScript Fundamentals — Enrolled" },
+              { "expected_output": "enrolled" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why does placing a `<script>` tag at the bottom of `<body>` prevent a common DOM error? What error occurs if the script runs too early, and what is a modern alternative to bottom placement?",
+            "sample_answer": "HTML is parsed top-to-bottom. If a `<script>` is in the `<head>` or before body elements, it runs before those elements exist in the DOM. Any call like `document.getElementById('title')` returns `null` because the element hasn't been parsed yet. Calling a property on null — `null.textContent` — throws `TypeError: Cannot read properties of null`. Bottom placement works because by the time the script runs, all HTML above it (the entire body) has been parsed and all elements exist. The modern alternative is the `defer` attribute on the script tag: `<script src='script.js' defer></script>`. A deferred script is downloaded in parallel but executes only after the full HTML document is parsed, regardless of where the script tag appears."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that simulates a form validation result: (1) select the element with id 'form-message', (2) set its textContent to 'Please enter a valid email address', (3) add class 'error' and remove class 'success' from it using classList, (4) log its className after the changes.",
+            "starter": "// HTML on the page:\n// <p id=\"form-message\" class=\"message success\">Form submitted!</p>\n\n// 1. Select form-message\n// 2. Update textContent to error message\n// 3. Add 'error' class, remove 'success' class\n// 4. Log className\n",
+            "solution": "const msg = document.getElementById('form-message');\nmsg.textContent = 'Please enter a valid email address';\n\nmsg.classList.add('error');\nmsg.classList.remove('success');\n\nconsole.log(msg.className);",
+            "test_cases": [
+              { "expected_output": "message error" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, select all `.price-tag` elements, convert the NodeList to an array, and use forEach to update each element's textContent by appending ' (VAT inclusive)'. Log each updated price.",
+            "starter": "// HTML on the page:\n// <span class=\"price-tag\">₦15,000</span>\n// <span class=\"price-tag\">₦12,000</span>\n// <span class=\"price-tag\">₦10,000</span>\n\n// querySelectorAll .price-tag\n// Array.from\n// forEach — append ' (VAT inclusive)' to each textContent\n// Log each updated price\n",
+            "solution": "const prices = document.querySelectorAll('.price-tag');\n\nArray.from(prices).forEach(price => {\n  price.textContent = price.textContent + ' (VAT inclusive)';\n  console.log(price.textContent);\n});",
+            "test_cases": [
+              { "expected_output": "₦15,000 (VAT inclusive)" },
+              { "expected_output": "₦12,000 (VAT inclusive)" },
+              { "expected_output": "₦10,000 (VAT inclusive)" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Describe the DOM tree structure using the terms: document, root, node, parent, child, sibling. Then explain what the `document` object is in JavaScript and how it is used to access page elements.",
+            "sample_answer": "The DOM is a tree data structure. `document` is the root node — the top-level entry point from which the entire tree is accessible. Every HTML element becomes a node in the tree. A parent node is one that directly contains other nodes — `body` is the parent of `h1`. A child node is directly inside another node — `h1` is a child of `body`. Sibling nodes share the same parent — two `<p>` tags inside the same `<div>` are siblings. In JavaScript, `document` is a global object automatically available in the browser environment. It represents the entire HTML page and provides methods to access and modify its elements: `document.getElementById`, `document.querySelector`, `document.querySelectorAll`. It also has properties like `document.title` (the page title) and `document.body` (the body element). All DOM interaction starts from `document`."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "module": "10",
+  "title": "The Document Object Model — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build an interactive DOM manipulation page for a Nigerian tech context. Your solution must use: getElementById and querySelector/querySelectorAll, textContent and innerHTML, setAttribute/getAttribute, classList (add, remove, toggle), inline styles via element.style, and Array.from with NodeList iteration. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Konga Product Listing Page",
+        "scenario": "Build a dynamic product listing page for a Konga store. Use JavaScript to populate product cards, update prices, manage stock badges, and show an availability alert.",
+        "requirements": [
+          "Select the element with id 'page-title' and update its textContent to 'Konga Store — Electronics'",
+          "Use querySelectorAll to select all '.product-card' elements (at least 3 in HTML); log the count",
+          "Use forEach on the NodeList to log each card's data-name attribute (use getAttribute)",
+          "Select the first card's '.card-price' element using querySelector on the card element; update its textContent to '₦4,500'",
+          "Use classList.add to add 'in-stock' to the first card and classList.add('out-of-stock') to the last card",
+          "Use classList.toggle to toggle a 'highlighted' class on the first card; log whether it contains 'highlighted'",
+          "Select the element with id 'stock-alert', update its textContent, and use classList.remove to remove the 'hidden' class",
+          "Use Array.from on the NodeList of product cards and use filter to keep cards that do not contain the 'out-of-stock' class; log the filtered count"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Konga Store</title>\n  <style>\n    .hidden { display: none; }\n    .in-stock { border: 2px solid green; }\n    .out-of-stock { border: 2px solid red; opacity: 0.6; }\n    .highlighted { background: #fffbe6; }\n    .product-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; max-width: 280px; }\n    .alert { background: #fff3cd; padding: 10px; border-radius: 4px; margin: 8px 0; }\n  </style>\n</head>\n<body>\n  <h1 id=\"page-title\">Konga Store</h1>\n  <div id=\"stock-alert\" class=\"alert hidden\">Stock update available</div>\n\n  <div class=\"product-card\" data-name=\"Wireless Earbuds\">\n    <h2 class=\"card-name\">Wireless Earbuds</h2>\n    <p class=\"card-price\">Price loading...</p>\n  </div>\n  <div class=\"product-card\" data-name=\"Phone Case\">\n    <h2 class=\"card-name\">Phone Case</h2>\n    <p class=\"card-price\">₦1,200</p>\n  </div>\n  <div class=\"product-card\" data-name=\"USB Cable\">\n    <h2 class=\"card-name\">USB Cable</h2>\n    <p class=\"card-price\">₦800</p>\n  </div>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Konga Product Listing Page\n// Use DOM selection and modification to build the interactive listing\n\n// 1. Update page title\n\n\n// 2. querySelectorAll .product-card and log count\n\n\n// 3. forEach on NodeList — log each card's data-name attribute\n\n\n// 4. Update first card's .card-price textContent\n\n\n// 5. classList.add 'in-stock' to first card, 'out-of-stock' to last card\n\n\n// 6. classList.toggle 'highlighted' on first card; log contains result\n\n\n// 7. Update stock alert textContent and remove 'hidden' class\n\n\n// 8. Array.from + filter — keep only cards without 'out-of-stock'; log count\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Publica Academy Course Dashboard",
+        "scenario": "Build a course dashboard for a Publica Academy student. Use JavaScript to populate course info, show enrolment status, manage a progress bar, and reveal a confirmation message.",
+        "requirements": [
+          "Select the element with id 'student-name' and update its textContent to a student name of your choice",
+          "Use querySelector to select '.course-title' and update its textContent to 'JavaScript Fundamentals — Module 10'",
+          "Use setAttribute to set the 'data-enrolled' attribute on the element with id 'course-card' to 'true'; log it back with getAttribute",
+          "Use element.style to set the width of id 'progress-fill' to '72%' and backgroundColor to 'navy'",
+          "Use querySelectorAll to select all '.module-badge' elements; log the count, then use forEach to log each badge's textContent",
+          "Use classList.remove to remove 'hidden' from the element with id 'enrol-confirm'",
+          "Use classList.toggle on the element with id 'alert-box' to toggle the 'hidden' class; log whether it contains 'hidden'",
+          "Use Array.from on the module badges NodeList and use filter to count only badges containing 'Passed'; log that count"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Publica Academy Dashboard</title>\n  <style>\n    .hidden { display: none; }\n    .badge { display: inline-block; padding: 3px 8px; border-radius: 10px; font-size: 0.8rem; background: #d4edda; color: #155724; margin: 2px; }\n    .progress-bar { height: 10px; background: #e9ecef; border-radius: 5px; margin: 8px 0; }\n    .progress-fill { height: 100%; border-radius: 5px; width: 0%; }\n    .alert { background: #fff3cd; padding: 10px; border-radius: 4px; margin: 8px 0; }\n    .confirm { background: #d4edda; padding: 12px; border-radius: 4px; margin: 8px 0; }\n    #course-card { border: 1px solid #ccc; padding: 16px; max-width: 400px; border-radius: 8px; }\n  </style>\n</head>\n<body>\n  <h1>Welcome, <span id=\"student-name\">Student</span>!</h1>\n  <div id=\"alert-box\" class=\"alert hidden\">You have a new message.</div>\n\n  <div id=\"course-card\">\n    <h2 class=\"course-title\">Loading...</h2>\n    <div class=\"progress-bar\"><div id=\"progress-fill\" class=\"progress-fill\"></div></div>\n    <p>Completed modules:</p>\n    <span class=\"module-badge\">Module 1 — Passed</span>\n    <span class=\"module-badge\">Module 2 — Passed</span>\n    <span class=\"module-badge\">Module 3 — In Progress</span>\n  </div>\n\n  <div id=\"enrol-confirm\" class=\"confirm hidden\">Enrolment confirmed!</div>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Publica Academy Course Dashboard\n// Populate and manage the dashboard with DOM manipulation\n\n// 1. Update student-name textContent\n\n\n// 2. Update .course-title textContent\n\n\n// 3. setAttribute data-enrolled on #course-card; log getAttribute\n\n\n// 4. Set progress-fill width and backgroundColor via element.style\n\n\n// 5. querySelectorAll .module-badge; log count; forEach log each textContent\n\n\n// 6. classList.remove 'hidden' from #enrol-confirm\n\n\n// 7. classList.toggle 'hidden' on #alert-box; log contains result\n\n\n// 8. Array.from + filter — count badges containing 'Passed'; log count\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "PiggyVest Savings Dashboard",
+        "scenario": "Build a savings dashboard for a PiggyVest user. Use JavaScript to display account info, update a savings progress bar, manage transaction badges, and toggle notifications.",
+        "requirements": [
+          "Select the element with id 'account-owner' and update its textContent to an account owner name",
+          "Use querySelector to select '.balance-display' and update its textContent to '₦18,000 saved'",
+          "Use element.style to set the width of id 'savings-bar' to '36%' and backgroundColor to '#28a745'",
+          "Use setAttribute to set 'data-goal' attribute on id 'savings-card' to '50000'; log it with getAttribute",
+          "Use querySelectorAll to select all '.transaction-row' elements; log the count and use forEach to log each one's textContent",
+          "Use classList.add to add 'active' to the element with id 'savings-tab'",
+          "Use classList.toggle to toggle 'hidden' on id 'notification-box'; log contains 'hidden' result",
+          "Use Array.from on the transaction rows and filter to keep only rows whose textContent includes 'deposit'; log the filtered count"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>PiggyVest Dashboard</title>\n  <style>\n    .hidden { display: none; }\n    .active { font-weight: bold; border-bottom: 2px solid navy; }\n    .progress-bar { height: 10px; background: #e9ecef; border-radius: 5px; margin: 8px 0; max-width: 300px; }\n    .savings-bar { height: 100%; border-radius: 5px; width: 0%; }\n    .transaction-row { padding: 6px 10px; border-bottom: 1px solid #eee; }\n    .notification { background: #d4edda; padding: 10px; border-radius: 4px; margin: 8px 0; }\n    #savings-card { border: 1px solid #ccc; padding: 16px; border-radius: 8px; max-width: 360px; }\n  </style>\n</head>\n<body>\n  <h1>PiggyVest — <span id=\"account-owner\">Account</span></h1>\n  <div id=\"notification-box\" class=\"notification hidden\">Goal milestone reached!</div>\n\n  <div id=\"savings-card\">\n    <p class=\"balance-display\">Loading balance...</p>\n    <div class=\"progress-bar\"><div id=\"savings-bar\" class=\"savings-bar\"></div></div>\n    <nav><span id=\"savings-tab\">Savings</span> | <span>Investments</span></nav>\n  </div>\n\n  <div id=\"transactions\">\n    <div class=\"transaction-row\">+ ₦5,000 deposit — Jan 10</div>\n    <div class=\"transaction-row\">- ₦2,000 withdrawal — Jan 12</div>\n    <div class=\"transaction-row\">+ ₦8,000 deposit — Jan 15</div>\n    <div class=\"transaction-row\">- ₦3,000 withdrawal — Jan 18</div>\n  </div>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// PiggyVest Savings Dashboard\n// Populate the dashboard using DOM manipulation\n\n// 1. Update account-owner textContent\n\n\n// 2. Update .balance-display textContent\n\n\n// 3. Set savings-bar width and backgroundColor via element.style\n\n\n// 4. setAttribute data-goal on #savings-card; log getAttribute\n\n\n// 5. querySelectorAll .transaction-row; log count; forEach log each textContent\n\n\n// 6. classList.add 'active' to #savings-tab\n\n\n// 7. classList.toggle 'hidden' on #notification-box; log contains result\n\n\n// 8. Array.from + filter — keep rows with 'deposit'; log count\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Paystack Transaction Dashboard",
+        "scenario": "Build a merchant transaction dashboard for a Paystack business. Use JavaScript to display revenue stats, manage transaction badges, update a revenue bar, and toggle status messages.",
+        "requirements": [
+          "Select the element with id 'merchant-name' and update its textContent to a business name",
+          "Use innerHTML to set the content of id 'revenue-display' to '<strong>₦240,000</strong> total revenue'",
+          "Use element.style to set the width of id 'revenue-bar' to '80%' and backgroundColor to 'navy'",
+          "Use setAttribute to set 'data-period' attribute on id 'stats-card' to 'January 2025'; log it with getAttribute",
+          "Use querySelectorAll to select all '.txn-badge' elements; log the count and use forEach to log each badge's textContent",
+          "Use classList.remove to remove 'hidden' from id 'success-banner'",
+          "Use classList.toggle 'hidden' on id 'warning-box'; log whether it contains 'hidden' after the toggle",
+          "Use Array.from on the txn badges and filter to keep badges whose textContent includes 'success'; log the count"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Paystack Dashboard</title>\n  <style>\n    .hidden { display: none; }\n    .badge { display: inline-block; padding: 3px 8px; border-radius: 10px; font-size: 0.8rem; margin: 2px; background: #e2e8f0; }\n    .progress-bar { height: 10px; background: #e9ecef; border-radius: 5px; margin: 8px 0; max-width: 320px; }\n    .revenue-bar { height: 100%; border-radius: 5px; width: 0%; }\n    .banner { background: #d4edda; padding: 10px; border-radius: 4px; margin: 8px 0; }\n    .warning { background: #fff3cd; padding: 10px; border-radius: 4px; margin: 8px 0; }\n    #stats-card { border: 1px solid #ccc; padding: 16px; border-radius: 8px; max-width: 400px; }\n  </style>\n</head>\n<body>\n  <h1>Paystack — <span id=\"merchant-name\">Merchant</span></h1>\n  <div id=\"warning-box\" class=\"warning hidden\">Verify your business account.</div>\n\n  <div id=\"stats-card\">\n    <p id=\"revenue-display\">Loading revenue...</p>\n    <div class=\"progress-bar\"><div id=\"revenue-bar\" class=\"revenue-bar\"></div></div>\n    <p>Recent transactions:</p>\n    <span class=\"txn-badge\">TXN-001 success</span>\n    <span class=\"txn-badge\">TXN-002 failed</span>\n    <span class=\"txn-badge\">TXN-003 success</span>\n    <span class=\"txn-badge\">TXN-004 success</span>\n  </div>\n\n  <div id=\"success-banner\" class=\"banner hidden\">Dashboard loaded successfully.</div>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Paystack Transaction Dashboard\n// Populate and manage the dashboard with DOM manipulation\n\n// 1. Update merchant-name textContent\n\n\n// 2. Set revenue-display with innerHTML (bold amount)\n\n\n// 3. Set revenue-bar width and backgroundColor via element.style\n\n\n// 4. setAttribute data-period on #stats-card; log getAttribute\n\n\n// 5. querySelectorAll .txn-badge; log count; forEach log each textContent\n\n\n// 6. classList.remove 'hidden' from #success-banner\n\n\n// 7. classList.toggle 'hidden' on #warning-box; log contains result\n\n\n// 8. Array.from + filter — keep badges with 'success'; log count\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Bolt Driver Earnings Page",
+        "scenario": "Build a driver earnings summary page for a Bolt driver. Use JavaScript to display earnings data, update trip stats, manage status badges, and toggle alert messages.",
+        "requirements": [
+          "Select the element with id 'driver-name' and update its textContent to a driver name",
+          "Use querySelector to select '.earnings-total' and update its textContent to '₦32,400 net earnings'",
+          "Use element.style to set the width of id 'rating-bar' to '92%' and backgroundColor to '#ffc107'",
+          "Use setAttribute to set 'data-week' on id 'summary-card' to 'Week 4 — Jan 2025'; log with getAttribute",
+          "Use querySelectorAll to select all '.trip-row' elements; log the count and use forEach to log each row's textContent",
+          "Use classList.add to add class 'gold' to the element with id 'rating-badge'",
+          "Use classList.toggle 'hidden' on id 'bonus-alert'; log whether it contains 'hidden' after the toggle",
+          "Use Array.from on the trip rows and filter to keep rows whose textContent includes 'completed'; log the filtered count"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bolt Driver Dashboard</title>\n  <style>\n    .hidden { display: none; }\n    .gold { background: #ffc107; color: #333; padding: 4px 10px; border-radius: 10px; font-weight: bold; }\n    .progress-bar { height: 10px; background: #e9ecef; border-radius: 5px; margin: 8px 0; max-width: 300px; }\n    .rating-bar { height: 100%; border-radius: 5px; width: 0%; }\n    .trip-row { padding: 6px 10px; border-bottom: 1px solid #eee; }\n    .alert { background: #d4edda; padding: 10px; border-radius: 4px; margin: 8px 0; }\n    #summary-card { border: 1px solid #ccc; padding: 16px; border-radius: 8px; max-width: 380px; }\n  </style>\n</head>\n<body>\n  <h1>Bolt — <span id=\"driver-name\">Driver</span></h1>\n  <div id=\"bonus-alert\" class=\"alert hidden\">Bonus unlocked: 10 trips this week!</div>\n\n  <div id=\"summary-card\">\n    <p class=\"earnings-total\">Loading earnings...</p>\n    <div class=\"progress-bar\"><div id=\"rating-bar\" class=\"rating-bar\"></div></div>\n    <p>Rating: <span id=\"rating-badge\">4.9</span></p>\n  </div>\n\n  <div id=\"trip-log\">\n    <div class=\"trip-row\">Trip #1 — completed — ₦1,200</div>\n    <div class=\"trip-row\">Trip #2 — completed — ₦950</div>\n    <div class=\"trip-row\">Trip #3 — cancelled — ₦0</div>\n    <div class=\"trip-row\">Trip #4 — completed — ₦1,500</div>\n  </div>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bolt Driver Earnings Page\n// Populate and manage the page with DOM manipulation\n\n// 1. Update driver-name textContent\n\n\n// 2. Update .earnings-total textContent\n\n\n// 3. Set rating-bar width and backgroundColor via element.style\n\n\n// 4. setAttribute data-week on #summary-card; log getAttribute\n\n\n// 5. querySelectorAll .trip-row; log count; forEach log each textContent\n\n\n// 6. classList.add 'gold' to #rating-badge\n\n\n// 7. classList.toggle 'hidden' on #bonus-alert; log contains result\n\n\n// 8. Array.from + filter — keep rows with 'completed'; log count\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "selection",
+          "label": "DOM Selection",
+          "points": 30,
+          "descriptors": {
+            "full": "getElementById and querySelector/querySelectorAll used correctly; nested querySelector used on a specific element; NodeList length logged",
+            "partial": "Selection methods used but one or more missing or incorrect (e.g., querySelector used where querySelectorAll needed)",
+            "none": "Selection methods absent or all returning null due to incorrect selectors"
+          }
+        },
+        {
+          "id": "content_attributes",
+          "label": "Content and Attribute Modification",
+          "points": 30,
+          "descriptors": {
+            "full": "textContent and innerHTML used correctly; setAttribute and getAttribute used for at least one attribute; inline style set with correct camelCase property names",
+            "partial": "Two of the three techniques used correctly; one missing or incorrectly applied",
+            "none": "Content and attribute modification absent or using incorrect APIs"
+          }
+        },
+        {
+          "id": "classlist_iteration",
+          "label": "classList and NodeList Iteration",
+          "points": 30,
+          "descriptors": {
+            "full": "classList.add, remove, and toggle all used; NodeList iterated with forEach; Array.from used to enable filter; filter result logged correctly",
+            "partial": "classList operations present but toggle or Array.from missing; forEach works but filter absent",
+            "none": "classList and NodeList iteration both missing or non-functional"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 10,
+          "descriptors": {
+            "full": "const/let used correctly, variable names are descriptive, output is clear and readable, no var",
+            "partial": "Minor quality issues — occasional let where const fits, unclear variable names",
+            "none": "var used, unclear naming, or output is unreadable"
+          }
+        }
+      ]
+    }
+  }
+}

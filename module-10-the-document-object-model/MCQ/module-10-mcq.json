@@ -1,0 +1,452 @@
+[
+    {
+        "title": "understanding the dom tree",
+        "description": "What is the DOM",
+        "type": "multiple choice",
+        "question": "What is the DOM?",
+        "options": "A programming language|JavaScript's live representation of the HTML page as a tree of objects|A CSS framework|A browser plugin",
+        "answer": "JavaScript's live representation of the HTML page as a tree of objects",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "DOM purpose",
+        "type": "multiple choice",
+        "question": "What can JavaScript do with the DOM?",
+        "options": "Only read elements|Read modify add and remove elements on the page|Only add new elements|Only change CSS",
+        "answer": "Read modify add and remove elements on the page",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Tree structure",
+        "type": "multiple choice",
+        "question": "What kind of data structure is the DOM?",
+        "options": "An array|A tree with parent child and sibling relationships|A flat list|A stack",
+        "answer": "A tree with parent child and sibling relationships",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Document root",
+        "type": "multiple choice",
+        "question": "What is the entry point (root) to the entire DOM tree?",
+        "options": "window|document|body|html",
+        "answer": "document",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Parent relationship",
+        "type": "multiple choice",
+        "question": "In the DOM tree what is the parent of an h1 inside the body element?",
+        "options": "html|head|body|document",
+        "answer": "body",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "textContent property",
+        "type": "multiple choice",
+        "question": "What does element.textContent return?",
+        "options": "The element's HTML tag|The visible text inside the element|The element's CSS styles|The element's id",
+        "answer": "The visible text inside the element",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "tagName property",
+        "type": "multiple choice",
+        "question": "What does heading.tagName return for an h1 element?",
+        "options": "h1|H1|heading|title",
+        "answer": "H1",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "className property",
+        "type": "multiple choice",
+        "question": "What does element.className return?",
+        "options": "The element's id|The element's class attribute value|The tag name|The parent element",
+        "answer": "The element's class attribute value",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Script placement reason",
+        "type": "multiple choice",
+        "question": "Why should the script tag be placed at the bottom of the body?",
+        "options": "Because it loads faster|So that all HTML elements exist before JavaScript tries to access them|Because the head cannot contain scripts|For styling purposes",
+        "answer": "So that all HTML elements exist before JavaScript tries to access them",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Script in head problem",
+        "type": "multiple choice",
+        "question": "What happens if a script in the head tries to access an element that is defined in the body?",
+        "options": "It works fine|The element is null because it has not been parsed yet|An error stops the HTML from loading|The element is undefined",
+        "answer": "The element is null because it has not been parsed yet",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Node types",
+        "type": "multiple choice",
+        "question": "Which of the following is NOT a type of DOM node?",
+        "options": "Element node|Text node|Attribute node|Function node",
+        "answer": "Function node",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "document.body",
+        "type": "multiple choice",
+        "question": "What does document.body give you?",
+        "options": "The entire HTML document|The body element|The head element|The document title",
+        "answer": "The body element",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "document.title",
+        "type": "multiple choice",
+        "question": "What does document.title return?",
+        "options": "The body text|The content of the title tag in the head|The h1 text|The URL",
+        "answer": "The content of the title tag in the head",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Siblings",
+        "type": "multiple choice",
+        "question": "What are sibling elements in the DOM?",
+        "options": "Elements at the same depth with the same parent|Elements inside each other|The root and its children|Elements in different files",
+        "answer": "Elements at the same depth with the same parent",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "selecting elements",
+        "description": "getElementById return",
+        "type": "multiple choice",
+        "question": "What does getElementById return?",
+        "options": "An array of elements|One element or null|A NodeList|A string",
+        "answer": "One element or null",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "selecting elements",
+        "description": "querySelector return",
+        "type": "multiple choice",
+        "question": "What does querySelector return?",
+        "options": "All matching elements|The first matching element or null|An array|A boolean",
+        "answer": "The first matching element or null",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "selecting elements",
+        "description": "querySelectorAll return",
+        "type": "multiple choice",
+        "question": "What does querySelectorAll return?",
+        "options": "One element|A NodeList of all matching elements|An array|null",
+        "answer": "A NodeList of all matching elements",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "selecting elements",
+        "description": "getElementById syntax",
+        "type": "multiple choice",
+        "question": "How do you select an element with id page-title?",
+        "options": "document.getElementById(\"page-title\")|document.querySelector(page-title)|document.getElement(\"page-title\")|document.select(\"#page-title\")",
+        "answer": "document.getElementById(\"page-title\")",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "selecting elements",
+        "description": "querySelector selector types",
+        "type": "True or False",
+        "question": "querySelector accepts any valid CSS selector including tags classes ids and nested selectors.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "Class selector in querySelector",
+        "type": "multiple choice",
+        "question": "How do you select the first element with class intro using querySelector?",
+        "options": "document.querySelector(\"intro\")|document.querySelector(\".intro\")|document.querySelector(\"#intro\")|document.querySelector(\"class:intro\")",
+        "answer": "document.querySelector(\".intro\")",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "NodeList not an array",
+        "type": "multiple choice",
+        "question": "What array method does a NodeList NOT have natively?",
+        "options": "forEach|length|map|index access",
+        "answer": "map",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "NodeList forEach",
+        "type": "True or False",
+        "question": "You can use forEach directly on a NodeList returned by querySelectorAll.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "Array.from purpose",
+        "type": "multiple choice",
+        "question": "Why would you use Array.from() on a NodeList?",
+        "options": "To delete it|To convert it to a real array so you can use map and filter|To make it longer|To sort it automatically",
+        "answer": "To convert it to a real array so you can use map and filter",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "null from failed selection",
+        "type": "multiple choice",
+        "question": "What does getElementById return when no element with that id exists?",
+        "options": "undefined|An empty string|null|An error",
+        "answer": "null",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "Nested selector",
+        "type": "multiple choice",
+        "question": "What does document.querySelector(\".course-card h2\") select?",
+        "options": "All h2 elements|The first h2 that is inside an element with class course-card|All course-card elements|The body element",
+        "answer": "The first h2 that is inside an element with class course-card",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "selecting elements",
+        "description": "Demo safe access",
+        "type": "multiple choice",
+        "question": "In the demo why does the code check if (missing !== null) before accessing missing.textContent?",
+        "options": "Because null is falsy|Because accessing a property on null throws a TypeError|Because it makes the code slower|It is not necessary",
+        "answer": "Because accessing a property on null throws a TypeError",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "textContent vs innerHTML",
+        "type": "multiple choice",
+        "question": "What is the key difference between textContent and innerHTML?",
+        "options": "They are identical|textContent sets plain text while innerHTML parses HTML tags|innerHTML is safer|textContent can include HTML",
+        "answer": "textContent sets plain text while innerHTML parses HTML tags",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "textContent safety",
+        "type": "multiple choice",
+        "question": "Which property should you prefer for setting plain text content?",
+        "options": "innerHTML|textContent|innerText|outerHTML",
+        "answer": "textContent",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "getAttribute",
+        "type": "multiple choice",
+        "question": "What does element.getAttribute(\"src\") do?",
+        "options": "Sets the src attribute|Returns the current value of the src attribute|Removes the src attribute|Creates a new element",
+        "answer": "Returns the current value of the src attribute",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "setAttribute",
+        "type": "multiple choice",
+        "question": "How do you change the href attribute of a link to /courses/js?",
+        "options": "link.href(\"/courses/js\")|link.setAttribute(\"href\" \"/courses/js\")|link.href = \"/courses/js\"|Both setAttribute and direct property assignment work",
+        "answer": "Both setAttribute and direct property assignment work",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "classList.add",
+        "type": "multiple choice",
+        "question": "What does element.classList.add(\"active\") do?",
+        "options": "Replaces all classes with active|Adds the class active without removing existing classes|Removes the class active|Toggles the class active",
+        "answer": "Adds the class active without removing existing classes",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "classList.toggle",
+        "type": "multiple choice",
+        "question": "What does classList.toggle(\"hidden\") do?",
+        "options": "Always adds hidden|Adds hidden if absent or removes it if present|Always removes hidden|Checks if hidden exists",
+        "answer": "Adds hidden if absent or removes it if present",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "classList vs className",
+        "type": "multiple choice",
+        "question": "Why is classList preferred over className for managing classes?",
+        "options": "className is faster|classList adds or removes individual classes without replacing all existing ones|className does not work|classList is newer",
+        "answer": "classList adds or removes individual classes without replacing all existing ones",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "classList.contains",
+        "type": "multiple choice",
+        "question": "What does element.classList.contains(\"active\") return?",
+        "options": "The class string|A boolean indicating whether the element has that class|The element|undefined",
+        "answer": "A boolean indicating whether the element has that class",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "Style camelCase",
+        "type": "multiple choice",
+        "question": "How do you write the CSS property background-color in JavaScript?",
+        "options": "element.style.background-color|element.style.backgroundColor|element.style[\"background-color\"]|element.style.bgColor",
+        "answer": "element.style.backgroundColor",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "Remove inline style",
+        "type": "multiple choice",
+        "question": "How do you remove an inline style that was set with element.style.color?",
+        "options": "delete element.style.color|element.style.color = \"\"|element.style.removeColor()|element.classList.remove(\"color\")",
+        "answer": "element.style.color = \"\"",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "innerHTML XSS warning",
+        "type": "True or False",
+        "question": "You should never set innerHTML to user-supplied input because it creates an XSS vulnerability.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "Style best practice",
+        "type": "multiple choice",
+        "question": "When should you use element.style over classList for styling?",
+        "options": "For state-based changes like active or hidden|For dynamic one-off changes like a calculated width|For all styling needs|Never",
+        "answer": "For dynamic one-off changes like a calculated width",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "Demo disabled button",
+        "type": "multiple choice",
+        "question": "In the demo how is the enroll button disabled?",
+        "options": "btn.setAttribute(\"disabled\" \"true\")|btn.disabled = true|btn.classList.add(\"disabled\")|btn.style.disabled = true",
+        "answer": "btn.disabled = true",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "font-size in JS",
+        "type": "multiple choice",
+        "question": "What is the JavaScript equivalent of the CSS property font-size?",
+        "options": "element.style.font-size|element.style.fontSize|element.style.fontsize|element.style.FontSize",
+        "answer": "element.style.fontSize",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Live representation",
+        "type": "True or False",
+        "question": "Changes made to the DOM via JavaScript are immediately reflected on the visible page.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "Children property",
+        "type": "multiple choice",
+        "question": "What does element.children return?",
+        "options": "A string of child tag names|A live HTMLCollection of the direct child elements|Only the first child|The parent element",
+        "answer": "A live HTMLCollection of the direct child elements",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "getElementById no hash",
+        "type": "multiple choice",
+        "question": "When using getElementById should you include the # symbol in the id string?",
+        "options": "Yes always|No — getElementById does not use CSS selector syntax|Only for classes|Only for nested selectors",
+        "answer": "No — getElementById does not use CSS selector syntax",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "selecting elements",
+        "description": "querySelectorAll vs getElementsByClassName",
+        "type": "multiple choice",
+        "question": "What is one advantage of querySelectorAll over getElementsByClassName?",
+        "options": "It is faster|It accepts any CSS selector not just class names|It returns a live collection|It modifies elements automatically",
+        "answer": "It accepts any CSS selector not just class names",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "classList.remove",
+        "type": "multiple choice",
+        "question": "What does element.classList.remove(\"hidden\") do if the element does not have the class hidden?",
+        "options": "Throws an error|Nothing — it silently does nothing|Adds the class instead|Returns false",
+        "answer": "Nothing — it silently does nothing",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "Setting textContent",
+        "type": "multiple choice",
+        "question": "What does heading.textContent = \"New Title\" do?",
+        "options": "Appends New Title to existing text|Replaces all content inside the element with the plain text New Title|Creates a new heading|Sets an attribute",
+        "answer": "Replaces all content inside the element with the plain text New Title",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "Style units required",
+        "type": "True or False",
+        "question": "When setting element.style.width in JavaScript you must include the unit like px or % as part of the string.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "selecting elements",
+        "description": "Multiple elements loop",
+        "type": "multiple choice",
+        "question": "After selecting multiple elements with querySelectorAll how do you change each one?",
+        "options": "Access them directly like an object|Use forEach to loop through the NodeList|Use a single assignment|Call map on the result",
+        "answer": "Use forEach to loop through the NodeList",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "modifying content attributes and styles",
+        "description": "removeAttribute",
+        "type": "multiple choice",
+        "question": "How do you completely remove the disabled attribute from a button?",
+        "options": "btn.disabled = false|btn.removeAttribute(\"disabled\")|delete btn.disabled|Both setting to false and removeAttribute work",
+        "answer": "Both setting to false and removeAttribute work",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "understanding the dom tree",
+        "description": "DOM vs source HTML",
+        "type": "multiple choice",
+        "question": "If JavaScript adds a new element to the page does the original HTML source file change?",
+        "options": "Yes the file is updated|No — the DOM changes in memory but the source file remains unchanged|Only if you save|It depends on the browser",
+        "answer": "No — the DOM changes in memory but the source file remains unchanged",
+        "difficulty": "Advanced"
+    }
+]
