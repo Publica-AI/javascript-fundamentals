@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publica Academy — Event Object Demo</title>
+  <style>
+    body { font-family: sans-serif; max-width: 520px; margin: 32px auto; padding: 0 16px; }
+    input { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    .btn { padding: 8px 18px; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+    .btn-primary { background: navy; color: white; border: none; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 10px 14px; border: 1px solid #dee2e6; border-radius: 4px; margin: 4px 0; cursor: pointer; }
+    li:hover { background: #f0f4ff; }
+    #selected { color: navy; font-weight: bold; min-height: 1.2em; }
+    #search-result { color: #555; font-style: italic; min-height: 1.2em; }
+    #form-status { font-weight: bold; min-height: 1.2em; }
+    form { border: 1px solid #dee2e6; padding: 16px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Publica Academy</h1>
+
+  <h2>Course Catalogue</h2>
+  <ul id="course-list">
+    <li data-course="js">JavaScript Fundamentals</li>
+    <li data-course="html">HTML &amp; CSS Basics</li>
+    <li data-course="git">Git &amp; GitHub</li>
+  </ul>
+  <p id="selected">Click a course to select it</p>
+
+  <h2>Course Search</h2>
+  <input id="search-input" type="text" placeholder="Search — press Enter to submit, Escape to clear">
+  <p id="search-result"></p>
+
+  <h2>Enrolment Form</h2>
+  <form id="enrol-form">
+    <input id="email-input" type="email" placeholder="Your email address">
+    <br><br>
+    <button type="submit" class="btn btn-primary">Enrol Now</button>
+  </form>
+  <p id="form-status"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>

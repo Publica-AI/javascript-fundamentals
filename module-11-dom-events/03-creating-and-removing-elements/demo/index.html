@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publica Academy — Module List Demo</title>
+  <style>
+    body { font-family: sans-serif; max-width: 520px; margin: 32px auto; padding: 0 16px; }
+    input { width: 70%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    .btn { padding: 8px 14px; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+    .btn-add { background: navy; color: white; border: none; }
+    .btn-clear { background: #dc3545; color: white; border: none; margin-left: 4px; }
+    .btn-delete { background: none; border: none; color: #dc3545; cursor: pointer; font-size: 1.1rem; margin-left: 8px; }
+    ul#module-list { list-style: none; padding: 0; }
+    ul#module-list li { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border: 1px solid #dee2e6; border-radius: 4px; margin: 4px 0; }
+    #course-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .course-card { border: 1px solid #dee2e6; border-radius: 8px; padding: 12px; width: 140px; }
+    .course-card h3 { font-size: 0.9rem; margin: 0 0 4px; }
+    .course-card p { font-size: 0.85rem; color: #555; margin: 0 0 8px; }
+    .enroll-btn { font-size: 0.8rem; padding: 4px 8px; background: navy; color: white; border: none; border-radius: 3px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Publica Academy</h1>
+
+  <h2>My Module List</h2>
+  <input id="module-input" type="text" placeholder="Enter module name...">
+  <button id="add-btn" class="btn btn-add">Add</button>
+  <button id="clear-btn" class="btn btn-clear">Clear All</button>
+  <ul id="module-list"></ul>
+
+  <h2>Course Catalogue</h2>
+  <div id="course-grid"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
