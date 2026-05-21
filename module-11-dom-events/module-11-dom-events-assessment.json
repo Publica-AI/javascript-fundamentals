@@ -1,0 +1,185 @@
+{
+  "module": "11",
+  "title": "DOM Events",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the HTML below, write JavaScript to: (1) add a 'click' event listener to the button with id 'greet-btn', (2) inside the handler, select the paragraph with id 'output' and set its textContent to 'Hello, Amara!', (3) add class 'active' to the button using classList.",
+            "starter": "// HTML on the page:\n// <button id=\"greet-btn\">Greet</button>\n// <p id=\"output\">Waiting...</p>\n\n// 1. Add click event listener to the button\n\n// 2. Inside the handler: update output textContent\n\n// 3. Inside the handler: add 'active' class to the button\n",
+            "solution": "const btn = document.getElementById('greet-btn');\nconst output = document.getElementById('output');\n\nbtn.addEventListener('click', function () {\n  output.textContent = 'Hello, Amara!';\n  btn.classList.add('active');\n});",
+            "test_cases": [
+              { "expected_output": "Hello, Amara!" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that adds a 'submit' event listener to the form with id 'name-form'. The handler should: (1) call e.preventDefault(), (2) get the value from the input with id 'name-input', (3) use createElement to create a new <li> with textContent set to the input value, (4) appendChild the <li> to the <ul> with id 'name-list', (5) clear the input value after adding.",
+            "starter": "// HTML on the page:\n// <form id=\"name-form\">\n//   <input type=\"text\" id=\"name-input\">\n//   <button type=\"submit\">Add</button>\n// </form>\n// <ul id=\"name-list\"></ul>\n\n// Add submit event listener to the form\n// preventDefault, get value, createElement li, appendChild, clear input\n",
+            "solution": "const form = document.getElementById('name-form');\nconst input = document.getElementById('name-input');\nconst list = document.getElementById('name-list');\n\nform.addEventListener('submit', function (e) {\n  e.preventDefault();\n  const li = document.createElement('li');\n  li.textContent = input.value;\n  list.appendChild(li);\n  input.value = '';\n});",
+            "test_cases": [
+              { "expected_output": "preventDefault called" },
+              { "expected_output": "li created and appended" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What does `e.preventDefault()` do, and why is it essential when handling a form 'submit' event? What would happen without it?",
+            "sample_answer": "`e.preventDefault()` stops the browser's default action for that event. For a form submit, the default action is to send an HTTP request to the server and reload the page. Without it, the page refreshes immediately after the user clicks submit, so any JavaScript that runs after the submit (like adding items to a list or showing a message) would be lost because the page reloads and resets to its initial state. By calling preventDefault, we keep the page intact and handle the form data entirely with JavaScript."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that adds a 'keydown' event listener to the input with id 'search-box'. When the user presses the 'Enter' key (check e.key === 'Enter'), set the textContent of the element with id 'result' to 'Searching for: ' followed by the input's value. When the user presses 'Escape', clear both the input value and the result textContent.",
+            "starter": "// HTML on the page:\n// <input type=\"text\" id=\"search-box\" placeholder=\"Type and press Enter\">\n// <p id=\"result\"></p>\n\n// Add keydown event listener\n// If Enter: show search text in result\n// If Escape: clear input and result\n",
+            "solution": "const searchBox = document.getElementById('search-box');\nconst result = document.getElementById('result');\n\nsearchBox.addEventListener('keydown', function (e) {\n  if (e.key === 'Enter') {\n    result.textContent = 'Searching for: ' + searchBox.value;\n  }\n  if (e.key === 'Escape') {\n    searchBox.value = '';\n    result.textContent = '';\n  }\n});",
+            "test_cases": [
+              { "expected_output": "Searching for: " }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that: (1) uses createElement to create a new <div> with class 'card' and textContent 'New Card', (2) creates a <button> with textContent '×' and class 'delete-btn', (3) adds a click event listener to the button that calls remove() on its parent element, (4) appends the button to the div, then appends the div to the element with id 'container'.",
+            "starter": "// HTML on the page:\n// <div id=\"container\"></div>\n\n// 1. Create a div with class 'card' and textContent 'New Card'\n// 2. Create a button with textContent '×' and class 'delete-btn'\n// 3. Add click listener to button — remove parent element\n// 4. Append button to div, then div to container\n",
+            "solution": "const container = document.getElementById('container');\n\nconst card = document.createElement('div');\ncard.classList.add('card');\ncard.textContent = 'New Card';\n\nconst deleteBtn = document.createElement('button');\ndeleteBtn.textContent = '×';\ndeleteBtn.classList.add('delete-btn');\n\ndeleteBtn.addEventListener('click', function () {\n  card.remove();\n});\n\ncard.appendChild(deleteBtn);\ncontainer.appendChild(card);",
+            "test_cases": [
+              { "expected_output": "card created with delete button" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `e.target` and `e.currentTarget` in an event handler? Give a scenario where they would be different.",
+            "sample_answer": "`e.target` is the element that actually triggered the event — the element the user interacted with directly. `e.currentTarget` is the element that the event listener is attached to. They differ when events bubble. Scenario: a <ul> has a click listener. The user clicks a <span> inside an <li>. `e.target` is the <span> (what was clicked), while `e.currentTarget` is the <ul> (where the listener lives). This is the basis of event delegation — you attach one listener to a parent and use e.target to determine which child was clicked."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that adds a 'click' event listener to the button with id 'toggle-btn'. Each click should toggle the class 'visible' on the element with id 'panel'. Also update the button's textContent: if the panel contains 'visible', set button text to 'Hide Panel', otherwise set it to 'Show Panel'.",
+            "starter": "// HTML on the page:\n// <button id=\"toggle-btn\">Show Panel</button>\n// <div id=\"panel\" class=\"panel\">Panel content here</div>\n\n// Add click listener to toggle-btn\n// Toggle 'visible' class on panel\n// Update button text based on panel state\n",
+            "solution": "const toggleBtn = document.getElementById('toggle-btn');\nconst panel = document.getElementById('panel');\n\ntoggleBtn.addEventListener('click', function () {\n  panel.classList.toggle('visible');\n  if (panel.classList.contains('visible')) {\n    toggleBtn.textContent = 'Hide Panel';\n  } else {\n    toggleBtn.textContent = 'Show Panel';\n  }\n});",
+            "test_cases": [
+              { "expected_output": "Hide Panel" },
+              { "expected_output": "Show Panel" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that adds an 'input' event listener to the text input with id 'char-input'. On each keystroke, update the textContent of the element with id 'char-count' to show the current length of the input's value (e.g., '5 characters'). If the length exceeds 20, add class 'warning' to the counter; otherwise remove it.",
+            "starter": "// HTML on the page:\n// <input type=\"text\" id=\"char-input\" placeholder=\"Type something...\">\n// <p id=\"char-count\">0 characters</p>\n\n// Add input event listener\n// Update character count on each keystroke\n// Add/remove 'warning' class based on length\n",
+            "solution": "const charInput = document.getElementById('char-input');\nconst charCount = document.getElementById('char-count');\n\ncharInput.addEventListener('input', function () {\n  const length = charInput.value.length;\n  charCount.textContent = length + ' characters';\n  if (length > 20) {\n    charCount.classList.add('warning');\n  } else {\n    charCount.classList.remove('warning');\n  }\n});",
+            "test_cases": [
+              { "expected_output": "characters" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Explain the difference between the 'input' event and the 'keydown' event on a text input. When would you choose one over the other?",
+            "sample_answer": "The 'input' event fires after the input's value has already changed — you always get the updated value. It fires for any value change: typing, pasting, autocomplete, cutting, or speech input. The 'keydown' event fires before the character is inserted — at that moment, the value hasn't changed yet (it's the previous value). It fires for any key press, including keys that don't change the value (Shift, Ctrl, Escape, arrows). Use 'input' when you care about the value changing (character counter, live search filtering). Use 'keydown' when you care about specific keys regardless of value (Enter to submit, Escape to close, arrow keys for navigation)."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that adds a 'submit' event listener to the form with id 'login-form'. The handler should: (1) preventDefault, (2) get the values of inputs with ids 'email-input' and 'password-input', (3) if either is empty, set textContent of id 'form-error' to 'All fields are required' and add class 'error' to it, (4) if both have values, set textContent of id 'form-error' to 'Login successful!' and remove class 'error', add class 'success'.",
+            "starter": "// HTML on the page:\n// <form id=\"login-form\">\n//   <input type=\"email\" id=\"email-input\">\n//   <input type=\"password\" id=\"password-input\">\n//   <button type=\"submit\">Login</button>\n// </form>\n// <p id=\"form-error\"></p>\n\n// Add submit listener with validation logic\n",
+            "solution": "const form = document.getElementById('login-form');\nconst emailInput = document.getElementById('email-input');\nconst passwordInput = document.getElementById('password-input');\nconst formError = document.getElementById('form-error');\n\nform.addEventListener('submit', function (e) {\n  e.preventDefault();\n  const email = emailInput.value;\n  const password = passwordInput.value;\n\n  if (email === '' || password === '') {\n    formError.textContent = 'All fields are required';\n    formError.classList.add('error');\n    formError.classList.remove('success');\n  } else {\n    formError.textContent = 'Login successful!';\n    formError.classList.remove('error');\n    formError.classList.add('success');\n  }\n});",
+            "test_cases": [
+              { "expected_output": "All fields are required" },
+              { "expected_output": "Login successful!" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that creates 3 list items dynamically. For each item: (1) createElement an <li> with textContent 'Item 1', 'Item 2', 'Item 3', (2) add a click event listener to each <li> that logs 'Clicked: ' + the item's textContent when clicked, (3) appendChild each <li> to the <ul> with id 'dynamic-list'.",
+            "starter": "// HTML on the page:\n// <ul id=\"dynamic-list\"></ul>\n\n// Create 3 li elements with click listeners, append to list\n",
+            "solution": "const list = document.getElementById('dynamic-list');\n\nfor (let i = 1; i <= 3; i++) {\n  const li = document.createElement('li');\n  li.textContent = 'Item ' + i;\n  li.addEventListener('click', function () {\n    console.log('Clicked: ' + li.textContent);\n  });\n  list.appendChild(li);\n}",
+            "test_cases": [
+              { "expected_output": "Clicked: Item 1" },
+              { "expected_output": "Clicked: Item 2" },
+              { "expected_output": "Clicked: Item 3" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why do dynamically created elements (created with createElement after page load) need their event listeners attached at creation time? What alternative pattern handles this without attaching individual listeners?",
+            "sample_answer": "Event listeners must be attached after the element exists in memory. A statically written addEventListener in your script only runs once when the page loads — it can't see elements created later. So each dynamically created element needs its listener attached right after createElement, before or after appending. The alternative is event delegation: attach one listener to a parent element that already exists (like the <ul>), and use e.target inside the handler to determine which child was clicked. Since events bubble up from child to parent, the parent's listener catches clicks on all current and future children — no individual listeners needed."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that adds a 'click' event listener to the <ul> with id 'task-list' (event delegation). Inside the handler, check if the clicked element (e.target) has class 'delete-btn'. If it does, call remove() on e.target's parentElement (the <li>). Log 'Deleted: ' + the li's textContent before removing.",
+            "starter": "// HTML on the page:\n// <ul id=\"task-list\">\n//   <li>Buy groceries <button class=\"delete-btn\">×</button></li>\n//   <li>Write code <button class=\"delete-btn\">×</button></li>\n//   <li>Read book <button class=\"delete-btn\">×</button></li>\n// </ul>\n\n// Add ONE click listener to the ul (event delegation)\n// Check if e.target has class 'delete-btn'\n// If yes: log and remove the parent li\n",
+            "solution": "const taskList = document.getElementById('task-list');\n\ntaskList.addEventListener('click', function (e) {\n  if (e.target.classList.contains('delete-btn')) {\n    const li = e.target.parentElement;\n    console.log('Deleted: ' + li.textContent);\n    li.remove();\n  }\n});",
+            "test_cases": [
+              { "expected_output": "Deleted: " }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that: (1) adds a 'click' event listener to the button with id 'add-btn', (2) on each click, creates a new <div> with class 'notification' and textContent 'Notification ' + a counter (starting at 1), (3) creates a <button> with textContent 'Dismiss' that removes the notification div when clicked, (4) appends both to the element with id 'notification-area'. Counter increments with each click.",
+            "starter": "// HTML on the page:\n// <button id=\"add-btn\">Add Notification</button>\n// <div id=\"notification-area\"></div>\n\n// Track count starting at 0\n// Click handler: increment count, create notification + dismiss button, append\n",
+            "solution": "const addBtn = document.getElementById('add-btn');\nconst area = document.getElementById('notification-area');\nlet count = 0;\n\naddBtn.addEventListener('click', function () {\n  count++;\n  const notification = document.createElement('div');\n  notification.classList.add('notification');\n  notification.textContent = 'Notification ' + count;\n\n  const dismissBtn = document.createElement('button');\n  dismissBtn.textContent = 'Dismiss';\n  dismissBtn.addEventListener('click', function () {\n    notification.remove();\n  });\n\n  notification.appendChild(dismissBtn);\n  area.appendChild(notification);\n});",
+            "test_cases": [
+              { "expected_output": "Notification 1" },
+              { "expected_output": "Notification 2" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is event delegation and why is it more efficient than adding individual event listeners to each child element? Give one practical scenario.",
+            "sample_answer": "Event delegation is the pattern of attaching a single event listener to a parent element instead of attaching separate listeners to each child. It works because of event bubbling — when a child is clicked, the event travels up through its ancestors, so the parent's listener fires. It's more efficient because: (1) one listener uses less memory than N listeners, (2) it automatically works for dynamically added children without re-attaching listeners, (3) it simplifies cleanup. Practical scenario: a to-do list where items are added and removed dynamically. Instead of attaching a delete listener to each new item's button, attach one listener to the <ul>. Check `e.target.classList.contains('delete-btn')` and remove `e.target.parentElement`. New items work immediately without extra code."
+          }
+        ]
+      }
+    ]
+  }
+}

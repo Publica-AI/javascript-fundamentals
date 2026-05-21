@@ -1,0 +1,185 @@
+{
+  "module": "11",
+  "title": "DOM Events — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build an interactive web page that responds to user actions using DOM events. Your solution must use: addEventListener for at least 3 different event types (click, input/keydown, submit), the event object (e.target, e.key, or e.preventDefault()), createElement and appendChild to add elements dynamically, a remove() or removeChild() call to delete elements, and classList manipulation in response to events. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Jumia Wishlist Manager",
+        "scenario": "Build an interactive wishlist page for a Jumia shopper. Users can add items via a form, mark them as purchased with a click, delete items, and search/filter the list with keyboard input.",
+        "requirements": [
+          "Add a 'submit' event listener to the form with id 'wishlist-form'; use e.preventDefault() to stop page reload",
+          "On valid form submission, use createElement to build a new <li> with the item name, a 'Done' button, and a '×' delete button; appendChild it to the list",
+          "Add a 'click' event listener to each 'Done' button that toggles class 'purchased' on its parent <li> (use e.target and classList.toggle)",
+          "Add a 'click' event listener to each '×' button that calls remove() on its parent <li> to delete the item",
+          "Add a 'keyup' event listener to the search input that filters visible list items: hide items that don't include the search text (use style.display or classList)",
+          "Add a 'click' event listener to the 'Clear All' button that removes all <li> elements from the list",
+          "Display a live item count that updates whenever an item is added or removed"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Jumia Wishlist</title>\n  <style>\n    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; }\n    .purchased { text-decoration: line-through; opacity: 0.6; }\n    .hidden { display: none; }\n    li { padding: 8px; margin: 4px 0; background: #f9f9f9; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }\n    button { cursor: pointer; }\n    .btn-done { background: #d4edda; border: none; padding: 4px 8px; border-radius: 4px; }\n    .btn-delete { background: #f8d7da; border: none; padding: 4px 8px; border-radius: 4px; }\n    #clear-btn { margin-top: 10px; background: #fff3cd; border: 1px solid #ffc107; padding: 6px 12px; border-radius: 4px; }\n  </style>\n</head>\n<body>\n  <h1>Jumia Wishlist</h1>\n  <form id=\"wishlist-form\">\n    <input type=\"text\" id=\"item-input\" placeholder=\"Add an item...\" required>\n    <button type=\"submit\">Add</button>\n  </form>\n  <input type=\"text\" id=\"search-input\" placeholder=\"Search items...\">\n  <p>Items: <span id=\"item-count\">0</span></p>\n  <ul id=\"wishlist\"></ul>\n  <button id=\"clear-btn\">Clear All</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Jumia Wishlist Manager\n// Build an interactive wishlist using DOM events\n\n// 1. Select DOM elements\n\n\n// 2. Form submit — preventDefault, create new list item with Done + Delete buttons, appendChild\n\n\n// 3. Done button click — toggle 'purchased' class on parent li\n\n\n// 4. Delete button click — remove() the parent li\n\n\n// 5. Search input keyup — filter list items by text content\n\n\n// 6. Clear All button click — remove all li elements\n\n\n// 7. Update item count whenever items are added/removed\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Cowrywise Savings Goal Tracker",
+        "scenario": "Build an interactive savings goal tracker for a Cowrywise user. Users can add goals via a form, mark goals as achieved, delete goals, and filter goals with keyboard input.",
+        "requirements": [
+          "Add a 'submit' event listener to the form with id 'goal-form'; use e.preventDefault() to stop page reload",
+          "On valid form submission, use createElement to build a new goal card <div> with the goal name, target amount, an 'Achieved' button, and a '×' delete button; appendChild it to the goals container",
+          "Add a 'click' event listener to each 'Achieved' button that toggles class 'achieved' on its parent goal card (use e.target and classList.toggle)",
+          "Add a 'click' event listener to each '×' button that calls remove() on its parent goal card",
+          "Add a 'keyup' event listener to the search input that filters visible goal cards: hide cards that don't include the search text",
+          "Add a 'click' event listener to the 'Reset All' button that removes all goal cards from the container",
+          "Display a live goal count that updates whenever a goal is added or removed"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Cowrywise Goal Tracker</title>\n  <style>\n    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; }\n    .achieved { border-color: green; background: #d4edda; }\n    .hidden { display: none; }\n    .goal-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }\n    .btn-achieve { background: #d4edda; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    .btn-delete { background: #f8d7da; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    #reset-btn { margin-top: 10px; background: #fff3cd; border: 1px solid #ffc107; padding: 6px 12px; border-radius: 4px; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Cowrywise Savings Goals</h1>\n  <form id=\"goal-form\">\n    <input type=\"text\" id=\"goal-input\" placeholder=\"Goal name...\" required>\n    <input type=\"number\" id=\"amount-input\" placeholder=\"Target (₦)\" required>\n    <button type=\"submit\">Add Goal</button>\n  </form>\n  <input type=\"text\" id=\"search-input\" placeholder=\"Search goals...\">\n  <p>Goals: <span id=\"goal-count\">0</span></p>\n  <div id=\"goals-container\"></div>\n  <button id=\"reset-btn\">Reset All</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Cowrywise Savings Goal Tracker\n// Build an interactive goal tracker using DOM events\n\n// 1. Select DOM elements\n\n\n// 2. Form submit — preventDefault, create goal card with Achieved + Delete buttons, appendChild\n\n\n// 3. Achieved button click — toggle 'achieved' class on parent card\n\n\n// 4. Delete button click — remove() the parent card\n\n\n// 5. Search input keyup — filter goal cards by text content\n\n\n// 6. Reset All button click — remove all goal cards\n\n\n// 7. Update goal count whenever goals are added/removed\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "Flutterwave Payment Log",
+        "scenario": "Build an interactive payment log page for a Flutterwave merchant. Users can add transactions via a form, mark them as verified, delete entries, and search through the log.",
+        "requirements": [
+          "Add a 'submit' event listener to the form with id 'payment-form'; use e.preventDefault() to stop page reload",
+          "On valid form submission, use createElement to build a new <tr> row with customer name, amount, a 'Verify' button, and a '×' delete button; appendChild it to the table body",
+          "Add a 'click' event listener to each 'Verify' button that toggles class 'verified' on its parent <tr> (use e.target and classList.toggle)",
+          "Add a 'click' event listener to each '×' button that calls remove() on its parent <tr>",
+          "Add a 'keyup' event listener to the search input that filters visible table rows: hide rows that don't include the search text",
+          "Add a 'click' event listener to the 'Clear Log' button that removes all <tr> elements from the table body",
+          "Display a live transaction count that updates whenever a row is added or removed"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Flutterwave Payment Log</title>\n  <style>\n    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }\n    table { width: 100%; border-collapse: collapse; margin-top: 10px; }\n    th, td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }\n    .verified { background: #d4edda; }\n    .hidden { display: none; }\n    .btn-verify { background: #cce5ff; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    .btn-delete { background: #f8d7da; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    #clear-btn { margin-top: 10px; background: #fff3cd; border: 1px solid #ffc107; padding: 6px 12px; border-radius: 4px; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Flutterwave Payment Log</h1>\n  <form id=\"payment-form\">\n    <input type=\"text\" id=\"customer-input\" placeholder=\"Customer name\" required>\n    <input type=\"number\" id=\"amount-input\" placeholder=\"Amount (₦)\" required>\n    <button type=\"submit\">Log Payment</button>\n  </form>\n  <input type=\"text\" id=\"search-input\" placeholder=\"Search payments...\">\n  <p>Transactions: <span id=\"txn-count\">0</span></p>\n  <table>\n    <thead><tr><th>Customer</th><th>Amount</th><th>Actions</th></tr></thead>\n    <tbody id=\"payment-log\"></tbody>\n  </table>\n  <button id=\"clear-btn\">Clear Log</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Flutterwave Payment Log\n// Build an interactive payment log using DOM events\n\n// 1. Select DOM elements\n\n\n// 2. Form submit — preventDefault, create table row with Verify + Delete buttons, appendChild\n\n\n// 3. Verify button click — toggle 'verified' class on parent tr\n\n\n// 4. Delete button click — remove() the parent tr\n\n\n// 5. Search input keyup — filter table rows by text content\n\n\n// 6. Clear Log button click — remove all tr elements from tbody\n\n\n// 7. Update transaction count whenever rows are added/removed\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Andela Talent Task Board",
+        "scenario": "Build an interactive task board for an Andela developer. Users can add tasks via a form, mark them as complete, delete tasks, and search through tasks using keyboard input.",
+        "requirements": [
+          "Add a 'submit' event listener to the form with id 'task-form'; use e.preventDefault() to stop page reload",
+          "On valid form submission, use createElement to build a new task <div> with the task title, priority label, a 'Complete' button, and a '×' delete button; appendChild it to the task board",
+          "Add a 'click' event listener to each 'Complete' button that toggles class 'completed' on its parent task div (use e.target and classList.toggle)",
+          "Add a 'click' event listener to each '×' button that calls remove() on its parent task div",
+          "Add a 'keyup' event listener to the search input that filters visible tasks: hide tasks that don't include the search text",
+          "Add a 'click' event listener to the 'Clear Board' button that removes all task divs from the board",
+          "Display a live task count that updates whenever a task is added or removed"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Andela Task Board</title>\n  <style>\n    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; }\n    .completed { text-decoration: line-through; opacity: 0.6; border-color: green; }\n    .hidden { display: none; }\n    .task-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }\n    .priority { font-size: 0.75rem; padding: 2px 6px; border-radius: 10px; background: #e2e8f0; }\n    .btn-complete { background: #d4edda; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    .btn-delete { background: #f8d7da; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    #clear-btn { margin-top: 10px; background: #fff3cd; border: 1px solid #ffc107; padding: 6px 12px; border-radius: 4px; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Andela Task Board</h1>\n  <form id=\"task-form\">\n    <input type=\"text\" id=\"task-input\" placeholder=\"Task title...\" required>\n    <select id=\"priority-input\">\n      <option value=\"low\">Low</option>\n      <option value=\"medium\">Medium</option>\n      <option value=\"high\">High</option>\n    </select>\n    <button type=\"submit\">Add Task</button>\n  </form>\n  <input type=\"text\" id=\"search-input\" placeholder=\"Search tasks...\">\n  <p>Tasks: <span id=\"task-count\">0</span></p>\n  <div id=\"task-board\"></div>\n  <button id=\"clear-btn\">Clear Board</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Andela Talent Task Board\n// Build an interactive task board using DOM events\n\n// 1. Select DOM elements\n\n\n// 2. Form submit — preventDefault, create task card with Complete + Delete buttons, appendChild\n\n\n// 3. Complete button click — toggle 'completed' class on parent card\n\n\n// 4. Delete button click — remove() the parent card\n\n\n// 5. Search input keyup — filter task cards by text content\n\n\n// 6. Clear Board button click — remove all task cards\n\n\n// 7. Update task count whenever tasks are added/removed\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Moniepoint Expense Tracker",
+        "scenario": "Build an interactive expense tracker for a Moniepoint business user. Users can add expenses via a form, mark them as approved, delete entries, and search through expenses.",
+        "requirements": [
+          "Add a 'submit' event listener to the form with id 'expense-form'; use e.preventDefault() to stop page reload",
+          "On valid form submission, use createElement to build a new expense <div> with description, amount, an 'Approve' button, and a '×' delete button; appendChild it to the expenses list",
+          "Add a 'click' event listener to each 'Approve' button that toggles class 'approved' on its parent expense div (use e.target and classList.toggle)",
+          "Add a 'click' event listener to each '×' button that calls remove() on its parent expense div",
+          "Add a 'keyup' event listener to the search input that filters visible expenses: hide expenses that don't include the search text",
+          "Add a 'click' event listener to the 'Clear All' button that removes all expense divs from the list",
+          "Display a live expense count that updates whenever an expense is added or removed"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Moniepoint Expense Tracker</title>\n  <style>\n    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; }\n    .approved { border-color: green; background: #d4edda; }\n    .hidden { display: none; }\n    .expense-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }\n    .btn-approve { background: #cce5ff; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    .btn-delete { background: #f8d7da; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }\n    #clear-btn { margin-top: 10px; background: #fff3cd; border: 1px solid #ffc107; padding: 6px 12px; border-radius: 4px; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Moniepoint Expenses</h1>\n  <form id=\"expense-form\">\n    <input type=\"text\" id=\"desc-input\" placeholder=\"Description...\" required>\n    <input type=\"number\" id=\"amount-input\" placeholder=\"Amount (₦)\" required>\n    <button type=\"submit\">Add Expense</button>\n  </form>\n  <input type=\"text\" id=\"search-input\" placeholder=\"Search expenses...\">\n  <p>Expenses: <span id=\"expense-count\">0</span></p>\n  <div id=\"expense-list\"></div>\n  <button id=\"clear-btn\">Clear All</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Moniepoint Expense Tracker\n// Build an interactive expense tracker using DOM events\n\n// 1. Select DOM elements\n\n\n// 2. Form submit — preventDefault, create expense card with Approve + Delete buttons, appendChild\n\n\n// 3. Approve button click — toggle 'approved' class on parent card\n\n\n// 4. Delete button click — remove() the parent card\n\n\n// 5. Search input keyup — filter expense cards by text content\n\n\n// 6. Clear All button click — remove all expense cards\n\n\n// 7. Update expense count whenever expenses are added/removed\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "event_listeners",
+          "label": "Event Listeners and Event Types",
+          "points": 30,
+          "descriptors": {
+            "full": "At least 3 event types used correctly (submit, click, keyup/keydown); addEventListener syntax is correct; event handlers trigger the right behaviour",
+            "partial": "Two event types used correctly, or one event type has incorrect syntax/behaviour",
+            "none": "Fewer than two event listeners present or addEventListener not used"
+          }
+        },
+        {
+          "id": "event_object",
+          "label": "Event Object and preventDefault",
+          "points": 25,
+          "descriptors": {
+            "full": "e.preventDefault() used on form submit; e.target used to identify clicked element; event object accessed correctly in all handlers",
+            "partial": "preventDefault present but e.target not used, or vice versa",
+            "none": "Event object not used; form reloads page on submit"
+          }
+        },
+        {
+          "id": "create_remove",
+          "label": "createElement, appendChild, and remove",
+          "points": 30,
+          "descriptors": {
+            "full": "createElement builds complete elements with text content and buttons; appendChild adds them to the correct container; remove() deletes individual elements and clear-all removes all children",
+            "partial": "Elements created and appended but delete/remove functionality missing or broken",
+            "none": "No dynamic element creation; innerHTML used exclusively instead of createElement"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used correctly; live counter updates accurately; search filter works; classList used for state changes; no var",
+            "partial": "Minor issues — counter not updating, or search partially working",
+            "none": "var used, no search functionality, counter broken"
+          }
+        }
+      ]
+    }
+  }
+}
