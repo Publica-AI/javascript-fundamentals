@@ -1,0 +1,199 @@
+{
+  "module": "12",
+  "title": "Array Higher-Order Functions",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `map` to create a new array from the students array where each element is a string: 'Amara Obi — 88 — Pass' (Pass if score >= 50, Fail otherwise). Print the new array.",
+            "starter": "const students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 45 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 33 }\n];\n\n// Use map to create result strings\n// Print the array\n",
+            "solution": "const students = [\n  { name: 'Amara Obi',   score: 88 },\n  { name: 'Bayo Ade',    score: 45 },\n  { name: 'Chidi Nweke', score: 72 },\n  { name: 'Dami Lawal',  score: 33 }\n];\n\nconst results = students.map(s => s.name + ' — ' + s.score + ' — ' + (s.score >= 50 ? 'Pass' : 'Fail'));\nconsole.log(results);",
+            "test_cases": [
+              { "expected_output": "Amara Obi — 88 — Pass" },
+              { "expected_output": "Bayo Ade — 45 — Fail" },
+              { "expected_output": "Chidi Nweke — 72 — Pass" },
+              { "expected_output": "Dami Lawal — 33 — Fail" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `filter` to get only orders with status 'delivered' AND amount > 2000. Then use `reduce` on the filtered result to calculate the total amount. Print both the filtered array length and the total.",
+            "starter": "const orders = [\n  { id: 'ORD-1', customer: 'Amara', amount: 4500, status: 'delivered' },\n  { id: 'ORD-2', customer: 'Bayo',  amount: 1200, status: 'delivered' },\n  { id: 'ORD-3', customer: 'Chidi', amount: 8000, status: 'cancelled' },\n  { id: 'ORD-4', customer: 'Dami',  amount: 3000, status: 'delivered' },\n  { id: 'ORD-5', customer: 'Emeka', amount: 600,  status: 'pending' }\n];\n\n// filter: delivered AND amount > 2000\n// reduce: total of filtered amounts\n// Print filtered count and total\n",
+            "solution": "const orders = [\n  { id: 'ORD-1', customer: 'Amara', amount: 4500, status: 'delivered' },\n  { id: 'ORD-2', customer: 'Bayo',  amount: 1200, status: 'delivered' },\n  { id: 'ORD-3', customer: 'Chidi', amount: 8000, status: 'cancelled' },\n  { id: 'ORD-4', customer: 'Dami',  amount: 3000, status: 'delivered' },\n  { id: 'ORD-5', customer: 'Emeka', amount: 600,  status: 'pending' }\n];\n\nconst bigDelivered = orders.filter(o => o.status === 'delivered' && o.amount > 2000);\nconst total = bigDelivered.reduce((sum, o) => sum + o.amount, 0);\n\nconsole.log(bigDelivered.length);\nconsole.log(total);",
+            "test_cases": [
+              { "expected_output": "2" },
+              { "expected_output": "7500" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `map` and `forEach`? When would you choose one over the other?",
+            "sample_answer": "`map` returns a new array containing the transformed values — it's for when you need a result array. `forEach` returns undefined — it's for side effects (logging, updating the DOM, modifying external state). Choose `map` when you need to transform data into a new array (e.g., converting prices to strings, adding a computed property). Choose `forEach` when you want to do something with each item but don't need a new array (e.g., logging each item, updating DOM elements). A common mistake is using `forEach` to push into an empty array — `map` does that directly."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `reduce` to count how many students passed (score >= 50) in the array below. Then use reduce again to calculate the average score of all students. Print both values.",
+            "starter": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 55 },\n  { name: 'Emeka', score: 33 }\n];\n\n// reduce to count passing students (score >= 50)\n// reduce to calculate average score\n// Print both\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 55 },\n  { name: 'Emeka', score: 33 }\n];\n\nconst passCount = students.reduce((count, s) => s.score >= 50 ? count + 1 : count, 0);\nconst average = students.reduce((sum, s) => sum + s.score, 0) / students.length;\n\nconsole.log(passCount);\nconsole.log(average);",
+            "test_cases": [
+              { "expected_output": "3" },
+              { "expected_output": "58.6" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `find` to get the first product with price > 5000 from the array below. Use `some` to check if any product is out of stock. Use `every` to check if all products have a name with length > 3. Print all three results.",
+            "starter": "const products = [\n  { name: 'Earbuds',   price: 4500,  inStock: true },\n  { name: 'Laptop',    price: 85000, inStock: true },\n  { name: 'Phone Case', price: 1200, inStock: false },\n  { name: 'Charger',   price: 6500,  inStock: true }\n];\n\n// find: first product with price > 5000\n// some: any product out of stock?\n// every: all names longer than 3 characters?\n// Print all results\n",
+            "solution": "const products = [\n  { name: 'Earbuds',   price: 4500,  inStock: true },\n  { name: 'Laptop',    price: 85000, inStock: true },\n  { name: 'Phone Case', price: 1200, inStock: false },\n  { name: 'Charger',   price: 6500,  inStock: true }\n];\n\nconst expensive = products.find(p => p.price > 5000);\nconst anyOutOfStock = products.some(p => !p.inStock);\nconst allLongNames = products.every(p => p.name.length > 3);\n\nconsole.log(expensive.name);\nconsole.log(anyOutOfStock);\nconsole.log(allLongNames);",
+            "test_cases": [
+              { "expected_output": "Laptop" },
+              { "expected_output": "true" },
+              { "expected_output": "true" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Explain what `reduce` does step by step. What are the accumulator and the initial value? Why is the initial value important?",
+            "sample_answer": "`reduce` processes an array from left to right, carrying a single 'accumulator' value through each iteration. On each step, the callback receives the accumulator and the current element, and returns the new accumulator value for the next step. The initial value (second argument to reduce) sets the accumulator's starting value before the first element is processed. It's important because: (1) without it, reduce uses the first array element as the initial accumulator and starts from index 1 — which fails on empty arrays (TypeError) and produces wrong results for objects (e.g., `[{score:10}, {score:20}].reduce((sum, s) => sum + s.score)` gives 'NaN' because sum starts as the first object). (2) The initial value determines the accumulator's type — use 0 for sums, '' for strings, [] for arrays, {} for objects."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Chain array methods in one expression: start with the employees array, filter to get only those in the 'Engineering' department, map to create strings 'Name (salary)', then log each result. Do it all in one chained expression.",
+            "starter": "const employees = [\n  { name: 'Amara', department: 'Engineering', salary: 120000 },\n  { name: 'Bayo',  department: 'Marketing',   salary: 95000 },\n  { name: 'Chidi', department: 'Engineering', salary: 135000 },\n  { name: 'Dami',  department: 'Sales',       salary: 88000 },\n  { name: 'Emeka', department: 'Engineering', salary: 110000 }\n];\n\n// Chain: filter (Engineering) → map (format string) → forEach (log)\n",
+            "solution": "const employees = [\n  { name: 'Amara', department: 'Engineering', salary: 120000 },\n  { name: 'Bayo',  department: 'Marketing',   salary: 95000 },\n  { name: 'Chidi', department: 'Engineering', salary: 135000 },\n  { name: 'Dami',  department: 'Sales',       salary: 88000 },\n  { name: 'Emeka', department: 'Engineering', salary: 110000 }\n];\n\nemployees\n  .filter(e => e.department === 'Engineering')\n  .map(e => e.name + ' (' + e.salary + ')')\n  .forEach(s => console.log(s));",
+            "test_cases": [
+              { "expected_output": "Amara (120000)" },
+              { "expected_output": "Chidi (135000)" },
+              { "expected_output": "Emeka (110000)" },
+              { "expected_not_output": "Bayo" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `reduce` to build a frequency object that counts how many students are in each course. Print the resulting object.",
+            "starter": "const students = [\n  { name: 'Amara', course: 'JavaScript' },\n  { name: 'Bayo',  course: 'Python' },\n  { name: 'Chidi', course: 'JavaScript' },\n  { name: 'Dami',  course: 'JavaScript' },\n  { name: 'Emeka', course: 'Python' },\n  { name: 'Funmi', course: 'React' }\n];\n\n// Use reduce to build { JavaScript: 3, Python: 2, React: 1 }\n// Print the result\n",
+            "solution": "const students = [\n  { name: 'Amara', course: 'JavaScript' },\n  { name: 'Bayo',  course: 'Python' },\n  { name: 'Chidi', course: 'JavaScript' },\n  { name: 'Dami',  course: 'JavaScript' },\n  { name: 'Emeka', course: 'Python' },\n  { name: 'Funmi', course: 'React' }\n];\n\nconst courseCounts = students.reduce((acc, s) => {\n  acc[s.course] = (acc[s.course] || 0) + 1;\n  return acc;\n}, {});\n\nconsole.log(courseCounts);",
+            "test_cases": [
+              { "expected_output": "JavaScript: 3" },
+              { "expected_output": "Python: 2" },
+              { "expected_output": "React: 1" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why can you chain `.filter().map().reduce()` but not `.reduce().filter()`? What determines whether a method is chainable?",
+            "sample_answer": "Method chaining works when the return value of one method is the right type for the next method call. `filter` returns an array, `map` returns an array — both return arrays, so any array method can be called next. `reduce` returns whatever the accumulator is (a number, string, object — not necessarily an array). If reduce returns a number (like a sum), you can't call `.filter()` on a number — numbers don't have array methods. A method is chainable with array methods if it returns an array. `filter`, `map`, `slice`, `sort`, `concat`, and `flat` all return arrays and are chainable. `reduce`, `find`, `some`, `every`, `forEach`, and `indexOf` return non-array values and typically end the chain."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `filter` to get products that are both in stock AND priced under ₦5000. Then use `map` on the filtered result to add a 7.5% VAT to each price, returning objects with name and priceWithVAT. Print the result.",
+            "starter": "const products = [\n  { name: 'Earbuds',    price: 4500,  inStock: true },\n  { name: 'Laptop',     price: 85000, inStock: true },\n  { name: 'Phone Case', price: 1200,  inStock: false },\n  { name: 'USB Cable',  price: 600,   inStock: true },\n  { name: 'Charger',    price: 6500,  inStock: true }\n];\n\n// filter: inStock AND price < 5000\n// map: add 7.5% VAT, return { name, priceWithVAT }\n// Print result\n",
+            "solution": "const products = [\n  { name: 'Earbuds',    price: 4500,  inStock: true },\n  { name: 'Laptop',     price: 85000, inStock: true },\n  { name: 'Phone Case', price: 1200,  inStock: false },\n  { name: 'USB Cable',  price: 600,   inStock: true },\n  { name: 'Charger',    price: 6500,  inStock: true }\n];\n\nconst result = products\n  .filter(p => p.inStock && p.price < 5000)\n  .map(p => ({ name: p.name, priceWithVAT: p.price * 1.075 }));\n\nconsole.log(result);",
+            "test_cases": [
+              { "expected_output": "Earbuds" },
+              { "expected_output": "4837.5" },
+              { "expected_output": "USB Cable" },
+              { "expected_output": "645" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `sort` (on a copy) to sort the students by score in descending order. Then use `map` to create a leaderboard: '1. Amara — 88'. Print each entry. Do NOT mutate the original array.",
+            "starter": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 91 },\n  { name: 'Emeka', score: 55 }\n];\n\n// Sort by score descending (don't mutate original)\n// Map to leaderboard strings '1. Name — Score'\n// Print each\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 91 },\n  { name: 'Emeka', score: 55 }\n];\n\n[...students]\n  .sort((a, b) => b.score - a.score)\n  .map((s, i) => (i + 1) + '. ' + s.name + ' — ' + s.score)\n  .forEach(entry => console.log(entry));",
+            "test_cases": [
+              { "expected_output": "1. Dami — 91" },
+              { "expected_output": "2. Amara — 88" },
+              { "expected_output": "3. Chidi — 72" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why does `[...array].sort()` use the spread operator before sorting? What problem does this solve?",
+            "sample_answer": "`sort()` mutates the original array — it rearranges elements in place and returns the same array reference. If you call `students.sort(...)`, the original `students` array is permanently reordered. Using `[...array]` (spread into a new array) creates a shallow copy first, so sort operates on the copy. The original array remains unchanged. This matters when: (1) the original data is used elsewhere in the app, (2) you're inside a pure function that shouldn't cause side effects, (3) you want to display a sorted view without affecting the stored data order. The pattern is: spread to copy, then sort the copy."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `map` to add a `grade` property to each student object (A: >=80, B: >=60, C: >=50, F: below 50). Return new objects — do not mutate the original. Print the new array.",
+            "starter": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 65 },\n  { name: 'Dami',  score: 52 }\n];\n\n// map: return new objects with added grade property\n// Do NOT mutate original\n// Print result\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 65 },\n  { name: 'Dami',  score: 52 }\n];\n\nconst withGrades = students.map(s => {\n  let grade;\n  if (s.score >= 80) grade = 'A';\n  else if (s.score >= 60) grade = 'B';\n  else if (s.score >= 50) grade = 'C';\n  else grade = 'F';\n  return { name: s.name, score: s.score, grade };\n});\n\nconsole.log(withGrades);",
+            "test_cases": [
+              { "expected_output": "A" },
+              { "expected_output": "F" },
+              { "expected_output": "B" },
+              { "expected_output": "C" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use `reduce` to group the transactions by type. The result should be an object like: `{ deposit: [...], withdrawal: [...] }`. Print the result and the count of deposits.",
+            "starter": "const transactions = [\n  { id: 1, type: 'deposit',    amount: 5000 },\n  { id: 2, type: 'withdrawal', amount: 1500 },\n  { id: 3, type: 'deposit',    amount: 3000 },\n  { id: 4, type: 'deposit',    amount: 8000 },\n  { id: 5, type: 'withdrawal', amount: 2000 }\n];\n\n// reduce to group by type: { deposit: [...], withdrawal: [...] }\n// Print the result and deposit count\n",
+            "solution": "const transactions = [\n  { id: 1, type: 'deposit',    amount: 5000 },\n  { id: 2, type: 'withdrawal', amount: 1500 },\n  { id: 3, type: 'deposit',    amount: 3000 },\n  { id: 4, type: 'deposit',    amount: 8000 },\n  { id: 5, type: 'withdrawal', amount: 2000 }\n];\n\nconst grouped = transactions.reduce((acc, txn) => {\n  if (!acc[txn.type]) acc[txn.type] = [];\n  acc[txn.type].push(txn);\n  return acc;\n}, {});\n\nconsole.log(grouped);\nconsole.log(grouped.deposit.length);",
+            "test_cases": [
+              { "expected_output": "3" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `find` and `filter`? Give a scenario where using the wrong one causes a bug.",
+            "sample_answer": "`find` returns the first element that matches the condition (a single value, or undefined if none match). `filter` returns a new array of all elements that match (could be empty, could be many). Bug scenario: You want to look up a user by ID (unique). If you use `filter`, you get an array with one element — `[{id: 3, name: 'Chidi'}]` instead of `{id: 3, name: 'Chidi'}`. Then `result.name` is undefined (arrays don't have a .name property) — you'd need `result[0].name`. Use `find` when you expect exactly one match (lookup by unique key). Use `filter` when you expect multiple matches (all orders with status 'pending')."
+          }
+        ]
+      }
+    ]
+  }
+}

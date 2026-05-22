@@ -1,0 +1,452 @@
+[
+    {
+        "title": "map and filter",
+        "description": "Higher-order function definition",
+        "type": "multiple choice",
+        "question": "What is a higher-order function?",
+        "options": "A function that runs faster|A function that takes another function as an argument|A function that returns a number|A function defined inside a class",
+        "answer": "A function that takes another function as an argument",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "map and filter",
+        "description": "map purpose",
+        "type": "multiple choice",
+        "question": "What does array.map(callback) do?",
+        "options": "Removes elements from the array|Returns a new array with every element transformed by the callback|Modifies the original array|Returns a single value",
+        "answer": "Returns a new array with every element transformed by the callback",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "map and filter",
+        "description": "map return length",
+        "type": "True or False",
+        "question": "The array returned by map always has the same number of elements as the original.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "map and filter",
+        "description": "filter purpose",
+        "type": "multiple choice",
+        "question": "What does array.filter(callback) do?",
+        "options": "Transforms every element|Returns a new array containing only elements where the callback returned true|Removes elements from the original|Sorts the array",
+        "answer": "Returns a new array containing only elements where the callback returned true",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "map and filter",
+        "description": "filter return length",
+        "type": "multiple choice",
+        "question": "Can the array returned by filter be shorter than the original?",
+        "options": "No it is always the same length|Yes it contains only elements that passed the test|It is always longer|It is always empty",
+        "answer": "Yes it contains only elements that passed the test",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "map and filter",
+        "description": "Original unchanged",
+        "type": "True or False",
+        "question": "map and filter both modify the original array.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "map and filter",
+        "description": "map extract field",
+        "type": "multiple choice",
+        "question": "What does orders.map(order => order.amount) produce?",
+        "options": "A single number|A new array containing just the amount from each order|The original orders array|undefined",
+        "answer": "A new array containing just the amount from each order",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "map and filter",
+        "description": "filter boolean callback",
+        "type": "multiple choice",
+        "question": "What must the filter callback return to keep an element?",
+        "options": "The element itself|A truthy value (such as true)|The index|The array",
+        "answer": "A truthy value (such as true)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "map and filter",
+        "description": "filter combined condition",
+        "type": "multiple choice",
+        "question": "What does products.filter(p => p.inStock && p.price < 2000) keep?",
+        "options": "All products|Only products that are both in stock AND priced under 2000|Products that are in stock OR under 2000|Only the first match",
+        "answer": "Only products that are both in stock AND priced under 2000",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "map and filter",
+        "description": "Chain order",
+        "type": "multiple choice",
+        "question": "When chaining filter and map which order is more efficient?",
+        "options": "map then filter|filter then map because fewer elements need to be transformed|The order does not matter|You cannot chain them",
+        "answer": "filter then map because fewer elements need to be transformed",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "map and filter",
+        "description": "map with spread",
+        "type": "multiple choice",
+        "question": "What does orders.map(o => ({ ...o amountWithVAT: o.amount * 1.075 })) do?",
+        "options": "Modifies the original orders|Returns a new array where each object has all original properties plus a new amountWithVAT property|Deletes the amount property|Returns a single object",
+        "answer": "Returns a new array where each object has all original properties plus a new amountWithVAT property",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "map and filter",
+        "description": "Demo jsPassers",
+        "type": "multiple choice",
+        "question": "In the demo students.filter(s => s.course === \"JavaScript\" && s.score >= 70).map(s => s.name) returns what?",
+        "options": "All student names|Only names of JavaScript students who scored 70 or above|Only scores|An empty array",
+        "answer": "Only names of JavaScript students who scored 70 or above",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "map and filter",
+        "description": "Callback parameters",
+        "type": "multiple choice",
+        "question": "What parameters does the map callback receive?",
+        "options": "Only the element|element index and array|Only the index|element and length",
+        "answer": "element index and array",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "map and filter",
+        "description": "Demo highValuePaid",
+        "type": "multiple choice",
+        "question": "In the demo orders.filter(o => o.status === \"paid\" && o.amount >= 5000) on 5 orders returns how many?",
+        "options": "1|2|3|5",
+        "answer": "3",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "map and filter",
+        "description": "Arrow function style",
+        "type": "True or False",
+        "question": "Arrow functions are the idiomatic style for callbacks in map and filter.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "map and filter",
+        "description": "filter no match",
+        "type": "multiple choice",
+        "question": "What does filter return if no elements match the condition?",
+        "options": "undefined|null|An empty array|An error",
+        "answer": "An empty array",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "map and filter",
+        "description": "map vs forEach",
+        "type": "multiple choice",
+        "question": "What is the key difference between map and forEach?",
+        "options": "They are identical|map returns a new array while forEach returns undefined|forEach returns a new array|map modifies the original",
+        "answer": "map returns a new array while forEach returns undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "reduce purpose",
+        "type": "multiple choice",
+        "question": "What does array.reduce(callback initialValue) do?",
+        "options": "Filters the array|Accumulates all elements into a single value|Returns the first element|Sorts the array",
+        "answer": "Accumulates all elements into a single value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reduce and find",
+        "description": "reduce parameters",
+        "type": "multiple choice",
+        "question": "What two parameters does the reduce callback receive?",
+        "options": "element and index|accumulator and current element|key and value|array and length",
+        "answer": "accumulator and current element",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reduce and find",
+        "description": "Initial value for sum",
+        "type": "multiple choice",
+        "question": "What initial value should you use when summing numbers with reduce?",
+        "options": "1|null|0|undefined",
+        "answer": "0",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reduce and find",
+        "description": "reduce step by step",
+        "type": "multiple choice",
+        "question": "What is the final result of [5000, 3200, 8000].reduce((acc, n) => acc + n, 0)?",
+        "options": "5000|8200|16200|16200",
+        "answer": "16200",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "Must return accumulator",
+        "type": "True or False",
+        "question": "Forgetting to return the accumulator from the reduce callback gives undefined on the next iteration.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "reduce with object",
+        "type": "multiple choice",
+        "question": "What initial value do you use when building a frequency counter object with reduce?",
+        "options": "0|[]|{}|null",
+        "answer": "{}",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "reduce conditional sum",
+        "type": "multiple choice",
+        "question": "What does orders.reduce((acc, o) => o.status === \"paid\" ? acc + o.amount : acc, 0) do?",
+        "options": "Sums all amounts|Sums only the amounts of paid orders|Counts paid orders|Returns the first paid order",
+        "answer": "Sums only the amounts of paid orders",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "find purpose",
+        "type": "multiple choice",
+        "question": "What does array.find(callback) return?",
+        "options": "A new array of matches|The first element where the callback returns true or undefined if none match|The last matching element|A boolean",
+        "answer": "The first element where the callback returns true or undefined if none match",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reduce and find",
+        "description": "find no match",
+        "type": "multiple choice",
+        "question": "What does find return if no element matches?",
+        "options": "null|An empty array|An error|undefined",
+        "answer": "undefined",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "findIndex purpose",
+        "type": "multiple choice",
+        "question": "What does findIndex return when it finds a match?",
+        "options": "The element|The index of the first matching element|true|The array length",
+        "answer": "The index of the first matching element",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "findIndex no match",
+        "type": "multiple choice",
+        "question": "What does findIndex return when no element matches?",
+        "options": "0|undefined|null|-1",
+        "answer": "-1",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "some purpose",
+        "type": "multiple choice",
+        "question": "What does array.some(callback) return?",
+        "options": "The matching element|true if at least one element passes the test otherwise false|A new array|The count of matches",
+        "answer": "true if at least one element passes the test otherwise false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "every purpose",
+        "type": "multiple choice",
+        "question": "What does array.every(callback) return?",
+        "options": "true always|true only if ALL elements pass the test otherwise false|The first failing element|A count",
+        "answer": "true only if ALL elements pass the test otherwise false",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "Demo statusCounts",
+        "type": "multiple choice",
+        "question": "In the demo the reduce frequency counter on orders produces { paid: 3, pending: 1, failed: 1 }. What was the initial value?",
+        "options": "0|[]|{}|null",
+        "answer": "{}",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "reduce and find",
+        "description": "Demo find by id",
+        "type": "multiple choice",
+        "question": "In the demo students.find(s => s.id === \"STU-002\") returns what?",
+        "options": "The index 2|The student object with id STU-002|undefined|An array of one student",
+        "answer": "The student object with id STU-002",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "reduce and find",
+        "description": "some vs every",
+        "type": "multiple choice",
+        "question": "If one student scored below 70 what does students.every(s => s.score >= 70) return?",
+        "options": "true|false|undefined|The failing student",
+        "answer": "false",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Why chain",
+        "type": "multiple choice",
+        "question": "Why is method chaining useful?",
+        "options": "It modifies the original array|It lets you transform data in stages within a single expression without intermediate variables|It is faster than using loops|It prevents errors",
+        "answer": "It lets you transform data in stages within a single expression without intermediate variables",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "How chaining works",
+        "type": "multiple choice",
+        "question": "Why can you call .map() directly after .filter()?",
+        "options": "Because filter modifies the original|Because filter returns a new array and map can be called on any array|Because they are the same method|Because of hoisting",
+        "answer": "Because filter returns a new array and map can be called on any array",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "filter map reduce chain",
+        "type": "multiple choice",
+        "question": "What does orders.filter(o => o.status === \"paid\").map(o => o.amount).reduce((acc, n) => acc + n, 0) produce?",
+        "options": "An array of paid orders|A single number representing the total of paid order amounts|An array of amounts|undefined",
+        "answer": "A single number representing the total of paid order amounts",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "sort mutates",
+        "type": "True or False",
+        "question": "The sort() method mutates the original array.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Sort copy pattern",
+        "type": "multiple choice",
+        "question": "How do you sort an array without mutating the original?",
+        "options": "Use filter first|Use [...array].sort() to create a copy before sorting|Use sort(false)|Use map instead",
+        "answer": "[...array].sort() to create a copy before sorting",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Ascending sort",
+        "type": "multiple choice",
+        "question": "What comparator function sorts numbers in ascending order?",
+        "options": "(a b) => b - a|(a b) => a - b|(a b) => a + b|(a b) => b + a",
+        "answer": "(a b) => a - b",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Descending sort",
+        "type": "multiple choice",
+        "question": "What comparator function sorts numbers in descending order?",
+        "options": "(a b) => a - b|(a b) => b - a|(a b) => a * b|(a b) => b + a",
+        "answer": "(a b) => b - a",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Sort objects",
+        "type": "multiple choice",
+        "question": "How do you sort an array of students by score descending?",
+        "options": "[...students].sort((a b) => b.score - a.score)|students.sort()|students.filter(s => s.score)|students.map(s => s.score)",
+        "answer": "[...students].sort((a b) => b.score - a.score)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Alphabetical sort",
+        "type": "multiple choice",
+        "question": "What method is used to sort strings alphabetically in a comparator?",
+        "options": "a - b|a.localeCompare(b)|a > b|a.sort(b)",
+        "answer": "a.localeCompare(b)",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Demo janDeposits",
+        "type": "multiple choice",
+        "question": "In the demo payments.filter(p => p.type === \"deposit\" && p.month === \"Jan\").reduce((acc, p) => acc + p.amount, 0) returns what?",
+        "options": "5000|3500|8500|16500",
+        "answer": "8500",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Pipeline stages",
+        "type": "multiple choice",
+        "question": "In a filter \u2192 sort \u2192 map pipeline for displaying top students what does each stage do?",
+        "options": "filter removes non-matching then sort reorders then map formats for display|sort first then filter then map|map first then sort then filter|All three do the same thing",
+        "answer": "filter removes non-matching then sort reorders then map formats for display",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Dashboard stats pattern",
+        "type": "multiple choice",
+        "question": "In the demo the stats object computes total passed failed and average. Which method is used for the average calculation?",
+        "options": "filter|map|reduce|find",
+        "answer": "reduce",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Original never mutated",
+        "type": "True or False",
+        "question": "When chaining filter map and reduce the original array is never mutated.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "reduce and find",
+        "description": "Demo paidTotal",
+        "type": "multiple choice",
+        "question": "In the demo orders with amounts [5000 3200 8000 1500 12000] and statuses [paid pending paid failed paid] what is the paid total from reduce?",
+        "options": "29700|16200|25000|8000",
+        "answer": "25000",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "chaining array methods",
+        "description": "Sort strings",
+        "type": "multiple choice",
+        "question": "How do you sort an array of student objects alphabetically by name?",
+        "options": "[...students].sort((a b) => a.name.localeCompare(b.name))|students.sort()|students.sort((a b) => a - b)|students.filter(s => s.name)",
+        "answer": "[...students].sort((a b) => a.name.localeCompare(b.name))",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "map and filter",
+        "description": "map does not filter",
+        "type": "True or False",
+        "question": "map can be used to remove elements from an array like filter does.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "reduce and find",
+        "description": "some returns boolean",
+        "type": "multiple choice",
+        "question": "What data type does array.some() always return?",
+        "options": "An array|An element|A boolean|A number",
+        "answer": "A boolean",
+        "difficulty": "intermediate"
+    }
+]

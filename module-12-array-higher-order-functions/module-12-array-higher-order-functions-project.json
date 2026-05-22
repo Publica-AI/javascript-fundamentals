@@ -1,0 +1,180 @@
+{
+  "module": "12",
+  "title": "Array Higher-Order Functions — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build a data analytics system using array higher-order functions. Your solution must use: map to transform data, filter with at least one compound condition, reduce to compute a total or build an accumulator, find or findIndex to locate a single item, some or every for boolean checks, and at least one method chain combining 2+ HOFs. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Opay Transaction Analytics",
+        "scenario": "Build a transaction analytics system for an Opay merchant. Process the provided transaction dataset to generate insights, summaries, and reports using array higher-order functions.",
+        "requirements": [
+          "Use map to create an array of transaction summary strings: 'TXN-001: ₦5000 (transfer) — completed'",
+          "Use filter to get only completed transactions, then filter again with a compound condition: completed AND amount > 3000",
+          "Use reduce to calculate the total revenue from all completed transactions",
+          "Use find to locate the transaction with id 'TXN-004'; log its details",
+          "Use some to check if any transaction is 'failed'; use every to check if all transactions have an amount > 0",
+          "Chain filter (completed only) → map (extract amounts) → reduce (sum) in one expression; log the result"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Opay Analytics</title>\n</head>\n<body>\n  <h1>Opay Transaction Analytics</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Opay Transaction Analytics\n// Use array higher-order functions to analyse this dataset\n\nconst transactions = [\n  { id: 'TXN-001', type: 'transfer', amount: 5000,  status: 'completed', customer: 'Amara Obi' },\n  { id: 'TXN-002', type: 'payment',  amount: 1200,  status: 'completed', customer: 'Bayo Ade' },\n  { id: 'TXN-003', type: 'transfer', amount: 15000, status: 'failed',    customer: 'Chidi Nweke' },\n  { id: 'TXN-004', type: 'withdrawal', amount: 3000, status: 'completed', customer: 'Dami Lawal' },\n  { id: 'TXN-005', type: 'payment',  amount: 8500,  status: 'completed', customer: 'Emeka Eze' },\n  { id: 'TXN-006', type: 'transfer', amount: 2000,  status: 'pending',   customer: 'Funmi Bello' },\n  { id: 'TXN-007', type: 'payment',  amount: 4200,  status: 'completed', customer: 'Gbenga Yusuf' }\n];\n\n// 1. map — create summary strings for each transaction\n\n\n// 2. filter — completed only; then compound filter: completed AND amount > 3000\n\n\n// 3. reduce — total revenue from completed transactions\n\n\n// 4. find — locate TXN-004 and log its details\n\n\n// 5. some — any failed? every — all amounts > 0?\n\n\n// 6. Chain: filter → map → reduce in one expression\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Bamboo Investment Portfolio Analyser",
+        "scenario": "Build a portfolio analysis system for a Bamboo investor. Process the provided stock holdings dataset to generate performance reports and insights using array higher-order functions.",
+        "requirements": [
+          "Use map to create an array of holding labels: 'AAPL — 10 shares @ $150.00 = $1500.00'",
+          "Use filter to get only profitable holdings (currentPrice > buyPrice), then filter with compound condition: profitable AND quantity >= 5",
+          "Use reduce to calculate total portfolio value (sum of quantity * currentPrice for all holdings)",
+          "Use find to locate the holding with symbol 'GOOGL'; log its details",
+          "Use some to check if any holding has lost more than 20% of its value; use every to check if all holdings have quantity > 0",
+          "Chain filter (profitable) → map (compute gain per holding) → reduce (total gains) in one expression; log the result"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bamboo Portfolio</title>\n</head>\n<body>\n  <h1>Bamboo Investment Portfolio Analyser</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bamboo Investment Portfolio Analyser\n// Use array higher-order functions to analyse this portfolio\n\nconst holdings = [\n  { symbol: 'AAPL',  name: 'Apple',    quantity: 10, buyPrice: 130, currentPrice: 150 },\n  { symbol: 'GOOGL', name: 'Alphabet', quantity: 3,  buyPrice: 2800, currentPrice: 2750 },\n  { symbol: 'TSLA',  name: 'Tesla',    quantity: 5,  buyPrice: 200, currentPrice: 240 },\n  { symbol: 'AMZN',  name: 'Amazon',   quantity: 2,  buyPrice: 3400, currentPrice: 3100 },\n  { symbol: 'MSFT',  name: 'Microsoft', quantity: 8, buyPrice: 280, currentPrice: 320 },\n  { symbol: 'NFLX',  name: 'Netflix',  quantity: 4,  buyPrice: 550, currentPrice: 420 }\n];\n\n// 1. map — create holding label strings\n\n\n// 2. filter — profitable only; compound filter: profitable AND quantity >= 5\n\n\n// 3. reduce — total portfolio value\n\n\n// 4. find — locate GOOGL and log details\n\n\n// 5. some — any lost >20%? every — all quantity > 0?\n\n\n// 6. Chain: filter → map → reduce for total gains\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "Chipper Cash Transfer Report",
+        "scenario": "Build a transfer report system for a Chipper Cash user. Process the provided cross-border transfer dataset to generate analytics using array higher-order functions.",
+        "requirements": [
+          "Use map to create an array of transfer labels: 'To: Kenya — $200 (completed)'",
+          "Use filter to get only completed transfers, then compound filter: completed AND amount >= 100",
+          "Use reduce to calculate total amount sent across all completed transfers",
+          "Use find to locate the transfer with id 'TRF-005'; log its details",
+          "Use some to check if any transfer was 'rejected'; use every to check if all transfers have a valid recipient (non-empty string)",
+          "Chain filter (completed) → map (extract amounts) → reduce (average amount) in one expression; log the average"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Chipper Cash Report</title>\n</head>\n<body>\n  <h1>Chipper Cash Transfer Report</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Chipper Cash Transfer Report\n// Use array higher-order functions to analyse this transfer data\n\nconst transfers = [\n  { id: 'TRF-001', recipient: 'Kwame Asante', country: 'Ghana',   amount: 200, status: 'completed' },\n  { id: 'TRF-002', recipient: 'Wanjiku Maina', country: 'Kenya',  amount: 150, status: 'completed' },\n  { id: 'TRF-003', recipient: 'Thabo Molefe',  country: 'SA',     amount: 500, status: 'rejected' },\n  { id: 'TRF-004', recipient: 'Amina Diallo',  country: 'Senegal', amount: 75,  status: 'completed' },\n  { id: 'TRF-005', recipient: 'Emeka Okafor',  country: 'Nigeria', amount: 300, status: 'pending' },\n  { id: 'TRF-006', recipient: 'Fatou Sow',     country: 'Senegal', amount: 120, status: 'completed' },\n  { id: 'TRF-007', recipient: 'Kofi Mensah',   country: 'Ghana',   amount: 250, status: 'completed' }\n];\n\n// 1. map — create transfer label strings\n\n\n// 2. filter — completed only; compound filter: completed AND amount >= 100\n\n\n// 3. reduce — total amount sent (completed only)\n\n\n// 4. find — locate TRF-005 and log details\n\n\n// 5. some — any rejected? every — all have valid recipient?\n\n\n// 6. Chain: filter → map → reduce for average transfer amount\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Termii SMS Campaign Analyser",
+        "scenario": "Build an SMS campaign analytics system for a Termii user. Process the provided message dataset to generate delivery reports and insights using array higher-order functions.",
+        "requirements": [
+          "Use map to create an array of message labels: 'MSG-001 → 08012345678 — delivered (OTP)'",
+          "Use filter to get only delivered messages, then compound filter: delivered AND type is 'marketing'",
+          "Use reduce to calculate total cost (sum of cost field) for all delivered messages",
+          "Use find to locate the message with id 'MSG-003'; log its details",
+          "Use some to check if any message has status 'bounced'; use every to check if all messages have a non-empty recipient",
+          "Chain filter (delivered) → map (extract cost) → reduce (total) in one expression; log the total delivery cost"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Termii Campaign</title>\n</head>\n<body>\n  <h1>Termii SMS Campaign Analyser</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Termii SMS Campaign Analyser\n// Use array higher-order functions to analyse this message data\n\nconst messages = [\n  { id: 'MSG-001', recipient: '08012345678', type: 'otp',       status: 'delivered', cost: 4 },\n  { id: 'MSG-002', recipient: '08098765432', type: 'marketing', status: 'delivered', cost: 3 },\n  { id: 'MSG-003', recipient: '07011112222', type: 'otp',       status: 'pending',   cost: 4 },\n  { id: 'MSG-004', recipient: '09033334444', type: 'marketing', status: 'delivered', cost: 3 },\n  { id: 'MSG-005', recipient: '08155556666', type: 'alert',     status: 'bounced',   cost: 2 },\n  { id: 'MSG-006', recipient: '07077778888', type: 'marketing', status: 'delivered', cost: 3 },\n  { id: 'MSG-007', recipient: '08199990000', type: 'otp',       status: 'delivered', cost: 4 }\n];\n\n// 1. map — create message label strings\n\n\n// 2. filter — delivered only; compound filter: delivered AND marketing\n\n\n// 3. reduce — total cost for delivered messages\n\n\n// 4. find — locate MSG-003 and log details\n\n\n// 5. some — any bounced? every — all have non-empty recipient?\n\n\n// 6. Chain: filter → map → reduce for total delivery cost\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Korapay Merchant Settlement Report",
+        "scenario": "Build a settlement report system for a Korapay merchant. Process the provided payout dataset to generate financial summaries and analytics using array higher-order functions.",
+        "requirements": [
+          "Use map to create an array of payout labels: 'PAY-001: ₦45,000 to GTBank (settled)'",
+          "Use filter to get only settled payouts, then compound filter: settled AND amount >= 50000",
+          "Use reduce to calculate total settled amount across all payouts",
+          "Use find to locate the payout with id 'PAY-004'; log its details",
+          "Use some to check if any payout has status 'failed'; use every to check if all payouts have an accountNumber property with length > 0",
+          "Chain filter (settled) → map (amounts) → reduce (average payout) in one expression; log the average"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Korapay Settlements</title>\n</head>\n<body>\n  <h1>Korapay Merchant Settlement Report</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Korapay Merchant Settlement Report\n// Use array higher-order functions to analyse this payout data\n\nconst payouts = [\n  { id: 'PAY-001', bank: 'GTBank',     accountNumber: '0123456789', amount: 45000,  status: 'settled' },\n  { id: 'PAY-002', bank: 'Access Bank', accountNumber: '9876543210', amount: 78000,  status: 'settled' },\n  { id: 'PAY-003', bank: 'Zenith Bank', accountNumber: '1122334455', amount: 23000,  status: 'pending' },\n  { id: 'PAY-004', bank: 'UBA',         accountNumber: '5544332211', amount: 56000,  status: 'settled' },\n  { id: 'PAY-005', bank: 'First Bank',  accountNumber: '6677889900', amount: 91000,  status: 'failed' },\n  { id: 'PAY-006', bank: 'GTBank',      accountNumber: '1234567890', amount: 34000,  status: 'settled' },\n  { id: 'PAY-007', bank: 'Kuda Bank',   accountNumber: '0011223344', amount: 62000,  status: 'settled' }\n];\n\n// 1. map — create payout label strings\n\n\n// 2. filter — settled only; compound filter: settled AND amount >= 50000\n\n\n// 3. reduce — total settled amount\n\n\n// 4. find — locate PAY-004 and log details\n\n\n// 5. some — any failed? every — all have accountNumber length > 0?\n\n\n// 6. Chain: filter → map → reduce for average payout\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "map_filter",
+          "label": "map and filter",
+          "points": 30,
+          "descriptors": {
+            "full": "map returns correctly transformed array; filter uses correct condition including at least one compound condition (&&); both return new arrays without mutating the original",
+            "partial": "map or filter used but one has an incorrect condition or mutates the original array",
+            "none": "map and filter absent or both producing incorrect results"
+          }
+        },
+        {
+          "id": "reduce_find",
+          "label": "reduce and find",
+          "points": 30,
+          "descriptors": {
+            "full": "reduce correctly accumulates a total with proper initial value; find locates the correct item and handles the case where it might not exist",
+            "partial": "reduce works but missing initial value, or find used but result not logged",
+            "none": "reduce and find both absent or non-functional"
+          }
+        },
+        {
+          "id": "some_every_chain",
+          "label": "some/every and Method Chaining",
+          "points": 30,
+          "descriptors": {
+            "full": "some and every used with correct boolean conditions; at least one chain of 2+ HOFs (e.g., filter→map→reduce) written as one expression with correct results",
+            "partial": "some/every present but chain missing, or chain present but broken at one step",
+            "none": "No some/every and no method chaining"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 10,
+          "descriptors": {
+            "full": "const/let used correctly; arrow functions used in callbacks; output is clear and labelled; no var; no mutation of original data",
+            "partial": "Minor issues — occasional unclear output or function keyword instead of arrow",
+            "none": "var used, data mutated, or output is unreadable"
+          }
+        }
+      ]
+    }
+  }
+}
