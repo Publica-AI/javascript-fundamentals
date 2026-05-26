@@ -1,0 +1,192 @@
+{
+  "module": "13",
+  "title": "Classes and OOP",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a class `Student` with a constructor that takes name, course, and score. Add a method `getGrade()` that returns 'A' (>=80), 'B' (>=60), 'C' (>=50), or 'F'. Add a method `getSummary()` that returns: 'Amara — JavaScript — A'. Create two instances and print their summaries.",
+            "starter": "// Create the Student class\n// constructor(name, course, score)\n// getGrade() method\n// getSummary() method\n\n// Create 2 instances and print summaries\n",
+            "solution": "class Student {\n  constructor(name, course, score) {\n    this.name = name;\n    this.course = course;\n    this.score = score;\n  }\n\n  getGrade() {\n    if (this.score >= 80) return 'A';\n    if (this.score >= 60) return 'B';\n    if (this.score >= 50) return 'C';\n    return 'F';\n  }\n\n  getSummary() {\n    return this.name + ' — ' + this.course + ' — ' + this.getGrade();\n  }\n}\n\nconst amara = new Student('Amara', 'JavaScript', 88);\nconst bayo = new Student('Bayo', 'Python', 45);\n\nconsole.log(amara.getSummary());\nconsole.log(bayo.getSummary());",
+            "test_cases": [
+              { "expected_output": "Amara — JavaScript — A" },
+              { "expected_output": "Bayo — Python — F" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a class `BankAccount` with a private field `#balance`. The constructor takes ownerName and initialBalance. Add a getter `balance` that returns the value. Add a setter `balance` that throws an error if the value is negative. Add a method `deposit(amount)` that adds to the balance. Create an instance, deposit ₦5000, then log the balance. Try setting balance to -100 inside a try/catch and log the error message.",
+            "starter": "// Create BankAccount class with #balance\n// getter and setter for balance (reject negative)\n// deposit(amount) method\n\n// Create instance, deposit, log balance\n// try/catch: set negative balance, log error\n",
+            "solution": "class BankAccount {\n  #balance;\n\n  constructor(ownerName, initialBalance) {\n    this.ownerName = ownerName;\n    this.#balance = initialBalance;\n  }\n\n  get balance() {\n    return this.#balance;\n  }\n\n  set balance(value) {\n    if (value < 0) throw new Error('Balance cannot be negative');\n    this.#balance = value;\n  }\n\n  deposit(amount) {\n    this.#balance += amount;\n  }\n}\n\nconst account = new BankAccount('Amara', 10000);\naccount.deposit(5000);\nconsole.log(account.balance);\n\ntry {\n  account.balance = -100;\n} catch (e) {\n  console.log(e.message);\n}",
+            "test_cases": [
+              { "expected_output": "15000" },
+              { "expected_output": "Balance cannot be negative" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the purpose of private fields (#) in JavaScript classes? Why not just use regular properties?",
+            "sample_answer": "Private fields (prefixed with #) are only accessible inside the class body — code outside the class cannot read or write them directly. Regular properties are fully accessible from anywhere. Purpose: (1) Encapsulation — you protect internal state from accidental or invalid modification. A #balance field forces all changes to go through methods or setters that can validate the input. (2) API clarity — public properties are the intended interface; private fields are implementation details that can change without breaking external code. Without private fields, any code could do `account.balance = -99999` and bypass all validation. With #balance, the only way to change it is through the setter or methods you define — you control the rules."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a base class `Vehicle` with a constructor that takes make, model, and year. Add a method `getInfo()` that returns 'Toyota Camry (2022)'. Create a subclass `ElectricVehicle` that extends Vehicle, adds a `range` property, and overrides `getInfo()` to return 'Tesla Model 3 (2023) — Range: 350km'. Create one instance of each and print their info.",
+            "starter": "// Base class Vehicle: constructor(make, model, year)\n// getInfo() method\n\n// Subclass ElectricVehicle: extends Vehicle\n// constructor adds range\n// Override getInfo() to include range\n\n// Create instances and print info\n",
+            "solution": "class Vehicle {\n  constructor(make, model, year) {\n    this.make = make;\n    this.model = model;\n    this.year = year;\n  }\n\n  getInfo() {\n    return this.make + ' ' + this.model + ' (' + this.year + ')';\n  }\n}\n\nclass ElectricVehicle extends Vehicle {\n  constructor(make, model, year, range) {\n    super(make, model, year);\n    this.range = range;\n  }\n\n  getInfo() {\n    return super.getInfo() + ' — Range: ' + this.range + 'km';\n  }\n}\n\nconst camry = new Vehicle('Toyota', 'Camry', 2022);\nconst tesla = new ElectricVehicle('Tesla', 'Model 3', 2023, 350);\n\nconsole.log(camry.getInfo());\nconsole.log(tesla.getInfo());",
+            "test_cases": [
+              { "expected_output": "Toyota Camry (2022)" },
+              { "expected_output": "Tesla Model 3 (2023) — Range: 350km" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a class `Counter` with a static property `total` starting at 0. Each time a new Counter is created, increment `total`. Add a static method `getTotal()` that returns the current count. Create 4 Counter instances and log the total.",
+            "starter": "// Class Counter with static total property\n// Constructor increments Counter.total\n// Static method getTotal()\n\n// Create 4 instances\n// Log Counter.getTotal()\n",
+            "solution": "class Counter {\n  static total = 0;\n\n  constructor() {\n    Counter.total++;\n  }\n\n  static getTotal() {\n    return Counter.total;\n  }\n}\n\nconst c1 = new Counter();\nconst c2 = new Counter();\nconst c3 = new Counter();\nconst c4 = new Counter();\n\nconsole.log(Counter.getTotal());",
+            "test_cases": [
+              { "expected_output": "4" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What does `super` do in a subclass constructor and in a subclass method? What happens if you forget to call `super()` in a subclass constructor?",
+            "sample_answer": "In a subclass constructor, `super(args)` calls the parent class's constructor — it initialises the parent's properties on the new instance. You must call super() before using `this` in the subclass constructor. In a subclass method, `super.methodName()` calls the parent class's version of that method — useful when you want to extend (not fully replace) the parent's behaviour. If you forget `super()` in the constructor: JavaScript throws a ReferenceError saying you must call super before accessing `this`. The instance can't be created because the parent's setup hasn't run — the object isn't properly initialised."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a class `Product` with a private field `#price`. Add a getter that returns the price. Add a setter that only accepts numbers between 1 and 1000000 (throw an error otherwise). Add a method `getPriceWithVAT()` that returns price * 1.075. Create an instance with price 5000, log price with VAT, then try setting price to 0 in a try/catch.",
+            "starter": "// Class Product with #price\n// getter, setter (validate 1–1000000)\n// getPriceWithVAT() method\n\n// Create instance, log VAT price\n// try/catch: set price to 0\n",
+            "solution": "class Product {\n  #price;\n\n  constructor(name, price) {\n    this.name = name;\n    this.#price = price;\n  }\n\n  get price() {\n    return this.#price;\n  }\n\n  set price(value) {\n    if (value < 1 || value > 1000000) {\n      throw new Error('Price must be between 1 and 1000000');\n    }\n    this.#price = value;\n  }\n\n  getPriceWithVAT() {\n    return this.#price * 1.075;\n  }\n}\n\nconst item = new Product('Earbuds', 5000);\nconsole.log(item.getPriceWithVAT());\n\ntry {\n  item.price = 0;\n} catch (e) {\n  console.log(e.message);\n}",
+            "test_cases": [
+              { "expected_output": "5375" },
+              { "expected_output": "Price must be between 1 and 1000000" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a base class `Shape` with a method `getArea()` that returns 0. Create subclasses `Circle` (takes radius, area = π × r²) and `Rectangle` (takes width and height, area = w × h). Create an array with one Circle (radius 5) and one Rectangle (4 × 6). Use forEach to log each shape's area.",
+            "starter": "// Base class Shape with getArea() returning 0\n// Subclass Circle: constructor(radius), override getArea()\n// Subclass Rectangle: constructor(width, height), override getArea()\n\n// Create array with Circle(5) and Rectangle(4, 6)\n// forEach: log each area\n",
+            "solution": "class Shape {\n  getArea() {\n    return 0;\n  }\n}\n\nclass Circle extends Shape {\n  constructor(radius) {\n    super();\n    this.radius = radius;\n  }\n\n  getArea() {\n    return Math.PI * this.radius * this.radius;\n  }\n}\n\nclass Rectangle extends Shape {\n  constructor(width, height) {\n    super();\n    this.width = width;\n    this.height = height;\n  }\n\n  getArea() {\n    return this.width * this.height;\n  }\n}\n\nconst shapes = [new Circle(5), new Rectangle(4, 6)];\nshapes.forEach(shape => console.log(shape.getArea()));",
+            "test_cases": [
+              { "expected_output": "78.53981633974483" },
+              { "expected_output": "24" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is polymorphism? How does it work in the context of JavaScript classes and method overriding?",
+            "sample_answer": "Polymorphism means 'many forms' — the same method name produces different behaviour depending on which class the object belongs to. In JavaScript, when a subclass overrides a parent method, calling that method on the subclass instance runs the subclass version, not the parent's. This means you can write code that works with an array of mixed types: `shapes.forEach(s => console.log(s.getArea()))` — each shape calls its own getArea() automatically. The calling code doesn't need to know whether it's a Circle or Rectangle. This makes code extensible: you can add a new Triangle subclass later, and the forEach loop works with it automatically without modification."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a class `User` with a constructor(name, email) and a method `greet()` returning 'Hello, I am Amara'. Create a subclass `Admin` that extends User, adds a `permissions` array in the constructor, and overrides `greet()` to return 'Hello, I am Amara (Admin — 3 permissions)'. Use super.greet() inside the override. Create instances and log both greetings.",
+            "starter": "// Class User: constructor(name, email), greet() method\n// Subclass Admin: extends User, adds permissions array\n// Override greet() using super.greet()\n\n// Create instances and log greetings\n",
+            "solution": "class User {\n  constructor(name, email) {\n    this.name = name;\n    this.email = email;\n  }\n\n  greet() {\n    return 'Hello, I am ' + this.name;\n  }\n}\n\nclass Admin extends User {\n  constructor(name, email, permissions) {\n    super(name, email);\n    this.permissions = permissions;\n  }\n\n  greet() {\n    return super.greet() + ' (Admin — ' + this.permissions.length + ' permissions)';\n  }\n}\n\nconst user = new User('Bayo', 'bayo@email.com');\nconst admin = new Admin('Amara', 'amara@email.com', ['read', 'write', 'delete']);\n\nconsole.log(user.greet());\nconsole.log(admin.greet());",
+            "test_cases": [
+              { "expected_output": "Hello, I am Bayo" },
+              { "expected_output": "Hello, I am Amara (Admin — 3 permissions)" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a class `TaskManager` with a static method `createFromArray(arr)` that takes an array of task name strings and returns an array of task objects: `[{id: 1, name: 'Buy groceries', done: false}, ...]`. Call the static method with ['Buy groceries', 'Write code', 'Read book'] and log the result.",
+            "starter": "// Class TaskManager\n// Static method createFromArray(arr)\n// Returns array of {id, name, done} objects\n\n// Call with 3 task names and log result\n",
+            "solution": "class TaskManager {\n  static createFromArray(arr) {\n    return arr.map((name, index) => ({\n      id: index + 1,\n      name: name,\n      done: false\n    }));\n  }\n}\n\nconst tasks = TaskManager.createFromArray(['Buy groceries', 'Write code', 'Read book']);\nconsole.log(tasks);",
+            "test_cases": [
+              { "expected_output": "Buy groceries" },
+              { "expected_output": "Write code" },
+              { "expected_output": "Read book" },
+              { "expected_output": "done: false" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between a static method and an instance method? When would you use each?",
+            "sample_answer": "An instance method is called on an instance (`myObj.doSomething()`) and has access to `this` — the specific object's data. A static method is called on the class itself (`MyClass.doSomething()`) and does NOT have access to any instance — there's no `this` pointing to a specific object. Use instance methods when the behaviour depends on the instance's data (e.g., `student.getGrade()` needs that student's score). Use static methods for utility operations related to the class but not tied to a specific instance: factory methods (`User.fromCSV(line)`), counters (`User.getCount()`), or helpers (`MathHelper.average(arr)`). A static method can't access instance properties because it doesn't know which instance you mean."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a class `Playlist` with a private field `#songs` (array). Constructor takes a playlist name. Add methods: `addSong(title)` to push to #songs, `get songCount()` getter that returns the length, and `getSongs()` that returns a copy of the array (not the original). Create a playlist, add 3 songs, log the count, and log the songs.",
+            "starter": "// Class Playlist with #songs private array\n// constructor(name)\n// addSong(title), get songCount(), getSongs()\n\n// Create playlist, add 3 songs\n// Log count and songs\n",
+            "solution": "class Playlist {\n  #songs = [];\n\n  constructor(name) {\n    this.name = name;\n  }\n\n  addSong(title) {\n    this.#songs.push(title);\n  }\n\n  get songCount() {\n    return this.#songs.length;\n  }\n\n  getSongs() {\n    return [...this.#songs];\n  }\n}\n\nconst myPlaylist = new Playlist('Afrobeats Hits');\nmyPlaylist.addSong('Essence');\nmyPlaylist.addSong('Last Last');\nmyPlaylist.addSong('Calm Down');\n\nconsole.log(myPlaylist.songCount);\nconsole.log(myPlaylist.getSongs());",
+            "test_cases": [
+              { "expected_output": "3" },
+              { "expected_output": "Essence" },
+              { "expected_output": "Last Last" },
+              { "expected_output": "Calm Down" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a base class `Notification` with constructor(message) and method `send()` that returns 'Sending: ' + message. Create subclasses `EmailNotification` (adds recipient, overrides send to include 'via email to recipient') and `SMSNotification` (adds phoneNumber, overrides send to include 'via SMS to number'). Create an array of mixed notifications and forEach to log each send().",
+            "starter": "// Base class Notification: constructor(message), send()\n// EmailNotification: extends, adds recipient, overrides send()\n// SMSNotification: extends, adds phoneNumber, overrides send()\n\n// Create array of mixed types, forEach log send()\n",
+            "solution": "class Notification {\n  constructor(message) {\n    this.message = message;\n  }\n\n  send() {\n    return 'Sending: ' + this.message;\n  }\n}\n\nclass EmailNotification extends Notification {\n  constructor(message, recipient) {\n    super(message);\n    this.recipient = recipient;\n  }\n\n  send() {\n    return 'Sending: ' + this.message + ' via email to ' + this.recipient;\n  }\n}\n\nclass SMSNotification extends Notification {\n  constructor(message, phoneNumber) {\n    super(message);\n    this.phoneNumber = phoneNumber;\n  }\n\n  send() {\n    return 'Sending: ' + this.message + ' via SMS to ' + this.phoneNumber;\n  }\n}\n\nconst notifications = [\n  new EmailNotification('Welcome!', 'amara@email.com'),\n  new SMSNotification('Your OTP is 1234', '08012345678')\n];\n\nnotifications.forEach(n => console.log(n.send()));",
+            "test_cases": [
+              { "expected_output": "Sending: Welcome! via email to amara@email.com" },
+              { "expected_output": "Sending: Your OTP is 1234 via SMS to 08012345678" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why does `getSongs()` in a Playlist class return `[...this.#songs]` instead of `this.#songs` directly? What problem does this solve?",
+            "sample_answer": "Returning `this.#songs` directly gives the caller a reference to the actual private array. They could then modify it externally — `playlist.getSongs().push('Hacked Song')` — and that modification would affect the private field, bypassing the class's controlled interface. The whole point of making it private is lost. Returning `[...this.#songs]` creates a shallow copy — a new array with the same elements. The caller can do whatever they want with the copy without affecting the original private array. This is defensive copying — it preserves encapsulation by ensuring the private state can only be changed through methods the class defines (like `addSong`)."
+          }
+        ]
+      }
+    ]
+  }
+}

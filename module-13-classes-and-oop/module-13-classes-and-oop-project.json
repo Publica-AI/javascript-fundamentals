@@ -1,0 +1,185 @@
+{
+  "module": "13",
+  "title": "Classes and OOP — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build a class-based system using object-oriented programming principles. Your solution must use: a base class with a constructor and at least 2 methods, a subclass using extends and super, at least one private field (#) with a getter and setter (including validation), at least one static method or property, and demonstrate polymorphism by calling the same method on different subclass instances. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Interswitch Payment Processing System",
+        "scenario": "Build a class hierarchy for an Interswitch payment processing system. Model a base Transaction class with CardTransaction and BankTransfer subclasses, using private fields for sensitive data and static tracking.",
+        "requirements": [
+          "Create a base class `Transaction` with a constructor that takes id, amount, and sender; store amount as a private field #amount with a getter and setter (setter rejects amounts <= 0)",
+          "Add a method `getSummary()` that returns 'TXN-001: ₦5000 from Amara Obi — pending'",
+          "Add a static property `count` that increments in the constructor; add a static method `getCount()` that returns the total",
+          "Create a subclass `CardTransaction` that extends Transaction, adds cardType and last4Digits, and overrides `getSummary()` to include card info",
+          "Create a subclass `BankTransfer` that extends Transaction, adds bankName and accountNumber, and overrides `getSummary()` to include bank info",
+          "Create an array of mixed Transaction instances (at least 2 CardTransaction + 2 BankTransfer) and use forEach to call getSummary() on each (polymorphism)",
+          "Log the total transaction count using the static method"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Interswitch Payments</title>\n</head>\n<body>\n  <h1>Interswitch Payment Processing System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Interswitch Payment Processing System\n// Build a class hierarchy for payment processing\n\n// 1. Base class Transaction: constructor(id, amount, sender)\n//    Private #amount with getter/setter (reject <= 0)\n//    getSummary() method\n//    Static count + getCount()\n\n\n// 2. Subclass CardTransaction: extends Transaction\n//    constructor adds cardType, last4Digits\n//    Override getSummary() to include card info\n\n\n// 3. Subclass BankTransfer: extends Transaction\n//    constructor adds bankName, accountNumber\n//    Override getSummary() to include bank info\n\n\n// 4. Create mixed array of transactions (2+ CardTransaction, 2+ BankTransfer)\n\n\n// 5. forEach — call getSummary() on each (polymorphism)\n\n\n// 6. Log total count via static method\n\n\n// 7. Demonstrate setter validation (try setting amount to -100)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "FairMoney Loan Management System",
+        "scenario": "Build a class hierarchy for a FairMoney loan management system. Model a base Account class with SavingsAccount and LoanAccount subclasses, using private fields for balances and static tracking.",
+        "requirements": [
+          "Create a base class `Account` with a constructor that takes id, ownerName, and balance; store balance as a private field #balance with a getter and setter (setter rejects negative values)",
+          "Add a method `getStatus()` that returns 'ACC-001: Amara Obi — ₦50,000'",
+          "Add a static property `totalAccounts` that increments in the constructor; add a static method `getTotal()` that returns the count",
+          "Create a subclass `SavingsAccount` that extends Account, adds interestRate, and overrides `getStatus()` to include 'Savings @ 8%'",
+          "Create a subclass `LoanAccount` that extends Account, adds loanTerm and monthlyPayment, and overrides `getStatus()` to include loan details",
+          "Create an array of mixed Account instances (at least 2 SavingsAccount + 2 LoanAccount) and use forEach to call getStatus() on each (polymorphism)",
+          "Log the total account count using the static method"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>FairMoney Loans</title>\n</head>\n<body>\n  <h1>FairMoney Loan Management System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// FairMoney Loan Management System\n// Build a class hierarchy for account management\n\n// 1. Base class Account: constructor(id, ownerName, balance)\n//    Private #balance with getter/setter (reject negative)\n//    getStatus() method\n//    Static totalAccounts + getTotal()\n\n\n// 2. Subclass SavingsAccount: extends Account\n//    constructor adds interestRate\n//    Override getStatus() to include savings info\n\n\n// 3. Subclass LoanAccount: extends Account\n//    constructor adds loanTerm, monthlyPayment\n//    Override getStatus() to include loan details\n\n\n// 4. Create mixed array (2+ SavingsAccount, 2+ LoanAccount)\n\n\n// 5. forEach — call getStatus() on each (polymorphism)\n\n\n// 6. Log total count via static method\n\n\n// 7. Demonstrate setter validation (try setting balance to -5000)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "Carbon Credit Scoring Engine",
+        "scenario": "Build a class hierarchy for a Carbon credit scoring engine. Model a base User class with Borrower and Investor subclasses, using private fields for sensitive scores and static tracking.",
+        "requirements": [
+          "Create a base class `User` with a constructor that takes id, name, and email; store a private field #creditScore with a getter and setter (setter clamps score between 0–850)",
+          "Add a method `getProfile()` that returns 'USR-001: Amara Obi (amara@email.com) — Score: 720'",
+          "Add a static property `userCount` that increments in the constructor; add a static method `getUserCount()`",
+          "Create a subclass `Borrower` that extends User, adds loanLimit and activeLoan, and overrides `getProfile()` to include borrower details",
+          "Create a subclass `Investor` that extends User, adds portfolioValue and riskLevel, and overrides `getProfile()` to include investor details",
+          "Create an array of mixed User instances (at least 2 Borrower + 2 Investor) and use forEach to call getProfile() on each (polymorphism)",
+          "Log the total user count using the static method"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Carbon Credit Engine</title>\n</head>\n<body>\n  <h1>Carbon Credit Scoring Engine</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Carbon Credit Scoring Engine\n// Build a class hierarchy for credit scoring\n\n// 1. Base class User: constructor(id, name, email)\n//    Private #creditScore with getter/setter (clamp 0–850)\n//    getProfile() method\n//    Static userCount + getUserCount()\n\n\n// 2. Subclass Borrower: extends User\n//    constructor adds loanLimit, activeLoan\n//    Override getProfile() to include borrower info\n\n\n// 3. Subclass Investor: extends User\n//    constructor adds portfolioValue, riskLevel\n//    Override getProfile() to include investor info\n\n\n// 4. Create mixed array (2+ Borrower, 2+ Investor)\n\n\n// 5. forEach — call getProfile() on each (polymorphism)\n\n\n// 6. Log total count via static method\n\n\n// 7. Demonstrate setter validation (try setting creditScore to 900 and -50)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "GTBank Customer Management System",
+        "scenario": "Build a class hierarchy for a GTBank customer management system. Model a base Customer class with PersonalCustomer and BusinessCustomer subclasses, using private fields for account data and static tracking.",
+        "requirements": [
+          "Create a base class `Customer` with a constructor that takes id, name, and tier; store a private field #accountBalance with a getter and setter (setter rejects negative values)",
+          "Add a method `getInfo()` that returns 'CUST-001: Amara Obi — Gold Tier — ₦250,000'",
+          "Add a static property `customerCount` that increments in the constructor; add a static method `getCustomerCount()`",
+          "Create a subclass `PersonalCustomer` that extends Customer, adds occupation and savingsGoal, and overrides `getInfo()` to include personal details",
+          "Create a subclass `BusinessCustomer` that extends Customer, adds businessName and annualRevenue, and overrides `getInfo()` to include business details",
+          "Create an array of mixed Customer instances (at least 2 Personal + 2 Business) and use forEach to call getInfo() on each (polymorphism)",
+          "Log the total customer count using the static method"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>GTBank Customers</title>\n</head>\n<body>\n  <h1>GTBank Customer Management System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// GTBank Customer Management System\n// Build a class hierarchy for customer management\n\n// 1. Base class Customer: constructor(id, name, tier)\n//    Private #accountBalance with getter/setter (reject negative)\n//    getInfo() method\n//    Static customerCount + getCustomerCount()\n\n\n// 2. Subclass PersonalCustomer: extends Customer\n//    constructor adds occupation, savingsGoal\n//    Override getInfo() to include personal details\n\n\n// 3. Subclass BusinessCustomer: extends Customer\n//    constructor adds businessName, annualRevenue\n//    Override getInfo() to include business details\n\n\n// 4. Create mixed array (2+ Personal, 2+ Business)\n\n\n// 5. forEach — call getInfo() on each (polymorphism)\n\n\n// 6. Log total count via static method\n\n\n// 7. Demonstrate setter validation (try setting balance to -1000)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Konga Marketplace Product System",
+        "scenario": "Build a class hierarchy for a Konga marketplace product system. Model a base Product class with PhysicalProduct and DigitalProduct subclasses, using private fields for pricing and static inventory tracking.",
+        "requirements": [
+          "Create a base class `Product` with a constructor that takes id, name, and category; store a private field #price with a getter and setter (setter rejects values <= 0)",
+          "Add a method `getDetails()` that returns 'PRD-001: Wireless Earbuds [Electronics] — ₦4,500'",
+          "Add a static property `inventory` that increments in the constructor; add a static method `getInventoryCount()`",
+          "Create a subclass `PhysicalProduct` that extends Product, adds weight and shippingCost, and overrides `getDetails()` to include shipping info",
+          "Create a subclass `DigitalProduct` that extends Product, adds fileSize and downloadUrl, and overrides `getDetails()` to include download info",
+          "Create an array of mixed Product instances (at least 2 Physical + 2 Digital) and use forEach to call getDetails() on each (polymorphism)",
+          "Log the total inventory count using the static method"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Konga Products</title>\n</head>\n<body>\n  <h1>Konga Marketplace Product System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Konga Marketplace Product System\n// Build a class hierarchy for product management\n\n// 1. Base class Product: constructor(id, name, category)\n//    Private #price with getter/setter (reject <= 0)\n//    getDetails() method\n//    Static inventory + getInventoryCount()\n\n\n// 2. Subclass PhysicalProduct: extends Product\n//    constructor adds weight, shippingCost\n//    Override getDetails() to include shipping info\n\n\n// 3. Subclass DigitalProduct: extends Product\n//    constructor adds fileSize, downloadUrl\n//    Override getDetails() to include download info\n\n\n// 4. Create mixed array (2+ Physical, 2+ Digital)\n\n\n// 5. forEach — call getDetails() on each (polymorphism)\n\n\n// 6. Log total inventory count via static method\n\n\n// 7. Demonstrate setter validation (try setting price to -500)\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "class_constructor",
+          "label": "Class, Constructor, and Methods",
+          "points": 25,
+          "descriptors": {
+            "full": "Base class has constructor with correct parameters; at least 2 methods defined; methods use `this` correctly to access instance properties",
+            "partial": "Class defined but methods don't use `this` or constructor is missing parameters",
+            "none": "No class syntax used or constructor absent"
+          }
+        },
+        {
+          "id": "inheritance",
+          "label": "Inheritance and Polymorphism",
+          "points": 30,
+          "descriptors": {
+            "full": "extends and super used correctly; subclass overrides a method; polymorphism demonstrated by calling the same method on an array of mixed instances",
+            "partial": "extends used but super missing or incorrect; polymorphism not demonstrated",
+            "none": "No inheritance; classes are independent with no extends"
+          }
+        },
+        {
+          "id": "private_static",
+          "label": "Private Fields and Static Members",
+          "points": 30,
+          "descriptors": {
+            "full": "At least one #private field with getter and validated setter; static property increments correctly; static method accessible on the class",
+            "partial": "Private field present but setter has no validation, or static member present but not used correctly",
+            "none": "No private fields and no static members"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used; class names are PascalCase; method names are camelCase verbs; output is clear and demonstrates each feature",
+            "partial": "Minor naming issues or incomplete demonstrations",
+            "none": "var used, poor naming, or features not demonstrated in output"
+          }
+        }
+      ]
+    }
+  }
+}
