@@ -1,0 +1,452 @@
+[
+    {
+        "title": "defining classes and constructors",
+        "description": "What is a class",
+        "type": "multiple choice",
+        "question": "What is a class in JavaScript?",
+        "options": "A type of function|A blueprint for creating multiple objects of the same shape|A CSS selector|A built-in data type",
+        "answer": "A blueprint for creating multiple objects of the same shape",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "class keyword",
+        "type": "multiple choice",
+        "question": "Which keyword is used to define a class?",
+        "options": "function|define|class|object",
+        "answer": "class",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "new keyword",
+        "type": "multiple choice",
+        "question": "What does the new keyword do when used with a class?",
+        "options": "Deletes an instance|Creates a new instance of the class by calling the constructor|Defines a method|Imports a module",
+        "answer": "Creates a new instance of the class by calling the constructor",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "constructor purpose",
+        "type": "multiple choice",
+        "question": "What does the constructor method do?",
+        "options": "Returns a value|Runs automatically when new is called and sets up the instance's properties|Defines a static method|Removes properties",
+        "answer": "Runs automatically when new is called and sets up the instance's properties",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "this in constructor",
+        "type": "multiple choice",
+        "question": "What does this refer to inside the constructor?",
+        "options": "The class itself|The new instance being created|The global window|The parent class",
+        "answer": "The new instance being created",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Instance properties",
+        "type": "multiple choice",
+        "question": "How do you set a property called name on the new instance inside the constructor?",
+        "options": "name = value|this.name = value|const name = value|set.name = value",
+        "answer": "this.name = value",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Methods shared",
+        "type": "True or False",
+        "question": "Methods defined in the class body are shared by all instances rather than duplicated on each one.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Instances independent",
+        "type": "multiple choice",
+        "question": "If you change earbuds.stock does cable.stock also change?",
+        "options": "Yes they share the same stock|No each instance has its own property values|Only if they are the same class|It throws an error",
+        "answer": "No each instance has its own property values",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "instanceof",
+        "type": "multiple choice",
+        "question": "What does earbuds instanceof Product return?",
+        "options": "The class name|true if earbuds was created from Product|The prototype|undefined",
+        "answer": "true if earbuds was created from Product",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Object literal vs class",
+        "type": "multiple choice",
+        "question": "When should you use a class instead of an object literal?",
+        "options": "When you need only one object|When you need to create many objects of the same shape|When you need a constant|When you need an array",
+        "answer": "When you need to create many objects of the same shape",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Default property",
+        "type": "multiple choice",
+        "question": "In the Course class the constructor sets this.enrolled = 0. What is this?",
+        "options": "A static property|A default property value given to every new instance|A method|A parameter",
+        "answer": "A default property value given to every new instance",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Demo enroll method",
+        "type": "multiple choice",
+        "question": "In the demo after calling jsCourse.enroll() twice what is jsCourse.enrolled?",
+        "options": "0|1|2|3",
+        "answer": "2",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Independent instances demo",
+        "type": "multiple choice",
+        "question": "In the demo after calling jsCourse.enroll() twice what is htmlCourse.enrolled?",
+        "options": "2|1|0|undefined",
+        "answer": "0",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Arrays of instances",
+        "type": "multiple choice",
+        "question": "Can you use filter and map on an array of class instances?",
+        "options": "No classes cannot be in arrays|Yes higher-order functions work the same on arrays of class instances|Only with forEach|Only with reduce",
+        "answer": "Yes higher-order functions work the same on arrays of class instances",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Demo getGrade",
+        "type": "multiple choice",
+        "question": "In the demo new Student(\"Chidi Nwosu\" 45 \"HTML & CSS\").getGrade() returns what?",
+        "options": "Pass|Borderline|Fail|undefined",
+        "answer": "Fail",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Method calling another method",
+        "type": "multiple choice",
+        "question": "In the demo getSummary() calls this.getGrade() inside it. Is this valid?",
+        "options": "No methods cannot call other methods|Yes a method can call other methods on the same instance using this|Only with super|Only in the constructor",
+        "answer": "Yes a method can call other methods on the same instance using this",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "extends keyword",
+        "type": "multiple choice",
+        "question": "What does the extends keyword do?",
+        "options": "Creates a new instance|Makes a child class inherit all properties and methods from a parent class|Adds a method|Removes a property",
+        "answer": "Makes a child class inherit all properties and methods from a parent class",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "super in constructor",
+        "type": "multiple choice",
+        "question": "What does super(name email) do inside a child class constructor?",
+        "options": "Creates a new class|Calls the parent class constructor to set up inherited properties|Deletes the parent class|Returns a value",
+        "answer": "Calls the parent class constructor to set up inherited properties",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "super must be first",
+        "type": "True or False",
+        "question": "super() must be called before accessing this in the child constructor.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Inherited method",
+        "type": "multiple choice",
+        "question": "If Student extends User and User has a greet() method can you call amara.greet() on a Student instance?",
+        "options": "No the child must redefine it|Yes the child inherits all parent methods|Only with super.greet()|Only if greet is static",
+        "answer": "Yes the child inherits all parent methods",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Child adds own method",
+        "type": "multiple choice",
+        "question": "Can a child class add methods that the parent does not have?",
+        "options": "No it can only use parent methods|Yes the child can define additional methods beyond what the parent provides|Only static methods|Only getters",
+        "answer": "Yes the child can define additional methods beyond what the parent provides",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Method override",
+        "type": "multiple choice",
+        "question": "What happens when a child class defines a method with the same name as a parent method?",
+        "options": "Both run|The child version overrides and replaces the parent version for instances of the child|An error is thrown|The parent version always runs",
+        "answer": "The child version overrides and replaces the parent version for instances of the child",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "super.method()",
+        "type": "multiple choice",
+        "question": "What does super.method() do inside an overriding child method?",
+        "options": "Calls the constructor|Calls the parent's version of that method allowing the child to extend rather than replace it|Deletes the method|Creates a new instance",
+        "answer": "Calls the parent's version of that method allowing the child to extend rather than replace it",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "instanceof chain",
+        "type": "multiple choice",
+        "question": "If savings is an instance of SavingsAccount which extends Account what does savings instanceof Account return?",
+        "options": "false|true|undefined|An error",
+        "answer": "true",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "is-a test",
+        "type": "multiple choice",
+        "question": "How do you decide if inheritance is appropriate?",
+        "options": "If the child uses the same variable names|If the child passes the is-a test (Student is a User)|If both classes have methods|If the child is shorter",
+        "answer": "If the child passes the is-a test (Student is a User)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Demo deposit inherited",
+        "type": "multiple choice",
+        "question": "In the demo savings is a SavingsAccount that extends Account. Can savings.deposit(5000) be called?",
+        "options": "No deposit is not on SavingsAccount|Yes deposit is inherited from Account|Only with super.deposit()|Only if redefined",
+        "answer": "Yes deposit is inherited from Account",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Demo getProgress",
+        "type": "multiple choice",
+        "question": "In the demo after savings.deposit(5000) on an initial balance of 18000 with goal 50000 what percentage does getProgress show?",
+        "options": "36%|40%|46%|50%",
+        "answer": "46%",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Array of mixed types",
+        "type": "multiple choice",
+        "question": "In the demo an array contains Student Admin and Instructor instances. When forEach calls getInfo() on each what happens?",
+        "options": "All return the same output|Each calls its own version of getInfo producing different output based on the override|An error is thrown|Only User's getInfo runs",
+        "answer": "Each calls its own version of getInfo producing different output based on the override",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Composition vs inheritance",
+        "type": "multiple choice",
+        "question": "Why should a Cart class NOT extend User even if carts belong to users?",
+        "options": "Because it is too complex|Because Cart is not a User \u2014 use a userId property instead (composition)|Because JavaScript does not allow it|Because User has too many methods",
+        "answer": "Because Cart is not a User \u2014 use a userId property instead (composition)",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "static method definition",
+        "type": "multiple choice",
+        "question": "Where is a static method called?",
+        "options": "On an instance|On the class itself not on instances|Inside the constructor only|On the prototype",
+        "answer": "On the class itself not on instances",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "static method call",
+        "type": "multiple choice",
+        "question": "How do you call a static method fromCSV on the Student class?",
+        "options": "amara.fromCSV()|Student.fromCSV()|new Student.fromCSV()|this.fromCSV()",
+        "answer": "Student.fromCSV()",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Cannot call static on instance",
+        "type": "True or False",
+        "question": "Calling a static method on an instance (e.g. amara.fromCSV()) throws a TypeError.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Static use case",
+        "type": "multiple choice",
+        "question": "What is a common use case for static methods?",
+        "options": "Setting instance properties|Factory methods that create instances from different data formats|Accessing this.name|Overriding parent methods",
+        "answer": "Factory methods that create instances from different data formats",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Private field syntax",
+        "type": "multiple choice",
+        "question": "How do you declare a private field in a class?",
+        "options": "private balance|_balance|#balance|this.private.balance",
+        "answer": "#balance",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Private field access",
+        "type": "multiple choice",
+        "question": "How do you access a private field inside the class?",
+        "options": "this.balance|this.#balance|self.#balance|class.#balance",
+        "answer": "this.#balance",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Private field outside",
+        "type": "multiple choice",
+        "question": "What happens if you try to access account.#balance from outside the class?",
+        "options": "It returns undefined|A SyntaxError is thrown|It returns null|It returns 0",
+        "answer": "A SyntaxError is thrown",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Encapsulation purpose",
+        "type": "multiple choice",
+        "question": "Why are private fields useful?",
+        "options": "They make code shorter|They protect internal state so external code cannot corrupt it directly|They make methods faster|They allow inheritance",
+        "answer": "They protect internal state so external code cannot corrupt it directly",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Getter syntax",
+        "type": "multiple choice",
+        "question": "How is a getter defined inside a class?",
+        "options": "function get price()|get price() { }|getter price() { }|this.get.price()",
+        "answer": "get price() { }",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Getter access",
+        "type": "multiple choice",
+        "question": "How do you access a getter named price on an instance?",
+        "options": "earbuds.price()|earbuds.price|earbuds.getPrice()|earbuds[\"price()\"]",
+        "answer": "earbuds.price",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Setter purpose",
+        "type": "multiple choice",
+        "question": "What is the purpose of a setter?",
+        "options": "To read a value|To validate and control how a private field is updated|To delete a property|To call a static method",
+        "answer": "To validate and control how a private field is updated",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Setter assignment",
+        "type": "multiple choice",
+        "question": "How do you use a setter named price?",
+        "options": "earbuds.setPrice(3999)|earbuds.price(3999)|earbuds.price = 3999|earbuds.set(\"price\" 3999)",
+        "answer": "earbuds.price = 3999",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Static property",
+        "type": "multiple choice",
+        "question": "What is a static property?",
+        "options": "A property on every instance|A property that belongs to the class itself and is shared across all instances|A private field|A getter",
+        "answer": "A property that belongs to the class itself and is shared across all instances",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Static counter",
+        "type": "multiple choice",
+        "question": "In the demo Course.count increments in the constructor. After creating 3 courses what is Course.count?",
+        "options": "1|2|3|0",
+        "answer": "3",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Demo priceWithVAT",
+        "type": "multiple choice",
+        "question": "In the demo the getter priceWithVAT returns Math.round(this.#price * (1 + Course.VAT_RATE)). For price 15000 and VAT 0.075 what is the result?",
+        "options": "15075|15750|16125|16000",
+        "answer": "16125",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Demo wrong PIN",
+        "type": "multiple choice",
+        "question": "In the demo account.withdraw(5000, 9999) where the correct PIN is 1234 returns what?",
+        "options": "Withdrawn \u20a65000|Insufficient funds|Wrong PIN|SyntaxError",
+        "answer": "Wrong PIN",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Static VAT_RATE",
+        "type": "multiple choice",
+        "question": "How is Course.VAT_RATE accessed inside an instance method?",
+        "options": "this.VAT_RATE|Course.VAT_RATE|#VAT_RATE|super.VAT_RATE",
+        "answer": "Course.VAT_RATE",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Demo fromCSV factory",
+        "type": "multiple choice",
+        "question": "In the demo Student.fromCSV(\"Amara Obi, 88\") does what?",
+        "options": "Returns a string|Creates a new Student instance with name Amara Obi and score 88|Modifies an existing student|Returns an array",
+        "answer": "Creates a new Student instance with name Amara Obi and score 88",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "defining classes and constructors",
+        "description": "Class vs function",
+        "type": "multiple choice",
+        "question": "What is the relationship between a class and a constructor function in JavaScript?",
+        "options": "They are unrelated|A class is syntactic sugar over constructor functions and prototypes|Classes replace all functions|Functions are faster than classes",
+        "answer": "A class is syntactic sugar over constructor functions and prototypes",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "inheritance and super",
+        "description": "Child instanceof parent",
+        "type": "True or False",
+        "question": "An instance of a child class returns true for instanceof checks against both the child class and the parent class.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "static methods and private fields",
+        "description": "Private field declaration",
+        "type": "multiple choice",
+        "question": "Where must private fields be declared in a class?",
+        "options": "Inside the constructor|At the top of the class body before the constructor|Inside a method|After the class definition",
+        "answer": "At the top of the class body before the constructor",
+        "difficulty": "intermediate"
+    }
+]
