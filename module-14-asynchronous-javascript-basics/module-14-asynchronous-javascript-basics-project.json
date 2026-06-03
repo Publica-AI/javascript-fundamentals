@@ -1,0 +1,175 @@
+{
+  "module": "14",
+  "title": "Asynchronous JavaScript Basics — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build a system that demonstrates asynchronous JavaScript patterns. Your solution must use: setTimeout for delayed execution, setInterval with clearInterval for repeated actions, demonstrate sync vs async execution order, implement a sequential callback pipeline (at least 3 steps nested), and log output that proves the execution order. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Publica Academy Class Notification System",
+        "scenario": "Build an automated class notification system for Publica Academy. Simulate a class starting countdown, timed reminders, and a sequential enrolment verification pipeline using async patterns.",
+        "requirements": [
+          "Demonstrate execution order: log 3 sync statements and 2 async (setTimeout 0ms and 1000ms) to prove async runs after sync",
+          "Use setInterval to create a countdown from 5 to 0 (one tick per second); log each tick; clearInterval when it reaches 0 and log 'Class is now LIVE!'",
+          "Use setTimeout to schedule 3 notifications at different delays (500ms, 1200ms, 2000ms); each logs a different reminder message",
+          "Build a 4-step sequential callback pipeline: (1) verify student → (2) check seat availability → (3) process payment → (4) confirm enrolment. Each step uses setTimeout(callback, 600) to simulate async work and logs its step name on completion",
+          "After the pipeline completes (inside the final callback), log a summary message with the student name"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Publica Notifications</title>\n</head>\n<body>\n  <h1>Publica Academy Class Notification System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Publica Academy Class Notification System\n// Demonstrate async JavaScript patterns\n\n// 1. Execution order: 3 sync logs + 2 async (setTimeout 0ms and 1000ms)\n//    Prove that sync runs first, then 0ms timeout, then 1000ms timeout\n\n\n// 2. Countdown: setInterval from 5 to 0, clearInterval at 0\n\n\n// 3. Timed notifications: 3 setTimeout calls at 500ms, 1200ms, 2000ms\n\n\n// 4. Sequential callback pipeline (4 steps, each with setTimeout 600ms):\n//    verifyStudent → checkSeats → processPayment → confirmEnrolment\n\n\n// 5. Log summary after pipeline completes\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Paystack Payment Processing Pipeline",
+        "scenario": "Build a payment processing simulation for Paystack. Demonstrate async execution order, a transaction timeout monitor, staged notifications, and a sequential payment verification pipeline.",
+        "requirements": [
+          "Demonstrate execution order: log 3 sync statements and 2 async (setTimeout 0ms and 1000ms) to prove async runs after sync",
+          "Use setInterval to simulate a transaction timeout monitor that logs 'Checking...' every second for 5 seconds, then clearInterval and log 'Transaction timeout reached'",
+          "Use setTimeout to schedule 3 payment status updates at different delays (400ms, 900ms, 1500ms); each logs a status message",
+          "Build a 4-step sequential callback pipeline: (1) validate card → (2) charge card → (3) verify with bank → (4) send receipt. Each step uses setTimeout(callback, 500) and logs on completion",
+          "After the pipeline completes, log a final success message with the transaction amount"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Paystack Processing</title>\n</head>\n<body>\n  <h1>Paystack Payment Processing Pipeline</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Paystack Payment Processing Pipeline\n// Demonstrate async JavaScript patterns\n\n// 1. Execution order: 3 sync logs + 2 async (setTimeout 0ms and 1000ms)\n\n\n// 2. Transaction monitor: setInterval every 1s for 5 ticks, then clearInterval\n\n\n// 3. Payment status updates: 3 setTimeout calls at 400ms, 900ms, 1500ms\n\n\n// 4. Sequential callback pipeline (4 steps, each setTimeout 500ms):\n//    validateCard → chargeCard → verifyWithBank → sendReceipt\n\n\n// 5. Log final success message after pipeline completes\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "Bolt Ride Request Simulator",
+        "scenario": "Build a ride request simulation for Bolt. Demonstrate async execution order, a driver search interval, staged ride updates, and a sequential ride-matching pipeline using callbacks.",
+        "requirements": [
+          "Demonstrate execution order: log 3 sync statements and 2 async (setTimeout 0ms and 1000ms) to prove async runs after sync",
+          "Use setInterval to simulate searching for nearby drivers — log 'Searching...' every second for 4 seconds, then clearInterval and log 'Driver found!'",
+          "Use setTimeout to schedule 3 ride status updates at different delays (600ms, 1200ms, 2000ms): 'Driver assigned', 'Driver en route', 'Driver arrived'",
+          "Build a 4-step sequential callback pipeline: (1) confirm pickup location → (2) match driver → (3) calculate fare → (4) start ride. Each step uses setTimeout(callback, 700) and logs on completion",
+          "After the pipeline completes, log a summary with the fare amount"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bolt Ride Simulator</title>\n</head>\n<body>\n  <h1>Bolt Ride Request Simulator</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bolt Ride Request Simulator\n// Demonstrate async JavaScript patterns\n\n// 1. Execution order: 3 sync logs + 2 async (setTimeout 0ms and 1000ms)\n\n\n// 2. Driver search: setInterval every 1s for 4 ticks, then clearInterval\n\n\n// 3. Ride status updates: 3 setTimeout calls at 600ms, 1200ms, 2000ms\n\n\n// 4. Sequential callback pipeline (4 steps, each setTimeout 700ms):\n//    confirmPickup → matchDriver → calculateFare → startRide\n\n\n// 5. Log ride summary after pipeline completes\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "PiggyVest Auto-Save Scheduler",
+        "scenario": "Build an auto-save scheduling simulation for PiggyVest. Demonstrate async execution order, a recurring savings timer, staged deposit notifications, and a sequential savings verification pipeline.",
+        "requirements": [
+          "Demonstrate execution order: log 3 sync statements and 2 async (setTimeout 0ms and 1000ms) to prove async runs after sync",
+          "Use setInterval to simulate an auto-save that logs 'Auto-saving ₦500...' every second for 5 cycles, then clearInterval and log total saved (₦2,500)",
+          "Use setTimeout to schedule 3 deposit confirmations at different delays (300ms, 800ms, 1500ms); each logs a confirmation with an amount",
+          "Build a 4-step sequential callback pipeline: (1) authenticate user → (2) check balance → (3) debit source → (4) credit savings. Each step uses setTimeout(callback, 600) and logs on completion",
+          "After the pipeline completes, log a final balance update message"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>PiggyVest Auto-Save</title>\n</head>\n<body>\n  <h1>PiggyVest Auto-Save Scheduler</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// PiggyVest Auto-Save Scheduler\n// Demonstrate async JavaScript patterns\n\n// 1. Execution order: 3 sync logs + 2 async (setTimeout 0ms and 1000ms)\n\n\n// 2. Auto-save timer: setInterval every 1s for 5 cycles, log each save, clearInterval and log total\n\n\n// 3. Deposit confirmations: 3 setTimeout calls at 300ms, 800ms, 1500ms\n\n\n// 4. Sequential callback pipeline (4 steps, each setTimeout 600ms):\n//    authenticate → checkBalance → debitSource → creditSavings\n\n\n// 5. Log final balance update after pipeline completes\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Jumia Order Fulfilment Tracker",
+        "scenario": "Build an order fulfilment tracking simulation for Jumia. Demonstrate async execution order, a delivery progress ticker, staged shipping notifications, and a sequential order processing pipeline.",
+        "requirements": [
+          "Demonstrate execution order: log 3 sync statements and 2 async (setTimeout 0ms and 1000ms) to prove async runs after sync",
+          "Use setInterval to simulate delivery progress — log 'Checkpoint N reached' every second for 4 checkpoints, then clearInterval and log 'Package delivered!'",
+          "Use setTimeout to schedule 3 shipping notifications at different delays (500ms, 1000ms, 1800ms): 'Order confirmed', 'Shipped', 'Out for delivery'",
+          "Build a 4-step sequential callback pipeline: (1) verify order → (2) pick from warehouse → (3) hand to courier → (4) confirm delivery. Each step uses setTimeout(callback, 500) and logs on completion",
+          "After the pipeline completes, log a delivery summary with the order ID"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Jumia Fulfilment</title>\n</head>\n<body>\n  <h1>Jumia Order Fulfilment Tracker</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Jumia Order Fulfilment Tracker\n// Demonstrate async JavaScript patterns\n\n// 1. Execution order: 3 sync logs + 2 async (setTimeout 0ms and 1000ms)\n\n\n// 2. Delivery progress: setInterval every 1s for 4 checkpoints, then clearInterval\n\n\n// 3. Shipping notifications: 3 setTimeout calls at 500ms, 1000ms, 1800ms\n\n\n// 4. Sequential callback pipeline (4 steps, each setTimeout 500ms):\n//    verifyOrder → pickFromWarehouse → handToCourier → confirmDelivery\n\n\n// 5. Log delivery summary after pipeline completes\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "execution_order",
+          "label": "Synchronous vs Asynchronous Execution Order",
+          "points": 20,
+          "descriptors": {
+            "full": "Correctly demonstrates that sync code runs before async; setTimeout(fn, 0) runs after all sync code; output clearly shows the order with labelled logs",
+            "partial": "Attempt made but order not clearly demonstrated or labels missing",
+            "none": "No demonstration of execution order"
+          }
+        },
+        {
+          "id": "timers",
+          "label": "setTimeout and setInterval/clearInterval",
+          "points": 30,
+          "descriptors": {
+            "full": "setInterval correctly counts or repeats an action; clearInterval stops it at the right time; multiple setTimeout calls fire at correct relative delays; interval ID stored in a variable",
+            "partial": "setInterval used but clearInterval missing or incorrect; or setTimeout used but only one call",
+            "none": "No timer functions used"
+          }
+        },
+        {
+          "id": "callback_pipeline",
+          "label": "Sequential Callback Pipeline",
+          "points": 35,
+          "descriptors": {
+            "full": "4+ steps nested correctly; each step executes only after the previous completes; output proves sequential order; final callback logs a summary",
+            "partial": "Pipeline attempted but fewer than 4 steps, or steps not properly nested (parallel instead of sequential)",
+            "none": "No callback nesting; steps run independently"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used; logs are labelled and clear; timer IDs stored properly; no var; code is readable",
+            "partial": "Minor issues — unlabelled logs or missing timer ID variable",
+            "none": "var used, unreadable output, or timers leak (no clearInterval)"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "module": "14",
+  "title": "Asynchronous JavaScript Basics",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Predict and write the output order of the following code. Then write the code and add a comment next to each console.log explaining WHY it runs in that position (sync first, then async by delay).",
+            "starter": "// Write this code and predict the EXACT output order:\n// console.log('A');\n// setTimeout(() => console.log('B'), 1000);\n// setTimeout(() => console.log('C'), 0);\n// console.log('D');\n// setTimeout(() => console.log('E'), 500);\n// console.log('F');\n\n// Write the code below and add comments explaining the order\n",
+            "solution": "console.log('A'); // 1st — sync, runs immediately\nsetTimeout(() => console.log('B'), 1000); // 5th — async, 1000ms delay (longest)\nsetTimeout(() => console.log('C'), 0); // 4th — async, 0ms but still after all sync\nconsole.log('D'); // 2nd — sync, runs immediately\nsetTimeout(() => console.log('E'), 500); // 5th — async, 500ms delay\nconsole.log('F'); // 3rd — sync, runs immediately\n\n// Output order: A, D, F, C, E, B\n// All sync (A, D, F) runs first, then async in delay order (C=0ms, E=500ms, B=1000ms)",
+            "test_cases": [
+              { "expected_output": "A" },
+              { "expected_output": "D" },
+              { "expected_output": "F" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a countdown timer using setInterval that counts from 3 to 0 (logging each number), then logs 'Go!' and clears the interval. Store the interval ID in a variable.",
+            "starter": "// Create a countdown from 3 to 0 using setInterval\n// Log each number\n// When it reaches 0, log 'Go!' and clearInterval\n",
+            "solution": "let count = 3;\n\nconst timerId = setInterval(() => {\n  console.log(count);\n  count--;\n  if (count < 0) {\n    console.log('Go!');\n    clearInterval(timerId);\n  }\n}, 1000);",
+            "test_cases": [
+              { "expected_output": "3" },
+              { "expected_output": "2" },
+              { "expected_output": "1" },
+              { "expected_output": "0" },
+              { "expected_output": "Go!" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why does `setTimeout(fn, 0)` NOT execute immediately? Explain using the concept of the event loop and the call stack.",
+            "sample_answer": "Even with a 0ms delay, setTimeout places the callback into the task queue (macrotask queue), not onto the call stack. The event loop only moves tasks from the queue to the stack when the stack is empty — meaning all synchronous code must finish first. So the execution order is: (1) all synchronous code on the stack runs to completion, (2) the event loop checks the queue, (3) setTimeout's callback is moved to the stack and executed. The 0ms is the minimum delay, not a guarantee of immediate execution. If the sync code takes 500ms to run, the 0ms callback won't fire until after those 500ms."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `delayedGreet(name, delay)` that uses setTimeout to log 'Hello, [name]!' after the given delay in milliseconds. Call it 3 times with different names and delays (200ms, 500ms, 100ms). The output should prove they fire in delay order, not call order.",
+            "starter": "// Function delayedGreet(name, delay)\n// Uses setTimeout to log 'Hello, [name]!' after delay ms\n\n// Call 3 times:\n// delayedGreet('Amara', 200)\n// delayedGreet('Bayo', 500)\n// delayedGreet('Chidi', 100)\n",
+            "solution": "function delayedGreet(name, delay) {\n  setTimeout(() => {\n    console.log('Hello, ' + name + '!');\n  }, delay);\n}\n\ndelayedGreet('Amara', 200);\ndelayedGreet('Bayo', 500);\ndelayedGreet('Chidi', 100);\n\n// Output order: Chidi (100ms), Amara (200ms), Bayo (500ms)",
+            "test_cases": [
+              { "expected_output": "Hello, Chidi!" },
+              { "expected_output": "Hello, Amara!" },
+              { "expected_output": "Hello, Bayo!" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a 3-step sequential callback pipeline using setTimeout. Step 1 (after 300ms): log 'Step 1: Fetching data...'. Step 2 (after another 300ms): log 'Step 2: Processing data...'. Step 3 (after another 300ms): log 'Step 3: Done!'. Each step must only start after the previous one completes (nested callbacks).",
+            "starter": "// 3-step sequential pipeline using nested setTimeout callbacks\n// Step 1 → Step 2 → Step 3 (each 300ms apart)\n// Each must ONLY run after the previous completes\n",
+            "solution": "setTimeout(() => {\n  console.log('Step 1: Fetching data...');\n  setTimeout(() => {\n    console.log('Step 2: Processing data...');\n    setTimeout(() => {\n      console.log('Step 3: Done!');\n    }, 300);\n  }, 300);\n}, 300);",
+            "test_cases": [
+              { "expected_output": "Step 1: Fetching data..." },
+              { "expected_output": "Step 2: Processing data..." },
+              { "expected_output": "Step 3: Done!" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is 'callback hell' and why is it a problem? What makes deeply nested callbacks hard to work with?",
+            "sample_answer": "Callback hell is when multiple sequential async operations are nested inside each other's callbacks, creating a pyramid of indentation (also called 'pyramid of doom'). Each step depends on the previous step's result, so it must be inside the previous callback. Problems: (1) Readability — deeply indented code is hard to follow; the logic flows right instead of down. (2) Error handling — each level needs its own error check; there's no single place to catch all errors. (3) Modification — inserting a step in the middle means re-indenting everything below it. (4) Reuse — the steps are coupled together; you can't easily reorder or skip steps. Promises and async/await solve this by allowing sequential-looking code that's actually asynchronous."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `repeatAction(message, times, interval)` that uses setInterval to log the message every `interval` ms, but stops after `times` repetitions using clearInterval. Call it with ('Saving...', 3, 500).",
+            "starter": "// Function repeatAction(message, times, interval)\n// setInterval to log message every interval ms\n// clearInterval after 'times' repetitions\n\n// Call: repeatAction('Saving...', 3, 500)\n",
+            "solution": "function repeatAction(message, times, interval) {\n  let count = 0;\n  const id = setInterval(() => {\n    count++;\n    console.log(message + ' (' + count + '/' + times + ')');\n    if (count >= times) {\n      clearInterval(id);\n      console.log('Complete!');\n    }\n  }, interval);\n}\n\nrepeatAction('Saving...', 3, 500);",
+            "test_cases": [
+              { "expected_output": "Saving... (1/3)" },
+              { "expected_output": "Saving... (2/3)" },
+              { "expected_output": "Saving... (3/3)" },
+              { "expected_output": "Complete!" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `simulateAPI(data, delay, callback)` that uses setTimeout to call the callback with the data after the delay. Then use it to simulate 2 sequential API calls: first fetch a user name (after 500ms), then inside that callback fetch their score (after 300ms). Log both values in the final callback.",
+            "starter": "// Function simulateAPI(data, delay, callback)\n// setTimeout → call callback(data) after delay\n\n// Sequential: fetch user name, then fetch score\n// Log both values in the final callback\n",
+            "solution": "function simulateAPI(data, delay, callback) {\n  setTimeout(() => {\n    callback(data);\n  }, delay);\n}\n\nsimulateAPI('Amara', 500, (name) => {\n  console.log('User: ' + name);\n  simulateAPI(88, 300, (score) => {\n    console.log('Score: ' + score);\n    console.log('Result: ' + name + ' scored ' + score);\n  });\n});",
+            "test_cases": [
+              { "expected_output": "User: Amara" },
+              { "expected_output": "Score: 88" },
+              { "expected_output": "Result: Amara scored 88" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `setTimeout` and `setInterval`? Give a scenario where using one instead of the other would cause a bug.",
+            "sample_answer": "`setTimeout` runs the callback ONCE after the specified delay. `setInterval` runs the callback REPEATEDLY at the specified interval until clearInterval is called. Bug scenario: You want to check a server's status once after 5 seconds. If you accidentally use setInterval instead of setTimeout, the check runs every 5 seconds forever — flooding the server with requests and leaking memory (the interval never stops). Conversely, if you want a countdown that ticks every second, using setTimeout only fires once — you'd only get one tick instead of a continuous countdown. The fix: setTimeout for one-off delays, setInterval for recurring actions (always paired with clearInterval to stop)."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write code that logs 'Start', schedules 'Timeout 1' at 0ms, schedules 'Timeout 2' at 0ms, then logs 'End'. Predict and verify the output order. Add a comment explaining why both timeouts run after 'End' even though their delay is 0.",
+            "starter": "// Log 'Start'\n// setTimeout 'Timeout 1' at 0ms\n// setTimeout 'Timeout 2' at 0ms\n// Log 'End'\n\n// Add comment explaining the output order\n",
+            "solution": "console.log('Start');\n\nsetTimeout(() => console.log('Timeout 1'), 0);\nsetTimeout(() => console.log('Timeout 2'), 0);\n\nconsole.log('End');\n\n// Output: Start, End, Timeout 1, Timeout 2\n// Both timeouts go to the task queue. The event loop only processes\n// the queue after the call stack is empty (after all sync code finishes).\n// They run in queue order (FIFO): Timeout 1 was queued first.",
+            "test_cases": [
+              { "expected_output": "Start" },
+              { "expected_output": "End" },
+              { "expected_output": "Timeout 1" },
+              { "expected_output": "Timeout 2" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `processSteps(steps)` that takes an array of step name strings and executes them sequentially using nested setTimeout (each step takes 400ms). After all steps complete, log 'All steps done!'. Call it with ['Validate', 'Process', 'Save'].",
+            "starter": "// Function processSteps(steps)\n// Execute steps sequentially using nested setTimeout (400ms each)\n// After all steps: log 'All steps done!'\n\n// Call with ['Validate', 'Process', 'Save']\n",
+            "solution": "function processSteps(steps) {\n  function runStep(index) {\n    if (index >= steps.length) {\n      console.log('All steps done!');\n      return;\n    }\n    setTimeout(() => {\n      console.log('Step: ' + steps[index]);\n      runStep(index + 1);\n    }, 400);\n  }\n  runStep(0);\n}\n\nprocessSteps(['Validate', 'Process', 'Save']);",
+            "test_cases": [
+              { "expected_output": "Step: Validate" },
+              { "expected_output": "Step: Process" },
+              { "expected_output": "Step: Save" },
+              { "expected_output": "All steps done!" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why must you store the return value of `setInterval()` in a variable? What happens if you don't, and how does `clearInterval` use it?",
+            "sample_answer": "`setInterval` returns a numeric ID that uniquely identifies that particular interval timer. `clearInterval(id)` uses this ID to know which timer to stop. If you don't store the ID, you have no way to stop the interval — it will keep running forever (or until the page/process is closed). This is a memory and performance leak: the callback keeps firing, consuming CPU cycles and potentially accumulating side effects (like adding items to an array or sending network requests indefinitely). Always: `const timerId = setInterval(...)` followed by `clearInterval(timerId)` when you want it to stop."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write code that uses setTimeout to schedule 4 messages: 'First' at 300ms, 'Second' at 100ms, 'Third' at 200ms, 'Fourth' at 50ms. Before scheduling them, log 'Scheduling...' (sync). After all setTimeout calls, log 'All scheduled!' (sync). Predict the full output order in a comment.",
+            "starter": "// Log 'Scheduling...' (sync)\n// Schedule 4 messages at different delays\n// Log 'All scheduled!' (sync)\n\n// Comment: predict the full output order\n",
+            "solution": "console.log('Scheduling...');\n\nsetTimeout(() => console.log('First'), 300);\nsetTimeout(() => console.log('Second'), 100);\nsetTimeout(() => console.log('Third'), 200);\nsetTimeout(() => console.log('Fourth'), 50);\n\nconsole.log('All scheduled!');\n\n// Output order:\n// 1. Scheduling... (sync)\n// 2. All scheduled! (sync)\n// 3. Fourth (50ms — shortest delay)\n// 4. Second (100ms)\n// 5. Third (200ms)\n// 6. First (300ms — longest delay)",
+            "test_cases": [
+              { "expected_output": "Scheduling..." },
+              { "expected_output": "All scheduled!" },
+              { "expected_output": "Fourth" },
+              { "expected_output": "Second" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `fetchSequential(urls, callback)` that simulates fetching an array of URLs one after another using setTimeout (200ms per fetch). For each URL, log 'Fetching: [url]'. After all are fetched, call the callback with the count. Demonstrate with ['api/users', 'api/posts', 'api/comments'].",
+            "starter": "// Function fetchSequential(urls, callback)\n// Fetch each URL sequentially (200ms per fetch, setTimeout)\n// Log 'Fetching: [url]' for each\n// After all done, call callback(count)\n\n// Call with 3 URLs, callback logs 'Fetched N URLs'\n",
+            "solution": "function fetchSequential(urls, callback) {\n  let index = 0;\n\n  function next() {\n    if (index >= urls.length) {\n      callback(urls.length);\n      return;\n    }\n    setTimeout(() => {\n      console.log('Fetching: ' + urls[index]);\n      index++;\n      next();\n    }, 200);\n  }\n\n  next();\n}\n\nfetchSequential(['api/users', 'api/posts', 'api/comments'], (count) => {\n  console.log('Fetched ' + count + ' URLs');\n});",
+            "test_cases": [
+              { "expected_output": "Fetching: api/users" },
+              { "expected_output": "Fetching: api/posts" },
+              { "expected_output": "Fetching: api/comments" },
+              { "expected_output": "Fetched 3 URLs" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Explain why callbacks are necessary for sequential async operations. Why can't you just write the steps one after another like synchronous code?",
+            "sample_answer": "Synchronous code runs line by line — line 2 waits for line 1 to finish. But async operations (network requests, timers, file reads) don't block — they schedule work and return immediately. The next line runs before the async work completes. If you write `const data = fetchData()` followed by `processData(data)`, processData runs immediately with undefined because fetchData returned before the data arrived. Callbacks solve this: you pass your 'next step' as a function to the async operation. The async operation calls your function when it's done, guaranteeing the data is available. Without callbacks (or Promises/async-await), there's no way to say 'run this AFTER that async thing finishes' — the language doesn't naturally wait."
+          }
+        ]
+      }
+    ]
+  }
+}
