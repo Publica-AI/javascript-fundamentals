@@ -1,0 +1,452 @@
+[
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Synchronous definition",
+        "type": "multiple choice",
+        "question": "What does synchronous execution mean?",
+        "options": "Code runs in parallel|Each line waits for the previous one to finish before starting|Code skips errors automatically|Functions run in random order",
+        "answer": "Each line waits for the previous one to finish before starting",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Asynchronous definition",
+        "type": "multiple choice",
+        "question": "What does asynchronous execution mean?",
+        "options": "Code runs faster|An operation is scheduled to run later so other code can continue immediately|Code runs on a second thread|All functions become Promises",
+        "answer": "An operation is scheduled to run later so other code can continue immediately",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Blocking problem",
+        "type": "multiple choice",
+        "question": "What happens if a slow operation runs synchronously in a browser?",
+        "options": "The function returns undefined|The page freezes and becomes unresponsive|JavaScript throws an error|The operation is cancelled automatically",
+        "answer": "The page freezes and becomes unresponsive",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Call stack",
+        "type": "multiple choice",
+        "question": "What is the call stack?",
+        "options": "A list of scheduled timers|A data structure tracking which function is currently executing|A queue for async callbacks|The browser's memory storage",
+        "answer": "A data structure tracking which function is currently executing",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Event loop rule",
+        "type": "multiple choice",
+        "question": "When does the event loop move a callback from the task queue to the call stack?",
+        "options": "After exactly 1000ms|Only after all synchronous code has finished and the call stack is empty|When the timer fires regardless of the stack|Immediately after the timeout is created",
+        "answer": "Only after all synchronous code has finished and the call stack is empty",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "0ms timeout order",
+        "type": "multiple choice",
+        "question": "If setTimeout(fn, 0) is called will fn run before the next synchronous console.log line below it?",
+        "options": "Yes 0ms means immediately|No it is still async and runs after all synchronous code completes|Yes but only if the stack is empty at that moment|It depends on the browser",
+        "answer": "No it is still async and runs after all synchronous code completes",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "A C B pattern",
+        "type": "multiple choice",
+        "question": "Given: console.log('A'); setTimeout(fn, 0); console.log('C'); — what is the output order?",
+        "options": "A B C|A C B|B A C|C A B",
+        "answer": "A C B",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Single threaded",
+        "type": "True or False",
+        "question": "JavaScript is single-threaded — only one piece of code runs on the call stack at a time.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Web APIs",
+        "type": "multiple choice",
+        "question": "When setTimeout is called who actually handles the timer while JavaScript continues?",
+        "options": "The call stack|A second JavaScript thread|The browser's Web APIs (outside of JavaScript)|The callback queue",
+        "answer": "The browser's Web APIs (outside of JavaScript)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Task queue FIFO",
+        "type": "multiple choice",
+        "question": "Two setTimeouts are both scheduled at 0ms. Which callback runs first?",
+        "options": "The second one|The one with a shorter function body|The first one scheduled — the task queue is first-in-first-out|They run simultaneously",
+        "answer": "The first one scheduled — the task queue is first-in-first-out",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Why async needed",
+        "type": "True or False",
+        "question": "Asynchronous JavaScript solves the problem of slow operations blocking the entire page.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Examples of async operations",
+        "type": "multiple choice",
+        "question": "Which of these is an asynchronous operation?",
+        "options": "const x = 1 + 2|let name = 'Amara'|fetch('https://api.example.com/data')|console.log('hello')",
+        "answer": "fetch('https://api.example.com/data')",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Demo execution order",
+        "type": "multiple choice",
+        "question": "In the demo there are 5 lines: sync 'Class schedule loaded' then setTimeout 1s then setTimeout 2s then setTimeout 0ms then sync 'Dashboard updated'. What is the output order by line number?",
+        "options": "1 2 3 4 5|1 5 4 2 3|1 4 2 3 5|1 5 2 3 4",
+        "answer": "1 5 4 2 3",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Slow sync delays async",
+        "type": "multiple choice",
+        "question": "If a synchronous loop takes 3 seconds to complete and a setTimeout(fn, 100) was set before it what happens to fn?",
+        "options": "fn runs after 100ms as scheduled|fn runs immediately because the stack is full|fn runs after the loop completes — the delay is a minimum not a guarantee|fn is cancelled",
+        "answer": "fn runs after the loop completes — the delay is a minimum not a guarantee",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "Callback queue role",
+        "type": "multiple choice",
+        "question": "What is the callback queue in the event loop model?",
+        "options": "The place where functions are defined|A holding area where completed async callbacks wait until the call stack is empty|The memory where variables are stored|The list of all scheduled intervals",
+        "answer": "A holding area where completed async callbacks wait until the call stack is empty",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "synchronous vs asynchronous execution",
+        "description": "JavaScript threads",
+        "type": "multiple choice",
+        "question": "How many JavaScript threads does a typical browser page use for running your code?",
+        "options": "As many as needed|One — JavaScript is single-threaded for your code|Two — one for sync and one for async|It depends on the device CPU count",
+        "answer": "One — JavaScript is single-threaded for your code",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "setTimeout syntax",
+        "type": "multiple choice",
+        "question": "What are the two arguments to setTimeout?",
+        "options": "A string and a number|A callback function and a delay in milliseconds|A promise and a timeout|A function name and a function body",
+        "answer": "A callback function and a delay in milliseconds",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "setTimeout runs once",
+        "type": "True or False",
+        "question": "setTimeout runs its callback exactly once.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "clearTimeout",
+        "type": "multiple choice",
+        "question": "What do you need in order to cancel a setTimeout before it fires?",
+        "options": "Call cancel() on the callback|Store the return value of setTimeout and pass it to clearTimeout|Set the delay to 0|Use delete setTimeout",
+        "answer": "Store the return value of setTimeout and pass it to clearTimeout",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "setInterval repeats",
+        "type": "multiple choice",
+        "question": "What is the key difference between setInterval and setTimeout?",
+        "options": "setInterval only accepts arrow functions|setInterval repeats the callback at every interval until stopped whereas setTimeout fires once|setTimeout is faster|setInterval is synchronous",
+        "answer": "setInterval repeats the callback at every interval until stopped whereas setTimeout fires once",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "clearInterval required",
+        "type": "multiple choice",
+        "question": "What happens if you never call clearInterval?",
+        "options": "JavaScript throws an error after 10 iterations|The interval runs indefinitely until the page is closed|It stops automatically after 60 seconds|The browser slows it down over time",
+        "answer": "The interval runs indefinitely until the page is closed",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "Delay is minimum",
+        "type": "multiple choice",
+        "question": "Is the delay in setTimeout a guaranteed exact time or a minimum time?",
+        "options": "Exact — the callback fires precisely at that ms|Minimum — the callback fires at least that many ms later but may be delayed if the stack is busy|Approximate — within 10ms|Maximum — it fires before that time",
+        "answer": "Minimum — the callback fires at least that many ms later but may be delayed if the stack is busy",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "Store interval ID",
+        "type": "True or False",
+        "question": "You must store the return value of setInterval in a variable to be able to stop it later.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "Multiple independent timeouts",
+        "type": "multiple choice",
+        "question": "If you call setTimeout three times with delays of 500ms 800ms and 1200ms do they wait for each other?",
+        "options": "Yes each one waits for the previous to finish|No they are all scheduled independently and fire at their own delays|Yes the second waits 500ms after the first|Only if they share the same callback",
+        "answer": "No they are all scheduled independently and fire at their own delays",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "setTimeout return value",
+        "type": "multiple choice",
+        "question": "What does setTimeout return?",
+        "options": "The callback function|A Promise|A numeric ID that can be used with clearTimeout|undefined",
+        "answer": "A numeric ID that can be used with clearTimeout",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "Stacking intervals bug",
+        "type": "multiple choice",
+        "question": "If setInterval is called inside a click handler and the button is clicked 3 times without clearing how many intervals are running?",
+        "options": "1 — the new one replaces the old|2 — only the last two|3 — each click creates a new independent interval|0 — they cancel each other",
+        "answer": "3 — each click creates a new independent interval",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "Fix stacking intervals",
+        "type": "multiple choice",
+        "question": "What is the correct way to prevent stacking intervals when setInterval is inside a click handler?",
+        "options": "Use setTimeout instead|Store the interval ID outside the handler and call clearInterval before starting a new one|Increase the interval delay|Use a global variable for the callback",
+        "answer": "Store the interval ID outside the handler and call clearInterval before starting a new one",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "Demo countdown",
+        "type": "multiple choice",
+        "question": "In the demo the countdown uses setInterval starting at 5 and ticking every 1000ms. How many ticks occur before clearInterval is called?",
+        "options": "4|5|6|10",
+        "answer": "6",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "Demo countdown message",
+        "type": "multiple choice",
+        "question": "In the demo after the countdown reaches 0 and clearInterval is called what message is logged?",
+        "options": "Countdown complete|Timer stopped|Class is now LIVE!|Session ended",
+        "answer": "Class is now LIVE!",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "clearTimeout after fired",
+        "type": "multiple choice",
+        "question": "What happens if you call clearTimeout with a timeout ID that has already fired?",
+        "options": "An error is thrown|The callback runs again|Nothing happens — it is safe to call clearTimeout on an already-fired timeout|The timer resets",
+        "answer": "Nothing happens — it is safe to call clearTimeout on an already-fired timeout",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "ms to seconds",
+        "type": "multiple choice",
+        "question": "How many milliseconds do you pass to setTimeout for a 3-second delay?",
+        "options": "3|30|300|3000",
+        "answer": "3000",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "setInterval use case",
+        "type": "multiple choice",
+        "question": "Which task is best suited for setInterval?",
+        "options": "Showing a welcome message once on page load|Sending a one-time confirmation email|Updating a live clock display every second|Running a function when a button is clicked",
+        "answer": "Updating a live clock display every second",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "settimeout and setinterval",
+        "description": "setTimeout use case",
+        "type": "multiple choice",
+        "question": "Which task is best suited for setTimeout?",
+        "options": "A live countdown that ticks every second|Auto-hiding a notification banner 3 seconds after it appears|Polling an API for updates every 30 seconds|Repeating an animation indefinitely",
+        "answer": "Auto-hiding a notification banner 3 seconds after it appears",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Callback definition",
+        "type": "multiple choice",
+        "question": "What is a callback?",
+        "options": "A function that calls itself|A function passed as an argument to another function to be called later|A return value|A type of loop",
+        "answer": "A function passed as an argument to another function to be called later",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Callbacks already used",
+        "type": "multiple choice",
+        "question": "Which of these uses a callback?",
+        "options": "const x = 5|let name = 'Amara'|button.addEventListener('click', function() {})|document.querySelector('#btn')",
+        "answer": "button.addEventListener('click', function() {})",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "forEach is a callback",
+        "type": "True or False",
+        "question": "The function passed to forEach is a callback.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Who calls the callback",
+        "type": "multiple choice",
+        "question": "When you pass a callback to setTimeout who decides when to call it?",
+        "options": "You call it manually|The setTimeout function calls it after the delay|JavaScript calls it immediately|The event loop calls it synchronously",
+        "answer": "The setTimeout function calls it after the delay",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Sequential async callbacks",
+        "type": "multiple choice",
+        "question": "How do you make one async step run only AFTER a previous async step completes using callbacks?",
+        "options": "Put them on separate lines|Nest the second step inside the callback of the first|Use a for loop|Use two setTimeouts with the same delay",
+        "answer": "Nest the second step inside the callback of the first",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Callback hell definition",
+        "type": "multiple choice",
+        "question": "What is callback hell?",
+        "options": "A runtime error from too many callbacks|Deeply nested callbacks for sequential async steps creating a hard-to-read pyramid of indentation|A loop that runs too long|A callback that never fires",
+        "answer": "Deeply nested callbacks for sequential async steps creating a hard-to-read pyramid of indentation",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Error handling in nested callbacks",
+        "type": "multiple choice",
+        "question": "What is a problem with error handling in deeply nested callbacks?",
+        "options": "Errors are always swallowed|Each nesting level needs its own error handling making it repetitive and easy to miss|Callbacks cannot throw errors|You must use try/catch at every level",
+        "answer": "Each nesting level needs its own error handling making it repetitive and easy to miss",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Adding steps to nested code",
+        "type": "multiple choice",
+        "question": "What happens to code readability when you add a 6th sequential async step to a 5-level nested callback chain?",
+        "options": "Readability improves because the code is now complete|The code must indent one level deeper making the pyramid grow|JavaScript automatically flattens it|The previous callbacks run in parallel",
+        "answer": "The code must indent one level deeper making the pyramid grow",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Callbacks not always bad",
+        "type": "True or False",
+        "question": "Callbacks are only a problem when multiple async steps must run sequentially — for single async tasks like addEventListener they work fine.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Solution to callback hell",
+        "type": "multiple choice",
+        "question": "What JavaScript feature was introduced to solve callback hell by enabling flat sequential-looking async code?",
+        "options": "Classes|Arrow functions|Promises and async/await|Template literals",
+        "answer": "Promises and async/await",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "forEach async difference",
+        "type": "multiple choice",
+        "question": "When forEach calls your callback on each array element is this an asynchronous operation?",
+        "options": "Yes forEach is async|No forEach is synchronous — it calls the callback immediately for each element|It depends on the array size|Only for arrays with more than 100 items",
+        "answer": "No forEach is synchronous — it calls the callback immediately for each element",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Demo pipeline steps",
+        "type": "multiple choice",
+        "question": "In the demo the enrolment pipeline has 4 nested steps. What is the correct sequential order?",
+        "options": "sendReceipt → confirmEnrolment → processPayment → checkSlots|checkSlots → processPayment → confirmEnrolment → sendReceipt|processPayment → checkSlots → sendReceipt → confirmEnrolment|confirmEnrolment → checkSlots → processPayment → sendReceipt",
+        "answer": "checkSlots → processPayment → confirmEnrolment → sendReceipt",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Demo payment amount",
+        "type": "multiple choice",
+        "question": "In the demo processPayment is called with what amount?",
+        "options": "10000|12000|15000|20000",
+        "answer": "15000",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Demo pipeline nesting depth",
+        "type": "multiple choice",
+        "question": "In the demo the 4-step sequential callback pipeline is how many levels of indentation deep at its innermost point?",
+        "options": "2|3|4|5",
+        "answer": "4",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Demo callback hell visualised",
+        "type": "multiple choice",
+        "question": "In the demo Part 5 shows a pyramid diagram of 5 nested steps. What does this visualise?",
+        "options": "How fast callbacks run|The memory used by callbacks|The callback hell problem — readability decreasing as sequential async steps grow|How to avoid callbacks",
+        "answer": "The callback hell problem — readability decreasing as sequential async steps grow",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Callback results dependency",
+        "type": "multiple choice",
+        "question": "Why must step 2 be nested inside step 1's callback when step 2 needs step 1's result?",
+        "options": "Because JavaScript requires it syntactically|Because step 1 is async — by the time the next line runs step 1 has not finished yet|Because callbacks always run in pairs|Because you cannot call two functions in sequence",
+        "answer": "Because step 1 is async — by the time the next line runs step 1 has not finished yet",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "callbacks and their limitations",
+        "description": "Pyramid of doom synonym",
+        "type": "multiple choice",
+        "question": "Callback hell is also called the pyramid of doom because of what visual characteristic?",
+        "options": "The code runs slowly|Each nested callback adds another level of indentation pushing code rightward like a pyramid|The code uses too much memory|The callbacks form a triangle shape in the call stack",
+        "answer": "Each nested callback adds another level of indentation pushing code rightward like a pyramid",
+        "difficulty": "intermediate"
+    }
+]
