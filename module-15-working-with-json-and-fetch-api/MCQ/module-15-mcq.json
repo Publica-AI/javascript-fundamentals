@@ -1,0 +1,452 @@
+[
+    {
+        "title": "json format parse and stringify",
+        "description": "JSON definition",
+        "type": "multiple choice",
+        "question": "What is JSON?",
+        "options": "A JavaScript function|A text-based format for storing and transmitting structured data|A type of database|A browser API",
+        "answer": "A text-based format for storing and transmitting structured data",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "JSON is a string",
+        "type": "True or False",
+        "question": "JSON is a string — not a JavaScript object — even though it looks similar to an object literal.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "JSON keys must be double-quoted",
+        "type": "True or False",
+        "question": "In JSON all keys must be double-quoted strings.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "JSON.parse purpose",
+        "type": "multiple choice",
+        "question": "What does JSON.parse() do?",
+        "options": "Converts an object to a string|Converts a JSON string into a JavaScript value (object array etc.)|Fetches data from a URL|Validates JSON syntax",
+        "answer": "Converts a JSON string into a JavaScript value (object array etc.)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "JSON.stringify purpose",
+        "type": "multiple choice",
+        "question": "What does JSON.stringify() do?",
+        "options": "Converts a JavaScript value into a JSON string|Parses a JSON string|Sends data to a server|Minifies code",
+        "answer": "Converts a JavaScript value into a JSON string",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "typeof after stringify",
+        "type": "multiple choice",
+        "question": "What is typeof JSON.stringify({name: 'Amara'})?",
+        "options": "object|array|string|json",
+        "answer": "string",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "typeof after parse",
+        "type": "multiple choice",
+        "question": "After JSON.parse(jsonString) where jsonString holds a valid JSON object what is the typeof the result?",
+        "options": "string|json|object|array",
+        "answer": "object",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Accessing property on JSON string",
+        "type": "multiple choice",
+        "question": "Given const jsonString = '{\"name\":\"Amara\"}' what does jsonString.name return?",
+        "options": "Amara|undefined — it is a string not an object|null|An error",
+        "answer": "undefined — it is a string not an object",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "JSON indentation argument",
+        "type": "multiple choice",
+        "question": "What does the third argument in JSON.stringify(obj, null, 2) control?",
+        "options": "The number of properties to include|The indentation spaces for readable formatted output|The depth of nesting|The encoding type",
+        "answer": "The indentation spaces for readable formatted output",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Functions in JSON",
+        "type": "True or False",
+        "question": "Functions and undefined values are silently removed when you call JSON.stringify() on an object that contains them.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Invalid JSON throws",
+        "type": "multiple choice",
+        "question": "What happens if you call JSON.parse() on an invalid JSON string (e.g. one with single-quoted keys)?",
+        "options": "It returns null|It returns an empty object|It throws a SyntaxError|It silently returns undefined",
+        "answer": "It throws a SyntaxError",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Store object without stringify",
+        "type": "multiple choice",
+        "question": "What happens if you do localStorage.setItem('data' myObject) without JSON.stringify?",
+        "options": "The object is stored correctly|[object Object] is stored instead of the actual data|An error is thrown|The object is converted automatically",
+        "answer": "[object Object] is stored instead of the actual data",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "JSON allowed value types",
+        "type": "multiple choice",
+        "question": "Which of these is a valid JSON value type?",
+        "options": "function|undefined|null|Symbol",
+        "answer": "null",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Demo stringify typeof",
+        "type": "multiple choice",
+        "question": "In the demo after JSON.stringify(original) is called what does typeof jsonStr return?",
+        "options": "object|json|function|string",
+        "answer": "string",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Demo parsed.courses[0]",
+        "type": "multiple choice",
+        "question": "In the demo the original object has courses: ['JavaScript Fundamentals' 'HTML & CSS Basics']. After stringify and parse what is parsed.courses[0]?",
+        "options": "HTML & CSS Basics|undefined|JavaScript Fundamentals|An error",
+        "answer": "JavaScript Fundamentals",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Parse direction",
+        "type": "multiple choice",
+        "question": "Which direction does JSON.parse go?",
+        "options": "JavaScript object → JSON string|JSON string → JavaScript object|URL → response|Response → data",
+        "answer": "JSON string → JavaScript object",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "json format parse and stringify",
+        "description": "Stringify use cases",
+        "type": "multiple choice",
+        "question": "When would you use JSON.stringify?",
+        "options": "To access a property on an object|To send data to an API or store it in localStorage|To fetch data from a URL|To convert a number to a string",
+        "answer": "To send data to an API or store it in localStorage",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "fetch returns a Promise",
+        "type": "multiple choice",
+        "question": "What does fetch() return?",
+        "options": "The response data directly|A Promise that resolves with a Response object|An array of data|A callback function",
+        "answer": "A Promise that resolves with a Response object",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "fetch is async",
+        "type": "True or False",
+        "question": "fetch() is asynchronous — code written after the fetch call runs before the data arrives.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "response.json()",
+        "type": "multiple choice",
+        "question": "What does response.json() do?",
+        "options": "Converts the response to a plain string|Returns a Promise that parses the response body as JSON|Validates the JSON format|Returns the raw JSON text directly",
+        "answer": "Returns a Promise that parses the response body as JSON",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Two .then() calls",
+        "type": "multiple choice",
+        "question": "Why does a typical fetch chain use two .then() calls?",
+        "options": "For performance|The first .then() receives the Response object and the second receives the parsed JSON data|To add error handling|Because fetch requires exactly two",
+        "answer": "The first .then() receives the Response object and the second receives the parsed JSON data",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "fetch runs after sync",
+        "type": "multiple choice",
+        "question": "Given: fetch(url).then(...); console.log('After fetch'); — what logs first?",
+        "options": "The fetched data|'After fetch' because fetch is async and doesn't block|They log at the same time|It depends on internet speed",
+        "answer": "'After fetch' because fetch is async and doesn't block",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Default HTTP method",
+        "type": "multiple choice",
+        "question": "What HTTP method does fetch(url) use by default when no options are provided?",
+        "options": "POST|PUT|GET|DELETE",
+        "answer": "GET",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Array from API",
+        "type": "multiple choice",
+        "question": "After fetching an API that returns a JSON array and calling response.json() what can you do with the result?",
+        "options": "Only iterate it with a for loop|Use any array method: forEach map filter reduce|Only log it|Only display it with innerHTML",
+        "answer": "Use any array method: forEach map filter reduce",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Response object",
+        "type": "multiple choice",
+        "question": "What is the Response object that the first .then() receives?",
+        "options": "The parsed JSON data|The raw response including headers status code and methods for reading the body|A string of the response|An array of data",
+        "answer": "The raw response including headers status code and methods for reading the body",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Demo users loaded",
+        "type": "multiple choice",
+        "question": "In the demo clicking Load Users fetches from jsonplaceholder.typicode.com/users. How many users does the API return?",
+        "options": "5|8|10|20",
+        "answer": "10",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Demo posts shown",
+        "type": "multiple choice",
+        "question": "In the demo clicking Load Posts fetches from /posts. How many of the 100 posts are displayed?",
+        "options": "5|8|10|100",
+        "answer": "8",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Demo render pattern",
+        "type": "multiple choice",
+        "question": "In the demo the fetched users are rendered to the page using which pattern?",
+        "options": "A for loop that appends elements one by one|map to create HTML strings then join and set innerHTML|forEach with createElement|A document.write call",
+        "answer": "map to create HTML strings then join and set innerHTML",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "fetch availability",
+        "type": "multiple choice",
+        "question": "Where is fetch() available without any import?",
+        "options": "Only in browsers|Only in Node.js|In all modern browsers and Node 18+|Only in React applications",
+        "answer": "In all modern browsers and Node 18+",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Combining modules",
+        "type": "multiple choice",
+        "question": "Fetching an API and rendering the data uses skills from which previous modules?",
+        "options": "Only Module 15|Modules 10 (DOM) 12 (array HOFs) and 15 (fetch)|Only Modules 14 and 15|Only Module 12",
+        "answer": "Modules 10 (DOM) 12 (array HOFs) and 15 (fetch)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Loading state purpose",
+        "type": "True or False",
+        "question": "Showing a 'Loading...' message before the fetch call starts is a best practice because the user sees feedback while data is being retrieved.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "response.json returns Promise",
+        "type": "True or False",
+        "question": "response.json() returns a Promise — not the data directly — because reading the response body is asynchronous.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "fetching data with the fetch api",
+        "description": "Single vs list endpoint",
+        "type": "multiple choice",
+        "question": "In a REST API what is the typical difference between /users/1 and /users?",
+        "options": "/users/1 is faster|/users/1 returns one user and /users returns all users|/users requires authentication|They return the same data",
+        "answer": "/users/1 returns one user and /users returns all users",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "response.ok definition",
+        "type": "multiple choice",
+        "question": "What does response.ok mean?",
+        "options": "The JSON was parsed successfully|The HTTP status code is in the 200–299 range|The server is online|The request was sent without errors",
+        "answer": "The HTTP status code is in the 200–299 range",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "fetch does not reject on 404",
+        "type": "True or False",
+        "question": "fetch() automatically rejects (triggers .catch()) when the server returns a 404 status.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "404 without check",
+        "type": "multiple choice",
+        "question": "If you fetch a URL that returns 404 and you do not check response.ok what happens?",
+        "options": ".catch() is triggered automatically|The Promise rejects|The first .then() runs as if the request succeeded|JavaScript throws a SyntaxError",
+        "answer": "The first .then() runs as if the request succeeded",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Network vs HTTP error",
+        "type": "multiple choice",
+        "question": "What type of error causes fetch() to automatically reject (trigger .catch()) without needing a response.ok check?",
+        "options": "A 404 response|A 500 response|A network failure such as no internet or unresolvable domain|A response with wrong JSON format",
+        "answer": "A network failure such as no internet or unresolvable domain",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Throw in first then",
+        "type": "multiple choice",
+        "question": "If you throw an error inside a .then() callback what happens to the Promise chain?",
+        "options": "The error is ignored|The next .then() runs with the error as its argument|The error skips all remaining .then() calls and is caught by .catch()|The program crashes",
+        "answer": "The error skips all remaining .then() calls and is caught by .catch()",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Safe fetch pattern",
+        "type": "multiple choice",
+        "question": "What is the purpose of writing a safeFetch helper that wraps fetch with a response.ok check?",
+        "options": "To make fetch faster|To write the error check once and reuse it everywhere — ensuring consistent error handling|To cache API responses|To avoid needing .then()",
+        "answer": "To write the error check once and reuse it everywhere — ensuring consistent error handling",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "response.ok false range",
+        "type": "multiple choice",
+        "question": "For which HTTP status codes is response.ok false?",
+        "options": "All status codes|Only 404|Anything outside the 200–299 range (e.g. 400 401 404 500)|Only 500 and above",
+        "answer": "Anything outside the 200–299 range (e.g. 400 401 404 500)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "catch handles both errors",
+        "type": "True or False",
+        "question": "When you throw an error inside a .then() for a bad response.ok that error is caught by the same .catch() that handles network failures.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Three fetch states",
+        "type": "multiple choice",
+        "question": "What are the three states every fetch-based UI should handle?",
+        "options": "Start middle end|Request response callback|Loading success error|Parse fetch render",
+        "answer": "Loading success error",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Demo 404 trigger",
+        "type": "multiple choice",
+        "question": "In the demo clicking Trigger 404 Error fetches which URL?",
+        "options": "jsonplaceholder.typicode.com/users/0|jsonplaceholder.typicode.com/users/9999|jsonplaceholder.typicode.com/notfound|An invalid domain name",
+        "answer": "jsonplaceholder.typicode.com/users/9999",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Demo 404 caught by",
+        "type": "multiple choice",
+        "question": "In the demo when the 404 is triggered what catches and displays the error to the user?",
+        "options": "A try/catch block|The .catch() handler which updates the status element with the error message|An alert popup|The browser's default error page",
+        "answer": "The .catch() handler which updates the status element with the error message",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Demo safeFetch helper",
+        "type": "multiple choice",
+        "question": "In the demo all fetch calls go through the safeFetch helper function. What does this helper do?",
+        "options": "Adds a loading delay|Caches responses|Wraps fetch with a response.ok check and throws on HTTP errors so .catch handles everything|Converts data to CSV",
+        "answer": "Wraps fetch with a response.ok check and throws on HTTP errors so .catch handles everything",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Network error message",
+        "type": "multiple choice",
+        "question": "When you are offline and call fetch() what error message typically appears in .catch()?",
+        "options": "HTTP error: 503|Response not ok|Failed to fetch|JSON parse error",
+        "answer": "Failed to fetch",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Always check response.ok",
+        "type": "True or False",
+        "question": "You should always check response.ok before calling response.json() because a 404 or 500 response would otherwise be processed as if it were successful data.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "Error message quality",
+        "type": "multiple choice",
+        "question": "Why is it better to display 'Something went wrong. Please try again.' to users instead of 'TypeError: Failed to fetch'?",
+        "options": "The first is shorter|Technical error messages mean nothing to non-developers — user-facing messages should be clear and actionable|The browser requires it|Both messages are equally good",
+        "answer": "Technical error messages mean nothing to non-developers — user-facing messages should be clear and actionable",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "response.ok is not a method",
+        "type": "multiple choice",
+        "question": "How do you read the response.ok value?",
+        "options": "response.ok()|response.ok — it is a boolean property not a method|response.getOk()|response.status.ok",
+        "answer": "response.ok — it is a boolean property not a method",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "handling errors and checking response ok",
+        "description": "404 is a successful fetch",
+        "type": "multiple choice",
+        "question": "From fetch()'s perspective why is a 404 response considered a success?",
+        "options": "Because the data was returned|Because the server responded — fetch only rejects when no response is received at all|Because 404 is a valid JSON status|Because the browser ignores error codes",
+        "answer": "Because the server responded — fetch only rejects when no response is received at all",
+        "difficulty": "Advanced"
+    }
+]

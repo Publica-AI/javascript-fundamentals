@@ -1,0 +1,185 @@
+{
+  "module": "15",
+  "title": "Working with JSON and Fetch API — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build an interactive data-fetching application that loads, displays, and handles errors with real API data. Your solution must use: JSON.parse and JSON.stringify, fetch() with .then() and .catch(), a response.ok check that throws on error, rendering fetched data to the DOM, and a loading/error state indicator. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Andela Developer Directory",
+        "scenario": "Build a developer directory that fetches user profiles from a public API, displays them as cards, handles errors gracefully, and demonstrates JSON round-trips.",
+        "requirements": [
+          "Use fetch to load users from 'https://jsonplaceholder.typicode.com/users' with .then() chaining",
+          "Check response.ok before parsing; if not ok, throw an Error with the status code",
+          "Render each user as a card in the DOM showing name, email, and company name (use map + innerHTML or createElement)",
+          "Add a 'Load Users' button with a click handler that triggers the fetch; show a 'Loading...' state while fetching",
+          "Add a 'Trigger Error' button that fetches a non-existent URL; display the error message in a red error box using .catch()",
+          "Demonstrate JSON.stringify by converting the first user object to a formatted JSON string and displaying it in a <pre> element",
+          "Demonstrate JSON.parse by parsing a hardcoded JSON string into an object and logging its properties"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Andela Directory</title>\n  <style>\n    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }\n    .card { border: 1px solid #ddd; padding: 12px; margin: 8px 0; border-radius: 6px; }\n    .error { background: #f8d7da; color: #721c24; padding: 12px; border-radius: 6px; margin: 10px 0; }\n    .loading { color: #666; font-style: italic; }\n    .json-display { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; }\n    button { padding: 8px 16px; margin: 4px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Andela Developer Directory</h1>\n  <button id=\"load-btn\">Load Users</button>\n  <button id=\"error-btn\">Trigger Error</button>\n  <button id=\"json-btn\">Show JSON Demo</button>\n  <div id=\"status\"></div>\n  <div id=\"user-list\"></div>\n  <pre id=\"json-display\" class=\"json-display\" style=\"display:none;\"></pre>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Andela Developer Directory\n// Fetch, display, and handle errors with JSON and Fetch API\n\n// 1. Select DOM elements\n\n\n// 2. Load Users button — fetch users, check response.ok, render cards\n\n\n// 3. Show loading state while fetching\n\n\n// 4. Trigger Error button — fetch bad URL, catch and display error\n\n\n// 5. JSON Demo button — stringify first user, display in <pre>;\n//    also parse a hardcoded JSON string and log its properties\n\n\n// 6. Render function: take users array, build cards, set innerHTML\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Flutterwave Transaction Viewer",
+        "scenario": "Build a transaction viewer that fetches post data from a public API (simulating transactions), displays them, handles errors, and demonstrates JSON operations.",
+        "requirements": [
+          "Use fetch to load posts from 'https://jsonplaceholder.typicode.com/posts?_limit=8' with .then() chaining",
+          "Check response.ok before parsing; if not ok, throw an Error with the status code",
+          "Render each post as a transaction card in the DOM showing title and body (use map + innerHTML or createElement)",
+          "Add a 'Load Transactions' button with a click handler that triggers the fetch; show a 'Loading...' state while fetching",
+          "Add a 'Trigger Error' button that fetches a non-existent URL; display the error message in a red error box using .catch()",
+          "Demonstrate JSON.stringify by converting a transaction object to formatted JSON and displaying it in a <pre> element",
+          "Demonstrate JSON.parse by parsing a hardcoded JSON string representing a transaction and logging its properties"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Flutterwave Transactions</title>\n  <style>\n    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }\n    .card { border: 1px solid #ddd; padding: 12px; margin: 8px 0; border-radius: 6px; }\n    .card h3 { margin: 0 0 6px; }\n    .error { background: #f8d7da; color: #721c24; padding: 12px; border-radius: 6px; margin: 10px 0; }\n    .loading { color: #666; font-style: italic; }\n    .json-display { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; }\n    button { padding: 8px 16px; margin: 4px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Flutterwave Transaction Viewer</h1>\n  <button id=\"load-btn\">Load Transactions</button>\n  <button id=\"error-btn\">Trigger Error</button>\n  <button id=\"json-btn\">Show JSON Demo</button>\n  <div id=\"status\"></div>\n  <div id=\"txn-list\"></div>\n  <pre id=\"json-display\" class=\"json-display\" style=\"display:none;\"></pre>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Flutterwave Transaction Viewer\n// Fetch, display, and handle errors with JSON and Fetch API\n\n// 1. Select DOM elements\n\n\n// 2. Load Transactions button — fetch posts, check response.ok, render cards\n\n\n// 3. Show loading state while fetching\n\n\n// 4. Trigger Error button — fetch bad URL, catch and display error\n\n\n// 5. JSON Demo button — stringify a transaction object, display in <pre>;\n//    parse a hardcoded JSON string and log its properties\n\n\n// 6. Render function: take data array, build cards, set innerHTML\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "Cowrywise Investment Feed",
+        "scenario": "Build an investment feed that fetches data from a public API, displays investment-style cards, handles fetch errors, and demonstrates JSON serialization.",
+        "requirements": [
+          "Use fetch to load data from 'https://jsonplaceholder.typicode.com/posts?_limit=6' with .then() chaining",
+          "Check response.ok before parsing; if not ok, throw an Error with the status code",
+          "Render each item as an investment card in the DOM (use map + innerHTML or createElement)",
+          "Add a 'Load Feed' button with a click handler; show a 'Loading...' state while fetching",
+          "Add a 'Trigger Error' button that fetches an invalid endpoint; display the error in a styled error box using .catch()",
+          "Demonstrate JSON.stringify with indentation (2 spaces) by displaying the first item as formatted JSON",
+          "Demonstrate JSON.parse by converting a JSON string to an object and displaying its properties in the DOM"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Cowrywise Feed</title>\n  <style>\n    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }\n    .card { border: 1px solid #ddd; padding: 12px; margin: 8px 0; border-radius: 6px; }\n    .error { background: #f8d7da; color: #721c24; padding: 12px; border-radius: 6px; margin: 10px 0; }\n    .loading { color: #666; font-style: italic; }\n    .json-display { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; }\n    button { padding: 8px 16px; margin: 4px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Cowrywise Investment Feed</h1>\n  <button id=\"load-btn\">Load Feed</button>\n  <button id=\"error-btn\">Trigger Error</button>\n  <button id=\"json-btn\">JSON Demo</button>\n  <div id=\"status\"></div>\n  <div id=\"feed-list\"></div>\n  <pre id=\"json-display\" class=\"json-display\" style=\"display:none;\"></pre>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Cowrywise Investment Feed\n// Fetch, display, and handle errors with JSON and Fetch API\n\n// 1. Select DOM elements\n\n\n// 2. Load Feed button — fetch data, check response.ok, render cards\n\n\n// 3. Show loading state while fetching\n\n\n// 4. Trigger Error button — fetch invalid URL, catch and display error\n\n\n// 5. JSON Demo button — stringify with indentation, display in <pre>;\n//    parse JSON string, show properties in DOM\n\n\n// 6. Render function: take data array, build cards, set innerHTML\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Moniepoint Customer Lookup",
+        "scenario": "Build a customer lookup tool that fetches user data from a public API, displays profiles, handles lookup failures, and demonstrates JSON parse/stringify.",
+        "requirements": [
+          "Use fetch to load a single user from 'https://jsonplaceholder.typicode.com/users/1' with .then() chaining",
+          "Check response.ok; if not ok, throw an Error with the status",
+          "Render the user profile in the DOM showing name, email, phone, and company",
+          "Add a 'Lookup Customer' button that fetches the user; show 'Searching...' loading state",
+          "Add a 'Bad Lookup' button that fetches a non-existent user ID (/users/999); display the error using .catch()",
+          "Demonstrate JSON.stringify by displaying the fetched user as a formatted JSON string",
+          "Demonstrate JSON.parse by parsing a hardcoded customer JSON string and rendering it in the DOM"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Moniepoint Lookup</title>\n  <style>\n    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }\n    .profile { border: 1px solid #ddd; padding: 16px; border-radius: 8px; margin: 10px 0; }\n    .error { background: #f8d7da; color: #721c24; padding: 12px; border-radius: 6px; margin: 10px 0; }\n    .loading { color: #666; font-style: italic; }\n    .json-display { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; }\n    button { padding: 8px 16px; margin: 4px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Moniepoint Customer Lookup</h1>\n  <button id=\"lookup-btn\">Lookup Customer</button>\n  <button id=\"error-btn\">Bad Lookup</button>\n  <button id=\"json-btn\">JSON Demo</button>\n  <div id=\"status\"></div>\n  <div id=\"profile-area\"></div>\n  <pre id=\"json-display\" class=\"json-display\" style=\"display:none;\"></pre>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Moniepoint Customer Lookup\n// Fetch, display, and handle errors with JSON and Fetch API\n\n// 1. Select DOM elements\n\n\n// 2. Lookup button — fetch single user, check response.ok, render profile\n\n\n// 3. Show loading state while fetching\n\n\n// 4. Bad Lookup button — fetch non-existent user, catch and display error\n\n\n// 5. JSON Demo button — stringify fetched user, display in <pre>;\n//    parse hardcoded customer JSON string, render in DOM\n\n\n// 6. Render function: display user profile fields in the DOM\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Opay Merchant Activity Feed",
+        "scenario": "Build a merchant activity feed that fetches comment data from a public API, displays it as an activity log, handles errors, and demonstrates JSON operations.",
+        "requirements": [
+          "Use fetch to load comments from 'https://jsonplaceholder.typicode.com/comments?_limit=10' with .then() chaining",
+          "Check response.ok before parsing; if not ok, throw an Error with the status code",
+          "Render each comment as an activity entry in the DOM showing name, email, and body text",
+          "Add a 'Load Activity' button that triggers the fetch; show 'Loading activity...' state",
+          "Add a 'Trigger Error' button that fetches an invalid URL; display the error using .catch()",
+          "Demonstrate JSON.stringify by formatting the first comment as JSON and displaying it",
+          "Demonstrate JSON.parse by parsing a hardcoded JSON activity string and logging its fields"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Opay Activity Feed</title>\n  <style>\n    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }\n    .activity-item { border-bottom: 1px solid #eee; padding: 10px 0; }\n    .activity-item strong { color: #333; }\n    .error { background: #f8d7da; color: #721c24; padding: 12px; border-radius: 6px; margin: 10px 0; }\n    .loading { color: #666; font-style: italic; }\n    .json-display { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; }\n    button { padding: 8px 16px; margin: 4px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>Opay Merchant Activity Feed</h1>\n  <button id=\"load-btn\">Load Activity</button>\n  <button id=\"error-btn\">Trigger Error</button>\n  <button id=\"json-btn\">JSON Demo</button>\n  <div id=\"status\"></div>\n  <div id=\"activity-list\"></div>\n  <pre id=\"json-display\" class=\"json-display\" style=\"display:none;\"></pre>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Opay Merchant Activity Feed\n// Fetch, display, and handle errors with JSON and Fetch API\n\n// 1. Select DOM elements\n\n\n// 2. Load Activity button — fetch comments, check response.ok, render entries\n\n\n// 3. Show loading state while fetching\n\n\n// 4. Trigger Error button — fetch invalid URL, catch and display error\n\n\n// 5. JSON Demo button — stringify first comment, display in <pre>;\n//    parse hardcoded JSON string, log its fields\n\n\n// 6. Render function: take data array, build activity entries, set innerHTML\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "fetch_then",
+          "label": "fetch with .then() and .catch()",
+          "points": 30,
+          "descriptors": {
+            "full": "fetch used with proper .then() chain; response.ok checked and error thrown if false; .catch() handles both network errors and thrown errors; data parsed with response.json()",
+            "partial": "fetch used but response.ok not checked, or .catch() missing",
+            "none": "No fetch call or entirely broken fetch chain"
+          }
+        },
+        {
+          "id": "json_operations",
+          "label": "JSON.parse and JSON.stringify",
+          "points": 25,
+          "descriptors": {
+            "full": "JSON.stringify used with indentation to display formatted JSON; JSON.parse used to convert a string to an object; both operations demonstrated with correct output",
+            "partial": "One of parse/stringify used correctly, the other missing or incorrect",
+            "none": "No JSON.parse or JSON.stringify usage"
+          }
+        },
+        {
+          "id": "dom_rendering",
+          "label": "DOM Rendering and States",
+          "points": 30,
+          "descriptors": {
+            "full": "Fetched data rendered to the DOM as cards/entries; loading state shown during fetch; error state displayed in styled element; UI updates correctly for all states",
+            "partial": "Data rendered but loading or error state missing",
+            "none": "Data only logged to console; no DOM rendering"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used; event listeners attached correctly; render logic separated into a function; no var; code handles all three states (loading, success, error)",
+            "partial": "Minor issues — render logic not separated, or one state missing",
+            "none": "var used, no state handling, or fetch logic is broken"
+          }
+        }
+      ]
+    }
+  }
+}

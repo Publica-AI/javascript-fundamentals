@@ -1,0 +1,191 @@
+{
+  "module": "15",
+  "title": "Working with JSON and Fetch API",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the student object below, use JSON.stringify to convert it to a formatted JSON string (2-space indentation) and log it. Then parse the string back with JSON.parse and log the parsed object's name and score.",
+            "starter": "const student = {\n  name: 'Amara Obi',\n  score: 88,\n  course: 'JavaScript',\n  enrolled: true\n};\n\n// 1. Stringify with 2-space indentation, log the JSON string\n// 2. Parse it back, log parsed.name and parsed.score\n",
+            "solution": "const student = {\n  name: 'Amara Obi',\n  score: 88,\n  course: 'JavaScript',\n  enrolled: true\n};\n\nconst jsonString = JSON.stringify(student, null, 2);\nconsole.log(jsonString);\n\nconst parsed = JSON.parse(jsonString);\nconsole.log(parsed.name);\nconsole.log(parsed.score);",
+            "test_cases": [
+              { "expected_output": "Amara Obi" },
+              { "expected_output": "88" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a fetch call to 'https://jsonplaceholder.typicode.com/users/1'. Chain .then() to check response.ok (throw an error if false), parse the JSON, and log the user's name and email. Add .catch() to log any error message.",
+            "starter": "// Fetch a single user\n// Check response.ok — throw if false\n// Parse JSON and log name and email\n// .catch() — log error message\n",
+            "solution": "fetch('https://jsonplaceholder.typicode.com/users/1')\n  .then(response => {\n    if (!response.ok) {\n      throw new Error('HTTP error: ' + response.status);\n    }\n    return response.json();\n  })\n  .then(user => {\n    console.log(user.name);\n    console.log(user.email);\n  })\n  .catch(error => {\n    console.log('Error: ' + error.message);\n  });",
+            "test_cases": [
+              { "expected_output": "Leanne Graham" },
+              { "expected_output": "Sincere@april.biz" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why must you check `response.ok` after a fetch call? What types of errors does fetch's .catch() handle vs what response.ok catches?",
+            "sample_answer": "fetch only rejects (triggers .catch()) for network failures — when the request can't reach the server at all (no internet, DNS failure, CORS block). It does NOT reject for HTTP error status codes like 404 or 500 — those are still successful HTTP responses from fetch's perspective. `response.ok` is true only when the status is 200–299. Checking it catches server-side errors: 404 Not Found, 403 Forbidden, 500 Internal Server Error. Without the check, a 404 response would pass silently — you'd try to use the error body as if it were valid data. The pattern: use response.ok to catch HTTP errors, use .catch() to catch network errors."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Parse the following JSON string into a JavaScript object. Then access and log: the student's name, the number of modules (array length), and the second module's title.",
+            "starter": "const jsonString = '{\"name\":\"Chidi Nweke\",\"score\":72,\"modules\":[{\"id\":1,\"title\":\"Intro to JS\"},{\"id\":2,\"title\":\"Variables\"},{\"id\":3,\"title\":\"Control Flow\"}]}';\n\n// Parse the JSON string\n// Log: name, modules count, second module title\n",
+            "solution": "const jsonString = '{\"name\":\"Chidi Nweke\",\"score\":72,\"modules\":[{\"id\":1,\"title\":\"Intro to JS\"},{\"id\":2,\"title\":\"Variables\"},{\"id\":3,\"title\":\"Control Flow\"}]}';\n\nconst data = JSON.parse(jsonString);\nconsole.log(data.name);\nconsole.log(data.modules.length);\nconsole.log(data.modules[1].title);",
+            "test_cases": [
+              { "expected_output": "Chidi Nweke" },
+              { "expected_output": "3" },
+              { "expected_output": "Variables" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Fetch posts from 'https://jsonplaceholder.typicode.com/posts?_limit=5'. After parsing the response, use .filter() to keep only posts with an id <= 3, then .map() to create strings 'Post N: title'. Log each result. Handle errors with .catch().",
+            "starter": "// Fetch 5 posts\n// Filter: keep only id <= 3\n// Map: create 'Post N: title' strings\n// Log each\n// Handle errors\n",
+            "solution": "fetch('https://jsonplaceholder.typicode.com/posts?_limit=5')\n  .then(response => {\n    if (!response.ok) throw new Error('HTTP error: ' + response.status);\n    return response.json();\n  })\n  .then(posts => {\n    posts\n      .filter(p => p.id <= 3)\n      .map(p => 'Post ' + p.id + ': ' + p.title)\n      .forEach(s => console.log(s));\n  })\n  .catch(error => console.log('Error: ' + error.message));",
+            "test_cases": [
+              { "expected_output": "Post 1:" },
+              { "expected_output": "Post 2:" },
+              { "expected_output": "Post 3:" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `JSON.stringify()` and `JSON.parse()`? When would you use each in a web application?",
+            "sample_answer": "`JSON.stringify(obj)` converts a JavaScript object/array into a JSON string. `JSON.parse(str)` converts a JSON string back into a JavaScript object/array. Use stringify when: (1) saving data to localStorage (which only stores strings), (2) sending data in an HTTP request body, (3) displaying raw data for debugging. Use parse when: (1) reading data from localStorage back into an object, (2) receiving a JSON response body (though response.json() does this for you), (3) processing a JSON string from any source. They're inverse operations: parse(stringify(obj)) gives you back an equivalent object."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `safeFetch(url)` that wraps fetch with a response.ok check. If response is not ok, throw an Error with 'Request failed: ' + status. If ok, return the parsed JSON. Use it to fetch 'https://jsonplaceholder.typicode.com/todos/1' and log the todo's title. Include .catch().",
+            "starter": "// Function safeFetch(url)\n// Check response.ok, throw if false, return parsed JSON\n\n// Use safeFetch to get todo 1, log title\n// .catch() for errors\n",
+            "solution": "function safeFetch(url) {\n  return fetch(url)\n    .then(response => {\n      if (!response.ok) {\n        throw new Error('Request failed: ' + response.status);\n      }\n      return response.json();\n    });\n}\n\nsafeFetch('https://jsonplaceholder.typicode.com/todos/1')\n  .then(todo => console.log(todo.title))\n  .catch(error => console.log(error.message));",
+            "test_cases": [
+              { "expected_output": "delectus aut autem" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write code that demonstrates a complete JSON round-trip: (1) start with an array of 3 student objects, (2) stringify the array, (3) log the type of the stringified result, (4) parse it back, (5) log the type of the parsed result, (6) log the first student's name from the parsed array.",
+            "starter": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo', score: 72 },\n  { name: 'Chidi', score: 55 }\n];\n\n// 1. Stringify the array\n// 2. Log typeof the string\n// 3. Parse it back\n// 4. Log typeof the parsed result\n// 5. Log first student's name from parsed\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo', score: 72 },\n  { name: 'Chidi', score: 55 }\n];\n\nconst jsonStr = JSON.stringify(students);\nconsole.log(typeof jsonStr);\n\nconst parsed = JSON.parse(jsonStr);\nconsole.log(typeof parsed);\nconsole.log(parsed[0].name);",
+            "test_cases": [
+              { "expected_output": "string" },
+              { "expected_output": "object" },
+              { "expected_output": "Amara" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the purpose of the second and third arguments to `JSON.stringify(obj, replacer, space)`? Give an example of when you'd use the space argument.",
+            "sample_answer": "The second argument (replacer) is a function or array that filters which properties are included in the output. As a function, it receives each key-value pair and returns the value to include (or undefined to exclude). As an array, it lists which property names to keep. The third argument (space) controls indentation for readability. A number (e.g., 2) adds that many spaces per indentation level; a string (e.g., '\\t') uses that string. Example: `JSON.stringify(user, null, 2)` produces a human-readable multi-line string — you'd use this when displaying JSON to a developer (in a <pre> tag), logging for debugging, or writing config files. Without space, the output is a single compact line — harder to read but smaller in size."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Fetch users from 'https://jsonplaceholder.typicode.com/users'. After parsing, use .map() to create an array of objects with only `name` and `city` (from address.city). Log the resulting array.",
+            "starter": "// Fetch all users\n// Map to extract { name, city } from each\n// Log the result\n",
+            "solution": "fetch('https://jsonplaceholder.typicode.com/users')\n  .then(response => {\n    if (!response.ok) throw new Error('HTTP error: ' + response.status);\n    return response.json();\n  })\n  .then(users => {\n    const simplified = users.map(u => ({ name: u.name, city: u.address.city }));\n    console.log(simplified);\n  })\n  .catch(error => console.log(error.message));",
+            "test_cases": [
+              { "expected_output": "Leanne Graham" },
+              { "expected_output": "Gwenborough" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write code that fetches from a URL that will 404 ('https://jsonplaceholder.typicode.com/users/9999'). Check response.ok — if false, throw an error with the status. In .catch(), log 'Failed: ' + the error message. Also log 'Fetch attempted' before the fetch starts (sync).",
+            "starter": "// Log 'Fetch attempted' (sync)\n// Fetch the 404 URL\n// Check response.ok — throw if false\n// .catch() — log 'Failed: ' + message\n",
+            "solution": "console.log('Fetch attempted');\n\nfetch('https://jsonplaceholder.typicode.com/users/9999')\n  .then(response => {\n    if (!response.ok) {\n      throw new Error('HTTP error: ' + response.status);\n    }\n    return response.json();\n  })\n  .then(data => console.log(data))\n  .catch(error => console.log('Failed: ' + error.message));",
+            "test_cases": [
+              { "expected_output": "Fetch attempted" },
+              { "expected_output": "Failed:" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What does `response.json()` do? Why does it return a Promise instead of returning the data directly?",
+            "sample_answer": "`response.json()` reads the response body stream and parses it as JSON, returning a Promise that resolves with the resulting JavaScript object. It returns a Promise because reading the body is asynchronous — the response headers arrive first, but the body data may still be streaming in from the network. The body could be large (megabytes), so reading it is a separate async operation that takes time. If it returned data directly, it would have to block until the entire body was received — which would freeze the browser. By returning a Promise, the body reading happens in the background and your code continues when the data is ready. This is why fetch requires two .then() calls: one for the response headers, one for the parsed body."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write code that stores an array of objects in a simulated 'storage' string (like localStorage). Stringify 3 student objects into a variable `stored`. Then parse it back and use .filter() to get students with score >= 60. Log the filtered students' names.",
+            "starter": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo', score: 45 },\n  { name: 'Chidi', score: 72 }\n];\n\n// Stringify into 'stored' variable\n// Parse back\n// Filter score >= 60\n// Log each passing name\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo', score: 45 },\n  { name: 'Chidi', score: 72 }\n];\n\nconst stored = JSON.stringify(students);\nconst parsed = JSON.parse(stored);\n\nconst passing = parsed.filter(s => s.score >= 60);\npassing.forEach(s => console.log(s.name));",
+            "test_cases": [
+              { "expected_output": "Amara" },
+              { "expected_output": "Chidi" },
+              { "expected_not_output": "Bayo" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Fetch todos from 'https://jsonplaceholder.typicode.com/todos?_limit=10'. After parsing, filter to get only completed todos (completed === true). Log the count of completed todos and the title of the first completed one.",
+            "starter": "// Fetch 10 todos\n// Filter: completed === true\n// Log: count of completed, first completed title\n",
+            "solution": "fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')\n  .then(response => {\n    if (!response.ok) throw new Error('HTTP error: ' + response.status);\n    return response.json();\n  })\n  .then(todos => {\n    const completed = todos.filter(t => t.completed === true);\n    console.log(completed.length);\n    if (completed.length > 0) {\n      console.log(completed[0].title);\n    }\n  })\n  .catch(error => console.log(error.message));",
+            "test_cases": [
+              { "expected_output": "fugiat veniam minus" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is JSON? How does it differ from a JavaScript object literal? Name two things that are valid in a JS object but NOT valid in JSON.",
+            "sample_answer": "JSON (JavaScript Object Notation) is a text-based data interchange format. It looks similar to JavaScript object literals but is a strict string format with specific rules. Differences: (1) JSON keys MUST be double-quoted strings — JS objects allow unquoted keys and single quotes. (2) JSON values cannot be functions — JS objects can have methods. (3) JSON cannot have trailing commas — JS objects tolerate them. (4) JSON doesn't support undefined — only null. (5) JSON doesn't support comments. Two invalid things in JSON: (a) methods/functions (`{ greet() {} }`) and (b) single-quoted strings (`{ 'name': 'Amara' }` — both key and value must use double quotes in JSON)."
+          }
+        ]
+      }
+    ]
+  }
+}
