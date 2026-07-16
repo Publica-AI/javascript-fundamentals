@@ -1,0 +1,185 @@
+{
+  "module": "17",
+  "title": "Local Storage and State Persistence — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build a persistent web application that saves and loads data using browser storage. Your solution must use: localStorage.setItem and getItem, JSON.stringify when saving arrays/objects, JSON.parse when loading, rendering stored data to the DOM on page load, adding and deleting items that persist across refresh, and a clear/reset function. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "PiggyVest Savings Goal Tracker",
+        "scenario": "Build a persistent savings goal tracker for PiggyVest. Users can add goals, mark them as achieved, delete them, and see their data survive page refreshes. Track total savings and visit count.",
+        "requirements": [
+          "On page load, read goals from localStorage (key: 'piggy_goals'), parse the JSON, and render them to the DOM; if no data exists, start with an empty array",
+          "Add a form that on submit creates a new goal object {id, name, target, achieved: false}, pushes it to the array, saves with localStorage.setItem + JSON.stringify, and re-renders",
+          "Add a 'Mark Achieved' button on each goal that updates the achieved property, saves to localStorage, and re-renders with a visual change (class toggle)",
+          "Add a delete button on each goal that removes it from the array, saves to localStorage, and re-renders",
+          "Add a 'Clear All Goals' button that calls localStorage.removeItem for the goals key and clears the DOM",
+          "Use sessionStorage to track the number of times the page has been loaded in this tab (session page views); display it on the page",
+          "Display a total goal count and achieved count that updates in real time as goals are added/removed/achieved"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>PiggyVest Goals</title>\n  <style>\n    body { font-family: sans-serif; max-width: 550px; margin: 40px auto; padding: 0 20px; }\n    .goal-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }\n    .achieved { background: #d4edda; border-color: green; text-decoration: line-through; }\n    .stats { background: #f8f9fa; padding: 10px; border-radius: 6px; margin: 10px 0; }\n    button { cursor: pointer; padding: 4px 10px; border-radius: 4px; border: 1px solid #ccc; }\n    .btn-achieve { background: #d4edda; }\n    .btn-delete { background: #f8d7da; }\n    #clear-btn { background: #fff3cd; margin-top: 10px; }\n  </style>\n</head>\n<body>\n  <h1>PiggyVest Savings Goals</h1>\n  <div class=\"stats\">\n    <span>Goals: <strong id=\"goal-count\">0</strong></span> |\n    <span>Achieved: <strong id=\"achieved-count\">0</strong></span> |\n    <span>Session views: <strong id=\"session-views\">0</strong></span>\n  </div>\n  <form id=\"goal-form\">\n    <input type=\"text\" id=\"goal-name\" placeholder=\"Goal name\" required>\n    <input type=\"number\" id=\"goal-target\" placeholder=\"Target (₦)\" required>\n    <button type=\"submit\">Add Goal</button>\n  </form>\n  <div id=\"goals-list\"></div>\n  <button id=\"clear-btn\">Clear All Goals</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// PiggyVest Savings Goal Tracker\n// Build a persistent app with localStorage\n\n// 1. Load goals from localStorage on page load; parse JSON; render to DOM\n\n\n// 2. Form submit — create goal object, push, save, re-render\n\n\n// 3. Mark Achieved button — update property, save, re-render\n\n\n// 4. Delete button — remove from array, save, re-render\n\n\n// 5. Clear All — removeItem, clear DOM\n\n\n// 6. sessionStorage — track and display session page views\n\n\n// 7. Update stats (goal count, achieved count)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "GTBank Budget Planner",
+        "scenario": "Build a persistent monthly budget planner for a GTBank user. Users can add expenses, categorize them, delete entries, and track spending that persists across page refreshes.",
+        "requirements": [
+          "On page load, read expenses from localStorage (key: 'gtb_expenses'), parse JSON, and render them to the DOM; if no data, start with an empty array",
+          "Add a form that creates an expense object {id, description, amount, category, date}, saves with JSON.stringify to localStorage, and re-renders",
+          "Add category filter buttons that show/hide expenses by category without modifying stored data",
+          "Add a delete button on each expense that removes it from the array, saves, and re-renders",
+          "Add a 'Reset Budget' button that calls localStorage.removeItem and clears the DOM",
+          "Use sessionStorage to track the current session's total spending (resets on new tab); display it",
+          "Display running total of all expenses and count, updating in real time"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>GTBank Budget</title>\n  <style>\n    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }\n    .expense-row { padding: 10px; margin: 6px 0; border: 1px solid #eee; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }\n    .stats { background: #f8f9fa; padding: 10px; border-radius: 6px; margin: 10px 0; }\n    .category-badge { font-size: 0.75rem; padding: 2px 6px; border-radius: 10px; background: #e2e8f0; }\n    button { cursor: pointer; padding: 4px 10px; border-radius: 4px; border: 1px solid #ccc; }\n    .btn-delete { background: #f8d7da; }\n    #reset-btn { background: #fff3cd; margin-top: 10px; }\n    .filter-btn { margin: 2px; }\n    .hidden { display: none; }\n  </style>\n</head>\n<body>\n  <h1>GTBank Budget Planner</h1>\n  <div class=\"stats\">\n    <span>Expenses: <strong id=\"expense-count\">0</strong></span> |\n    <span>Total: <strong id=\"total-amount\">₦0</strong></span> |\n    <span>Session spend: <strong id=\"session-spend\">₦0</strong></span>\n  </div>\n  <form id=\"expense-form\">\n    <input type=\"text\" id=\"desc-input\" placeholder=\"Description\" required>\n    <input type=\"number\" id=\"amount-input\" placeholder=\"Amount (₦)\" required>\n    <select id=\"category-input\">\n      <option value=\"food\">Food</option>\n      <option value=\"transport\">Transport</option>\n      <option value=\"bills\">Bills</option>\n      <option value=\"other\">Other</option>\n    </select>\n    <button type=\"submit\">Add Expense</button>\n  </form>\n  <div id=\"filters\">\n    <button class=\"filter-btn\" data-cat=\"all\">All</button>\n    <button class=\"filter-btn\" data-cat=\"food\">Food</button>\n    <button class=\"filter-btn\" data-cat=\"transport\">Transport</button>\n    <button class=\"filter-btn\" data-cat=\"bills\">Bills</button>\n  </div>\n  <div id=\"expense-list\"></div>\n  <button id=\"reset-btn\">Reset Budget</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// GTBank Budget Planner\n// Build a persistent budget app with localStorage\n\n// 1. Load expenses from localStorage on page load; parse; render\n\n\n// 2. Form submit — create expense object, save, re-render\n\n\n// 3. Category filter buttons — show/hide by category\n\n\n// 4. Delete button — remove from array, save, re-render\n\n\n// 5. Reset Budget — removeItem, clear DOM\n\n\n// 6. sessionStorage — track session spending\n\n\n// 7. Update stats (count, total)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "FairMoney Loan Request Tracker",
+        "scenario": "Build a persistent loan request tracker for FairMoney. Users can submit loan requests, track their status, delete entries, and see data persist across refreshes.",
+        "requirements": [
+          "On page load, read loan requests from localStorage (key: 'fair_loans'), parse JSON, render to DOM; start with empty array if no data",
+          "Add a form that creates a loan object {id, purpose, amount, status: 'pending', date}, saves to localStorage with JSON.stringify, and re-renders",
+          "Add an 'Approve' button on each pending loan that changes status to 'approved', saves, and re-renders with visual change",
+          "Add a delete button that removes the loan from the array, saves, and re-renders",
+          "Add a 'Clear History' button that removes the localStorage key and clears the DOM",
+          "Use sessionStorage to store and display the username entered in a separate input (persists within the tab only)",
+          "Display counts of pending, approved, and total loans that update in real time"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>FairMoney Loans</title>\n  <style>\n    body { font-family: sans-serif; max-width: 550px; margin: 40px auto; padding: 0 20px; }\n    .loan-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }\n    .approved { background: #d4edda; border-color: green; }\n    .stats { background: #f8f9fa; padding: 10px; border-radius: 6px; margin: 10px 0; }\n    button { cursor: pointer; padding: 4px 10px; border-radius: 4px; border: 1px solid #ccc; }\n    .btn-approve { background: #cce5ff; }\n    .btn-delete { background: #f8d7da; }\n    #clear-btn { background: #fff3cd; margin-top: 10px; }\n  </style>\n</head>\n<body>\n  <h1>FairMoney Loan Tracker</h1>\n  <div class=\"stats\">\n    <span>Total: <strong id=\"total-count\">0</strong></span> |\n    <span>Pending: <strong id=\"pending-count\">0</strong></span> |\n    <span>Approved: <strong id=\"approved-count\">0</strong></span>\n  </div>\n  <div>\n    <label>Session user: </label>\n    <input type=\"text\" id=\"username-input\" placeholder=\"Your name\">\n    <span id=\"greeting\"></span>\n  </div>\n  <form id=\"loan-form\">\n    <input type=\"text\" id=\"purpose-input\" placeholder=\"Loan purpose\" required>\n    <input type=\"number\" id=\"loan-amount\" placeholder=\"Amount (₦)\" required>\n    <button type=\"submit\">Submit Request</button>\n  </form>\n  <div id=\"loan-list\"></div>\n  <button id=\"clear-btn\">Clear History</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// FairMoney Loan Request Tracker\n// Build a persistent loan tracker with localStorage\n\n// 1. Load loans from localStorage on page load; parse; render\n\n\n// 2. Form submit — create loan object, save, re-render\n\n\n// 3. Approve button — update status, save, re-render\n\n\n// 4. Delete button — remove, save, re-render\n\n\n// 5. Clear History — removeItem, clear DOM\n\n\n// 6. sessionStorage — save/load username; display greeting\n\n\n// 7. Update stats (total, pending, approved)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Chipper Cash Contact Manager",
+        "scenario": "Build a persistent contact manager for Chipper Cash transfers. Users can add contacts with country info, favourite them, delete them, and data persists across refreshes.",
+        "requirements": [
+          "On page load, read contacts from localStorage (key: 'chipper_contacts'), parse JSON, render to DOM; start with empty array if no data",
+          "Add a form that creates a contact object {id, name, phone, country, favourite: false}, saves to localStorage, and re-renders",
+          "Add a 'Star' button that toggles favourite status, saves, and re-renders with visual highlight",
+          "Add a delete button that removes the contact, saves, and re-renders",
+          "Add a 'Clear Contacts' button that removes the localStorage key and clears the DOM",
+          "Use sessionStorage to track a 'last searched' value: when the user types in the search box, save the search term to sessionStorage; restore it on page load within the same tab",
+          "Display total contacts and favourite count that update in real time"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Chipper Contacts</title>\n  <style>\n    body { font-family: sans-serif; max-width: 550px; margin: 40px auto; padding: 0 20px; }\n    .contact-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }\n    .favourite { background: #fffbe6; border-color: #ffc107; }\n    .stats { background: #f8f9fa; padding: 10px; border-radius: 6px; margin: 10px 0; }\n    button { cursor: pointer; padding: 4px 10px; border-radius: 4px; border: 1px solid #ccc; }\n    .btn-star { background: #fffbe6; }\n    .btn-delete { background: #f8d7da; }\n    #clear-btn { background: #fff3cd; margin-top: 10px; }\n  </style>\n</head>\n<body>\n  <h1>Chipper Cash Contacts</h1>\n  <div class=\"stats\">\n    <span>Contacts: <strong id=\"contact-count\">0</strong></span> |\n    <span>Favourites: <strong id=\"fav-count\">0</strong></span>\n  </div>\n  <input type=\"text\" id=\"search-input\" placeholder=\"Search contacts...\">\n  <form id=\"contact-form\">\n    <input type=\"text\" id=\"name-input\" placeholder=\"Name\" required>\n    <input type=\"tel\" id=\"phone-input\" placeholder=\"Phone\" required>\n    <select id=\"country-input\">\n      <option value=\"Nigeria\">Nigeria</option>\n      <option value=\"Ghana\">Ghana</option>\n      <option value=\"Kenya\">Kenya</option>\n      <option value=\"SA\">South Africa</option>\n    </select>\n    <button type=\"submit\">Add Contact</button>\n  </form>\n  <div id=\"contact-list\"></div>\n  <button id=\"clear-btn\">Clear Contacts</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Chipper Cash Contact Manager\n// Build a persistent contact manager with localStorage\n\n// 1. Load contacts from localStorage on page load; parse; render\n\n\n// 2. Form submit — create contact object, save, re-render\n\n\n// 3. Star button — toggle favourite, save, re-render\n\n\n// 4. Delete button — remove, save, re-render\n\n\n// 5. Clear Contacts — removeItem, clear DOM\n\n\n// 6. sessionStorage — save/restore search input value\n\n\n// 7. Update stats (contact count, fav count)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Konga Wishlist with Persistence",
+        "scenario": "Build a persistent product wishlist for Konga. Users can add products, mark them as purchased, delete them, and their wishlist survives page refreshes.",
+        "requirements": [
+          "On page load, read wishlist from localStorage (key: 'konga_wishlist'), parse JSON, render to DOM; start with empty array if no data",
+          "Add a form that creates a product object {id, name, price, purchased: false}, saves to localStorage, and re-renders",
+          "Add a 'Purchased' button that toggles the purchased property, saves, and re-renders with strikethrough styling",
+          "Add a delete button that removes the product, saves, and re-renders",
+          "Add a 'Clear Wishlist' button that calls localStorage.removeItem and clears the DOM",
+          "Use sessionStorage to track session visit count (increments each page load in same tab); display it",
+          "Display total items, purchased count, and total wishlist value that update in real time"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Konga Wishlist</title>\n  <style>\n    body { font-family: sans-serif; max-width: 550px; margin: 40px auto; padding: 0 20px; }\n    .wish-card { padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }\n    .purchased { text-decoration: line-through; opacity: 0.6; background: #d4edda; }\n    .stats { background: #f8f9fa; padding: 10px; border-radius: 6px; margin: 10px 0; }\n    button { cursor: pointer; padding: 4px 10px; border-radius: 4px; border: 1px solid #ccc; }\n    .btn-purchased { background: #d4edda; }\n    .btn-delete { background: #f8d7da; }\n    #clear-btn { background: #fff3cd; margin-top: 10px; }\n  </style>\n</head>\n<body>\n  <h1>Konga Wishlist</h1>\n  <div class=\"stats\">\n    <span>Items: <strong id=\"item-count\">0</strong></span> |\n    <span>Purchased: <strong id=\"purchased-count\">0</strong></span> |\n    <span>Total value: <strong id=\"total-value\">₦0</strong></span> |\n    <span>Session views: <strong id=\"session-views\">0</strong></span>\n  </div>\n  <form id=\"wish-form\">\n    <input type=\"text\" id=\"product-input\" placeholder=\"Product name\" required>\n    <input type=\"number\" id=\"price-input\" placeholder=\"Price (₦)\" required>\n    <button type=\"submit\">Add to Wishlist</button>\n  </form>\n  <div id=\"wishlist\"></div>\n  <button id=\"clear-btn\">Clear Wishlist</button>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Konga Wishlist with Persistence\n// Build a persistent wishlist app with localStorage\n\n// 1. Load wishlist from localStorage on page load; parse; render\n\n\n// 2. Form submit — create product object, save, re-render\n\n\n// 3. Purchased button — toggle purchased, save, re-render\n\n\n// 4. Delete button — remove, save, re-render\n\n\n// 5. Clear Wishlist — removeItem, clear DOM\n\n\n// 6. sessionStorage — track and display session view count\n\n\n// 7. Update stats (item count, purchased count, total value)\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "storage_ops",
+          "label": "localStorage Operations",
+          "points": 30,
+          "descriptors": {
+            "full": "setItem, getItem, and removeItem all used correctly; data persists across page refresh; clear/reset removes stored data",
+            "partial": "setItem and getItem used but removeItem missing, or data doesn't actually persist on refresh",
+            "none": "No localStorage usage or entirely broken"
+          }
+        },
+        {
+          "id": "json_roundtrip",
+          "label": "JSON Stringify/Parse for Storage",
+          "points": 25,
+          "descriptors": {
+            "full": "JSON.stringify used when saving arrays/objects; JSON.parse used when loading; handles the null case (first visit); no JSON errors",
+            "partial": "stringify/parse used but null case not handled (crashes on first visit)",
+            "none": "Attempting to store objects without stringify, or parse missing"
+          }
+        },
+        {
+          "id": "dom_persistence",
+          "label": "DOM Rendering and State Sync",
+          "points": 30,
+          "descriptors": {
+            "full": "Stored data rendered to DOM on page load; every mutation (add, delete, update) saves AND re-renders; UI stays in sync with storage; sessionStorage used for at least one feature",
+            "partial": "Data renders on load but updates don't save, or sessionStorage not used",
+            "none": "No DOM rendering from stored data"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used; render function separated and reusable; save function separated; IDs generated for items; counters accurate",
+            "partial": "Minor issues — render and save logic mixed together, or counters inaccurate",
+            "none": "var used, no separation of concerns, or app crashes"
+          }
+        }
+      ]
+    }
+  }
+}

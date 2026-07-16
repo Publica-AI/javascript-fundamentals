@@ -1,0 +1,353 @@
+[
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "Why storage needed",
+        "type": "multiple choice",
+        "question": "Why do JavaScript variables reset on page reload?",
+        "options": "Because browsers delete them|Variables live in memory which is cleared when the page restarts|JavaScript has a refresh bug|Variables expire after 5 minutes",
+        "answer": "Variables live in memory which is cleared when the page restarts",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "localStorage persistence",
+        "type": "multiple choice",
+        "question": "How long does localStorage data persist?",
+        "options": "Until the page refreshes|Until the tab closes|Indefinitely — until explicitly deleted by code or the user clearing browser data|24 hours",
+        "answer": "Indefinitely — until explicitly deleted by code or the user clearing browser data",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "sessionStorage persistence",
+        "type": "multiple choice",
+        "question": "How long does sessionStorage data persist?",
+        "options": "Indefinitely|Until the browser restarts|For the duration of the tab session — cleared when the tab closes|60 seconds",
+        "answer": "For the duration of the tab session — cleared when the tab closes",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "sessionStorage survives refresh",
+        "type": "True or False",
+        "question": "sessionStorage data survives a page refresh but not a tab close.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "localStorage shared tabs",
+        "type": "multiple choice",
+        "question": "If you set a value in localStorage in one browser tab can another tab on the same site read it?",
+        "options": "No each tab has its own localStorage|Yes localStorage is shared across all tabs of the same origin|Only if the tabs are opened from the same link|Only in incognito mode",
+        "answer": "Yes localStorage is shared across all tabs of the same origin",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "sessionStorage not shared",
+        "type": "True or False",
+        "question": "sessionStorage is not shared between tabs — each tab has its own isolated sessionStorage.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "Storage strings only",
+        "type": "multiple choice",
+        "question": "What data types can localStorage and sessionStorage store directly?",
+        "options": "Any JavaScript value including objects and arrays|Only strings|Numbers and strings|Objects and arrays only",
+        "answer": "Only strings",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "localStorage capacity",
+        "type": "multiple choice",
+        "question": "What is the approximate storage capacity of localStorage per origin?",
+        "options": "1 KB|50 KB|5–10 MB|100 MB",
+        "answer": "5–10 MB",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "localStorage use case",
+        "type": "multiple choice",
+        "question": "Which feature is best suited for localStorage?",
+        "options": "Saving a user's step in a multi-step checkout (current session only)|Storing a user's dark/light theme preference permanently|Temporary form data for a single page|One-time notification flags",
+        "answer": "Storing a user's dark/light theme preference permanently",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "sessionStorage use case",
+        "type": "multiple choice",
+        "question": "Which feature is best suited for sessionStorage?",
+        "options": "A saved password|A user's profile picture|Tracking a user's current step in a multi-page form (only needed until they finish)|App-wide colour theme",
+        "answer": "Tracking a user's current step in a multi-page form (only needed until they finish)",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "Demo visit count",
+        "type": "multiple choice",
+        "question": "In the demo a visit counter is incremented on every page load. Which storage is used so the count persists across browser restarts?",
+        "options": "sessionStorage|cookies|localStorage|A JavaScript variable",
+        "answer": "localStorage",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "Demo session loads",
+        "type": "multiple choice",
+        "question": "In the demo a session page loads counter tracks how many times the page has been visited in the current tab session. Which storage is used?",
+        "options": "localStorage|A global variable|cookies|sessionStorage",
+        "answer": "sessionStorage",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "localStorage synchronous",
+        "type": "True or False",
+        "question": "localStorage operations are synchronous — they run on the main thread without Promises or callbacks.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "Storage origin scope",
+        "type": "multiple choice",
+        "question": "Can data stored in localStorage on site-A.com be read by JavaScript on site-B.com?",
+        "options": "Yes all sites share one localStorage|No localStorage is scoped per origin so different sites cannot access each other's data|Only if both sites have HTTPS|Only with user permission",
+        "answer": "No localStorage is scoped per origin so different sites cannot access each other's data",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "DevTools inspection",
+        "type": "multiple choice",
+        "question": "Where in browser DevTools can you inspect localStorage and sessionStorage?",
+        "options": "Console tab|Network tab|Application tab (or Storage tab in Firefox)|Sources tab",
+        "answer": "Application tab (or Storage tab in Firefox)",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "localStorage browser restart",
+        "type": "True or False",
+        "question": "localStorage data is still available after closing and reopening the browser.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "localstorage vs sessionstorage",
+        "description": "storage not available in workers",
+        "type": "multiple choice",
+        "question": "Where is localStorage NOT directly available?",
+        "options": "In regular HTML pages|In inline script tags|In Web Workers and Service Workers|In modern browsers",
+        "answer": "In Web Workers and Service Workers",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "setItem syntax",
+        "type": "multiple choice",
+        "question": "What is the correct way to save a value to localStorage?",
+        "options": "localStorage.save('key' 'value')|localStorage('key') = 'value'|localStorage.setItem('key' 'value')|localStorage.store('key' 'value')",
+        "answer": "localStorage.setItem('key' 'value')",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "getItem missing key",
+        "type": "multiple choice",
+        "question": "What does localStorage.getItem('nonexistent') return when the key does not exist?",
+        "options": "undefined|0|null|An error",
+        "answer": "null",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "setItem overwrites",
+        "type": "True or False",
+        "question": "Calling setItem with a key that already exists overwrites the previous value.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "removeItem vs clear",
+        "type": "multiple choice",
+        "question": "What is the difference between localStorage.removeItem('key') and localStorage.clear()?",
+        "options": "They are identical|removeItem deletes one specific key whereas clear deletes all stored data for the origin|removeItem works faster|clear only works in Chrome",
+        "answer": "removeItem deletes one specific key whereas clear deletes all stored data for the origin",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "removeItem missing key safe",
+        "type": "True or False",
+        "question": "Calling removeItem with a key that does not exist throws an error.",
+        "options": "True|False",
+        "answer": "False",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "storage.length",
+        "type": "multiple choice",
+        "question": "What does localStorage.length return?",
+        "options": "The total bytes used|The number of key-value pairs stored|The maximum storage limit|The number of times setItem was called",
+        "answer": "The number of key-value pairs stored",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "Number stored as string",
+        "type": "multiple choice",
+        "question": "You store localStorage.setItem('score' 88). What does localStorage.getItem('score') return?",
+        "options": "88 as a number|'88' as a string|null|An error because 88 is not a string",
+        "answer": "'88' as a string",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "Demo visit counter storage",
+        "type": "multiple choice",
+        "question": "In the demo the visit counter reads: Number(localStorage.getItem('visit_count')) || 0. Why is Number() used here?",
+        "options": "To validate the value|Because localStorage only stores strings so the retrieved value must be converted to a number|To prevent null errors|For performance",
+        "answer": "Because localStorage only stores strings so the retrieved value must be converted to a number",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "Demo clear all",
+        "type": "multiple choice",
+        "question": "In the demo clicking Clear All Goals calls which two operations?",
+        "options": "removeItem and render|setItem with empty array and reload|goals = [] then saveGoals() (which calls setItem) then renderGoals()|localStorage.clear() and page reload",
+        "answer": "goals = [] then saveGoals() (which calls setItem) then renderGoals()",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "storage api setitem getitem removeitem clear",
+        "description": "setItem both args strings",
+        "type": "multiple choice",
+        "question": "What happens if you pass a non-string value as the second argument to setItem — e.g. setItem('data' {name: 'Amara'})?",
+        "options": "An error is thrown|The object is stored correctly as an object|The object is converted via toString() resulting in [object Object]|null is stored",
+        "answer": "The object is converted via toString() resulting in [object Object]",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Why JSON needed for storage",
+        "type": "multiple choice",
+        "question": "Why must you use JSON.stringify before storing an object in localStorage?",
+        "options": "For security|localStorage only accepts strings — without stringify the object becomes [object Object]|JSON.stringify speeds up storage|Objects are too large for localStorage",
+        "answer": "localStorage only accepts strings — without stringify the object becomes [object Object]",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "JSON parse after getItem",
+        "type": "multiple choice",
+        "question": "Why must you use JSON.parse when loading an object or array from localStorage?",
+        "options": "For security reasons|Because getItem always returns null|getItem returns a string — JSON.parse converts it back to the original JavaScript value|JSON.parse is faster",
+        "answer": "getItem returns a string — JSON.parse converts it back to the original JavaScript value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Types preserved",
+        "type": "True or False",
+        "question": "After storing {score: 88} with JSON.stringify and loading with JSON.parse the score property comes back as the number 88 not the string '88'.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Null fallback",
+        "type": "multiple choice",
+        "question": "Why do you write JSON.parse(localStorage.getItem('todos')) || [] instead of just JSON.parse(localStorage.getItem('todos'))?",
+        "options": "For performance|If the key does not exist getItem returns null — the || [] provides an empty array fallback for first use|JSON.parse requires a fallback argument|localStorage.getItem throws without a fallback",
+        "answer": "If the key does not exist getItem returns null — the || [] provides an empty array fallback for first use",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Save array pattern",
+        "type": "multiple choice",
+        "question": "Which pattern correctly saves an array of objects to localStorage?",
+        "options": "localStorage.setItem('items' items)|localStorage.setItem('items' JSON.stringify(items))|localStorage.items = JSON.stringify(items)|localStorage.save('items' items)",
+        "answer": "localStorage.setItem('items' JSON.stringify(items))",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Load array pattern",
+        "type": "multiple choice",
+        "question": "Which pattern correctly loads an array from localStorage with a fallback?",
+        "options": "localStorage.getItem('items')|JSON.stringify(localStorage.getItem('items'))|JSON.parse(localStorage.getItem('items')) || []|localStorage.parse('items') || []",
+        "answer": "JSON.parse(localStorage.getItem('items')) || []",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Save every mutation",
+        "type": "multiple choice",
+        "question": "When building a persistent todo list when should you call setItem to save the array?",
+        "options": "Only when the user clicks a Save button|On every mutation — after adding deleting or updating any item|Once when the page loads|Every 30 seconds on a timer",
+        "answer": "On every mutation — after adding deleting or updating any item",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Load on page load",
+        "type": "multiple choice",
+        "question": "When should you load saved data from localStorage in a persistent app?",
+        "options": "When the user clicks Load|Only when a form is submitted|On page load before rendering — so the UI reflects the saved state immediately|After all event listeners are set up",
+        "answer": "On page load before rendering — so the UI reflects the saved state immediately",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Demo study goals key",
+        "type": "multiple choice",
+        "question": "In the demo study goals are stored in localStorage. What key is used?",
+        "options": "goals|todos|study_goals|publica_goals",
+        "answer": "study_goals",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Demo theme storage",
+        "type": "multiple choice",
+        "question": "In the demo the theme preference is stored in localStorage. What are the two possible values?",
+        "options": "0 and 1|day and night|light and dark|white and black",
+        "answer": "light and dark",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "filter then save",
+        "type": "multiple choice",
+        "question": "To delete one item from a stored array the correct approach is?",
+        "options": "Call localStorage.removeItem with the item's index|Load the array parse it filter out the item and save the filtered array back|Directly modify the stored JSON string|Use splice on the localStorage object",
+        "answer": "Load the array parse it filter out the item and save the filtered array back",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "storing and retrieving json data",
+        "description": "Same stringify parse as module 15",
+        "type": "True or False",
+        "question": "JSON.stringify and JSON.parse used for localStorage persistence are the same methods used to process API responses in Module 15.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    }
+]

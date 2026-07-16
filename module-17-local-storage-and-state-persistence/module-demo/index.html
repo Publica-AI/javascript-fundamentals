@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 17 Demo — Publica Study Tracker</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 700px; margin: 0 auto; }
+    body.dark { background: #1a1a2e; color: #e0e0e0; }
+    body.light { background: #f8f9fa; color: #212529; }
+    h1 { margin-bottom: 0.25rem; }
+    .subtitle { color: #888; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .controls { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    input[type="text"] { flex: 1; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.9rem; min-width: 200px; }
+    button { padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-secondary { background: #6c757d; color: white; }
+    .btn-danger { background: #dc3545; color: white; }
+    .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.8rem; }
+    .theme-toggle { position: fixed; top: 1rem; right: 1rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+    .stat-card { background: white; padding: 0.75rem; border-radius: 6px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .dark .stat-card { background: #16213e; }
+    .stat-card .number { font-size: 1.5rem; font-weight: bold; color: #2563eb; }
+    .stat-card .label { font-size: 0.75rem; color: #888; }
+    .goal-list { list-style: none; }
+    .goal-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .dark .goal-item { background: #16213e; }
+    .goal-item.done { opacity: 0.6; }
+    .goal-item.done .goal-text { text-decoration: line-through; }
+    .goal-text { flex: 1; }
+    .empty { text-align: center; color: #888; padding: 2rem; font-style: italic; }
+  </style>
+</head>
+<body class="light">
+  <button class="btn-secondary theme-toggle" id="btn-theme">Toggle Theme</button>
+
+  <h1>Publica Study Tracker</h1>
+  <p class="subtitle">Module 17 Demo — Data persists across page refreshes</p>
+
+  <div class="stats">
+    <div class="stat-card"><div class="number" id="stat-total">0</div><div class="label">Total Goals</div></div>
+    <div class="stat-card"><div class="number" id="stat-done">0</div><div class="label">Completed</div></div>
+    <div class="stat-card"><div class="number" id="stat-visits">0</div><div class="label">Page Visits</div></div>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="input-goal" placeholder="Add a study goal...">
+    <button class="btn-primary" id="btn-add">Add Goal</button>
+    <button class="btn-danger btn-sm" id="btn-clear">Clear All</button>
+  </div>
+
+  <ul class="goal-list" id="goal-list"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>

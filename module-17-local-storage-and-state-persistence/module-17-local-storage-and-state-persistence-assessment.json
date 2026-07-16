@@ -1,0 +1,185 @@
+{
+  "module": "17",
+  "title": "Local Storage and State Persistence",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that: (1) saves the string 'Amara Obi' to localStorage with key 'username', (2) retrieves it and logs the value, (3) saves the number 88 with key 'score', (4) retrieves it and logs its value and typeof (note: it comes back as a string).",
+            "starter": "// 1. Save 'Amara Obi' to localStorage key 'username'\n// 2. Retrieve and log it\n// 3. Save 88 to key 'score'\n// 4. Retrieve, log value and typeof\n",
+            "solution": "localStorage.setItem('username', 'Amara Obi');\nconst name = localStorage.getItem('username');\nconsole.log(name);\n\nlocalStorage.setItem('score', 88);\nconst score = localStorage.getItem('score');\nconsole.log(score);\nconsole.log(typeof score);",
+            "test_cases": [
+              { "expected_output": "Amara Obi" },
+              { "expected_output": "88" },
+              { "expected_output": "string" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that: (1) creates an array of 3 student objects [{name, score}], (2) saves it to localStorage key 'students' using JSON.stringify, (3) retrieves and parses it with JSON.parse, (4) logs the parsed array length and the first student's name.",
+            "starter": "// 1. Create array of 3 students\n// 2. Save to localStorage with JSON.stringify\n// 3. Retrieve and parse with JSON.parse\n// 4. Log array length and first student's name\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo', score: 72 },\n  { name: 'Chidi', score: 55 }\n];\n\nlocalStorage.setItem('students', JSON.stringify(students));\n\nconst loaded = JSON.parse(localStorage.getItem('students'));\nconsole.log(loaded.length);\nconsole.log(loaded[0].name);",
+            "test_cases": [
+              { "expected_output": "3" },
+              { "expected_output": "Amara" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why must you use JSON.stringify when saving an array or object to localStorage? What happens if you try to save an object directly without stringify?",
+            "sample_answer": "localStorage can only store strings. If you try to save an object directly — `localStorage.setItem('data', myObject)` — JavaScript calls .toString() on the object, which produces '[object Object]' — the actual data is lost. When you getItem later, you get the useless string '[object Object]' instead of your data. JSON.stringify converts the object to a proper JSON string representation that preserves all keys, values, and structure. JSON.parse then converts it back to a real JavaScript object when you load it. The same applies to arrays: without stringify, an array becomes a comma-separated string of values (losing nested structure), not a parseable format."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that loads a todo array from localStorage (key: 'todos'). If the key doesn't exist (getItem returns null), default to an empty array. Add a new todo {id: 1, text: 'Learn localStorage', done: false}, save back to localStorage, then log the updated array length.",
+            "starter": "// Load todos from localStorage (handle null case)\n// Add a new todo object\n// Save back to localStorage\n// Log the array length\n",
+            "solution": "const stored = localStorage.getItem('todos');\nconst todos = stored ? JSON.parse(stored) : [];\n\ntodos.push({ id: 1, text: 'Learn localStorage', done: false });\nlocalStorage.setItem('todos', JSON.stringify(todos));\n\nconsole.log(todos.length);",
+            "test_cases": [
+              { "expected_output": "1" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that: (1) saves 3 key-value pairs to localStorage ('name', 'course', 'score'), (2) logs localStorage.length, (3) uses localStorage.removeItem to delete 'score', (4) logs localStorage.length again, (5) calls localStorage.clear() and logs the final length.",
+            "starter": "// 1. Save 3 items to localStorage\n// 2. Log length\n// 3. removeItem 'score'\n// 4. Log length\n// 5. clear() and log length\n",
+            "solution": "localStorage.setItem('name', 'Amara');\nlocalStorage.setItem('course', 'JavaScript');\nlocalStorage.setItem('score', '88');\nconsole.log(localStorage.length);\n\nlocalStorage.removeItem('score');\nconsole.log(localStorage.length);\n\nlocalStorage.clear();\nconsole.log(localStorage.length);",
+            "test_cases": [
+              { "expected_output": "3" },
+              { "expected_output": "2" },
+              { "expected_output": "0" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `localStorage.removeItem('key')` and `localStorage.clear()`? When would you use each?",
+            "sample_answer": "`removeItem('key')` deletes a single specific key-value pair from localStorage — all other stored data remains intact. `clear()` removes ALL key-value pairs from localStorage for that origin — everything is gone. Use removeItem when: you want to delete one specific piece of data while preserving the rest (e.g., logging out a user by removing their token, but keeping their theme preference). Use clear when: you want a full reset of all stored data (e.g., a 'Reset App' button that restores the app to its initial state). Be cautious with clear() in production — it deletes ALL localStorage for the domain, including data from other features or libraries."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a `saveTheme(theme)` function that saves the theme string to localStorage key 'theme'. Write a `loadTheme()` function that returns the stored theme or 'light' if none is stored. Call saveTheme('dark'), then call loadTheme() and log the result.",
+            "starter": "// saveTheme(theme) — saves to localStorage\n// loadTheme() — returns stored theme or 'light' default\n\n// Save 'dark', then load and log\n",
+            "solution": "function saveTheme(theme) {\n  localStorage.setItem('theme', theme);\n}\n\nfunction loadTheme() {\n  return localStorage.getItem('theme') || 'light';\n}\n\nsaveTheme('dark');\nconsole.log(loadTheme());",
+            "test_cases": [
+              { "expected_output": "dark" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that implements a visit counter: (1) load the current count from localStorage key 'visits' (default to 0 if null), (2) increment it, (3) save the new count, (4) log 'Visit #N'. This should work correctly across multiple page loads.",
+            "starter": "// Load visit count from localStorage (default 0)\n// Increment\n// Save back\n// Log 'Visit #N'\n",
+            "solution": "const stored = localStorage.getItem('visits');\nlet count = stored ? parseInt(stored) : 0;\ncount++;\nlocalStorage.setItem('visits', count);\nconsole.log('Visit #' + count);",
+            "test_cases": [
+              { "expected_output": "Visit #" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Describe the 'load on page load' pattern for localStorage. What are the steps, and why is handling the `null` case important?",
+            "sample_answer": "The pattern: (1) On page load, call `localStorage.getItem('key')`. (2) Check if the result is null (first visit — key doesn't exist yet). (3) If null, use a default value (empty array, default settings, 0). (4) If not null, parse it with JSON.parse to get the actual data. (5) Use the data to populate the UI. The null check is critical because: on the very first visit, nothing has been stored yet — getItem returns null. If you pass null to JSON.parse, it throws a SyntaxError. If you try to access properties on null (like `null.length`), you get a TypeError. The default value prevents these crashes and gives the app a clean starting state on first use."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that uses sessionStorage to track how many times a button has been clicked in the current session. On page load, read the count (default 0). Simulate 3 clicks by incrementing and saving each time. Log the final count. Note: this resets when the tab closes.",
+            "starter": "// Load click count from sessionStorage (default 0)\n// Simulate 3 clicks: increment and save each time\n// Log final count\n",
+            "solution": "let clicks = parseInt(sessionStorage.getItem('clicks')) || 0;\n\nclicks++;\nsessionStorage.setItem('clicks', clicks);\nclicks++;\nsessionStorage.setItem('clicks', clicks);\nclicks++;\nsessionStorage.setItem('clicks', clicks);\n\nconsole.log(clicks);",
+            "test_cases": [
+              { "expected_output": "3" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `addToCart(product)` that: loads the cart array from localStorage (key 'cart', default []), pushes the product, saves the updated cart, and returns the new cart length. Call it twice with different products and log the length each time.",
+            "starter": "// addToCart(product) — load cart, push, save, return length\n\n// Call twice with different products, log lengths\n",
+            "solution": "function addToCart(product) {\n  const stored = localStorage.getItem('cart');\n  const cart = stored ? JSON.parse(stored) : [];\n  cart.push(product);\n  localStorage.setItem('cart', JSON.stringify(cart));\n  return cart.length;\n}\n\nconsole.log(addToCart({ name: 'Earbuds', price: 4500 }));\nconsole.log(addToCart({ name: 'Phone Case', price: 1200 }));",
+            "test_cases": [
+              { "expected_output": "1" },
+              { "expected_output": "2" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `localStorage` and `sessionStorage`? Give one specific use case for each.",
+            "sample_answer": "Both have the same API (setItem, getItem, removeItem, clear) but differ in lifetime and scope. localStorage persists permanently until explicitly deleted — data survives tab close, browser close, and computer restart. sessionStorage persists only for the duration of the page session — it's deleted when the tab is closed. localStorage use case: saving a user's theme preference (dark/light mode) so it's remembered the next time they visit, even days later. sessionStorage use case: storing form progress in a multi-step wizard — if the user accidentally refreshes, they don't lose their answers, but once they close the tab (session over), the partial data is cleaned up automatically."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write JavaScript that: (1) saves a user preferences object {theme: 'dark', fontSize: 16, language: 'en'} to localStorage key 'prefs', (2) loads it back, (3) updates just the fontSize to 18 (without losing other properties), (4) saves the updated object, (5) loads again and logs the fontSize.",
+            "starter": "// 1. Save prefs object to localStorage\n// 2. Load it back\n// 3. Update fontSize to 18\n// 4. Save updated object\n// 5. Load and log fontSize\n",
+            "solution": "const prefs = { theme: 'dark', fontSize: 16, language: 'en' };\nlocalStorage.setItem('prefs', JSON.stringify(prefs));\n\nconst loaded = JSON.parse(localStorage.getItem('prefs'));\nloaded.fontSize = 18;\nlocalStorage.setItem('prefs', JSON.stringify(loaded));\n\nconst final = JSON.parse(localStorage.getItem('prefs'));\nconsole.log(final.fontSize);",
+            "test_cases": [
+              { "expected_output": "18" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `removeFromList(key, id)` that: loads an array from localStorage by key, filters out the item with the matching id, saves the filtered array back, and returns the new length. Test: save [{id:1, name:'A'}, {id:2, name:'B'}, {id:3, name:'C'}] to key 'items', then call removeFromList('items', 2) and log the returned length.",
+            "starter": "// removeFromList(key, id) — load, filter out matching id, save, return length\n\n// Save 3 items, remove id 2, log new length\n",
+            "solution": "function removeFromList(key, id) {\n  const stored = localStorage.getItem(key);\n  const items = stored ? JSON.parse(stored) : [];\n  const filtered = items.filter(item => item.id !== id);\n  localStorage.setItem(key, JSON.stringify(filtered));\n  return filtered.length;\n}\n\nconst items = [\n  { id: 1, name: 'A' },\n  { id: 2, name: 'B' },\n  { id: 3, name: 'C' }\n];\nlocalStorage.setItem('items', JSON.stringify(items));\n\nconsole.log(removeFromList('items', 2));",
+            "test_cases": [
+              { "expected_output": "2" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What are the limitations of localStorage? Name at least 3 limitations and explain when you might need a different solution.",
+            "sample_answer": "Limitations: (1) Storage size — typically 5-10MB per origin. Not suitable for large files, images, or video data. Use IndexedDB for larger structured data. (2) Strings only — everything is stored as a string, requiring JSON.stringify/parse for objects. Complex types like Date objects, Maps, Sets, or functions can't be serialized. (3) Synchronous — all operations block the main thread. For large reads/writes, this can freeze the UI. IndexedDB is asynchronous. (4) No expiration — data lives forever unless manually deleted. There's no built-in TTL (time-to-live). You have to implement expiration logic manually. (5) Accessible to all JavaScript on the same origin — no privacy between scripts. Sensitive data (tokens, passwords) should not be stored there. (6) Not available in Web Workers or Service Workers — only accessible from the main thread."
+          }
+        ]
+      }
+    ]
+  }
+}
