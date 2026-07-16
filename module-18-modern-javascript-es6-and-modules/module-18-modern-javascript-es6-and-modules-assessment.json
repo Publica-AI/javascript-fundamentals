@@ -1,0 +1,203 @@
+{
+  "module": "18",
+  "title": "Modern JavaScript ES6+ and Modules",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use object destructuring to extract `name`, `score`, and `course` from the student object. Then use nested destructuring to extract `city` from the address. Log all four values.",
+            "starter": "const student = {\n  name: 'Amara Obi',\n  score: 88,\n  course: 'JavaScript',\n  address: { city: 'Lagos', state: 'Lagos' }\n};\n\n// Destructure name, score, course\n// Nested destructure city from address\n// Log all four\n",
+            "solution": "const student = {\n  name: 'Amara Obi',\n  score: 88,\n  course: 'JavaScript',\n  address: { city: 'Lagos', state: 'Lagos' }\n};\n\nconst { name, score, course, address: { city } } = student;\n\nconsole.log(name);\nconsole.log(score);\nconsole.log(course);\nconsole.log(city);",
+            "test_cases": [
+              { "expected_output": "Amara Obi" },
+              { "expected_output": "88" },
+              { "expected_output": "JavaScript" },
+              { "expected_output": "Lagos" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use the spread operator to: (1) create a copy of the prices array, (2) add 9500 to the end of the copy without mutating the original, (3) merge the original with a second array [2500, 3700], (4) log the original length (should be unchanged) and the merged array.",
+            "starter": "const prices = [4500, 1200, 8000, 600];\nconst morePrices = [2500, 3700];\n\n// 1. Copy prices with spread\n// 2. Add 9500 to end of copy (immutably)\n// 3. Merge prices + morePrices with spread\n// 4. Log original length and merged array\n",
+            "solution": "const prices = [4500, 1200, 8000, 600];\nconst morePrices = [2500, 3700];\n\nconst copy = [...prices];\nconst withNew = [...prices, 9500];\nconst merged = [...prices, ...morePrices];\n\nconsole.log(prices.length);\nconsole.log(merged);",
+            "test_cases": [
+              { "expected_output": "4" },
+              { "expected_output": "4500" },
+              { "expected_output": "2500" },
+              { "expected_output": "3700" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between the spread operator (`...`) and the rest operator (`...`)? They look identical — how does JavaScript know which one you mean?",
+            "sample_answer": "Both use the `...` syntax but serve opposite purposes. The context determines which one JavaScript uses: Spread EXPANDS an iterable into individual elements — used in function calls (`Math.max(...nums)`), array literals (`[...arr, newItem]`), and object literals (`{...obj, newProp}`). It takes one thing and expands it into many. Rest COLLECTS multiple individual elements into one array — used in function parameters (`function sum(...nums)`) and destructuring (`const [first, ...rest] = arr`). It takes many things and packs them into one. JavaScript knows by position: in a function definition's parameter list or on the left side of a destructuring assignment, `...` is rest (collecting). Everywhere else (right side of assignment, inside array/object literals, in function call arguments), `...` is spread (expanding)."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use array destructuring to: (1) extract the first element into `first`, skip the second, extract the third into `third`, (2) collect the remaining elements into `rest`. Log first, third, and rest. Array: [10, 20, 30, 40, 50].",
+            "starter": "const numbers = [10, 20, 30, 40, 50];\n\n// Array destructure: first, skip, third, ...rest\n// Log first, third, rest\n",
+            "solution": "const numbers = [10, 20, 30, 40, 50];\n\nconst [first, , third, ...rest] = numbers;\n\nconsole.log(first);\nconsole.log(third);\nconsole.log(rest);",
+            "test_cases": [
+              { "expected_output": "10" },
+              { "expected_output": "30" },
+              { "expected_output": "40" },
+              { "expected_output": "50" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use the spread operator on objects to create a new `updatedProduct` from the product below. Add a `discount` property of 10 and override the `price` to 4050 (10% off). Log both the original price and the updated price to prove the original wasn't mutated.",
+            "starter": "const product = {\n  name: 'Wireless Earbuds',\n  price: 4500,\n  category: 'Electronics'\n};\n\n// Spread to create updatedProduct with discount and new price\n// Log original price and updated price\n",
+            "solution": "const product = {\n  name: 'Wireless Earbuds',\n  price: 4500,\n  category: 'Electronics'\n};\n\nconst updatedProduct = { ...product, discount: 10, price: 4050 };\n\nconsole.log(product.price);\nconsole.log(updatedProduct.price);",
+            "test_cases": [
+              { "expected_output": "4500" },
+              { "expected_output": "4050" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "When using spread to copy an object (`{...obj}`), is it a deep copy or a shallow copy? What problem does this cause with nested objects?",
+            "sample_answer": "Spread creates a SHALLOW copy — only the top-level properties are copied. Nested objects and arrays are NOT cloned; they're shared references between the original and the copy. Problem: if you do `const copy = {...user}` and user has `address: {city: 'Lagos'}`, then `copy.address === user.address` (same reference). Mutating `copy.address.city = 'Abuja'` also changes `user.address.city` because both point to the same address object. This breaks the immutability guarantee for nested data. Solutions: (1) manually spread nested objects too: `{...user, address: {...user.address, city: 'Abuja'}}`, (2) use `structuredClone(obj)` for a true deep copy, (3) use JSON.parse(JSON.stringify(obj)) for simple objects (doesn't handle functions or special types)."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `createUser(name, role = 'student', ...skills)` that uses a default parameter and rest parameter. It should return an object `{name, role, skills, skillCount}`. Call it three ways: (1) just name, (2) name + role, (3) name + role + 3 skills. Log each result.",
+            "starter": "// createUser(name, role = 'student', ...skills)\n// Returns {name, role, skills, skillCount}\n\n// Call 3 ways and log results\n",
+            "solution": "function createUser(name, role = 'student', ...skills) {\n  return { name, role, skills, skillCount: skills.length };\n}\n\nconsole.log(createUser('Amara'));\nconsole.log(createUser('Bayo', 'instructor'));\nconsole.log(createUser('Chidi', 'student', 'JavaScript', 'React', 'Node'));",
+            "test_cases": [
+              { "expected_output": "student" },
+              { "expected_output": "instructor" },
+              { "expected_output": "skillCount: 3" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use destructuring in a map callback to add a `passed` property to each student. Then use destructuring in a filter callback to keep only those where `passed` is true. Log the filtered names.",
+            "starter": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 33 }\n];\n\n// map: destructure {name, score}, add passed (score >= 50)\n// filter: destructure {passed}, keep true\n// Log filtered names\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 33 }\n];\n\nconst withPassed = students.map(({ name, score }) => ({ name, score, passed: score >= 50 }));\nconst passing = withPassed.filter(({ passed }) => passed);\npassing.forEach(({ name }) => console.log(name));",
+            "test_cases": [
+              { "expected_output": "Amara" },
+              { "expected_output": "Chidi" },
+              { "expected_not_output": "Bayo" },
+              { "expected_not_output": "Dami" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is destructuring in function parameters? How does `function greet({name, age})` differ from `function greet(person)`? Give an advantage of each approach.",
+            "sample_answer": "Destructuring in parameters extracts properties from the argument directly in the function signature. `function greet({name, age})` pulls name and age out of the passed object — inside the function you use `name` and `age` directly. `function greet(person)` receives the whole object — inside you use `person.name` and `person.age`. Advantage of destructuring: cleaner code inside the function (no repeated `person.` prefix), self-documenting signature (you can see exactly which properties the function uses), works well in map/filter callbacks (`students.filter(({score}) => score >= 50)`). Advantage of the whole object: you have access to ALL properties without listing them; you can pass the object to other functions; you can iterate its properties with Object.keys; and the function can work with objects of different shapes."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use destructuring with renaming to extract `name` as `productName` and `price` as `productPrice` from the object. Also destructure `category` with a default value of 'General' (the object doesn't have a category). Log all three.",
+            "starter": "const item = {\n  name: 'Wireless Earbuds',\n  price: 4500,\n  inStock: true\n};\n\n// Destructure: name as productName, price as productPrice\n// Destructure category with default 'General'\n// Log all three\n",
+            "solution": "const item = {\n  name: 'Wireless Earbuds',\n  price: 4500,\n  inStock: true\n};\n\nconst { name: productName, price: productPrice, category = 'General' } = item;\n\nconsole.log(productName);\nconsole.log(productPrice);\nconsole.log(category);",
+            "test_cases": [
+              { "expected_output": "Wireless Earbuds" },
+              { "expected_output": "4500" },
+              { "expected_output": "General" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `mergeSettings(defaults, ...overrides)` that uses the spread operator to merge all override objects into the defaults, with later overrides taking precedence. Call it with a defaults object and two override objects. Log the final merged result.",
+            "starter": "// mergeSettings(defaults, ...overrides)\n// Spread defaults and all overrides into one object\n\nconst defaults = { theme: 'light', fontSize: 14, lang: 'en' };\nconst userPrefs = { theme: 'dark' };\nconst sessionPrefs = { fontSize: 18 };\n\n// Call and log result\n",
+            "solution": "function mergeSettings(defaults, ...overrides) {\n  let result = { ...defaults };\n  for (const override of overrides) {\n    result = { ...result, ...override };\n  }\n  return result;\n}\n\nconst defaults = { theme: 'light', fontSize: 14, lang: 'en' };\nconst userPrefs = { theme: 'dark' };\nconst sessionPrefs = { fontSize: 18 };\n\nconst final = mergeSettings(defaults, userPrefs, sessionPrefs);\nconsole.log(final);",
+            "test_cases": [
+              { "expected_output": "theme: 'dark'" },
+              { "expected_output": "fontSize: 18" },
+              { "expected_output": "lang: 'en'" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What are default parameters and why are they useful? How do they compare to the old pattern of `value = value || defaultValue` inside the function body?",
+            "sample_answer": "Default parameters provide a fallback value directly in the function signature: `function greet(name = 'World')`. If the argument is undefined (not passed or explicitly undefined), the default is used. They're useful because: (1) the intent is clear from the signature — you see the defaults immediately, (2) they work correctly with all falsy values. The old pattern `value = value || defaultValue` has a bug: it triggers the default for ANY falsy value — 0, '', false, null — not just undefined. If `fontSize` should default to 14 but the user passes 0 (valid!), `fontSize || 14` gives 14 (wrong). Default parameters only activate for undefined, so `fontSize = 14` with argument 0 correctly gives 0. Default params are also self-documenting in IDE tooltips and documentation generators."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `summarize(...items)` using rest parameters that takes any number of objects with `{name, price}`. It should return an object `{count, total, names}` where names is an array of all names and total is the sum of all prices. Call it with 3 items and log the result.",
+            "starter": "// summarize(...items) — rest parameter\n// Returns {count, total, names}\n\n// Call with 3 product objects and log result\n",
+            "solution": "function summarize(...items) {\n  return {\n    count: items.length,\n    total: items.reduce((sum, item) => sum + item.price, 0),\n    names: items.map(item => item.name)\n  };\n}\n\nconst result = summarize(\n  { name: 'Earbuds', price: 4500 },\n  { name: 'Cable', price: 600 },\n  { name: 'Case', price: 1200 }\n);\n\nconsole.log(result);",
+            "test_cases": [
+              { "expected_output": "count: 3" },
+              { "expected_output": "total: 6300" },
+              { "expected_output": "Earbuds" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Given the array of students, use a single chained expression: spread + sort (by score descending, immutably), then map with destructured parameters to create strings 'Name — Score'. Log each result.",
+            "starter": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 91 }\n];\n\n// [...students].sort (descending) → .map (destructure) → .forEach (log)\n",
+            "solution": "const students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 91 }\n];\n\n[...students]\n  .sort((a, b) => b.score - a.score)\n  .map(({ name, score }) => name + ' — ' + score)\n  .forEach(entry => console.log(entry));",
+            "test_cases": [
+              { "expected_output": "Dami — 91" },
+              { "expected_output": "Amara — 88" },
+              { "expected_output": "Chidi — 72" },
+              { "expected_output": "Bayo — 45" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why is immutability important in modern JavaScript? How do spread and destructuring help achieve immutable updates? Give a practical scenario where mutation causes a bug.",
+            "sample_answer": "Immutability means never modifying existing data — instead, creating new copies with changes. It's important because: (1) predictability — you know data hasn't changed unexpectedly, (2) debugging — you can compare before/after states, (3) frameworks like React require it for change detection (React doesn't re-render if you mutate state directly). Spread helps by creating new arrays/objects: `{...user, name: 'New'}` creates a new object instead of modifying user. Destructuring helps by extracting values for transformation without touching the source. Bug scenario: You have a user list displayed in a table. You sort the array with `.sort()` (which mutates). The original reference in state is now also sorted — React doesn't detect a change (same reference), so the UI doesn't update. With `[...users].sort()`, you get a new sorted array, the reference changes, React detects it, and the UI updates correctly."
+          }
+        ]
+      }
+    ]
+  }
+}

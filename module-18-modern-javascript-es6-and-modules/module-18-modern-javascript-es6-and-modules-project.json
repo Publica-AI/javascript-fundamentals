@@ -1,0 +1,180 @@
+{
+  "module": "18",
+  "title": "Modern JavaScript ES6+ and Modules — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build a data processing system using modern ES6+ JavaScript features. Your solution must use: object destructuring (including nested and with renaming), array destructuring, spread operator for arrays (copy, merge) and objects (copy, add properties immutably), rest parameters in at least one function, default parameters, and a pipeline combining destructuring with array HOFs (map/filter with destructured parameters). All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Flutterwave Merchant Analytics Pipeline",
+        "scenario": "Build a merchant analytics system for Flutterwave using modern JavaScript features. Process the provided transaction dataset using destructuring, spread, rest, and ES6+ patterns to generate reports immutably.",
+        "requirements": [
+          "Use object destructuring to extract merchant name, country, and nested plan details (plan.name, plan.fee) from a merchant config object; log each extracted value",
+          "Use array destructuring to extract the first two transactions and collect the rest into a 'remaining' variable using rest syntax; log all three",
+          "Use the spread operator to create a copy of the transactions array, then create a new array merging transactions from two different merchants (without mutating originals)",
+          "Use the spread operator on objects to create an updated merchant object with an added 'lastUpdated' property and changed 'status' — without mutating the original; log both to prove immutability",
+          "Write a function with rest parameters `calculateFees(...amounts)` that accepts any number of amounts and returns total fees (1.5% each); also write a function with a default parameter for the fee rate",
+          "Build a pipeline: use map with destructured parameters ({amount, status}) to add a fee property, then filter with destructuring to keep only successful transactions, then log the results"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Flutterwave Analytics</title>\n</head>\n<body>\n  <h1>Flutterwave Merchant Analytics Pipeline</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Flutterwave Merchant Analytics Pipeline\n// Use ES6+ features to process this data\n\nconst merchant = {\n  name: 'TechHub Lagos',\n  country: 'Nigeria',\n  status: 'active',\n  plan: { name: 'Growth', fee: 1.5 }\n};\n\nconst transactions = [\n  { id: 'TXN-1', amount: 5000,  status: 'success',  customer: 'Amara Obi' },\n  { id: 'TXN-2', amount: 12000, status: 'success',  customer: 'Bayo Ade' },\n  { id: 'TXN-3', amount: 3500,  status: 'failed',   customer: 'Chidi Nweke' },\n  { id: 'TXN-4', amount: 8000,  status: 'success',  customer: 'Dami Lawal' },\n  { id: 'TXN-5', amount: 1500,  status: 'pending',  customer: 'Emeka Eze' }\n];\n\n// 1. Object destructuring — extract merchant name, country, plan.name, plan.fee\n\n\n// 2. Array destructuring — first two transactions + rest\n\n\n// 3. Spread (arrays) — copy transactions; merge two arrays\n\n\n// 4. Spread (objects) — immutable update of merchant (add property, change status)\n\n\n// 5. Rest parameters + default parameters functions\n\n\n// 6. Pipeline: map (destructured) → filter (destructured) → log results\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Paystack Payment Dashboard Builder",
+        "scenario": "Build a payment dashboard data processor for Paystack using modern JavaScript features. Transform and filter payment records using destructuring, spread, rest, and ES6+ patterns.",
+        "requirements": [
+          "Use object destructuring to extract business name, email, and nested settings (settings.currency, settings.webhook) from a business config object; log each",
+          "Use array destructuring to extract the first payment and collect the rest; log the first payment's id and the count of remaining",
+          "Use spread to create an immutable sorted copy of payments (by amount descending) without mutating the original; log both to prove immutability",
+          "Use spread on objects to create a new business config with added 'updatedAt' and overridden 'settings.currency' — without mutating; log both",
+          "Write a function `formatAmounts(currency = '₦', ...amounts)` with a default parameter and rest; return formatted strings like '₦5,000'",
+          "Build a pipeline: map with destructured parameters to add a formattedAmount property, filter with destructuring to keep amount > 3000, forEach with destructuring to log results"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Paystack Dashboard</title>\n</head>\n<body>\n  <h1>Paystack Payment Dashboard Builder</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Paystack Payment Dashboard Builder\n// Use ES6+ features to process this data\n\nconst business = {\n  name: 'ShopRite Nigeria',\n  email: 'pay@shoprite.ng',\n  settings: { currency: 'NGN', webhook: '/api/webhook' }\n};\n\nconst payments = [\n  { id: 'PAY-1', amount: 7500,  status: 'success', channel: 'card' },\n  { id: 'PAY-2', amount: 2300,  status: 'success', channel: 'bank' },\n  { id: 'PAY-3', amount: 15000, status: 'failed',  channel: 'card' },\n  { id: 'PAY-4', amount: 4800,  status: 'success', channel: 'ussd' },\n  { id: 'PAY-5', amount: 900,   status: 'success', channel: 'bank' }\n];\n\n// 1. Object destructuring — name, email, settings.currency, settings.webhook\n\n\n// 2. Array destructuring — first payment + rest\n\n\n// 3. Spread (arrays) — immutable sort by amount descending\n\n\n// 4. Spread (objects) — immutable update of business config\n\n\n// 5. Function with default parameter + rest parameters\n\n\n// 6. Pipeline: map → filter → forEach (all with destructuring in params)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "Bolt Trip Data Processor",
+        "scenario": "Build a trip data processor for Bolt using modern JavaScript features. Analyse driver and trip data using destructuring, spread, rest, and ES6+ patterns for immutable transformations.",
+        "requirements": [
+          "Use object destructuring to extract driver name, rating, and nested vehicle details (vehicle.make, vehicle.plate) from a driver object; log each",
+          "Use array destructuring to extract the first and last trips from the array (use length - 1 for last); log both trip IDs",
+          "Use spread to merge two trip arrays (morning trips and evening trips) into one combined array without mutating either; log the combined length",
+          "Use spread on objects to create an updated driver object with added 'lastOnline' date and changed 'status' — log both original and updated to prove immutability",
+          "Write a function `tripSummary(driverName, ...distances)` using rest to collect all distances; return total distance and average; use a default parameter for the unit ('km')",
+          "Build a pipeline: map with destructured parameters to add fare (distance × 150), filter with destructuring to keep completed trips only, forEach to log formatted results"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bolt Trips</title>\n</head>\n<body>\n  <h1>Bolt Trip Data Processor</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bolt Trip Data Processor\n// Use ES6+ features to process this data\n\nconst driver = {\n  name: 'Emeka Eze',\n  rating: 4.9,\n  status: 'online',\n  vehicle: { make: 'Toyota Camry', plate: 'LAG-234-XY' }\n};\n\nconst morningTrips = [\n  { id: 'TR-1', distance: 5.2,  status: 'completed', passenger: 'Amara' },\n  { id: 'TR-2', distance: 12.8, status: 'completed', passenger: 'Bayo' },\n  { id: 'TR-3', distance: 3.1,  status: 'cancelled', passenger: 'Chidi' }\n];\n\nconst eveningTrips = [\n  { id: 'TR-4', distance: 8.5,  status: 'completed', passenger: 'Dami' },\n  { id: 'TR-5', distance: 15.3, status: 'completed', passenger: 'Funmi' }\n];\n\n// 1. Object destructuring — driver name, rating, vehicle.make, vehicle.plate\n\n\n// 2. Array destructuring — first and last trips\n\n\n// 3. Spread (arrays) — merge morning + evening trips\n\n\n// 4. Spread (objects) — immutable driver update\n\n\n// 5. Rest + default parameter function — tripSummary\n\n\n// 6. Pipeline: map → filter → forEach (destructuring in params)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Publica Academy Student Data Transformer",
+        "scenario": "Build a student data transformer for Publica Academy using modern JavaScript features. Process enrolment and grade data using destructuring, spread, rest, and ES6+ patterns.",
+        "requirements": [
+          "Use object destructuring to extract student name, email, and nested enrolment details (enrolment.cohort, enrolment.startDate) from a student record; log each",
+          "Use array destructuring with skip syntax to extract the 1st and 3rd modules from a modules array; collect remaining with rest; log all",
+          "Use spread to create a new modules array that adds a new module at the beginning and one at the end — without mutating the original; log both arrays' lengths",
+          "Use spread on objects to create a graded student object that adds a 'grade' and 'graduated' property to the original student — without mutating; log both",
+          "Write a function `calculateAverage(studentName, ...scores)` using rest; return the average; use a default parameter for minimum passing score (50)",
+          "Build a pipeline: map with destructured parameters to add a passed boolean (score >= 50), filter with destructuring to keep only passed, forEach to log name and score"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Publica Academy</title>\n</head>\n<body>\n  <h1>Publica Academy Student Data Transformer</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Publica Academy Student Data Transformer\n// Use ES6+ features to process this data\n\nconst student = {\n  name: 'Amara Obi',\n  email: 'amara@publica.ng',\n  enrolment: { cohort: 'Cohort 5', startDate: '2025-01-15' }\n};\n\nconst modules = [\n  { id: 1, title: 'Intro to JS', score: 88 },\n  { id: 2, title: 'Variables',   score: 72 },\n  { id: 3, title: 'Control Flow', score: 45 },\n  { id: 4, title: 'Functions',   score: 91 },\n  { id: 5, title: 'Arrays',      score: 68 }\n];\n\nconst students = [\n  { name: 'Amara', score: 88 },\n  { name: 'Bayo',  score: 45 },\n  { name: 'Chidi', score: 72 },\n  { name: 'Dami',  score: 33 },\n  { name: 'Emeka', score: 55 }\n];\n\n// 1. Object destructuring — name, email, enrolment.cohort, enrolment.startDate\n\n\n// 2. Array destructuring — 1st module, skip 2nd, 3rd module, ...rest\n\n\n// 3. Spread (arrays) — add module at beginning and end immutably\n\n\n// 4. Spread (objects) — add grade and graduated to student immutably\n\n\n// 5. Rest + default parameter — calculateAverage function\n\n\n// 6. Pipeline: map → filter → forEach (destructuring in params)\n\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Jumia Product Catalogue Transformer",
+        "scenario": "Build a product catalogue data transformer for Jumia using modern JavaScript features. Process inventory data using destructuring, spread, rest, and ES6+ patterns for immutable operations.",
+        "requirements": [
+          "Use object destructuring to extract product name, price, and nested seller details (seller.name, seller.rating) from a product object; log each",
+          "Use array destructuring to extract the first two products and rest from the inventory array; log each group",
+          "Use spread to merge two category arrays (electronics and clothing) into a combined catalogue without mutating; then use spread to add a product at index 0",
+          "Use spread on objects to create a discounted product with added 'discount' and recalculated 'salePrice' properties — without mutating; log both",
+          "Write a function `createBundle(bundleName, ...products)` using rest that returns an object with name, items (the products), and itemCount; use a default parameter for discount percentage",
+          "Build a pipeline: map with destructured parameters to add VAT (price × 1.075), filter with destructuring to keep inStock only, forEach with destructuring to log product name and VAT price"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Jumia Catalogue</title>\n</head>\n<body>\n  <h1>Jumia Product Catalogue Transformer</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Jumia Product Catalogue Transformer\n// Use ES6+ features to process this data\n\nconst featuredProduct = {\n  name: 'Wireless Earbuds',\n  price: 4500,\n  inStock: true,\n  seller: { name: 'TechWorld', rating: 4.7 }\n};\n\nconst electronics = [\n  { id: 'E1', name: 'Wireless Earbuds', price: 4500, inStock: true },\n  { id: 'E2', name: 'USB-C Cable',      price: 600,  inStock: true },\n  { id: 'E3', name: 'Broken Tablet',    price: 0,    inStock: false }\n];\n\nconst clothing = [\n  { id: 'C1', name: 'Ankara Shirt',  price: 3500, inStock: true },\n  { id: 'C2', name: 'Denim Jacket',  price: 8000, inStock: false },\n  { id: 'C3', name: 'Canvas Shoes',  price: 5200, inStock: true }\n];\n\n// 1. Object destructuring — name, price, seller.name, seller.rating\n\n\n// 2. Array destructuring — first two electronics + rest\n\n\n// 3. Spread (arrays) — merge categories; add product at beginning\n\n\n// 4. Spread (objects) — immutable discount (add discount, salePrice)\n\n\n// 5. Rest + default parameter — createBundle function\n\n\n// 6. Pipeline: map → filter → forEach (destructuring in params)\n\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "destructuring",
+          "label": "Destructuring (Object and Array)",
+          "points": 30,
+          "descriptors": {
+            "full": "Object destructuring extracts nested properties correctly; array destructuring uses skip and rest syntax; destructuring used in function parameters within HOF callbacks",
+            "partial": "Basic destructuring present but no nested or no array destructuring",
+            "none": "No destructuring used"
+          }
+        },
+        {
+          "id": "spread",
+          "label": "Spread Operator (Arrays and Objects)",
+          "points": 30,
+          "descriptors": {
+            "full": "Spread used to copy/merge arrays immutably; spread used to copy/extend objects without mutation; original data unchanged (demonstrated with logs)",
+            "partial": "Spread used on arrays OR objects but not both, or mutation still occurring",
+            "none": "No spread operator usage"
+          }
+        },
+        {
+          "id": "rest_defaults",
+          "label": "Rest Parameters and Default Parameters",
+          "points": 25,
+          "descriptors": {
+            "full": "At least one function uses rest parameters (...args) to accept variable arguments; at least one function uses a default parameter value; both produce correct results",
+            "partial": "Rest or default used but not both, or used incorrectly",
+            "none": "No rest parameters and no default parameters"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality and Pipeline",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used; at least one HOF pipeline uses destructuring in callbacks; immutability proven with console logs; output is clear and labelled",
+            "partial": "Pipeline present but doesn't use destructured parameters",
+            "none": "var used, no pipeline, or output is unclear"
+          }
+        }
+      ]
+    }
+  }
+}
