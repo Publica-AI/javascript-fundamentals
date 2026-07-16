@@ -1,0 +1,452 @@
+[
+    {
+        "title": "promise states and creating promises",
+        "description": "Promise definition",
+        "type": "multiple choice",
+        "question": "What is a Promise in JavaScript?",
+        "options": "A function that runs immediately|An object representing a value that will be available in the future|A type of loop|A callback that always runs twice",
+        "answer": "An object representing a value that will be available in the future",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Three states",
+        "type": "multiple choice",
+        "question": "What are the three states of a Promise?",
+        "options": "start running done|active waiting cancelled|pending fulfilled rejected|loading success error",
+        "answer": "pending fulfilled rejected",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Pending state",
+        "type": "multiple choice",
+        "question": "What does the pending state of a Promise mean?",
+        "options": "The operation failed|The operation succeeded|The operation is still in progress and the result is not yet available|The Promise was cancelled",
+        "answer": "The operation is still in progress and the result is not yet available",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Fulfilled state",
+        "type": "multiple choice",
+        "question": "What does it mean when a Promise is fulfilled?",
+        "options": "It was rejected|It is still pending|The async operation succeeded and the Promise holds the result value|The Promise timed out",
+        "answer": "The async operation succeeded and the Promise holds the result value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Rejected state",
+        "type": "multiple choice",
+        "question": "What does it mean when a Promise is rejected?",
+        "options": "The operation is waiting|The operation succeeded with no value|The async operation failed and the Promise holds an error|The Promise was paused",
+        "answer": "The async operation failed and the Promise holds an error",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Immutability",
+        "type": "True or False",
+        "question": "Once a Promise is fulfilled or rejected it can never change to a different state.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "fetch returns Promise",
+        "type": "True or False",
+        "question": "fetch() returns a Promise — students were already using Promises in Module 15 without knowing the name.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "new Promise executor",
+        "type": "multiple choice",
+        "question": "What are the two arguments the executor function receives when you write new Promise(function(a, b) {})?",
+        "options": "then and catch|data and error|resolve and reject|success and failure",
+        "answer": "resolve and reject",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "resolve call",
+        "type": "multiple choice",
+        "question": "Inside a Promise executor when do you call resolve(value)?",
+        "options": "When the operation fails|When you want to pause|When the async operation succeeds and you have the result|At the start of every Promise",
+        "answer": "When the async operation succeeds and you have the result",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "reject call",
+        "type": "multiple choice",
+        "question": "Inside a Promise executor when do you call reject(error)?",
+        "options": "When the operation succeeds|When the async operation fails and you have an error|Every time a condition is checked|When resolve is already called",
+        "answer": "When the async operation fails and you have an error",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Promises vs callbacks",
+        "type": "multiple choice",
+        "question": "What key advantage do Promises have over nested callbacks for sequential async operations?",
+        "options": "Promises run faster|Promises allow flat chaining instead of nested indentation|Promises do not require functions|Promises run synchronously",
+        "answer": "Promises allow flat chaining instead of nested indentation",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Demo part1 student name",
+        "type": "multiple choice",
+        "question": "In the demo Part 1 the simulateAPI function is called to get a student object. What is the student's name?",
+        "options": "Chidi Nwosu|Funmi Adeyemi|Amara Obi|Gbenga Lawal",
+        "answer": "Amara Obi",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Demo course modules",
+        "type": "multiple choice",
+        "question": "In the demo Part 1 the course object is returned with a modules property. How many modules does it have?",
+        "options": "12|14|16|18",
+        "answer": "18",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Promise console log pending",
+        "type": "multiple choice",
+        "question": "If you log a Promise immediately after creating it before it resolves what do you see?",
+        "options": "The resolved value|undefined|Promise { <pending> }|null",
+        "answer": "Promise { <pending> }",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "When to create a Promise",
+        "type": "multiple choice",
+        "question": "When do you typically need to create a Promise with new Promise()?",
+        "options": "Every time you write async code|Only for fetch calls|When wrapping non-Promise async code like setTimeout or older callback-based APIs|Only inside async functions",
+        "answer": "When wrapping non-Promise async code like setTimeout or older callback-based APIs",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "promise states and creating promises",
+        "description": "Single error handler",
+        "type": "multiple choice",
+        "question": "How many .catch() calls do you typically need at the end of a Promise chain with 5 sequential steps?",
+        "options": "Five — one per step|Two — one for network one for data|One — it catches errors from any step in the chain|None — Promises handle errors automatically",
+        "answer": "One — it catches errors from any step in the chain",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": ".then() returns new Promise",
+        "type": "True or False",
+        "question": ".then() always returns a new Promise — this is what enables chaining.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Return value in then",
+        "type": "multiple choice",
+        "question": "If you return a plain value (like a string) from a .then() callback what does the next .then() receive?",
+        "options": "undefined because you cannot return from .then()|The string directly|A Promise wrapping the string|null",
+        "answer": "The string directly",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Return Promise in then",
+        "type": "multiple choice",
+        "question": "If you return a Promise from a .then() callback what does the next .then() receive?",
+        "options": "The Promise object itself|The resolved value of that Promise — the chain waits for it|undefined|An error",
+        "answer": "The resolved value of that Promise — the chain waits for it",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Forgetting return",
+        "type": "multiple choice",
+        "question": "What happens if you forget the return keyword inside a .then() callback?",
+        "options": "JavaScript adds it automatically|The chain stops executing|The next .then() receives undefined instead of the expected value|An error is thrown",
+        "answer": "The next .then() receives undefined instead of the expected value",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Catch position",
+        "type": "multiple choice",
+        "question": "Where should .catch() be placed in a Promise chain?",
+        "options": "At the beginning|After each .then()|At the end — it catches errors from any step above it|Nowhere — errors are automatic",
+        "answer": "At the end — it catches errors from any step above it",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Throw inside then",
+        "type": "multiple choice",
+        "question": "If you throw an error inside a .then() callback what happens?",
+        "options": "The program crashes|The error is ignored|The remaining .then() calls are skipped and .catch() receives the error|The chain restarts",
+        "answer": "The remaining .then() calls are skipped and .catch() receives the error",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Nesting then inside then",
+        "type": "multiple choice",
+        "question": "Why should you avoid nesting .then() inside another .then()?",
+        "options": "It causes an error|It is slower|It recreates the callback hell problem that Promises were designed to solve|JavaScript does not allow it",
+        "answer": "It recreates the callback hell problem that Promises were designed to solve",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": ".catch() equivalent",
+        "type": "multiple choice",
+        "question": ".catch(handler) is shorthand for what?",
+        "options": ".then(handler)|.then(undefined handler)|.then(null handler)|.error(handler)",
+        "answer": ".then(null handler)",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Chain continues after catch",
+        "type": "True or False",
+        "question": "After a .catch() handler runs the Promise chain can continue with additional .then() calls.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Demo retry pattern",
+        "type": "multiple choice",
+        "question": "In the demo Part 2 loadWithRetry calls simulateAPI with shouldFail set based on the attempt number. On which attempt does it succeed?",
+        "options": "1|2|3|4",
+        "answer": "3",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "flat vs nested",
+        "type": "multiple choice",
+        "question": "What is the main readability benefit of a flat .then() chain compared to nested callbacks?",
+        "options": "It runs faster|Each step reads at the same indentation level making the sequential logic easy to follow|It uses less memory|It does not need error handling",
+        "answer": "Each step reads at the same indentation level making the sequential logic easy to follow",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "then catch and chaining",
+        "description": "Response.json returns Promise",
+        "type": "multiple choice",
+        "question": "Why does a fetch chain need two .then() calls — one for response and one for data?",
+        "options": "fetch requires two .then() by rule|response.json() also returns a Promise so you need a second .then() to receive the parsed value|The first .then() only handles errors|For performance reasons",
+        "answer": "response.json() also returns a Promise so you need a second .then() to receive the parsed value",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "async functions and await",
+        "description": "async keyword",
+        "type": "multiple choice",
+        "question": "What does the async keyword before a function do?",
+        "options": "Makes the function run synchronously|Marks it as returning a Promise and allows use of await inside|Makes it run faster|Prevents errors",
+        "answer": "Marks it as returning a Promise and allows use of await inside",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "async functions and await",
+        "description": "await keyword",
+        "type": "multiple choice",
+        "question": "What does the await keyword do?",
+        "options": "Creates a new Promise|Pauses the async function until the Promise resolves and returns the value|Cancels a Promise|Runs a callback",
+        "answer": "Pauses the async function until the Promise resolves and returns the value",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "async functions and await",
+        "description": "await only in async",
+        "type": "True or False",
+        "question": "await can only be used inside an async function.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "async functions and await",
+        "description": "await pauses function not program",
+        "type": "multiple choice",
+        "question": "When an async function hits an await what pauses?",
+        "options": "The entire JavaScript program|All async functions|Only that async function — code outside it continues running|The event loop",
+        "answer": "Only that async function — code outside it continues running",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "async functions and await",
+        "description": "Demo await output order",
+        "type": "multiple choice",
+        "question": "Given: async function demo() { console.log('A'); await fetch(url); console.log('B'); } demo(); console.log('D'); — what is the output order?",
+        "options": "A B D|A D B|D A B|B A D",
+        "answer": "A D B",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "async functions and await",
+        "description": "async always returns Promise",
+        "type": "True or False",
+        "question": "An async function that returns a plain string still returns a Promise — the string is wrapped in Promise.resolve() automatically.",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "async functions and await",
+        "description": "Throw in async",
+        "type": "multiple choice",
+        "question": "What happens when you throw an error inside an async function?",
+        "options": "The error is ignored|The function returns undefined|The function returns a rejected Promise with that error|JavaScript stops executing",
+        "answer": "The function returns a rejected Promise with that error",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "async functions and await",
+        "description": "Refactoring then to await",
+        "type": "multiple choice",
+        "question": "Which async/await line is equivalent to .then(function(response) { return response.json(); })?",
+        "options": "const response = await fetch(url)|const data = await response.json()|await response.then()|async response.json()",
+        "answer": "const data = await response.json()",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "async functions and await",
+        "description": "Syntactic sugar",
+        "type": "multiple choice",
+        "question": "What does 'async/await is syntactic sugar over Promises' mean?",
+        "options": "async/await is faster than Promises|async/await is a cleaner syntax that uses Promises internally|async/await replaces Promises entirely|async/await only works in the browser",
+        "answer": "async/await is a cleaner syntax that uses Promises internally",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "async functions and await",
+        "description": "Demo part3 sequential time",
+        "type": "multiple choice",
+        "question": "In the demo Part 3 three sequential awaits each take 400ms. What is the approximate total sequential time?",
+        "options": "400ms|800ms|1200ms|2000ms",
+        "answer": "1200ms",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "async functions and await",
+        "description": "Demo part3 parallel time",
+        "type": "multiple choice",
+        "question": "In the demo Part 3 the same three operations run in parallel with Promise.all. What is the approximate total parallel time?",
+        "options": "1200ms|800ms|400ms|200ms",
+        "answer": "400ms",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "try catch replaces catch",
+        "type": "multiple choice",
+        "question": "In async/await code what replaces the .catch() handler from .then() chains?",
+        "options": "A finally block|A try/catch block wrapping the await calls|An if statement|An error event listener",
+        "answer": "A try/catch block wrapping the await calls",
+        "difficulty": "beginner"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "try catch handles both errors",
+        "type": "True or False",
+        "question": "A try/catch block in an async function catches both network failures (fetch rejects) and HTTP errors (thrown with throw).",
+        "options": "True|False",
+        "answer": "True",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Sequential await is slow",
+        "type": "multiple choice",
+        "question": "Why is awaiting three independent fetch calls sequentially inefficient?",
+        "options": "Each fetch is slower than the previous one|Each await waits for the previous to finish so they run one after another wasting time|Await does not work with fetch|Sequential code always has errors",
+        "answer": "Each await waits for the previous to finish so they run one after another wasting time",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Promise.all purpose",
+        "type": "multiple choice",
+        "question": "What does Promise.all([p1, p2, p3]) do?",
+        "options": "Runs the Promises in sequence|Runs all Promises simultaneously and resolves when all complete|Resolves with the first Promise that finishes|Rejects if any Promise is pending",
+        "answer": "Runs all Promises simultaneously and resolves when all complete",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Promise.all result order",
+        "type": "multiple choice",
+        "question": "Promise.all resolves with an array of results. In what order are the results?",
+        "options": "The order they resolved (fastest first)|The order of the input array regardless of which finished first|Alphabetical by variable name|Random order",
+        "answer": "The order of the input array regardless of which finished first",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Promise.all fail fast",
+        "type": "multiple choice",
+        "question": "What happens if ONE Promise in a Promise.all array rejects?",
+        "options": "The other Promises are cancelled|Promise.all waits for all then reports the failures|Promise.all immediately rejects with that error — the other results are discarded|The rejected Promise is ignored and the rest complete",
+        "answer": "Promise.all immediately rejects with that error — the other results are discarded",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Sequential vs parallel decision",
+        "type": "multiple choice",
+        "question": "When should you use sequential await instead of Promise.all?",
+        "options": "Always|When you need the result faster|When step 2 depends on the result of step 1|When you have more than 3 operations",
+        "answer": "When step 2 depends on the result of step 1",
+        "difficulty": "intermediate"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Promise.allSettled",
+        "type": "multiple choice",
+        "question": "What does Promise.allSettled differ from Promise.all?",
+        "options": "It is faster|It waits for all Promises to complete regardless of rejection — each result has a status property of fulfilled or rejected|It only works with fetch|It runs Promises sequentially",
+        "answer": "It waits for all Promises to complete regardless of rejection — each result has a status property of fulfilled or rejected",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Demo part4 users count",
+        "type": "multiple choice",
+        "question": "In the demo Part 4 Promise.all fetches users and posts in parallel. How many users does jsonplaceholder return?",
+        "options": "5|8|10|20",
+        "answer": "10",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Demo part5 mixed pattern",
+        "type": "multiple choice",
+        "question": "In the demo Part 5 the mixed pattern first awaits a user then fetches posts and todos in parallel. Why is the user awaited first?",
+        "options": "To make the code simpler|Because user data is larger|Because the posts and todos fetch calls need the user's id which is only available after the user is loaded|For security reasons",
+        "answer": "Because the posts and todos fetch calls need the user's id which is only available after the user is loaded",
+        "difficulty": "Advanced"
+    },
+    {
+        "title": "try catch and parallel operations",
+        "description": "Promise.race",
+        "type": "multiple choice",
+        "question": "What does Promise.race([p1, p2, p3]) do?",
+        "options": "Runs all Promises and waits for all|Resolves or rejects with the first Promise to settle|Runs Promises in order and stops at first success|Cancels slower Promises",
+        "answer": "Resolves or rejects with the first Promise to settle",
+        "difficulty": "Advanced"
+    }
+]

@@ -1,0 +1,191 @@
+{
+  "module": "16",
+  "title": "Promises and Async/Await",
+  "pool_config": {
+    "strategy": "pick_one_package",
+    "packages": [
+      {
+        "id": "pkg_1",
+        "questions": [
+          {
+            "id": "pkg1_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a function `delay(ms)` that returns a new Promise which resolves after `ms` milliseconds. Then write an async function `greetAfterDelay(name)` that awaits `delay(1000)` and then logs 'Hello, [name]!'. Call it with 'Amara'.",
+            "starter": "// Function delay(ms) — returns new Promise that resolves after ms\n\n// async function greetAfterDelay(name) — await delay, then log greeting\n\n// Call with 'Amara'\n",
+            "solution": "function delay(ms) {\n  return new Promise(resolve => {\n    setTimeout(resolve, ms);\n  });\n}\n\nasync function greetAfterDelay(name) {\n  await delay(1000);\n  console.log('Hello, ' + name + '!');\n}\n\ngreetAfterDelay('Amara');",
+            "test_cases": [
+              { "expected_output": "Hello, Amara!" }
+            ]
+          },
+          {
+            "id": "pkg1_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a function `fetchUser(id)` that returns a new Promise. If id > 0, resolve after 500ms with `{id, name: 'User ' + id}`. If id <= 0, reject with Error('Invalid ID'). Write an async function that calls fetchUser(1) and fetchUser(-1) using try/catch, logging success or the error message for each.",
+            "starter": "// fetchUser(id) — returns Promise, resolve if id > 0, reject otherwise\n\n// async function that calls fetchUser(1) and fetchUser(-1)\n// Use try/catch for each, log result or error message\n",
+            "solution": "function fetchUser(id) {\n  return new Promise((resolve, reject) => {\n    setTimeout(() => {\n      if (id > 0) {\n        resolve({ id, name: 'User ' + id });\n      } else {\n        reject(new Error('Invalid ID'));\n      }\n    }, 500);\n  });\n}\n\nasync function main() {\n  try {\n    const user = await fetchUser(1);\n    console.log(user.name);\n  } catch (e) {\n    console.log(e.message);\n  }\n\n  try {\n    const user = await fetchUser(-1);\n    console.log(user.name);\n  } catch (e) {\n    console.log(e.message);\n  }\n}\n\nmain();",
+            "test_cases": [
+              { "expected_output": "User 1" },
+              { "expected_output": "Invalid ID" }
+            ]
+          },
+          {
+            "id": "pkg1_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between writing `await promise` inside a try/catch vs using `.then().catch()`? When would you prefer one over the other?",
+            "sample_answer": "Both handle the same resolved/rejected states. `await` with try/catch makes async code look synchronous — it flows top-to-bottom, errors are caught in the same way as sync errors, and you can put multiple awaits in one try block. `.then().catch()` chains callbacks — each step returns a new promise, and the chain can become hard to follow with many steps. Prefer async/await when: (1) you have sequential steps that depend on each other, (2) you want readable, flat code, (3) you need complex control flow (loops, conditionals). Prefer .then() when: (1) you're doing a single fetch-and-process without complex logic, (2) you want to attach a handler without creating an async function, (3) you're working with older code that already uses .then() chains."
+          }
+        ]
+      },
+      {
+        "id": "pkg_2",
+        "questions": [
+          {
+            "id": "pkg2_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write an async function that uses Promise.all to fetch 3 values in parallel: `delay(300).then(() => 'A')`, `delay(200).then(() => 'B')`, `delay(100).then(() => 'C')`. Log the results array. Note: they should all arrive together despite different delays.",
+            "starter": "function delay(ms) {\n  return new Promise(resolve => setTimeout(resolve, ms));\n}\n\n// async function that uses Promise.all with 3 promises\n// Log the results array\n",
+            "solution": "function delay(ms) {\n  return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nasync function main() {\n  const results = await Promise.all([\n    delay(300).then(() => 'A'),\n    delay(200).then(() => 'B'),\n    delay(100).then(() => 'C')\n  ]);\n  console.log(results);\n}\n\nmain();",
+            "test_cases": [
+              { "expected_output": "A" },
+              { "expected_output": "B" },
+              { "expected_output": "C" }
+            ]
+          },
+          {
+            "id": "pkg2_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write an async function that processes an array of 3 names sequentially: for each name, await a 200ms delay, then log 'Processed: [name]'. After all are done, log 'All done!'. Use a for...of loop with await inside.",
+            "starter": "function delay(ms) {\n  return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nconst names = ['Amara', 'Bayo', 'Chidi'];\n\n// async function: for each name, await delay, log 'Processed: name'\n// After loop: log 'All done!'\n",
+            "solution": "function delay(ms) {\n  return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nconst names = ['Amara', 'Bayo', 'Chidi'];\n\nasync function processAll() {\n  for (const name of names) {\n    await delay(200);\n    console.log('Processed: ' + name);\n  }\n  console.log('All done!');\n}\n\nprocessAll();",
+            "test_cases": [
+              { "expected_output": "Processed: Amara" },
+              { "expected_output": "Processed: Bayo" },
+              { "expected_output": "Processed: Chidi" },
+              { "expected_output": "All done!" }
+            ]
+          },
+          {
+            "id": "pkg2_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is Promise.all and when would you use it instead of awaiting each promise sequentially? What happens if one of the promises in Promise.all rejects?",
+            "sample_answer": "Promise.all takes an array of promises and returns a single promise that resolves with an array of all results when ALL promises resolve. Use it when you have multiple independent async operations that don't depend on each other — fetching user data AND post data simultaneously instead of one after the other. It's faster because all operations run concurrently. If ONE promise rejects, the entire Promise.all rejects immediately with that error — the other results are discarded (though the operations still complete in the background). For handling mixed success/failure, use Promise.allSettled instead — it waits for all promises and returns an array of {status, value/reason} objects."
+          }
+        ]
+      },
+      {
+        "id": "pkg_3",
+        "questions": [
+          {
+            "id": "pkg3_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a function `randomSuccess()` that returns a Promise which randomly resolves with 'Success!' or rejects with Error('Failed!') (50/50 chance). Write an async function `tryUntilSuccess()` that keeps calling randomSuccess() in a loop until it succeeds, logging each attempt number. Log the final result.",
+            "starter": "// randomSuccess() — 50% chance resolve, 50% reject\n\n// async tryUntilSuccess() — loop until success, log attempts\n",
+            "solution": "function randomSuccess() {\n  return new Promise((resolve, reject) => {\n    setTimeout(() => {\n      if (Math.random() > 0.5) {\n        resolve('Success!');\n      } else {\n        reject(new Error('Failed!'));\n      }\n    }, 100);\n  });\n}\n\nasync function tryUntilSuccess() {\n  let attempt = 0;\n  while (true) {\n    attempt++;\n    try {\n      const result = await randomSuccess();\n      console.log('Attempt ' + attempt + ': ' + result);\n      return result;\n    } catch (e) {\n      console.log('Attempt ' + attempt + ': ' + e.message + ' Retrying...');\n    }\n  }\n}\n\ntryUntilSuccess();",
+            "test_cases": [
+              { "expected_output": "Attempt" },
+              { "expected_output": "Success!" }
+            ]
+          },
+          {
+            "id": "pkg3_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Rewrite this .then().catch() code as async/await with try/catch. The behaviour must be identical.\n\n```\nfetchData()\n  .then(data => {\n    console.log('Data:', data);\n    return processData(data);\n  })\n  .then(result => console.log('Result:', result))\n  .catch(err => console.log('Error:', err.message));\n```",
+            "starter": "// Simulate the functions\nfunction fetchData() {\n  return new Promise(resolve => setTimeout(() => resolve({ id: 1, value: 42 }), 300));\n}\nfunction processData(data) {\n  return new Promise(resolve => setTimeout(() => resolve(data.value * 2), 200));\n}\n\n// Rewrite the .then().catch() chain as async/await with try/catch\n",
+            "solution": "function fetchData() {\n  return new Promise(resolve => setTimeout(() => resolve({ id: 1, value: 42 }), 300));\n}\nfunction processData(data) {\n  return new Promise(resolve => setTimeout(() => resolve(data.value * 2), 200));\n}\n\nasync function main() {\n  try {\n    const data = await fetchData();\n    console.log('Data:', data);\n    const result = await processData(data);\n    console.log('Result:', result);\n  } catch (err) {\n    console.log('Error:', err.message);\n  }\n}\n\nmain();",
+            "test_cases": [
+              { "expected_output": "Data:" },
+              { "expected_output": "Result: 84" }
+            ]
+          },
+          {
+            "id": "pkg3_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What are the three states of a Promise? Can a Promise change from resolved to rejected or vice versa? Explain.",
+            "sample_answer": "The three states are: (1) Pending — the initial state; the async operation hasn't completed yet. (2) Fulfilled (resolved) — the operation completed successfully; the promise has a result value. (3) Rejected — the operation failed; the promise has a reason (error). A promise can only transition ONCE: from pending to fulfilled, or from pending to rejected. Once it settles (fulfilled or rejected), it NEVER changes state again. Calling resolve() after reject() (or vice versa) has no effect — the first one wins. This immutability is a key design principle: consumers of the promise can rely on the result being stable. Once you have a value from .then() or await, it won't suddenly become an error later."
+          }
+        ]
+      },
+      {
+        "id": "pkg_4",
+        "questions": [
+          {
+            "id": "pkg4_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Create a function `timeout(ms)` that returns a Promise which rejects after ms milliseconds with Error('Timeout!'). Use Promise.race to race a slow operation (resolves in 2000ms with 'Done!') against a timeout(1000). Log whichever wins. Then race again with timeout(3000) — this time the operation should win.",
+            "starter": "// timeout(ms) — rejects after ms with 'Timeout!'\n// slowOperation — resolves in 2000ms with 'Done!'\n\n// Race 1: slow vs timeout(1000) — timeout wins\n// Race 2: slow vs timeout(3000) — operation wins\n",
+            "solution": "function timeout(ms) {\n  return new Promise((_, reject) => {\n    setTimeout(() => reject(new Error('Timeout!')), ms);\n  });\n}\n\nfunction slowOperation() {\n  return new Promise(resolve => {\n    setTimeout(() => resolve('Done!'), 2000);\n  });\n}\n\nasync function main() {\n  try {\n    const result1 = await Promise.race([slowOperation(), timeout(1000)]);\n    console.log(result1);\n  } catch (e) {\n    console.log(e.message);\n  }\n\n  try {\n    const result2 = await Promise.race([slowOperation(), timeout(3000)]);\n    console.log(result2);\n  } catch (e) {\n    console.log(e.message);\n  }\n}\n\nmain();",
+            "test_cases": [
+              { "expected_output": "Timeout!" },
+              { "expected_output": "Done!" }
+            ]
+          },
+          {
+            "id": "pkg4_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write an async function that fetches data from 'https://jsonplaceholder.typicode.com/users/1' using fetch with async/await (not .then()). Check response.ok, parse the JSON, and log the user's name. Wrap in try/catch and log any errors.",
+            "starter": "// async function using fetch with await\n// Check response.ok\n// Parse JSON with await\n// Log user name\n// try/catch for errors\n",
+            "solution": "async function getUser() {\n  try {\n    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');\n    if (!response.ok) {\n      throw new Error('HTTP error: ' + response.status);\n    }\n    const user = await response.json();\n    console.log(user.name);\n  } catch (error) {\n    console.log('Error: ' + error.message);\n  }\n}\n\ngetUser();",
+            "test_cases": [
+              { "expected_output": "Leanne Graham" }
+            ]
+          },
+          {
+            "id": "pkg4_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "Why can't you use `await` at the top level of a regular script (outside an async function)? What is the workaround?",
+            "sample_answer": "`await` is only valid inside an async function because it pauses execution of that function while the promise resolves. At the top level of a regular script, there's no function to pause — the script is expected to run synchronously to completion. If await could pause the top level, it would block the entire main thread. Workarounds: (1) Wrap your code in an async IIFE (Immediately Invoked Function Expression): `(async () => { const data = await fetchData(); })();` (2) Create a named async function and call it: `async function main() { ... } main();` (3) In modern environments with ES modules (type='module' in HTML or .mjs files), top-level await IS supported because modules are loaded asynchronously by design."
+          }
+        ]
+      },
+      {
+        "id": "pkg_5",
+        "questions": [
+          {
+            "id": "pkg5_q1",
+            "type": "code",
+            "points": 40,
+            "prompt": "Write a function `withRetry(asyncFn, maxRetries)` that calls asyncFn. If it rejects, retry up to maxRetries times. Log each attempt. If all retries fail, throw the last error. Test it with a function that fails twice then succeeds on attempt 3.",
+            "starter": "// withRetry(asyncFn, maxRetries) — retry on failure\n\n// Test function: fails twice, succeeds on 3rd try\nlet attempts = 0;\nfunction unreliable() {\n  attempts++;\n  return new Promise((resolve, reject) => {\n    setTimeout(() => {\n      if (attempts < 3) reject(new Error('Fail #' + attempts));\n      else resolve('Success on attempt ' + attempts);\n    }, 100);\n  });\n}\n\n// Call withRetry(unreliable, 5) and log the result\n",
+            "solution": "async function withRetry(asyncFn, maxRetries) {\n  for (let i = 1; i <= maxRetries; i++) {\n    try {\n      const result = await asyncFn();\n      return result;\n    } catch (e) {\n      console.log('Attempt ' + i + ' failed: ' + e.message);\n      if (i === maxRetries) throw e;\n    }\n  }\n}\n\nlet attempts = 0;\nfunction unreliable() {\n  attempts++;\n  return new Promise((resolve, reject) => {\n    setTimeout(() => {\n      if (attempts < 3) reject(new Error('Fail #' + attempts));\n      else resolve('Success on attempt ' + attempts);\n    }, 100);\n  });\n}\n\nasync function main() {\n  try {\n    const result = await withRetry(unreliable, 5);\n    console.log(result);\n  } catch (e) {\n    console.log('All retries failed: ' + e.message);\n  }\n}\n\nmain();",
+            "test_cases": [
+              { "expected_output": "Attempt 1 failed: Fail #1" },
+              { "expected_output": "Attempt 2 failed: Fail #2" },
+              { "expected_output": "Success on attempt 3" }
+            ]
+          },
+          {
+            "id": "pkg5_q2",
+            "type": "code",
+            "points": 40,
+            "prompt": "Use Promise.all to fetch two URLs in parallel: 'https://jsonplaceholder.typicode.com/users/1' and 'https://jsonplaceholder.typicode.com/posts?userId=1&_limit=3'. Parse both, then log the user's name and the number of posts. Use async/await throughout.",
+            "starter": "// Fetch user and posts in parallel with Promise.all\n// Parse both responses\n// Log user name and post count\n",
+            "solution": "async function main() {\n  try {\n    const [userRes, postsRes] = await Promise.all([\n      fetch('https://jsonplaceholder.typicode.com/users/1'),\n      fetch('https://jsonplaceholder.typicode.com/posts?userId=1&_limit=3')\n    ]);\n\n    if (!userRes.ok || !postsRes.ok) throw new Error('Fetch failed');\n\n    const user = await userRes.json();\n    const posts = await postsRes.json();\n\n    console.log(user.name);\n    console.log(posts.length);\n  } catch (error) {\n    console.log('Error: ' + error.message);\n  }\n}\n\nmain();",
+            "test_cases": [
+              { "expected_output": "Leanne Graham" },
+              { "expected_output": "3" }
+            ]
+          },
+          {
+            "id": "pkg5_q3",
+            "type": "text",
+            "points": 20,
+            "prompt": "What is the difference between `Promise.all`, `Promise.allSettled`, and `Promise.race`? Give a use case for each.",
+            "sample_answer": "`Promise.all(promises)` — resolves when ALL promises resolve (returns array of results). Rejects immediately if ANY promise rejects. Use case: loading a dashboard that needs user data AND settings AND notifications — all must succeed for the page to render. `Promise.allSettled(promises)` — waits for ALL promises to settle (resolve or reject). Returns array of {status: 'fulfilled', value} or {status: 'rejected', reason} objects. Use case: sending emails to 100 recipients — you want to know which succeeded and which failed, without one failure cancelling the rest. `Promise.race(promises)` — resolves/rejects with whichever promise settles FIRST. Use case: implementing a timeout — race your actual fetch against a timer; if the timer fires first, you know the fetch took too long."
+          }
+        ]
+      }
+    ]
+  }
+}

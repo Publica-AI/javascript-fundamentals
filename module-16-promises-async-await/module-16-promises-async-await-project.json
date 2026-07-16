@@ -1,0 +1,180 @@
+{
+  "module": "16",
+  "title": "Promises and Async/Await — Project",
+  "pool_config": {
+    "strategy": "pick_one_project",
+    "pool_brief": "Build an asynchronous system using Promises and async/await. Your solution must use: a custom function that returns a new Promise (with resolve and reject), async/await to consume promises, try/catch for error handling, Promise.all for parallel operations, a comparison of sequential vs parallel execution (using console.time), and at least one retry pattern. All variables must use const or let.",
+    "projects": [
+      {
+        "id": "proj_1",
+        "title": "Carbon Loan Processing Pipeline",
+        "scenario": "Build an async loan processing system for Carbon. Simulate API calls with Promises, process loan applications sequentially and in parallel, handle failures with retry logic, and compare execution times.",
+        "requirements": [
+          "Create a function `simulateAPI(data, delay, shouldFail)` that returns a new Promise — resolves with data after delay, or rejects with an Error if shouldFail is true",
+          "Write an async function `processLoan(applicant)` that awaits 3 sequential steps: creditCheck → verifyIncome → approveLoan (each using simulateAPI with ~500ms delay); log each step",
+          "Add try/catch error handling: if any step fails, log the error message and return a rejection reason",
+          "Write an async function `processBatch(applicants)` that uses Promise.all to process multiple applicants in parallel; log all results",
+          "Compare sequential vs parallel: process 3 applicants sequentially (one after another with await in a loop) then in parallel (Promise.all); use console.time/timeEnd to show the speed difference",
+          "Implement a retry function `withRetry(fn, retries)` that retries a failing async function up to N times before giving up; demonstrate it with a function that fails twice then succeeds"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Carbon Loan Processing</title>\n</head>\n<body>\n  <h1>Carbon Loan Processing Pipeline</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Carbon Loan Processing Pipeline\n// Build an async system with Promises and async/await\n\n// 1. simulateAPI(data, delay, shouldFail) — returns a new Promise\n\n\n// 2. async processLoan(applicant) — 3 sequential await steps\n\n\n// 3. try/catch error handling in processLoan\n\n\n// 4. async processBatch(applicants) — Promise.all for parallel\n\n\n// 5. Sequential vs Parallel comparison with console.time\n\n\n// 6. withRetry(fn, retries) — retry pattern\n\n\n// Run the main flow\nasync function main() {\n  // Call your functions here\n}\nmain();\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_2",
+        "title": "Termii OTP Delivery System",
+        "scenario": "Build an async OTP delivery system for Termii. Simulate sending OTPs via multiple channels, handle delivery failures with retries, and process bulk sends in parallel.",
+        "requirements": [
+          "Create a function `sendOTP(channel, phone, delay)` that returns a new Promise — resolves with a success message after delay, or rejects if channel is 'whatsapp' (simulating failure)",
+          "Write an async function `deliverOTP(phone)` that awaits 3 sequential steps: generateCode → sendSMS → logDelivery (each using a Promise with ~400ms delay); log each step",
+          "Add try/catch: if sending fails, catch the error, log it, and attempt a fallback channel",
+          "Write an async function `bulkSend(phones)` that uses Promise.all to send OTPs to multiple numbers in parallel; log results",
+          "Compare sequential vs parallel: send to 4 numbers sequentially, then in parallel; use console.time/timeEnd to show the difference",
+          "Implement a retry: if the primary channel fails, retry up to 3 times with a different channel before giving up"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Termii OTP System</title>\n</head>\n<body>\n  <h1>Termii OTP Delivery System</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Termii OTP Delivery System\n// Build an async system with Promises and async/await\n\n// 1. sendOTP(channel, phone, delay) — returns a new Promise\n\n\n// 2. async deliverOTP(phone) — 3 sequential await steps\n\n\n// 3. try/catch with fallback channel on failure\n\n\n// 4. async bulkSend(phones) — Promise.all for parallel delivery\n\n\n// 5. Sequential vs Parallel comparison with console.time\n\n\n// 6. Retry pattern — retry up to 3 times on failure\n\n\nasync function main() {\n  // Call your functions here\n}\nmain();\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_3",
+        "title": "Bamboo Stock Trading Engine",
+        "scenario": "Build an async stock trading system for Bamboo. Simulate fetching stock prices, executing trades with validation, handling failures, and batch-processing orders in parallel.",
+        "requirements": [
+          "Create a function `fetchPrice(symbol, delay)` that returns a new Promise resolving with a random price after the delay; reject if symbol is 'INVALID'",
+          "Write an async function `executeTrade(order)` that awaits 3 sequential steps: fetchPrice → validateFunds → confirmTrade (each ~400ms); log each step with the symbol",
+          "Add try/catch: if any step fails (invalid symbol or insufficient funds), log the error and mark the trade as failed",
+          "Write an async function `batchTrade(orders)` that uses Promise.all to execute multiple trades in parallel; use Promise.allSettled to handle mixed success/failure",
+          "Compare sequential vs parallel: execute 3 trades sequentially, then in parallel; log timing with console.time/timeEnd",
+          "Implement retry: if fetchPrice fails due to timeout, retry up to 2 times before marking as failed"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Bamboo Trading</title>\n</head>\n<body>\n  <h1>Bamboo Stock Trading Engine</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Bamboo Stock Trading Engine\n// Build an async system with Promises and async/await\n\n// 1. fetchPrice(symbol, delay) — returns a new Promise\n\n\n// 2. async executeTrade(order) — 3 sequential await steps\n\n\n// 3. try/catch error handling for failed trades\n\n\n// 4. async batchTrade(orders) — Promise.all / Promise.allSettled\n\n\n// 5. Sequential vs Parallel comparison with console.time\n\n\n// 6. Retry pattern for fetchPrice timeouts\n\n\nasync function main() {\n  // Call your functions here\n}\nmain();\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_4",
+        "title": "Korapay Payment Gateway Simulator",
+        "scenario": "Build an async payment gateway simulator for Korapay. Simulate charge operations, handle declined payments, process merchant settlements in parallel, and implement retry logic.",
+        "requirements": [
+          "Create a function `chargeCard(amount, delay)` that returns a new Promise — resolves with a transaction reference after delay; rejects if amount > 100000 (limit exceeded)",
+          "Write an async function `processPayment(payment)` that awaits 3 sequential steps: validateCard → chargeCard → issueReceipt (each ~500ms); log each step",
+          "Add try/catch: if the charge is declined, log the reason and return a failed payment object",
+          "Write an async function `settleMultiple(payments)` that uses Promise.all to process multiple payments in parallel; log all results together",
+          "Compare sequential vs parallel: process 3 payments both ways; log timing with console.time/timeEnd",
+          "Implement retry: if chargeCard fails with a temporary error, retry up to 3 times with exponential backoff (delay doubles each retry)"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Korapay Gateway</title>\n</head>\n<body>\n  <h1>Korapay Payment Gateway Simulator</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Korapay Payment Gateway Simulator\n// Build an async system with Promises and async/await\n\n// 1. chargeCard(amount, delay) — returns a new Promise\n\n\n// 2. async processPayment(payment) — 3 sequential await steps\n\n\n// 3. try/catch for declined payments\n\n\n// 4. async settleMultiple(payments) — Promise.all for parallel\n\n\n// 5. Sequential vs Parallel comparison with console.time\n\n\n// 6. Retry with exponential backoff\n\n\nasync function main() {\n  // Call your functions here\n}\nmain();\n"
+          }
+        ]
+      },
+      {
+        "id": "proj_5",
+        "title": "Interswitch Transaction Reconciliation",
+        "scenario": "Build an async transaction reconciliation system for Interswitch. Simulate fetching records from multiple sources, compare them, handle fetch failures, and process reconciliations in parallel.",
+        "requirements": [
+          "Create a function `fetchRecords(source, delay)` that returns a new Promise resolving with mock transaction data after delay; rejects if source is 'offline'",
+          "Write an async function `reconcile(txnId)` that awaits 3 sequential steps: fetchBankRecord → fetchMerchantRecord → compareRecords (each ~400ms); log matches/mismatches",
+          "Add try/catch: if either source is unavailable, catch the error and log which source failed",
+          "Write an async function `batchReconcile(txnIds)` that uses Promise.all to reconcile multiple transactions in parallel",
+          "Compare sequential vs parallel: reconcile 4 transactions both ways; log timing with console.time/timeEnd",
+          "Implement retry: if a fetch fails, retry up to 2 times before marking as unreconciled"
+        ],
+        "files": [
+          {
+            "filename": "index.html",
+            "role": "starter",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Interswitch Reconciliation</title>\n</head>\n<body>\n  <h1>Interswitch Transaction Reconciliation</h1>\n  <p>Open the browser console to see your output.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "script.js",
+            "role": "submission",
+            "content": "// Interswitch Transaction Reconciliation\n// Build an async system with Promises and async/await\n\n// 1. fetchRecords(source, delay) — returns a new Promise\n\n\n// 2. async reconcile(txnId) — 3 sequential await steps\n\n\n// 3. try/catch for unavailable sources\n\n\n// 4. async batchReconcile(txnIds) — Promise.all for parallel\n\n\n// 5. Sequential vs Parallel comparison with console.time\n\n\n// 6. Retry pattern for failed fetches\n\n\nasync function main() {\n  // Call your functions here\n}\nmain();\n"
+          }
+        ]
+      }
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {
+          "id": "promise_creation",
+          "label": "Promise Creation and async/await",
+          "points": 30,
+          "descriptors": {
+            "full": "Custom function returns new Promise with resolve/reject; async functions use await correctly; code is flat and readable (not nested .then() chains)",
+            "partial": "Promise created but resolve/reject not both used, or await used incorrectly",
+            "none": "No Promise creation; no async/await usage"
+          }
+        },
+        {
+          "id": "error_handling",
+          "label": "Error Handling with try/catch",
+          "points": 25,
+          "descriptors": {
+            "full": "try/catch wraps await calls correctly; error messages are logged clearly; rejected promises are handled without unhandled rejection warnings; retry pattern implemented",
+            "partial": "try/catch present but doesn't cover all failure cases, or retry missing",
+            "none": "No error handling; unhandled rejections likely"
+          }
+        },
+        {
+          "id": "parallel",
+          "label": "Promise.all and Sequential vs Parallel",
+          "points": 30,
+          "descriptors": {
+            "full": "Promise.all used correctly for parallel execution; sequential and parallel approaches both demonstrated; console.time/timeEnd proves the speed difference; results are correct",
+            "partial": "Promise.all used but timing comparison missing, or sequential logic incorrect",
+            "none": "No parallel execution demonstrated"
+          }
+        },
+        {
+          "id": "code_quality",
+          "label": "Code Quality",
+          "points": 15,
+          "descriptors": {
+            "full": "const/let used; functions are well-named; output is clear and labelled; main() orchestrates the flow; no var",
+            "partial": "Minor issues — unclear output or inconsistent function naming",
+            "none": "var used, unreadable output, or code structure is confusing"
+          }
+        }
+      ]
+    }
+  }
+}
